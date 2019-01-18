@@ -15,13 +15,13 @@ authors:
   Antonia:
     name: Antonia
     display_name: Антония Апостолова
-    photo: assets/images/author-antonia.png
+    photo: /assets/images/author-antonia.png
     email: antonia@literaturnirazgovori.com
     web: https://www.facebook.com/literaturnirazgovori/
   Guest:
     name: Guest
     display_name: Гост-автор
-    photo: assets/images/author-guest.png
+    photo: /assets/images/author-guest.png
 
 # Plugins
 plugins:
