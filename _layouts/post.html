@@ -4,23 +4,7 @@ disqus: false
 archive: false
 post_class: post-template
 ---
-{% assign m = page.date | date: "%-m" %}
-{{ page.date | date: "%-d" }}
-{% case m %}
-{% when '1' %}Januar
-{% when '2' %}Februar
-{% when '3' %}März
-{% when '4' %}April
-{% when '5' %}Mai
-{% when '6' %}Juni
-{% when '7' %}Juli
-{% when '8' %}August
-{% when '9' %}September
-{% when '10' %}Oktober
-{% when '11' %}November
-{% when '12' %}Dezember
-{% endcase %}
-{{ page.date | date: "%Y" }}
+
 <!-- Begin Article
 ================================================== -->
 <div class="container">
@@ -59,12 +43,29 @@ post_class: post-template
             <div class="postinfo">
                 {% if page.author %}
                 <img class="author-thumb" src="{{ author.photo }}" alt="{{ author.display_name }}">
-                {{ author.display_name }}
+                {{ author.display_name }},
                 {% endif %}
 
                 <small>
-                    <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{
-                            page.date | date_to_string }}</time></span>
+                    <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">
+                            {% assign m = page.date | date: "%-m" %}
+                            {{ page.date | date: "%-d" }}
+                            {% case m %}
+                            {% when '1' %}Януари
+                            {% when '2' %}Февруари
+                            {% when '3' %}Март
+                            {% when '4' %}Април
+                            {% when '5' %}Май
+                            {% when '6' %}Юни
+                            {% when '7' %}Юли
+                            {% when '8' %}Август
+                            {% when '9' %}Септември
+                            {% when '10' %}Октомври
+                            {% when '11' %}Ноември
+                            {% when '12' %}Декември
+                            {% endcase %}
+                            {{ page.date | date: "%Y" }}
+                        </time></span>
                     {% if page.last_modified_at %}
                     (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{
                         page.last_modified_at | date: "%b %-d, %Y" }}</time>)
@@ -82,7 +83,7 @@ post_class: post-template
                 {{content}}
             </div>
 
-            <!-- Post Date -->
+            <!-- Post Date 
             <p>
                 <small>
                     <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{
@@ -93,7 +94,7 @@ post_class: post-template
                     {% endif %}
                 </small>
             </p>
-
+            -->
             <!-- Post Categories -->
             <div class="after-post-tags">
                 <ul class="tags">
