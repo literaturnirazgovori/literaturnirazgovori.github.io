@@ -1,6 +1,6 @@
 ---
 layout: post
-hidden: false
+hidden: true
 title: This is a test post
 author: Antonia
 image: /Uploads/road.jpg
