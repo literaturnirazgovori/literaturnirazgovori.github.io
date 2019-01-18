@@ -82,7 +82,7 @@ page.layout
           <li class="nav-item">
             {% endif %}
             <!-- UNHIDE THE CMS -->
-            <a class="nav-link" href="{{ site.baseurl }}/cms/">Blog</a>
+            <a class="nav-link" href="{{ site.baseurl }}/cms/">Начало</a>
           </li>
 
           {% if page.url == "/about.html" %}
@@ -90,34 +90,14 @@ page.layout
 
           <li class="nav-item">
             {% endif %}
-            <a class="nav-link" href="{{ site.baseurl }}/about">About</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/wowthemesnet/mediumish-theme-jekyll/archive/master.zip"><i
-                class="fas fa-download"></i> Download</a>
-          </li>
-
-          <li class="nav-item">
-            <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-wordpress/"><i class="fab fa-wordpress-simple"></i>
-              WP Version</a>
-          </li>
-
-          <li class="nav-item">
-            <a target="_blank" class="nav-link" href="https://www.wowthemes.net/themes/mediumish-ghost/"><i class="fab fa-snapchat-ghost"></i>
-              Ghost Version</a>
+            <a class="nav-link" href="{{ site.baseurl }}/about">За Антония</a>
           </li>
 
           <li class="nav-item">
             <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f"></i></a>
           </li>
 
-          <li class="nav-item">
-            <a target="_blank" class="nav-link" href="https://twitter.com/wowthemesnet"><i class="fab fa-twitter"></i></a>
-          </li>
-        </ul>
-
-        <!-- End Menu -->
+          <!-- End Menu -->
       </div>
     </div>
   </nav>
@@ -166,28 +146,6 @@ page.layout
     </div>
     <!-- /.container>
     
-<!-- Categories Jumbotron
-================================================== -->
-    <div class="jumbotron fortags">
-      <div class="d-md-flex h-100">
-        <div class="col-md-4 transpdark align-self-center text-center h-100">
-          <div class="d-md-flex align-items-center justify-content-center h-100">
-            <h2 class="d-md-block align-self-center py-1 font-weight-light">
-              Explore <span class="d-none d-md-inline">→</span>
-            </h2>
-          </div>
-        </div>
-        <div class="col-md-8 p-5 align-self-center text-center">
-          {% assign tags_list = site.categories %} {% if tags_list.first[0] ==
-          null %} {% for tag in tags_list %}
-          <a href="{{ site.baseurl }}/category/{{ tag }}">{{ tag | capitalize }} {{ site.tags[tag].size }}</a>
-          {% endfor %} {% else %} {% for tag in tags_list %}
-          <a href="{{ site.baseurl }}/category/{{ tag[0] }}">{{ tag[0] | capitalize }} ({{ tag[1].size }})</a>
-          {% endfor %} {% endif %} {% assign tags_list = nil %}
-        </div>
-      </div>
-    </div>
-
     <!-- Begin Footer
 ================================================== -->
     <footer class="footer">
@@ -196,10 +154,12 @@ page.layout
           <div class="col-md-6 col-sm-6 text-center text-lg-left">
             Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
           </div>
-          <div class="col-md-6 col-sm-6 text-center text-lg-right">
+          <!--
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">
             <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a>
             by WowThemes.net
           </div>
+          -->
         </div>
       </div>
     </footer>
