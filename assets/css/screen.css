@@ -263,6 +263,12 @@ License: https://www.wowthemes.net/freebies-license/
     color: rgba(0,0,0,.5);
     /* font-style: italic; */
 }
+.postinfo {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+}
+
  .footer {
      border-top:1px solid rgba(0,0,0,.05)!important;
      padding-top:15px;
@@ -527,7 +533,11 @@ License: https://www.wowthemes.net/freebies-license/
      font-size:30px;
 }
  .post-top-meta.authorpage .author-thumb {
-     float:none;
+    width: 30px;
+    height: 30px;
+    /* float: left; */
+    /* margin-right: 13px; */
+    border-radius: 100%;
 }
  .authorpage .author-description {
      font-size:1rem;
