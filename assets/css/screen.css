@@ -252,14 +252,15 @@ License: https://www.wowthemes.net/freebies-license/
      font-size: 4em;
 }
  .mainheading h1.posttitle {
-     font-weight:700;
-     margin-bottom:1rem;
-     font-family: "nicebgfont"
+    /* font-weight: 700; */
+    margin-bottom: 1rem;
+    font-family: "nicebgfont";
+    font-size: 2.0em;
 }
 .mainheading h2.postsubtitle  {
     font-weight: normal;
-    font-size: 1.5em;
-    font-style: italic;
+    font-size: 1.15em;
+    /* font-style: italic; */
 }
  .footer {
      border-top:1px solid rgba(0,0,0,.05)!important;
