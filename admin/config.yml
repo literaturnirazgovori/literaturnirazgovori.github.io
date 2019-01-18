@@ -25,10 +25,10 @@ collections:
         options:
           - { label: "Антония", value: "Antonia" }
           - { label: "Гост-автор", value: "Guest" }
-          - label: "Featured Image"
-            name: "image"
-            widget: "image"
-            media_library:
-              config:
-                multiple: true
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
       - { label: "Body", name: "body", widget: "markdown" }
