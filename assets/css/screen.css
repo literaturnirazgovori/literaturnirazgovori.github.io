@@ -260,6 +260,7 @@ License: https://www.wowthemes.net/freebies-license/
 .mainheading h2.postsubtitle  {
     font-weight: normal;
     font-size: 1.15em;
+    color: rgba(0,0,0,.5);
     /* font-style: italic; */
 }
  .footer {
