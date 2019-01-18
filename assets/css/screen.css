@@ -12,6 +12,18 @@ License: https://www.wowthemes.net/freebies-license/
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'nicebgfont';
+    src: url('../fonts/nicebgfont.woff2') format('woff'),
+         url('../fonts/nicebgfont.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.card-body{
+    font-family: "nicebgfont";
+}
+
 .mainheading {
      padding:1rem 0rem;
 }
@@ -242,6 +254,12 @@ License: https://www.wowthemes.net/freebies-license/
  .mainheading h1.posttitle {
      font-weight:700;
      margin-bottom:1rem;
+     font-family: "nicebgfont"
+}
+.mainheading h2.postsubtitle  {
+    font-weight: normal;
+    font-size: 1.5em;
+    font-style: italic;
 }
  .footer {
      border-top:1px solid rgba(0,0,0,.05)!important;
