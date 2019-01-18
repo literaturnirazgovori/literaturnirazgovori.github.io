@@ -13,15 +13,23 @@ License: https://www.wowthemes.net/freebies-license/
 }
 
 @font-face {
-    font-family: 'nicebgfont';
-    src: url('../fonts/nicebgfont.woff2') format('woff'),
-         url('../fonts/nicebgfont.woff2') format('woff');
+    font-family: 'nicebgfontsemibold';
+    src: url('../fonts/nicebgfontsemibold.woff2') format('woff'),
+         url('../fonts/nicebgfontsemibold.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nicebgfontsemilight';
+    src: url('../fonts/nicebgfontsemilight.woff2') format('woff'),
+         url('../fonts/nicebgfontsemilight.woff2') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 .card-body{
-    font-family: "nicebgfont";
+    font-family: "nicebgfontsemilight";
 }
 
 .mainheading {
@@ -102,6 +110,37 @@ License: https://www.wowthemes.net/freebies-license/
          padding-left:0.8rem;
     }
 }
+.navbar-nav .nav-link {
+    font-family: B52;
+    color: black;
+    font-size: 1.3em;
+}
+.nav-link {
+    color: black;
+    padding:0px;
+}
+.nav-link:hover {
+    color: black;
+}
+
+.post-image{
+    max-width: 300px;
+    float: left;
+    margin: 0px 20px 0px 0px !important;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);    
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    /**/
+    color: rgba(0,0,0,.5);
+}
+.navbar-light .navbar-nav .nav-link {
+    /**/
+    color: rgba(0,0,0,.9);
+}
+
+
 .lead{
     font-family: "B52";
 }
@@ -254,13 +293,14 @@ License: https://www.wowthemes.net/freebies-license/
  .mainheading h1.posttitle {
     /* font-weight: 700; */
     margin-bottom: 1rem;
-    font-family: "nicebgfont";
+    font-family: "nicebgfontsemibold";
     font-size: 2.0em;
 }
 .mainheading h2.postsubtitle  {
     font-weight: normal;
     font-size: 1.15em;
     color: rgba(0,0,0,.5);
+    font-family: "nicebgfontsemilight";
     /* font-style: italic; */
 }
 .postinfo {
@@ -285,8 +325,11 @@ License: https://www.wowthemes.net/freebies-license/
      color:rgba(0,0,0,.8);
 }
  .article-post {
-     font-family:Merriweather;
+    /* 
+    font-family: "nicebgfontsemilight";
      font-size:1.1rem;
+     */
+     font: 17px/1.42 nicebgfontsemilight,Arial,sans-serif;
      line-height:1.84;
      color:rgba(0,0,0,.8);
 }
