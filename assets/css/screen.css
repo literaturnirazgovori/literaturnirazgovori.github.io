@@ -152,10 +152,10 @@ License: https://www.wowthemes.net/freebies-license/
      font-size:12px;
 }
  .author-thumb {
-     width:40px;
-     height:40px;
-     float:left;
-     margin-right:13px;
+     width:30px;
+     height:30px;
+     /*float:left;
+     margin-right:13px;*/
      border-radius:100%;
 }
  .post-top-meta {
