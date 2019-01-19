@@ -28,13 +28,14 @@ plugins:
   - jekyll-paginate
   - jekyll-archives
 
+
 # Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: "/category/:name/"
+# jekyll-archives:
+#   enabled:
+#    - categories
+#  layout: archive
+#  permalinks:
+#    category: "/category/:name/"
 
 # Pagination
 paginate: 6
@@ -43,3 +44,15 @@ paginate_path: /cms/page:num/
 # Other
 markdown: kramdown
 highlighter: rouge
+
+collections:
+  category:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
