@@ -28,6 +28,17 @@ License: https://www.wowthemes.net/freebies-license/
     font-style: normal;
 }
 
+.pagenotfound {
+    background: url("/assets/images/shreds.png");
+    font-family: B52;
+    font-size: 8vw;
+    text-align: center;
+    padding: 50px;    
+}
+.pagenotfoundtitle {
+    font-size: 12vw;
+}
+
 .card-body{
     font-family: "nicebgfontsemilight";
 }

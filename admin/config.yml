@@ -33,3 +33,5 @@ collections:
           config:
             multiple: true
       - { label: "Body", name: "body", widget: "markdown" }
+      - {label: "Categories", name: "categories", widget: "list"}
+      - {label: "Tags", name: "tags", widget: "list"}   
