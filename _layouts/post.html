@@ -95,11 +95,23 @@ post_class: post-template
             <!-- End Featured Image -->
 
             <!-- Post Content -->
-            <div class="article-post">
+            <div class="article-post" style="display:none;">
                 {{content}}
             </div>
 
+            <script>
+                console.log("before");
+                //console.log($(".article-post").html());
+                var original = $(".article-post").html();
+                var fixed = original.replace(/<p>\*\*\*<\/p>/g, "NEWLINE").replace(/<p>/g, "").replace(/<\/p>/g, "<br/>").replace(/NEWLINE/g, "</p><p>");
+                fixed = "<p>" + fixed + "</p>";
 
+                //var fixed = "<p>" + $(".article-post").html().replace(/<p>/g, "").replace(/<\/p>/g, "").replace(/\*\*\*/g, "</p><p>").replace(/\n/g, "*LINE*") + "</p>";
+                console.log(fixed);
+                $(".article-post").html(fixed);
+                console.log("after");
+                $(".article-post").show()
+            </script>
             <!-- Post Date 
             <p>
                 <small>
