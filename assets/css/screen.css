@@ -45,7 +45,7 @@ License: https://www.wowthemes.net/freebies-license/
     filter: grayscale(100%);
     margin-right: 10px;
 }
-postlistitem-content{
+.postlistitem-content{
     position:relative;
     height:150px;
 }

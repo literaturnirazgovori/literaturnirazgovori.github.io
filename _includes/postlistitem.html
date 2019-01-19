@@ -45,12 +45,12 @@
         <span>
             <div class="postlistitem-content">
                 <div>{{ post.title }}</div>
-                <div class="postlistitem-subtitle" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-family:nicebgfontsemilight;font-size: 0.95rem;color: rgba(0,0,0,.44);">{{
+                <div class="postlistitem-subtitle">{{
                     post.subtitle |
                     strip_html | truncatewords:30 }}</div>
-                <div style="position: absolute; bottom:0px; left: 160px;">
+                <div class="postlistitem-bottominfo">
                     {% if post.author %}
-                    <img class="author-thumb posboxthumb" src="{{ author.photo }}" alt="{{ author.display_name }}">
+                    <img class="postlistitem-authorthumb posboxthumb" src="{{ author.photo }}" alt="{{ author.display_name }}">
                     {% endif %}
                     {{ author.display_name }}
 
