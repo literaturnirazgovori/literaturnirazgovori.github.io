@@ -1,0 +1,19 @@
+interviews:
+  name: interviews
+  text: Разговори
+
+bookreviews:
+  name: bookreviews
+  text: Рецензии
+
+translations:
+  name: translations
+  text: Преводна поезия
+
+newbooks:
+  name: newbooks
+  text: Нови книги
+
+newsevents:
+  name: newsevents
+  text: Новини и събития

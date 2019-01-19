@@ -34,7 +34,7 @@ collections:
             multiple: true
       - { label: "Body", name: "body", widget: "markdown" }
       - label: "Category"
-        name: "categories"
+        name: "category"
         widget: "select"
         default: "interviews"
         options:

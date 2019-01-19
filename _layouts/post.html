@@ -71,6 +71,12 @@ post_class: post-template
                         page.last_modified_at | date: "%b %-d, %Y" }}</time>)
                     {% endif %}
                 </small>
+                <span class="postcategory">
+                    {% if page.category %}
+                    {% assign cat = site.data.categoriestext[page.category] %}
+                    <a href="/category/{{ cat.name }}">{{ cat.text }}</a>
+                    {% endif %}
+                </span>
             </div>
 
             <!-- Post Featured Image -->
