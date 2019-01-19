@@ -27,6 +27,54 @@ License: https://www.wowthemes.net/freebies-license/
     font-weight: normal;
     font-style: normal;
 }
+.postlistitem{
+    margin: 10px 0px 10px 0px;
+    /*background-color: yellow;*/
+    height: 150px;
+    font-family: "nicebgfontsemibold";
+    border: 1px solid rgba(0,0,0,.125);
+}
+.postlistitemimage{
+    position: relative;
+    float: left;
+    width: 150px;
+    height: 150px;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(100%);
+    margin-right: 10px;
+}
+postlistitem-content{
+    position:relative;
+    height:150px;
+}
+
+.postlistitem-subtitle
+{
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    font-family:nicebgfontsemilight;
+    font-size: 0.95rem;
+    color: rgba(0,0,0,.44);
+}
+
+.postlistitem-authorthumb
+{
+    width:20px;
+    height:20px;
+    /*float:left;
+    margin-right:13px;*/
+    border-radius:100%;
+}
+
+.postlistitem-bottominfo
+{
+    position: absolute;
+    bottom:0px; 
+    left: 160px;
+}
 
 .pagenotfound {
     background: url("/assets/images/shreds.png");

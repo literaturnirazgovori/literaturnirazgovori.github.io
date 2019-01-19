@@ -92,7 +92,7 @@ page.layout
           </li>
 
           <!--==================================-->
-          {% if page.url == "/category/interviews/" %}
+          {% if page.url contains "/category/interviews" %}
           <li class="nav-item active">{% else %}</li>
 
           <li class="nav-item">
@@ -101,7 +101,7 @@ page.layout
           </li>
           <!--==================================-->
           <!--==================================-->
-          {% if page.url == "/category/bookreviews/" %}
+          {% if page.url contains "/category/bookreviews" %}
           <li class="nav-item active">{% else %}</li>
 
           <li class="nav-item">
@@ -110,7 +110,7 @@ page.layout
           </li>
           <!--==================================-->
           <!--==================================-->
-          {% if page.url == "/category/translations/" %}
+          {% if page.url contains "/category/translations" %}
           <li class="nav-item active">{% else %}</li>
 
           <li class="nav-item">
@@ -119,7 +119,7 @@ page.layout
           </li>
           <!--==================================-->
           <!--==================================-->
-          {% if page.url == "/category/newbooks/" %}
+          {% if page.url contains "/category/newbooks" %}
           <li class="nav-item active">{% else %}</li>
 
           <li class="nav-item">
@@ -128,7 +128,7 @@ page.layout
           </li>
           <!--==================================-->
           <!--==================================-->
-          {% if page.url == "/category/newsevents/" %}
+          {% if page.url contains "/category/newsevents" %}
           <li class="nav-item active">{% else %}</li>
 
           <li class="nav-item">

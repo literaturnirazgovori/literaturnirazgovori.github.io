@@ -1,0 +1,81 @@
+{% assign author = site.authors[post.author] %}
+{% if post.image %}
+{% assign image = post.image %}
+{% if image contains "://" %}
+{% assign image = post.image %}
+{% else %}
+{% assign image = post.image | absolute_url %}
+{% endif %}
+{% endif %}
+<!--
+<div class="postlistitem">
+    <span>
+        <a href="{{ post.url | absolute_url }}">
+            {% if post.image %}
+            <div class="postlistitemimage" style="background-image:url('{{image}}');"></div>
+            {% endif %}
+        </a>
+    </span>
+    <spam>
+        {{ post.title }}
+    </spam>
+</div>
+
+#header {
+  position: relative;
+  min-height: 150px;
+}
+
+#header-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+<div id="header">
+  <h1>Title</h1>
+  <div id="header-content">Some content</div>
+</div>
+-->
+<a href="{{ post.url | absolute_url }}">
+    <div class="postlistitem">
+        {% if post.image %}
+        <div class="postlistitemimage" style="background-image:url('{{image}}')">
+        </div>
+        {% endif %}
+        <span>
+            <div class="postlistitem-content">
+                <div>{{ post.title }}</div>
+                <div class="postlistitem-subtitle" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-family:nicebgfontsemilight;font-size: 0.95rem;color: rgba(0,0,0,.44);">{{
+                    post.subtitle |
+                    strip_html | truncatewords:30 }}</div>
+                <div style="position: absolute; bottom:0px; left: 160px;">
+                    {% if post.author %}
+                    <img class="author-thumb posboxthumb" src="{{ author.photo }}" alt="{{ author.display_name }}">
+                    {% endif %}
+                    {{ author.display_name }}
+
+                    <span class="post-date">
+                        {% assign m = post.date | date: "%-m" %}
+                        {{ post.date | date: "%-d" }}
+                        {% case m %}
+                        {% when '1' %}Януари
+                        {% when '2' %}Февруари
+                        {% when '3' %}Март
+                        {% when '4' %}Април
+                        {% when '5' %}Май
+                        {% when '6' %}Юни
+                        {% when '7' %}Юли
+                        {% when '8' %}Август
+                        {% when '9' %}Септември
+                        {% when '10' %}Октомври
+                        {% when '11' %}Ноември
+                        {% when '12' %}Декември
+                        {% endcase %}
+                        {{ post.date | date: "%Y" }}
+                    </span>
+
+                </div>
+            </div>
+        </span>
+    </div>
+</a>
