@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  "Quick Start Guide"
-author: Antonia
-categories: [ Jekyll, tutorial ]
-image: assets/images/12.jpg
-featured: true
 hidden: true
-category: bookreviews
+title: Quick Start Guide
+subtitle: no need for a subtitle
+author: Antonia
+image: assets/images/12.jpg
+category: interviews
+tags:
+  - tag
 ---
 
 If you already have a full Ruby development environment with all headers and RubyGems installed (see Jekyll’s requirements), you can create a new Jekyll site by doing the following:
