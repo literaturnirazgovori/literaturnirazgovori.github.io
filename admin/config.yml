@@ -4,7 +4,7 @@ backend:
   branch: master # Branch to update
   base_url: https://warm-woodland-78106.herokuapp.com
 
-publish_mode: editorial_workflow
+# publish_mode: editorial_workflow
 media_folder: Uploads
 public_folder: Uploads
 
@@ -16,7 +16,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template i.e. YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      - {label: "Hidden", name: "hidden", widget: "boolean", default: false}
+      - { label: "Hidden", name: "hidden", widget: "boolean", default: true }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Subtitle", name: "subtitle", widget: "string" }
       - label: "Author"
