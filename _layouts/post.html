@@ -100,16 +100,14 @@ post_class: post-template
             </div>
 
             <script>
-                console.log("before");
-                //console.log($(".article-post").html());
+                /*
+                - Make line breaks into <br/>
+                - Make paragraph breaks (marked with "==) to <p>
+                */
                 var original = $(".article-post").html();
                 var fixed = original.replace(/<p>\=\=<\/p>/g, "NEWLINE").replace(/<p>/g, "").replace(/<\/p>/g, "<br/>").replace(/NEWLINE/g, "</p><p>");
                 fixed = "<p>" + fixed + "</p>";
-
-                //var fixed = "<p>" + $(".article-post").html().replace(/<p>/g, "").replace(/<\/p>/g, "").replace(/\*\*\*/g, "</p><p>").replace(/\n/g, "*LINE*") + "</p>";
-                console.log(fixed);
                 $(".article-post").html(fixed);
-                console.log("after");
                 $(".article-post").show()
             </script>
             <!-- Post Date 
@@ -124,7 +122,7 @@ post_class: post-template
                 </small>
             </p>
             -->
-            <!-- Post Categories -->
+            <!-- Post Categories 
             <div class="after-post-tags">
                 <ul class="tags">
                     {% assign sortedCategories = page.categories | sort %}
@@ -135,6 +133,7 @@ post_class: post-template
                     {% endfor %}
                 </ul>
             </div>
+            -->
             <!-- End Categories -->
 
             <!-- Prev/Next 
