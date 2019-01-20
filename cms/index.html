@@ -12,8 +12,9 @@ title: Начало
         <h2><span>Featured</span></h2>
     </div>
     <div class="row">
-
-        {% for post in site.posts %}
+        {% assign allposts = site.posts | sort: 'date' %}
+        {% assign allposts = allposts | reverse %}
+        {% for post in allposts %}
 
         {% if post.featured == true %}
 
