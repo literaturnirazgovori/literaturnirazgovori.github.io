@@ -1,6 +1,6 @@
 ---
 layout: post
-hidden: true
+hidden: false
 title: another test
 subtitle: test1
 author: Antonia
