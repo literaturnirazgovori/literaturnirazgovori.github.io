@@ -12,7 +12,7 @@ title: Начало
         <h2><span>Featured</span></h2>
     </div>
     <div class="row">
-        {% assign allposts = site.posts | sort: 'date' %}
+        {% assign allposts = site.posts %}
         {% assign allposts = allposts | reverse %}
         {% for post in allposts %}
 
