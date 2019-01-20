@@ -8,7 +8,7 @@ layout: page
     {% assign posts = site.categories[page.tag] | where:"hidden","false"%}
     <!--{% assign counter = 0 %}-->
     {% if posts %}
-    {% for post in posts | reverse %}
+    {% for post in posts %}
     {% assign counter = forloop.length %}
     {% include postlistitem.html %}
     {% endfor %}
