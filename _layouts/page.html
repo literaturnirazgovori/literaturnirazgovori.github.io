@@ -5,7 +5,8 @@ layout: default
 
 <section>
     <div class="section-title">
-        <h2><span>{{ page.title }}</span></h2>
+            {% assign posts = site.categories[page.tag] | where:"hidden","false"%}
+        <h2><span>{{ page.title }} ({{ posts | size }})</span></h2>
     </div>
     
     <div class="article-post">
