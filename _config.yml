@@ -38,7 +38,7 @@ plugins:
 #    category: "/category/:name/"
 
 # Pagination
-paginate: 6
+paginate: 10
 paginate_path: /cms/page:num/
 
 # Other
