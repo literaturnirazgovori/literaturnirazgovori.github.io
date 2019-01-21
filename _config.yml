@@ -39,7 +39,7 @@ plugins:
 
 # Pagination
 paginate: 12
-paginate_path: /cms/page:num/
+paginate_path: /page:num/
 
 # Other
 markdown: kramdown

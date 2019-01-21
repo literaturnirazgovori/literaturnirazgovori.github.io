@@ -67,7 +67,7 @@ page.layout
   <div class="container pr-0">
     <!-- Begin Logo -->
     <!-- UNHIDE THE CMS -->
-    <a class="navbar-brand" href="{{ site.baseurl }}/cms/">
+    <a class="navbar-brand" href="{{ site.baseurl }}">
       <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" />
     </a>
     <!-- End Logo -->
@@ -82,13 +82,13 @@ page.layout
 
       <!-- UNHIDE THE CMS -->
       <ul class="navbar-nav ml-auto">
-        {% if page.url == "/cms/" %}
+        {% if page.url == "/" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
           {% endif %}
           <!-- UNHIDE THE CMS -->
-          <a class="nav-link" href="{{ site.baseurl }}/cms/">Начало</a>
+          <a class="nav-link" href="{{ site.baseurl }}">Начало</a>
         </li>
 
         <!--==================================-->
@@ -162,7 +162,7 @@ page.layout
 ================================================== -->
     <div class="mainheading">
       <!-- UNHIDE THE CMS -->
-      <h1 class="sitetitle"><a class="nav-link" href="{{ site.baseurl }}/cms/">{{ site.name }}</a></h1>
+      <h1 class="sitetitle"><a class="nav-link" href="{{ site.baseurl }}">{{ site.name }}</a></h1>
       <p class="lead">
         {% if site.mainlink %}
         <a href="{{ site.mainlink }}" target="_blank">
