@@ -3,6 +3,7 @@ layout: default
 disqus: false
 archive: false
 post_class: post-template
+comments: true
 ---
 
 <!-- Begin Article
@@ -42,7 +43,7 @@ post_class: post-template
             </div>
             <div class="postinfo">
                 {% if page.author %}
-                <img class="author-thumb" src="{{ author.photo }}" alt="{{ author.display_name }}">
+                <!--<img class="author-thumb" src="{{ author.photo }}" alt="{{ author.display_name }}">-->
                 {{ author.display_name }},
                 {% endif %}
 
@@ -165,7 +166,7 @@ post_class: post-template
 
 <!-- Begin Comments
 ================================================== -->
-{% if page.comments != false %}
+{% if page.comments %}
 <div class="container">
     <div id="comments" class="row justify-content-center mb-5">
         <div class="col-md-8">

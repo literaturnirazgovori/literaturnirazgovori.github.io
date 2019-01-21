@@ -89,6 +89,7 @@ License: https://www.wowthemes.net/freebies-license/
 
 .postcategory{
     float: right;
+    font-family: B52;
 }
 
 .card-body{
@@ -367,7 +368,7 @@ a {
 .mainheading h2.postsubtitle  {
     font-weight: normal;
     font-size: 1.15em;
-    color: rgba(0,0,0,.5);
+    color: #6b6b47;
     font-family: "nicebgfontsemilight";
     /* font-style: italic; */
 }
