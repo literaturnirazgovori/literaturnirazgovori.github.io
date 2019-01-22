@@ -375,6 +375,9 @@ a {
  .mainheading h1.sitetitle {
      font-family: "B52";
      font-size: 4em;
+     background-image: url('/assets/images/typebar-small.png'); 
+     background-repeat: no-repeat; 
+     background-position-x: 42vw;
 }
  .mainheading h1.posttitle {
     /* font-weight: 700; */
