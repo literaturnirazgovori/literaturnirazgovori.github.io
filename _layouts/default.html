@@ -162,7 +162,8 @@ page.layout
 ================================================== -->
     <div class="mainheading">
       <!-- UNHIDE THE CMS -->
-      <h1 class="sitetitle"><a class="nav-link" href="{{ site.baseurl }}">{{ site.name }}</a></h1>
+      <h1 class="sitetitle" style="background-image: url('assets/images/typebar-small.png'); background-repeat: no-repeat; background-position-x: right;"><a
+          class="nav-link" href="{{ site.baseurl }}">{{ site.name }}</a></h1>
       <p class="lead">
         {% if site.mainlink %}
         <a href="{{ site.mainlink }}" target="_blank">
@@ -200,48 +201,48 @@ page.layout
   -->
 
 
-  <!-- /.container>
+    <!-- /.container>
     
     <!-- Begin Footer
 ================================================== -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 text-center text-lg-left">
-          Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
-        </div>
-        <!--
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 text-center text-lg-left">
+            Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
+          </div>
+          <!--
             <div class="col-md-6 col-sm-6 text-center text-lg-right">
             <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a>
             by WowThemes.net
           </div>
           -->
+        </div>
       </div>
-    </div>
-  </footer>
-  <!-- End Footer
+    </footer>
+    <!-- End Footer
 ================================================== -->
-</div>
-<!-- /.site-content>
+  </div>
+  <!-- /.site-content>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+  <!-- Placed at the end of the document so the pages load faster -->
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 
-<script src="{{
+  <script src="{{
         site.baseurl
       }}/assets/js/ie10-viewport-bug-workaround.js"></script>
 
-<script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
 
-<script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js"></script>
-</body>
+  <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js"></script>
+  </body>
 
 </html>
