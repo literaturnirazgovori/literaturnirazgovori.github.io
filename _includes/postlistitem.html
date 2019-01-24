@@ -7,6 +7,11 @@
 {% assign image = post.image | absolute_url %}
 {% endif %}
 {% endif %}
+
+{% assign pagecategory="" %}
+{% if page.category and site.data.categoriestext[page.category] %}
+{% assign pagecategory=site.data.categoriestext[page.category].name%}
+{% endif %}
 <!--
 <div class="postlistitem">
     <span>
@@ -39,7 +44,7 @@
 <a href="{{ post.url | absolute_url }}">
     <div class="postlistitem">
         {% if post.image %}
-        <div class="postlistitemimage" style="background-image:url('{{image}}')">
+        <div class="postlistitemimage {{pagecategory}}" style="background-image:url('{{image}}')">
         </div>
         {% endif %}
         <span>
