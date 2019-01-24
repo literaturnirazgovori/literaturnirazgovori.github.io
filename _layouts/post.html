@@ -48,23 +48,10 @@ comments: true
                 {% endif %}
 
                 <small>
-                    <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">
+                    <span class="post-date"><time class="post-date">
                             {% assign m = page.date | date: "%-m" %}
                             {{ page.date | date: "%-d" }}
-                            {% case m %}
-                            {% when '1' %}Януари
-                            {% when '2' %}Февруари
-                            {% when '3' %}Март
-                            {% when '4' %}Април
-                            {% when '5' %}Май
-                            {% when '6' %}Юни
-                            {% when '7' %}Юли
-                            {% when '8' %}Август
-                            {% when '9' %}Септември
-                            {% when '10' %}Октомври
-                            {% when '11' %}Ноември
-                            {% when '12' %}Декември
-                            {% endcase %}
+                            {{site.data.months[m]}}
                             {{ page.date | date: "%Y" }}
                         </time></span>
                     {% if page.last_modified_at %}
