@@ -41,6 +41,10 @@ page.layout
 
 <!-- Begin Menu Navigation
 ================================================== -->
+{% assign pagecategory="" %}
+{% if page.category and site.data.categoriestext[page.category] %}
+{% assign pagecategory=site.data.categoriestext[page.category].name%}
+{% endif %}
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
   <div class="container pr-0">
     <!-- Begin Logo -->
@@ -70,7 +74,7 @@ page.layout
         </li>
 
         <!--==================================-->
-        {% if page.url contains "/category/interviews" %}
+        {% if page.url contains "/category/interviews" or pagecategory=="interviews" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
@@ -79,7 +83,7 @@ page.layout
         </li>
         <!--==================================-->
         <!--==================================-->
-        {% if page.url contains "/category/bookreviews" %}
+        {% if page.url contains "/category/bookreviews" or pagecategory=="bookreviews" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
@@ -88,7 +92,7 @@ page.layout
         </li>
         <!--==================================-->
         <!--==================================-->
-        {% if page.url contains "/category/translations" %}
+        {% if page.url contains "/category/translations" or pagecategory=="translations" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
@@ -97,7 +101,7 @@ page.layout
         </li>
         <!--==================================-->
         <!--==================================-->
-        {% if page.url contains "/category/newbooks" %}
+        {% if page.url contains "/category/newbooks" or pagecategory=="newbooks" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
@@ -106,7 +110,7 @@ page.layout
         </li>
         <!--==================================-->
         <!--==================================-->
-        {% if page.url contains "/category/newsevents" %}
+        {% if page.url contains "/category/newsevents" or pagecategory=="newsevents" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
@@ -155,7 +159,8 @@ page.layout
 
     <!-- Content
 ================================================== -->
-    <div class="main-content">{{ content }}</div>
+    <div class="main-content">
+      {{ content }}</div>
 
     <!-- Bottom Alert Bar
 ================================================== 
