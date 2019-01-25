@@ -143,7 +143,19 @@ page.layout
     <!-- Site Title
 ================================================== -->
     <div class="mainheading">
-      <!-- UNHIDE THE CMS -->
+      <span class="sitetitlecontainer">
+        <span class="sitetitle"><a href="{{ site.baseurl }}">{{ site.name }}</a>
+          <div class="lead">
+            {% if site.mainlink %}
+            <a href="{{ site.mainlink }}" target="_blank">
+              {% endif %}
+              {{ site.description }} {% if site.mainlink %}
+              <img src="{{ site.baseurl }}/assets/images/facebook.png" />
+            </a>{% endif %}</div>
+        </span></span>
+    </div>
+    <!--
+    <div class="mainheading">
       <h1 class="sitetitle"><a class="nav-link" href="{{ site.baseurl }}">{{ site.name }}</a></h1>
       <p class="lead">
         {% if site.mainlink %}
@@ -156,7 +168,7 @@ page.layout
         {% endif %}
       </p>
     </div>
-
+  -->
     <!-- Content
 ================================================== -->
     <div class="main-content">
