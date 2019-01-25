@@ -139,6 +139,11 @@ License: https://www.wowthemes.net/freebies-license/
     display:inline-block;
     height:100%;
   }
+  @media (max-width:990px) {
+    .sitetitlecontainer{
+        padding-right:0px;
+    }
+  }
 
 a {
      color:black;
