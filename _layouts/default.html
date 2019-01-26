@@ -46,12 +46,16 @@ page.layout
 {% assign pagecategory=site.data.categoriestext[page.category].name%}
 {% endif %}
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
-  <div class="container pr-0">
+  <div class="container pr-0 navbar-container">
     <!-- Begin Logo -->
     <!-- UNHIDE THE CMS -->
     <a class="navbar-brand" href="{{ site.baseurl }}/">
       <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" />
     </a>
+
+    <form action="/search">
+      <input type="text" id="searchinput" name="search"></input>
+    </form>
     <!-- End Logo -->
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
@@ -63,7 +67,7 @@ page.layout
       <!-- Begin Menu -->
 
       <!-- UNHIDE THE CMS -->
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto navbarlist">
         {% if page.url == "/" %}
         <li class="nav-item active">{% else %}</li>
 

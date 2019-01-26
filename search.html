@@ -1,0 +1,94 @@
+---
+layout: default
+title: Търсене
+---
+
+<head>
+    <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/assets/js/search-script.js" type="text/javascript"></script>
+
+    <script>
+        var itemTemplate = `
+    <a href="{url}">
+    <div class="postlistitem row">
+        <div class="col-6 col-lg-2 col-md-4 col-sm-6 col-xs-6 postlistitem-imagecontainer">
+            <div class="square postlistitemimage {category}" style="background-image: url('{image}');"></div>
+        </div>
+
+        <div class="col-6 col-lg-10 col-md-8 col-sm-6 col-xs-6 postlistitem-infocontainer">
+            <div class="align-self-start">
+                <div class="postlistitem-title">{title}</div>
+
+                <div class="postlistitem-subtitle">
+                    <span class="postlistitem-subtitle-concat">
+                        {subtitle}
+                    </span></div>
+            </div>
+            <div class="postlistitem-bottominfo">
+                {author}
+                <span class="post-date">
+                    {date}
+                </span>
+
+            </div>
+        </div>
+    </div>
+</a>`;
+        var authors = {{ site.authors | jsonify }};
+        var months = {{ site.data.months  | jsonify }};
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        function searchresultMiddleware(prop, value, template) {
+            switch (prop) {
+                case 'author':
+                    return authors[value].display_name;
+                case 'date':
+                    return "bla";
+            }
+        }
+
+        function bodyloaded() {
+            var sjs = new SimpleJekyllSearch({
+                searchInput: document.getElementById('search-input'),
+                resultsContainer: document.getElementById('results-container'),
+                json: '/search.json'
+            });
+
+            var searchbox = document.getElementById("search-input");
+            searchbox.value = getUrlParameter("search");
+
+            window.simpleJekyllSearch = new SimpleJekyllSearch({
+                searchInput: document.getElementById('search-input'),
+                resultsContainer: document.getElementById('results-container'),
+                json: '/search.json',
+                searchResultTemplate: itemTemplate,
+                templateMiddleware: searchresultMiddleware,
+                noResultsText: 'Няма резултати.',
+                limit: 10,
+                fuzzy: false,
+                exclude: ['Welcome']
+            });
+            setTimeout(() => {
+                window.simpleJekyllSearch.search(getUrlParameter("search"))
+            }, 1000);
+        }
+    </script>
+</head>
+
+<body onload="bodyloaded()">
+
+    <div class="section-title" style="display: flex;">
+        <h2>Търсене: <input type="text" id="search-input" placeholder="Търси..." style="flex: 1;"></h2>
+    </div>
+    <div id="search-container">
+        <div class="categorylist">
+            <div class="container" id="results-container">
+            </div>
+        </div>
+    </div>
+</body>

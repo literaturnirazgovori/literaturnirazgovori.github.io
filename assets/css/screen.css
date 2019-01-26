@@ -137,12 +137,47 @@
     font-size: 12vw;
 }
 
+/*----- search ------*/
+
+.navbar-container{
+    position:relative;
+}
+
+#searchinput {
+    position: absolute;
+    height: 50px;
+    left: 70px;
+    background-image: url("/assets/images/search-glass.png");
+    background-repeat: no-repeat;
+    background-position-y: 13px;
+    background-position-x: 2px;
+    width: 30px;
+    padding-left: 30px;
+    border: none;
+    -webkit-transition: width 0.4s linear;
+    transition: width 0.4s linear;
+    color: white;
+    top: 0;
+}
+
+#searchinput:focus{
+    width:100%;
+    background-image: url("/assets/images/search-glass-inverted.png");
+    background-color: black;
+}
+
+.navbarlist{
+    padding-left: 30px;
+}
+
+/*-------------------*/
+
 .postboxcategory a:hover {
     background-color: #E8E8E8;
-    -webkit-transition: background-color 2s ease-out;
-    -moz-transition: background-color 2s ease-out;
-    -o-transition: background-color 2s ease-out;
-    transition: background-color 2s ease-out;
+    -webkit-transition: background-color 1s linear;
+    -moz-transition: background-color 1s linear;
+    -o-transition: background-color 1s linear;
+    transition: background-color 1s linear;
 }
 
 
@@ -159,10 +194,10 @@
 
 .postcategory a:hover {
     background-color: #E8E8E8;
-    -webkit-transition: background-color 2s ease-out;
-    -moz-transition: background-color 2s ease-out;
-    -o-transition: background-color 2s ease-out;
-    transition: background-color 2s ease-out;
+    -webkit-transition: background-color 1s linear;
+    -moz-transition: background-color 1s linear;
+    -o-transition: background-color 1s linear;
+    transition: background-color 1s linear;
 }
 
 .card-body{
@@ -183,7 +218,7 @@
     display:inline-block;
     height:100%;
   }
-  @media (max-width:990px) {
+  @media (max-width:1080px) and (orientation: portrait) {
     .sitetitlecontainer{
         padding-right:0px;
     }
@@ -217,7 +252,7 @@ a {
  .mediumnavigation {
      background:rgba(255,255,255,.97);
      box-shadow:0 2px 2px -2px rgba(0,0,0,.15);
-     transition: top 0.2s ease-in-out;
+     transition: top 0.2s linear;
 }
  .main-content {
     min-height:300px;
@@ -285,10 +320,10 @@ a {
 
 .nav-item :hover {
     background-color: #E8E8E8;
-    -webkit-transition: background-color 2s ease-out;
-    -moz-transition: background-color 2s ease-out;
-    -o-transition: background-color 2s ease-out;
-    transition: background-color 2s ease-out;
+    -webkit-transition: background-color 1s linear;
+    -moz-transition: background-color 1s linear;
+    -o-transition: background-color 1s linear;
+    transition: background-color 1s linear;
 }
 
 .post-image{
