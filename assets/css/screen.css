@@ -72,7 +72,7 @@
     line-height: 1.6em;
     text-align: left;
 }
-@media (max-width: 1080px) and (orientation: landscape) {
+@media (max-width: 1080px) and (orientation: portrait) {
     .postlistitem-subtitle {
         display:none;
     }
