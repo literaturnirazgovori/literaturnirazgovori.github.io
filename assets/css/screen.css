@@ -72,15 +72,22 @@
     line-height: 1.6em;
     text-align: left;
 }
-/*
+@media (max-width: 600px) {
+    .postlistitem-subtitle {
+        display:none;
+    }
+    .postlistitem-title {
+        font-size: 10pt;
+    }
+} 
+
 @media (max-width:768px) {
 
-    .postlistitem-subtitle {
-        text-overflow: ellipsis;
-        font-size: 8pt;
-        white-space: nowrap;
+    .postlistitem-subtitle-concat {
+        max-height: 6.4em;
+        /* (Number of lines you want visible) * (line-height) */
     }
-}*/
+}
 
 .postlistitemimage.bookreviews, .postlistitemimage.newbooks{
     filter: none;
@@ -90,6 +97,8 @@
     position:relative;
     height:150px;
 }
+
+/*---------------------------------------*/
 
 .postlistitem-infocontainer
 {
