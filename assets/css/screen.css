@@ -1,9 +1,4 @@
-/* 
-Template Name: Mediumish 
-Copyright: Sal, WowThemes.net, https://www.wowthemes.net 
-Version: 1.0.22 
-License: https://www.wowthemes.net/freebies-license/ 
-*/
+/*------- Fonts -------*/
 @font-face {
     font-family: 'B52';
     src: url('../fonts/B52.woff') format('woff'),
@@ -27,25 +22,67 @@ License: https://www.wowthemes.net/freebies-license/
     font-weight: normal;
     font-style: normal;
 }
+
+/*------- Category pages -------*/
+
 .postlistitem{
-    margin: 10px 0px 10px 0px;
-    /*background-color: yellow;*/
-    height: 150px;
-    font-family: "nicebgfontsemibold";
     border: 1px solid rgba(0,0,0,.125);
+    display:flex; 
+    margin-bottom:10px;    
 }
-.postlistitemimage{
-    position: relative;
-    float: left;
-    width: 150px;
-    height: 150px;
-    background-position: 0% 0%;
-    background-repeat: no-repeat;
+
+.square {
+    width: 100%;
+    padding-bottom: 100%;
     background-size: cover;
-    filter: grayscale(100%);
-    margin-right: 10px;
+    background-position: center;
 }
-.postlistitemimage.bookreviews{
+
+.postlistitem-imagecontainer{
+    padding:0;
+}
+
+.postlistitemimage{
+    filter: grayscale(100%);
+}
+
+.postlistitem-title {
+    font-family: "nicebgfontsemibold";
+    font-size: 12pt;
+}
+
+.postlistitem-subtitle {
+    font-family: nicebgfontsemilight;
+    font-size: 0.95rem;
+    color: #6b6b47;
+    position: relative;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 10px;
+    /* Could be anything you like. */
+}
+
+.postlistitem-subtitle-concat {
+    position: relative;
+    display: inline-block;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 8em;
+    /* (Number of lines you want visible) * (line-height) */
+    line-height: 1.6em;
+    text-align: left;
+}
+/*
+@media (max-width:768px) {
+
+    .postlistitem-subtitle {
+        text-overflow: ellipsis;
+        font-size: 8pt;
+        white-space: nowrap;
+    }
+}*/
+
+.postlistitemimage.bookreviews, .postlistitemimage.newbooks{
     filter: none;
 }
 
@@ -54,29 +91,9 @@ License: https://www.wowthemes.net/freebies-license/
     height:150px;
 }
 
-.postlistitem-subtitle
+.postlistitem-infocontainer
 {
-    white-space: pre-wrap; 
-    overflow: hidden; 
-    /*text-overflow: ellipsis;*/
-    font-family:nicebgfontsemilight;
-    font-size: 0.95rem;
-    color: #6b6b47;
-    padding-right: 20px;
-}
-
-.postboxcategory{
-    font-family: B52;
-    font-size: 15px;
-    color: black;
-}
-
-.postboxcategory a:hover {
-    background-color: #E8E8E8;
-    -webkit-transition: background-color 2s ease-out;
-    -moz-transition: background-color 2s ease-out;
-    -o-transition: background-color 2s ease-out;
-    transition: background-color 2s ease-out;
+    position:relative;
 }
 
 .postlistitem-authorthumb
@@ -90,12 +107,15 @@ License: https://www.wowthemes.net/freebies-license/
 
 .postlistitem-bottominfo
 {
-    position: absolute;
-    bottom:0px; 
-    left: 160px;
     font-size: 12px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    position:absolute; 
+    bottom: 0;
 }
+
+
+
+/*------- 404 not found -------*/
 
 .pagenotfound {
     background: url("/assets/images/shreds.png");
@@ -106,6 +126,21 @@ License: https://www.wowthemes.net/freebies-license/
 }
 .pagenotfoundtitle {
     font-size: 12vw;
+}
+
+.postboxcategory a:hover {
+    background-color: #E8E8E8;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+
+
+.postboxcategory{
+    font-family: B52;
+    font-size: 15px;
+    color: black;
 }
 
 .postcategory{
@@ -144,6 +179,8 @@ License: https://www.wowthemes.net/freebies-license/
         padding-right:0px;
     }
   }
+
+
 
 a {
      color:black;

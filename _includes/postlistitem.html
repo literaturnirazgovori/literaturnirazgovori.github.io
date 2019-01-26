@@ -12,62 +12,35 @@
 {% if page.category and site.data.categoriestext[page.category] %}
 {% assign pagecategory=site.data.categoriestext[page.category].name%}
 {% endif %}
-<!--
-<div class="postlistitem">
-    <span>
-        <a href="{{ post.url | absolute_url }}">
-            {% if post.image %}
-            <div class="postlistitemimage" style="background-image:url('{{image}}');"></div>
-            {% endif %}
-        </a>
-    </span>
-    <spam>
-        {{ post.title }}
-    </spam>
-</div>
 
-#header {
-  position: relative;
-  min-height: 150px;
-}
-
-#header-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-<div id="header">
-  <h1>Title</h1>
-  <div id="header-content">Some content</div>
-</div>
--->
 <a href="{{ post.url | absolute_url }}">
-    <div class="postlistitem">
-        {% if post.image %}
-        <div class="postlistitemimage {{pagecategory}}" style="background-image:url('{{image}}')">
+    <div class="postlistitem row">
+        <div class="col-6 col-lg-2 col-md-4 col-sm-6 col-xs-6 postlistitem-imagecontainer">
+            <div class="square postlistitemimage {{pagecategory}}" style="background-image: url('{{image}}');"></div>
         </div>
-        {% endif %}
-        <span>
-            <div class="postlistitem-content">
-                <div>{{ post.title }}</div>
-                <div class="postlistitem-subtitle">{{
-                    post.subtitle |
-                    strip_html | truncatewords:30 }}</div>
-                <div class="postlistitem-bottominfo">
-                    {% if post.author %}
-                    <!--<img class="postlistitem-authorthumb posboxthumb" src="{{ author.photo }}" alt="{{ author.display_name }}">>-->
-                    {% endif %}
-                    {{ author.display_name }}
 
-                    <span class="post-date">
-                        {% assign m = post.date | date: "%-m" %}
-                        {{ post.date | date: "%-d" }}
-                        {{site.data.months[m]}}
-                        {{ post.date | date: "%Y" }}
-                    </span>
+        <div class="col-6 col-lg-10 col-md-8 col-sm-6 col-xs-6 postlistitem-infocontainer">
+            <div class="align-self-start">
+                <div class="postlistitem-title">{{ post.title }}</div>
 
-                </div>
+                <div class="postlistitem-subtitle">
+                    <span class="postlistitem-subtitle-concat">
+                        {{ post.subtitle | strip_html}}
+                    </span></div>
             </div>
-        </span>
+            <div class="postlistitem-bottominfo">
+                {% if post.author %}
+                {% endif %}
+                {{ author.display_name }}
+
+                <span class="post-date">
+                    {% assign m = post.date | date: "%-m" %}
+                    {{ post.date | date: "%-d" }}
+                    {{site.data.months[m]}}
+                    {{ post.date | date: "%Y" }}
+                </span>
+
+            </div>
+        </div>
     </div>
 </a>
