@@ -9,7 +9,8 @@
         "tags": "{{ post.tags | join: ', ' }}",
         "date": "{{ post.date }}",
         "image": "{{ post.image }}",
-        "author": "{{ post.author }}"
+        "author": "{{ post.author }}",
+        "subtitle": "{{ post.subtitle | escape }}"
     } 
     {% unless forloop.last %},
     {% endunless %}

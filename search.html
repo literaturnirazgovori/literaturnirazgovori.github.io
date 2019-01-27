@@ -48,7 +48,11 @@ title: Търсене
                 case 'author':
                     return authors[value].display_name;
                 case 'date':
-                    return "bla";
+                    var date = new Date(value);
+                    var day = date.getDate();
+                    var monthIndex = date.getMonth();
+                    var year = date.getFullYear();
+                    return day + ' ' + months[monthIndex + 1] + ' ' + year;
             }
         }
 
@@ -82,9 +86,15 @@ title: Търсене
 
 <body onload="bodyloaded()">
 
-    <div class="section-title" style="display: flex;">
-        <h2>Търсене: <input type="text" id="search-input" placeholder="Търси..." style="flex: 1;"></h2>
+    <div class="section-title">
+        <label style="float: left; margin-right:15PX;">
+            <h2 style="margin-bottom:0;">Търсене:</h2>
+        </label>
+        <span style="display: block; overflow: hidden; border: 0;">
+            <input type="text" id="search-input" placeholder="Търси..." style="width: 100%;font-family: B52;" />
+        </span>
     </div>
+
     <div id="search-container">
         <div class="categorylist">
             <div class="container" id="results-container">
