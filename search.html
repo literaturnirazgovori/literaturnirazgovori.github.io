@@ -9,33 +9,38 @@ title: Търсене
 
     <script>
         var itemTemplate = `
-    <a href="{url}">
+
     <div class="postlistitem row">
         <div class="col-6 col-lg-2 col-md-4 col-sm-6 col-xs-6 postlistitem-imagecontainer">
+            <a href="{url}">
             <div class="square postlistitemimage {category}" style="background-image: url('{image}');"></div>
+            </a>
         </div>
 
         <div class="col-6 col-lg-10 col-md-8 col-sm-6 col-xs-6 postlistitem-infocontainer">
             <div class="align-self-start">
+                <a href="{url}">
                 <div class="postlistitem-title">{title}</div>
 
                 <div class="postlistitem-subtitle">
                     <span class="postlistitem-subtitle-concat">
                         {subtitle}
                     </span></div>
+                </a>
             </div>
-            <div class="postlistitem-bottominfo">
+            <div class="postlistitem-bottominfo" style="width:100%; padding-right:25px;">
                 {author}
                 <span class="post-date">
                     {date}
                 </span>
-
+                <span class="postcategory">{category}</span>
             </div>
         </div>
-    </div>
-</a>`;
+    </div>`;
         var authors = {{ site.authors | jsonify }};
         var months = {{ site.data.months  | jsonify }};
+        var categoriestext = {{ site.data.categoriestext | jsonify }}
+
         function getUrlParameter(name) {
             name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
             var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
@@ -53,6 +58,8 @@ title: Търсене
                     var monthIndex = date.getMonth();
                     var year = date.getFullYear();
                     return day + ' ' + months[monthIndex + 1] + ' ' + year;
+                case 'category':
+                    return "<a href='/category/" + value + "'>" + categoriestext[value].text + "</a>";//"<a href=\"/category/" + categoriestext[value].name + "\">" + categoriestext[value].text + "</a>";
             }
         }
 
