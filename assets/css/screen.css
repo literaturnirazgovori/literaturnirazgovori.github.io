@@ -161,7 +161,7 @@
 }
 
 #searchinput:focus{
-    width:100%;
+    width:90%;
     background-image: url("/assets/images/search-glass-inverted.png");
     background-color: black;
 }
