@@ -158,6 +158,7 @@
     transition: width 0.4s linear;
     color: white;
     top: 0;
+    font-family: B52;
 }
 
 #searchinput:focus{

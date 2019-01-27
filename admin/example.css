@@ -1,0 +1,12 @@
+/*
+body{
+    background-color: yellow;
+}
+*/
+img[role="presentation"]{
+    display:none;
+}
+
+img {
+    height: 100px;
+}
