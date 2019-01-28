@@ -79,7 +79,7 @@ title: Търсене
                 json: '/search.json',
                 searchResultTemplate: itemTemplate,
                 templateMiddleware: searchresultMiddleware,
-                noResultsText: 'Няма резултати.',
+                noResultsText: '<p style="font-family: B52; font-size: 17pt;">Няма резултати.</p>',
                 limit: 10,
                 fuzzy: false,
                 exclude: ['Welcome']
@@ -87,6 +87,11 @@ title: Търсене
             setTimeout(() => {
                 window.simpleJekyllSearch.search(getUrlParameter("search"))
             }, 1000);
+        }
+
+        //update the url query string, so that searches can be copied by addres.
+        function newsearch() {
+            window.history.replaceState({}, "ttt", window.location.pathname + "?search=" + $("#search-input").get(0).value);
         }
     </script>
 </head>
@@ -98,7 +103,7 @@ title: Търсене
             <h2 style="margin-bottom:0;">Търсене:</h2>
         </label>
         <span style="display: block; overflow: hidden; border: 0;">
-            <input type="text" id="search-input" placeholder="Търси..." style="width: 100%;font-family: B52;" />
+            <input type="text" id="search-input" placeholder="Търси..." style="width: 100%;font-family: B52;" onkeyup="newsearch()" />
         </span>
     </div>
 
