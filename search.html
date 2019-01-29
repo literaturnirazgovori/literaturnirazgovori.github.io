@@ -80,9 +80,7 @@ title: Търсене
                 searchResultTemplate: itemTemplate,
                 templateMiddleware: searchresultMiddleware,
                 noResultsText: '<p style="font-family: B52; font-size: 17pt;">Няма резултати.</p>',
-                limit: 10,
-                fuzzy: false,
-                exclude: ['Welcome']
+                fuzzy: true
             });
             setTimeout(() => {
                 window.simpleJekyllSearch.search(getUrlParameter("search"))
