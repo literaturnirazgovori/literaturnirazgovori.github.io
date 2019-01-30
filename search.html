@@ -64,14 +64,14 @@ title: Търсене
         }
 
         function bodyloaded() {
+            var searchbox = document.getElementById("search-input");
+            searchbox.value = getUrlParameter("search");
+
             var sjs = new SimpleJekyllSearch({
                 searchInput: document.getElementById('search-input'),
                 resultsContainer: document.getElementById('results-container'),
                 json: '/search.json'
             });
-
-            var searchbox = document.getElementById("search-input");
-            searchbox.value = getUrlParameter("search");
 
             window.simpleJekyllSearch = new SimpleJekyllSearch({
                 searchInput: document.getElementById('search-input'),
