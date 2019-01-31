@@ -1,0 +1,18 @@
+---
+layout: default
+comments: true
+---
+
+<h1>Tags</h1>
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+<span class="site-tag">
+    <a href="/tag/{{ tag | first | slugify }}/" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+        {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+    </a>
+</span>
+{% endfor %}
+
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2Fliteraturnirazgovori&tabs=timeline&width=480&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=383087475054247"
+    width="480" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+    allow="encrypted-media"></iframe>

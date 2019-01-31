@@ -9,6 +9,7 @@ baseurl: ""
 google_analytics: UA-132938422-1
 disqus: "literaturnirazgovori"
 mailchimp-list: "https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b"
+encoding: utf-8
 
 # Authors
 authors:
@@ -30,12 +31,12 @@ plugins:
 
 
 # Archives
-# jekyll-archives:
-#   enabled:
-#    - categories
-#  layout: archive
-#  permalinks:
-#    category: "/category/:name/"
+jekyll-archives:
+  enabled:
+    - tags
+  layout: archive
+  permalinks:
+    category: "/tag/:name/"
 
 # Pagination
 paginate: 12
