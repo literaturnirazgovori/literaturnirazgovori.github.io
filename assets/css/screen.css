@@ -172,7 +172,8 @@
     display:none;
 }
 #mobilesearchbar input {
-    width: 250px;
+    max-width: 250px;
+    min-width: 150px;
 }
 
 @media (max-width: 992px){
