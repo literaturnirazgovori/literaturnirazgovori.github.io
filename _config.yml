@@ -27,16 +27,16 @@ authors:
 # Plugins
 plugins:
   - jekyll-paginate
-  - jekyll-archives
+#  - jekyll-archives
 
 
 # Archives
-jekyll-archives:
-  enabled:
-    - tags
-  layout: archive
-  permalinks:
-    category: "/tag/:name/"
+#jekyll-archives:
+#  enabled:
+#    - tags
+#  layout: archive
+#  permalinks:
+#    category: "/tag/:name/"
 
 # Pagination
 paginate: 12

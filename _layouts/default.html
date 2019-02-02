@@ -53,9 +53,10 @@ page.layout
       <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" />
     </a>
 
-    <form action="/search">
-      <input type="text" id="searchinput" name="search"></input>
+    <form id="mobilesearchbar" action="/search">
+      <input type="text" class="searchinput" name="search"></input>
     </form>
+
     <!-- End Logo -->
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
@@ -67,7 +68,8 @@ page.layout
       <!-- Begin Menu -->
 
       <!-- UNHIDE THE CMS -->
-      <ul class="navbar-nav ml-auto navbarlist">
+      <ul class="navbar-nav navbarlist" style="align-items: center;">
+        <!--removed calss: ml-auto-->
         {% if page.url == "/" %}
         <li class="nav-item active">{% else %}</li>
 
@@ -131,8 +133,14 @@ page.layout
           <a class="nav-link" href="{{ site.baseurl }}/about">За Антония</a>
         </li>
 
+        <li id="menubarsearch">
+          <form action="/search">
+            <input type="text" class="searchinput" name="search"></input>
+          </form>
+        </li>
+
         <li class="nav-item">
-          <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f"></i></a>
+          <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f" style="color:#3C5A99;"></i></a>
         </li>
 
         <!-- End Menu -->

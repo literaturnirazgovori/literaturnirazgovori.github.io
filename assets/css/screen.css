@@ -143,24 +143,55 @@
     position:relative;
 }
 
-#searchinput {
-    position: absolute;
-    height: 50px;
-    left: 70px;
-    background-image: url("/assets/images/search-glass.png");
+.searchinput {
+    background-size: 15px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 20px;
+    /* position: absolute; */
+    height: 30px;
+    /* left: 70px; */
+    background-image: url(/assets/images/search-glass.png);
     background-repeat: no-repeat;
-    background-position-y: 13px;
-    background-position-x: 2px;
-    width: 30px;
+    background-position-y: 6px;
+    background-position-x: 6px;
+    width: 85px;
     padding-left: 30px;
-    border: none;
-    -webkit-transition: width 0.4s linear;
-    transition: width 0.4s linear;
-    color: white;
-    top: 0;
+    border: 1px solid rgba(0,0,0,0.2);
+    color: black;
+    top: 9px;
     font-family: B52;
 }
 
+.navbarlist
+{
+    align-items: center;
+}
+
+#mobilesearchbar
+{
+    display:none;
+}
+#mobilesearchbar input {
+    width: 300px;
+}
+
+@media (max-width: 992px){
+    #menubarsearch {
+        display:none;
+    }
+
+    #mobilesearchbar
+    {
+        display:block;
+    }
+
+    .navbarlist
+    {
+        align-items: flex-start !important;
+    }
+}
+
+/*
 #searchinput:focus{
     width:90%;
     background-image: url("/assets/images/search-glass-inverted.png");
@@ -170,7 +201,7 @@
 .navbarlist{
     padding-left: 30px;
 }
-
+*/
 /*-------------------*/
 
 .postboxcategory a:hover {
@@ -300,7 +331,7 @@ a {
  @media (min-width:992px) {
      .navbar-expand-lg .navbar-nav .nav-link {
          padding-right:0.8rem;
-         padding-left:0.8rem;
+         padding-left:0.5rem;
     }
 }
 .navbar-nav .nav-link {
