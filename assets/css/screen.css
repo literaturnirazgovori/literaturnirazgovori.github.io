@@ -564,6 +564,19 @@ a {
      position: relative;
      background: #fff;
 }
+
+.footer a {
+    color:rgba(0,0,0,.44);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,.44);;
+    transition: 500ms;
+}
+
+.footer a:hover {
+    color:rgba(0,0,0,.44);
+    border-color: transparent;
+}
+
  .link-dark {
      color:rgba(0,0,0,.8);
 }
