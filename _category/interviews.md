@@ -1,6 +1,6 @@
 ---
 tag: interviews
 permalink: "/category/interviews"
-title: "Разговори"
+title: "Интервюта"
 category: interviews
 ---

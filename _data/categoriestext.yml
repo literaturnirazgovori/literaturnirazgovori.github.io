@@ -1,6 +1,10 @@
+talks:
+  name: talks
+  text: Разговори за писането
+
 interviews:
   name: interviews
-  text: Разговори
+  text: Интервюта
 
 bookreviews:
   name: bookreviews
@@ -8,7 +12,7 @@ bookreviews:
 
 translations:
   name: translations
-  text: Преводна поезия
+  text: Поезия
 
 newbooks:
   name: newbooks

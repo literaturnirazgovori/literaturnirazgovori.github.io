@@ -39,8 +39,10 @@ collections:
         widget: "select"
         default: "interviews"
         options:
-          - { label: "Разговори", value: "interviews" }
+          - { label: "Разговори", value: "talks" }
+          # - { label: "Разговори", value: "interviews" }
           - { label: "Рецензии", value: "bookreviews" }
+          - { label: "Интервюта", value: "interviews" }
           - { label: "Преводна поезия", value: "translations" }
           - { label: "Нови книги", value: "newbooks" }
           - { label: "Новини и събития", value: "newsevents" }

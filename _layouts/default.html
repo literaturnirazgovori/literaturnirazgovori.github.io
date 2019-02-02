@@ -76,16 +76,16 @@ page.layout
         <li class="nav-item">
           {% endif %}
           <!-- UNHIDE THE CMS -->
-          <a class="nav-link" href="{{ site.baseurl }}/">Начало</a>
+          <a class="nav-link" href="{{ site.baseurl }}/"><strong>Н</strong>ачало</a>
         </li>
 
         <!--==================================-->
-        {% if page.url contains "/category/interviews" or pagecategory=="interviews" %}
+        {% if page.url contains "/category/talks" or pagecategory=="talks" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
           {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/interviews">Разговори</a>
+          <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането</a>
         </li>
         <!--==================================-->
         <!--==================================-->
@@ -94,7 +94,16 @@ page.layout
 
         <li class="nav-item">
           {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/bookreviews">Рецензии</a>
+          <a class="nav-link" href="{{ site.baseurl }}/category/bookreviews"><strong>Р</strong>ецензии</a>
+        </li>
+        <!--==================================-->
+        <!--==================================-->
+        {% if page.url contains "/category/interviews" or pagecategory=="interviews" %}
+        <li class="nav-item active">{% else %}</li>
+
+        <li class="nav-item">
+          {% endif %}
+          <a class="nav-link" href="{{ site.baseurl }}/category/interviews"><strong>И</strong>нтервюта</a>
         </li>
         <!--==================================-->
         <!--==================================-->
@@ -103,7 +112,7 @@ page.layout
 
         <li class="nav-item">
           {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/translations">Преводна поезия</a>
+          <a class="nav-link" href="{{ site.baseurl }}/category/translations"><strong>П</strong>оезия</a>
         </li>
         <!--==================================-->
         <!--==================================-->
@@ -112,10 +121,10 @@ page.layout
 
         <li class="nav-item">
           {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/newbooks">Нови книги</a>
+          <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
         </li>
         <!--==================================-->
-        <!--==================================-->
+        <!--==================================
         {% if page.url contains "/category/newsevents" or pagecategory=="newsevents" %}
         <li class="nav-item active">{% else %}</li>
 
@@ -123,14 +132,14 @@ page.layout
           {% endif %}
           <a class="nav-link" href="{{ site.baseurl }}/category/newsevents">Новини и събития</a>
         </li>
-        <!--==================================-->
+        ==================================-->
 
         {% if page.url == "/about.html" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
           {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/about">За Антония</a>
+          <a class="nav-link" href="{{ site.baseurl }}/about"><strong>З</strong>а мен</a>
         </li>
 
         <li id="menubarsearch">

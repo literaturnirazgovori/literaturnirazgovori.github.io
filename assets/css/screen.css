@@ -165,6 +165,8 @@
 .navbarlist
 {
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
 #mobilesearchbar
