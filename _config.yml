@@ -31,12 +31,12 @@ plugins:
 
 
 # Archives
-#jekyll-archives:
-#  enabled:
-#    - tags
-#  layout: archive
-#  permalinks:
-#    category: "/tag/:name/"
+jekyll-archives:
+  enabled:
+    - tags
+  layout: archive
+  permalinks:
+    category: "/tag/:name/"
 
 # Pagination
 paginate: 12
