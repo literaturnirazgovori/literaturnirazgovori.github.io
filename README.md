@@ -1,5 +1,7 @@
 # Literaturni Razgovori
 
+[![Build Status](https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io.svg?branch=work)](https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io)
+
 [https://literaturnirazgovori.github.io](https://literaturnirazgovori.github.io)
 
 [https://literaturnirazgovori.com](https://literaturnirazgovori.com)

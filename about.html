@@ -1,18 +1,1019 @@
----
-layout: default
-comments: true
----
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>Tags</h1>
-{% assign tags = site.tags | sort %}
-{% for tag in tags %}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <link rel="icon" href="/assets/images/logo-book.png" />
+
+  <title> | Литературни разговори</title>
+
+  
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous" />
+
+  <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet" />
+
+  <!--Analytics, according to the runtime environment (auto-set by gh-pages). See: https://jekyllrb.com/docs/configuration/environments/-->
+  
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-132938422-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  <script src="/assets/js/jquery.min.js"></script>
+  <link href="/assets/css/screen.css" rel="stylesheet" />
+  <link href="/assets/css/main.css" rel="stylesheet" />
+  <link href="/assets/css/lightbox.min.css" rel="stylesheet" />
+  <script src="/assets/js/lightbox.min.js"></script>
+  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+
+</head>
+
+
+
+<!-- Begin Menu Navigation
+================================================== -->
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+  <div class="container pr-0 navbar-container">
+    <!-- Begin Logo -->
+    <!-- UNHIDE THE CMS -->
+    <a class="navbar-brand" href="/">
+      <img src="/assets/images/logo-book.png" alt="Литературни разговори" />
+    </a>
+
+    <form id="mobilesearchbar" action="/search">
+      <input type="text" class="searchinput" name="search"></input>
+    </form>
+
+    <!-- End Logo -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMediumish">
+      <!-- Begin Menu -->
+
+      <!-- UNHIDE THE CMS -->
+      <ul class="navbar-nav navbarlist" style="align-items: center;">
+        <!--removed calss: ml-auto-->
+        </li>
+
+        <li class="nav-item">
+          
+          <!-- UNHIDE THE CMS -->
+          <a class="nav-link" href="/"><strong>Н</strong>ачало</a>
+        </li>
+
+        <!--==================================-->
+        </li>
+
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/category/talks"><strong>Р</strong>азговори за писането</a>
+        </li>
+        <!--==================================-->
+        <!--==================================-->
+        </li>
+
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/category/bookreviews"><strong>Р</strong>ецензии</a>
+        </li>
+        <!--==================================-->
+        <!--==================================-->
+        </li>
+
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/category/interviews"><strong>И</strong>нтервюта</a>
+        </li>
+        <!--==================================-->
+        <!--==================================-->
+        </li>
+
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/category/translations"><strong>П</strong>оезия</a>
+        </li>
+        <!--==================================-->
+        <!--==================================-->
+        </li>
+
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/category/newbooks"><strong>Н</strong>ови книги</a>
+        </li>
+        <!--==================================-->
+        <!--==================================
+        </li>
+
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/category/newsevents">Новини и събития</a>
+        </li>
+        ==================================-->
+
+        
+        <li class="nav-item active">
+          <a class="nav-link" href="/about"><strong>З</strong>а мен</a>
+        </li>
+
+        <li id="menubarsearch">
+          <form action="/search">
+            <input type="text" class="searchinput" name="search"></input>
+          </form>
+        </li>
+
+        <li class="nav-item">
+          <a target="_blank" class="nav-link" href="https://www.facebook.com/literaturnirazgovori/"><i class="fab fa-facebook-f" style="color:#3C5A99;"></i></a>
+        </li>
+
+        <!-- End Menu -->
+    </div>
+  </div>
+</nav>
+<!-- End Navigation
+================================================== -->
+
+<div class="site-content">
+  <div class="container">
+    <!-- Site Title
+================================================== -->
+    <div class="mainheading">
+      <span class="sitetitlecontainer">
+        <span class="sitetitle"><a href="">Литературни разговори</a>
+          <div class="lead">
+            
+            <a href="https://www.facebook.com/literaturnirazgovori/" target="_blank">
+              
+              с Антония Апостолова 
+              <img src="/assets/images/facebook.png" />
+            </a></div>
+        </span></span>
+    </div>
+    <!--
+    <div class="mainheading">
+      <h1 class="sitetitle"><a class="nav-link" href="">Литературни разговори</a></h1>
+      <p class="lead">
+        
+        <a href="https://www.facebook.com/literaturnirazgovori/" target="_blank">
+          
+          с Антония Апостолова
+          
+          <img src="/assets/images/facebook.png" />
+        </a>
+        
+      </p>
+    </div>
+  -->
+    <!-- Content
+================================================== -->
+    <div class="main-content">
+      <h1>Tags</h1>
+
+
 <span class="site-tag">
-    <a href="/tag/{{ tag | first | slugify }}/" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
-        {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+    <a href="/tag/scribens/" style="font-size: 84%">
+        Scribens (1)
     </a>
 </span>
-{% endfor %}
+
+<span class="site-tag">
+    <a href="/tag/ади-асис/" style="font-size: 84%">
+        Ади Асис (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/алек-попов/" style="font-size: 84%">
+        Алек Попов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/александър-пен/" style="font-size: 84%">
+        Александър Пен (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/амир-ор/" style="font-size: 88%">
+        Амир Ор (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/анат-левин/" style="font-size: 84%">
+        Анат Левин (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/васил-панайотов/" style="font-size: 84%">
+        Васил Панайотов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/веселина-седларска/" style="font-size: 84%">
+        Веселина Седларска (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/владимир-зарев/" style="font-size: 84%">
+        Владимир Зарев (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/владимир-трендафилов/" style="font-size: 84%">
+        Владимир Трендафилов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/владислав-христов/" style="font-size: 84%">
+        Владислав Христов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/георги-томов/" style="font-size: 84%">
+        Георги Томов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/гилермо-мартинес/" style="font-size: 84%">
+        Гилермо Мартинес (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/давид-авидан/" style="font-size: 92%">
+        Давид Авидан (3)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/давид-гросман/" style="font-size: 84%">
+        Давид Гросман (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/дан-пагис/" style="font-size: 88%">
+        Дан Пагис (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/джордж-сиртевш/" style="font-size: 84%">
+        Джордж Сиртевш (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/джордж-сиртеш/" style="font-size: 88%">
+        Джордж Сиртеш (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/диана-петрова/" style="font-size: 84%">
+        Диана Петрова (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/димана-йорданов/" style="font-size: 84%">
+        Димана Йорданов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/един-кон-влязъл-в-бар/" style="font-size: 84%">
+        Един кон влязъл в бар (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/еднорог/" style="font-size: 84%">
+        Еднорог (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/ели-елиаху/" style="font-size: 100%">
+        Ели Елиаху (5)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/емануил-видински/" style="font-size: 84%">
+        Емануил Видински (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/жанет-45/" style="font-size: 84%">
+        Жанет 45 (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/здравка-евтимова/" style="font-size: 88%">
+        Здравка Евтимова (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/иван-димитров/" style="font-size: 84%">
+        Иван Димитров (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/иван-ланджев/" style="font-size: 84%">
+        Иван Ланджев (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/иван-христов/" style="font-size: 84%">
+        Иван Христов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/иванка-могилска/" style="font-size: 84%">
+        Иванка Могилска (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/йехуда-амихай/" style="font-size: 112%">
+        Йехуда Амихай (8)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/йона-волах/" style="font-size: 84%">
+        Йона Волах (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/камелия-кучер/" style="font-size: 84%">
+        Камелия Кучер (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/карен-алкалай-гут/" style="font-size: 88%">
+        Карен Алкалай Гут (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/керна-ангелова/" style="font-size: 84%">
+        Керна Ангелова (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/когато-капят-кестените/" style="font-size: 84%">
+        Когато капят кестените (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/кристин-димитрова/" style="font-size: 88%">
+        Кристин Димитрова (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/крум-филипов/" style="font-size: 84%">
+        Крум Филипов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/лора-динкова/" style="font-size: 84%">
+        Лора Динкова (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/любов-кронева/" style="font-size: 88%">
+        Любов Кронева (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/людмила-улицка/" style="font-size: 84%">
+        Людмила Улицка (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/манол-глишев/" style="font-size: 84%">
+        Манол Глишев (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/мария-закревска-бенкердорф/" style="font-size: 84%">
+        Мария Закревска Бенкердорф (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/мария-касимова-моасе/" style="font-size: 84%">
+        Мария Касимова Моасе (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/мати-каспи/" style="font-size: 84%">
+        Мати Каспи (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/мура/" style="font-size: 84%">
+        Мура (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/неда-антонова/" style="font-size: 84%">
+        Неда Антонова (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/недялко-славов/" style="font-size: 84%">
+        Недялко Славов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/николай-терзийски/" style="font-size: 88%">
+        Николай Терзийски (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/нина-берберова/" style="font-size: 84%">
+        Нина Берберова (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/петър-чухов/" style="font-size: 84%">
+        Петър Чухов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/петя-кокудева/" style="font-size: 84%">
+        Петя Кокудева (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/пиафе/" style="font-size: 84%">
+        Пиафе (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/радостина-а-ангелова/" style="font-size: 88%">
+        Радостина А. Ангелова (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/рива/" style="font-size: 84%">
+        Рива (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/роберт-зееталер/" style="font-size: 84%">
+        Роберт Зееталер (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/роберт-леви/" style="font-size: 84%">
+        Роберт Леви (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/сава-василев/" style="font-size: 84%">
+        Сава Василев (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/сиела/" style="font-size: 84%">
+        Сиела (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/силвия-недкова/" style="font-size: 84%">
+        Силвия Недкова (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/стефан-коспартов/" style="font-size: 84%">
+        Стефан Коспартов (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/тайе-селаси/" style="font-size: 84%">
+        Тайе Селаси (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/тал-ницан/" style="font-size: 88%">
+        Тал Ницан (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/таха-мухамад-али/" style="font-size: 84%">
+        Таха Мухамад Али (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/труман-капоти/" style="font-size: 84%">
+        Труман Капоти (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/хаим-гури/" style="font-size: 84%">
+        Хаим Гури (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/хайри-хамдан/" style="font-size: 84%">
+        Хайри Хамдан (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/юдит-равиц/" style="font-size: 84%">
+        Юдит Равиц (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/янкеле-ротблит/" style="font-size: 84%">
+        Янкеле Ротблит (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/афиши-в-огледалото/" style="font-size: 84%">
+        афиши в огледалото (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/биография/" style="font-size: 84%">
+        биография (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/в-далечното-пътуване/" style="font-size: 84%">
+        в далечното пътуване (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/веселина-седларска/" style="font-size: 84%">
+        веселина седларска (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/вълча-богородица/" style="font-size: 84%">
+        вълча богородица (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/даниел-келман/" style="font-size: 84%">
+        даниел келман (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/двуезично-издание/" style="font-size: 84%">
+        двуезично издание (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/депресията-ме-обича/" style="font-size: 84%">
+        депресията ме обича (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/еврейска-поезия/" style="font-size: 92%">
+        еврейска поезия (3)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/еднорог/" style="font-size: 84%">
+        еднорог (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/елена-алексиева/" style="font-size: 84%">
+        елена алексиева (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/ерго/" style="font-size: 84%">
+        ерго (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/зелените-очи-на-вятъра/" style="font-size: 84%">
+        зелените очи на вятъра (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/издателства/" style="font-size: 120%">
+        издателства (10)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/издателство/" style="font-size: 84%">
+        издателство (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/израелска-музика/" style="font-size: 84%">
+        израелска музика (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/израелска-поезия/" style="font-size: 204%">
+        израелска поезия (31)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/интервю/" style="font-size: 200%">
+        интервю (30)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/ирзаелска-поезия/" style="font-size: 84%">
+        ирзаелска поезия (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/йехуда-амихай/" style="font-size: 84%">
+        йехуда амихай (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/книга/" style="font-size: 152%">
+        книга (18)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/книги/" style="font-size: 84%">
+        книги (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/колибри/" style="font-size: 92%">
+        колибри (3)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/лексикон/" style="font-size: 84%">
+        лексикон (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/музика-за-хамелеони/" style="font-size: 84%">
+        музика за хамелеони (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/непрекъсната-линия/" style="font-size: 84%">
+        непрекъсната линия (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/нова-книга/" style="font-size: 84%">
+        нова книга (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/нови-заглавия/" style="font-size: 120%">
+        нови заглавия (10)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/нови-книги/" style="font-size: 120%">
+        нови книги (10)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/ново-заглавие/" style="font-size: 88%">
+        ново заглавие (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/ново-издание/" style="font-size: 84%">
+        ново издание (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/олга-шурбанова/" style="font-size: 84%">
+        олга шурбанова (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/отивам-си-е-възрватен-глагол/" style="font-size: 84%">
+        отивам си е възрватен глагол (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/отлъчване/" style="font-size: 84%">
+        отлъчване (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/относно-родерер/" style="font-size: 84%">
+        относно родерер (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/панаир-на-книгата/" style="font-size: 116%">
+        панаир на книгата (9)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/песен/" style="font-size: 88%">
+        песен (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/пет-въпроса-към/" style="font-size: 84%">
+        пет въпроса към (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/пиер-дьо-ронсар/" style="font-size: 84%">
+        пиер дьо ронсар (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/писането/" style="font-size: 196%">
+        писането (29)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/поезия/" style="font-size: 216%">
+        поезия (34)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/поет/" style="font-size: 88%">
+        поет (2)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/превод/" style="font-size: 212%">
+        превод (33)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/преводи/" style="font-size: 84%">
+        преводи (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/преводна-поезия/" style="font-size: 84%">
+        преводна поезия (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/препоръки/" style="font-size: 112%">
+        препоръки (8)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/разговор/" style="font-size: 84%">
+        разговор (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/разговори/" style="font-size: 192%">
+        разговори (28)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/разказвачът/" style="font-size: 84%">
+        разказвачът (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/разкази/" style="font-size: 84%">
+        разкази (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/рецензии/" style="font-size: 144%">
+        рецензии (16)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/рецензии-хермес/" style="font-size: 84%">
+        рецензии Хермес (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/роман/" style="font-size: 148%">
+        роман (17)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/сборник/" style="font-size: 84%">
+        сборник (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/свети-вълк/" style="font-size: 84%">
+        свети вълк (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/синът-на-авиатора/" style="font-size: 84%">
+        синът на авиатора (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/тил/" style="font-size: 84%">
+        тил (1)
+    </a>
+</span>
+
+<span class="site-tag">
+    <a href="/tag/цял-един-живот/" style="font-size: 84%">
+        цял един живот (1)
+    </a>
+</span>
+
 
 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2Fliteraturnirazgovori&tabs=timeline&width=480&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=383087475054247"
     width="480" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
-    allow="encrypted-media"></iframe>
+    allow="encrypted-media"></iframe></div>
+
+    <!-- Bottom Alert Bar
+================================================== 
+    <div class="alertbar">
+      <div class="container text-center">
+        <span><img src="/assets/images/logo-book.png" alt="" />
+          &nbsp; Never miss a <b>story</b> from us, subscribe to our
+          newsletter</span>
+        <form action="https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate"
+          target="_blank" novalidate>
+          <div class="mc-field-group">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on"
+              required />
+            <input type="submit" value="Subscribe" name="subscribe" class="heart" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  -->
+
+
+    <!-- /.container>
+    
+    <!-- Begin Footer
+================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 text-center text-lg-left">
+            Copyright © 2019 Литературни разговори &amp; <a href="http://www.alonintheworld.com"
+              target="_blank">alonintheworld</a>
+          </div>
+          <!--
+            <div class="col-md-6 col-sm-6 text-center text-lg-right">
+            <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a>
+            by WowThemes.net
+          </div>
+          -->
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer
+================================================== -->
+  </div>
+  <!-- /.site-content>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <script src="/assets/js/mediumish.js"></script>
+
+  <script id="dsq-count-scr" src="//literaturnirazgovori.disqus.com/count.js"></script>
+  </body>
+
+</html>
