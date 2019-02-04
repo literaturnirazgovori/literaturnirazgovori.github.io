@@ -6,7 +6,7 @@ layout: page
         <!--<h1>Filed Under <small>#{{ page.tag }}</small></h1>-->
         <!--{{site.data.categoriestext[page.tag].name}} : {{site.data.categoriestext[page.tag].text}}-->
 
-        {% assign posts = site.categories[page.tag] | where:"hidden","false"%}
+        {% assign posts = site.categories[page.category] | where:"hidden","false" %}
         <!--{% assign counter = 0 %}-->
         {% if posts %}
         {% for post in posts %}
@@ -15,7 +15,7 @@ layout: page
         {% endfor %}
         {% endif %}
         {% if counter == 0 %}
-        Няма публикувани статии под {{site.data.categoriestext[page.tag].text}}
+        Няма публикувани статии под {{ page.type }}
         {% endif %}
     </div>
 </div>

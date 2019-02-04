@@ -100,6 +100,102 @@
 
 /*---------------------------------------*/
 
+/*----- tags -----*/
+.tagcontainer {
+    background-image: url(/assets/images/bookmark.png);
+    background-repeat: no-repeat;
+    padding-left: 60px;
+}
+
+.tagcontainer:hover {
+    background-image: url(/assets/images/bookmark-color.png);
+}
+
+.tagheader{
+    font-family: B52;
+}
+
+ul.tags {
+    list-style:none;
+    padding-left:0;
+    /*margin:0 0 3rem 0;*/
+}
+ul.tags li {
+    display:inline-block;
+    font-size:0.9rem;
+}
+
+.tags {
+    list-style: none;
+    margin: 0;
+    overflow: hidden; 
+    padding: 0;
+  }
+  
+  .tags li {
+    float: left; 
+  }
+  
+  ul.tags li a, .tagcontainer h2 {
+    background: #eee;
+    border-radius: 3px 0 0 3px;
+    color: #999;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 20px 0 23px;
+    position: relative;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    -webkit-transition: color 0.2s;
+  }
+  
+  ul.tags li a::before, .tagcontainer h2::before {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 10px;
+  }
+  
+  ul.tags li a::after, .tagcontainer h2::after {
+    background: #fff;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #eee;
+    border-top: 13px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+  ul.tags li a:hover {
+    background-color: crimson;
+    color: white;
+  }
+  
+  ul.tags li a:hover::after {
+     border-left-color: crimson; 
+  }
+
+/*
+ul.tags li a {
+    background:rgba(0,0,0,.05);
+    color:rgba(0,0,0,.6);
+    border-radius:3px;
+    padding:5px 10px;
+}
+ul.tags li a:hover {
+    background:rgba(0,0,0,.07);
+    text-decoration:none;
+}
+*/
+
+
 .postlistitem-infocontainer
 {
     position:relative;
@@ -720,25 +816,7 @@ a {
      box-shadow:0 1px 7px rgba(0,0,0,.05);
      border:0;
 }
- ul.tags {
-     list-style:none;
-     padding-left:0;
-     margin:0 0 3rem 0;
-}
- ul.tags li {
-     display:inline-block;
-     font-size:0.9rem;
-}
- ul.tags li a {
-     background:rgba(0,0,0,.05);
-     color:rgba(0,0,0,.6);
-     border-radius:3px;
-     padding:5px 10px;
-}
- ul.tags li a:hover {
-     background:rgba(0,0,0,.07);
-     text-decoration:none;
-}
+
  .margtop3rem {
      margin-top: 3rem;
 }

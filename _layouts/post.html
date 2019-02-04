@@ -100,6 +100,21 @@ comments: true
                 $(".article-post").html(fixed);
                 $(".article-post").show();
             </script>
+
+            {% if page.tags %}
+            <div class="tagcontainer">
+                <span class="tagheader">Тагове:</span>
+                <ul class="tags">
+                    {% assign sortedTags = page.tags | sort %}
+                    {% for tag in sortedTags %}
+                    <li>
+                        <a href="{{ site.baseurl }}/tag/{{ tag | slugify }}/">{{ tag }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
             <!-- Post Date 
             <p>
                 <small>
