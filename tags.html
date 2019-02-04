@@ -40,38 +40,20 @@ layout: default
         right: 0;
         top: 0;
     }
-
-    .alltagslink {
-        background-image: url("/assets/images/bookmark.png");
-        height: 63px;
-        width: 50px;
-        background-repeat: no-repeat;
-        display: inline-block;
-    }
-
-    .alltagslink:hover {
-        background-image: url("/assets/images/bookmark-color.png");
-    }
 </style>
 
 <div style="margin-bottom: 20px;">
-    <a href="/tags.html" class="alltagslink"></a>
+    <a href="#"><img src="/assets/images/bookmark.png"></a>
     <span class="tagpagetitle">
-        {{ page.title }} ({{ posts | size }})</span>
+        Всички тагове</span>
 </div>
 
-<div class="article-post">
-    <div class="categorylist">
-        <div class="container">
-            {% if posts %}
-            {% for post in posts %}
-            {% assign counter = forloop.length %}
-            {% include postlistitem.html %}
-            {% endfor %}
-            {% endif %}
-            {% if counter == 0 %}
-            Няма публикувани статии под {{site.data.categoriestext[page.category].text}}
-            {% endif %}
-        </div>
-    </div>
-</div>
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+<!--| where:"hidden","false" -->
+<span class="site-tag">
+    <a href="/tag/{{ tag | first | slugify }}/" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+        {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+    </a>
+</span>
+{% endfor %}
