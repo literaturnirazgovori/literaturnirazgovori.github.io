@@ -2,5 +2,7 @@
     "files.exclude": {
         "_site/": true
     },
-    "json.format.enable": false
+    "json.format.enable": false,
+    "travis.username": "literaturnirazgovori",
+    "travis.repository": "literaturnirazgovori.github.io"
 }
