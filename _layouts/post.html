@@ -93,10 +93,10 @@ comments: true
                 - Make paragraph breaks (marked with "==) to <p>
                 */
                 var original = $(".article-post").html();
-                console.log(original);
+                //console.log(original);
                 var fixed = original.replace(/\\+\s*\\*\s*\=\=\s*\\+\s*\\*\s*/g, "NEWLINE").replace(/<p>.*\=\=.*<\/p>/g, "NEWLINE").replace(/<p>/g, "").replace(/<\/p>/g, "<br/>").replace(/NEWLINE/g, "</p><p>").replace(/\_(.+)\_/g, "<em>$1</em>").replace(/\*\*(.+)\*\*/g, "<strong>$1</strong>");
                 fixed = "<p>" + fixed + "</p>";
-                console.log(fixed);
+                //console.log(fixed);
                 $(".article-post").html(fixed);
                 $(".article-post").show();
             </script>
