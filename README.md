@@ -1,6 +1,6 @@
 # Literaturni Razgovori
 
-[![Build Status](https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io.svg?branch=work)](https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io)
+[Travis](https://travis-ci.com) says: [![Build Status](https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io.svg?branch=work)](https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io)
 
 [https://literaturnirazgovori.github.io](https://literaturnirazgovori.github.io)
 
