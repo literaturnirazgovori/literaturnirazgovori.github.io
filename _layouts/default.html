@@ -32,14 +32,24 @@
   {% assign pagecategorytext=site.data.categoriestext[page.category].text%}
   {% endif %}
 
-  <!-- social media SEO -->
+  {% assign currentUrl = page.url %}
+  {% unless currentUrl contains '://' %}
+  {% assign currentUrl = currentUrl | prepend: site.url %}
+  {% endunless %}
+
   {% if page.image %}
-  <meta property="og:image" content="{{ page.image | absolute_url }}" />
+  {% assign featuredImage = page.image %}
+  {% unless featuredImage contains '://' %}
+  {% assign featuredImage = featuredImage | prepend: site.url %}
+  {% endunless %}
   {% endif %}
-  {% if pagecategory %}
-  <meta property="og:type" content="{{pagecategory}}" />
+
+  <!-- social media SEO -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ currentUrl }}" />
+  {% if featuredImage %}
+  <meta property="og:image" content="{{ featuredImage }}" />
   {% endif %}
-  <meta property="og:url" content="{{ page.url  | absolute_url }}" />
   {% if page.title %}
   <meta property="og:title" content="{{ page.title }}" />
   {% else %}
