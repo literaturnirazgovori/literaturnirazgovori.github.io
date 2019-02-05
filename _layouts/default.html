@@ -32,17 +32,23 @@
   {% assign pagecategorytext=site.data.categoriestext[page.category].text%}
   {% endif %}
 
+  {% if jekyll.environment == "production" %}
+  {% assign siteurl="https://literaturnirazgovori.com" %}
+  {%else%}
+  {% assign siteurl = site.url %}
+  {% endif %}
+
   {% if page.url contains '://' %}
   {% assign currentUrl = page.url %}
   {%else%}
-  {% assign currentUrl = page.url | prepend: site.url %}
+  {% assign currentUrl = page.url | siteurl %}
   {% endif %}
 
   {% if page.image %}
   {% if page.image contains '://' %}
   {%else%}
   {% assign featuredImage = page.image %}
-  {% assign featuredImage = page.image | prepend: site.url %}
+  {% assign featuredImage = page.image | siteurl %}
   {% endif %}
   {% endif %}
 
