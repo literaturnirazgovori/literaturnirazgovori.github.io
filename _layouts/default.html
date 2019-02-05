@@ -26,6 +26,32 @@
   {% include analytics.html %}
   {% endif %}
 
+  {% assign pagecategory="" %}
+  {% if page.category and site.data.categoriestext[page.category] %}
+  {% assign pagecategory=site.data.categoriestext[page.category].name%}
+  {% assign pagecategorytext=site.data.categoriestext[page.category].text%}
+  {% endif %}
+
+  <!-- social media SEO -->
+  {% if page.image %}
+  <meta property="og:image" content="{{ site.baseurl }}{{ page.image }}" />
+  {% endif %}
+  {% if pagecategory %}
+  <meta property="og:type" content="{{pagecategory}}" />
+  {% endif %}
+  <meta property="og:url" content="{{ site.baseurl }}{{ page.url }}" />
+  {% if page.title %}
+  <meta property="og:title" content="{{ page.title }}" />
+  {% else %}
+  <meta property="og:title" content="{{ site.name }}" />
+  {% endif %}
+  {% if page.subtitle %}
+  <meta property="og:description" content="{{ page.subtitle }}" />
+  {% endif %}
+  {% if site.fb_app_id %}
+  <meta property="fb:app_id" content="{{site.fb_app_id}}" />
+  {% endif %}
+
   <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
   <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet" />
   <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" />
@@ -35,16 +61,14 @@
 
 </head>
 
+
 {% capture layout %}{% if page.layout %}layout-{{
 page.layout
 }}{% endif %}{% endcapture %}
 
 <!-- Begin Menu Navigation
 ================================================== -->
-{% assign pagecategory="" %}
-{% if page.category and site.data.categoriestext[page.category] %}
-{% assign pagecategory=site.data.categoriestext[page.category].name%}
-{% endif %}
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
   <div class="container pr-0 navbar-container">
     <!-- Begin Logo -->
