@@ -1,59 +1,23 @@
 ---
 layout: default
 ---
-{% assign posts = page.posts | where:"hidden","false" %}
-<style>
-    .tagpagetitle {
-        background: #eee;
-        border-radius: 3px 0 0 3px;
-        font-weight: 700;
-        font-size: 1.4rem;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        padding-bottom: 4px;
-        margin-left: 10px;
-        border: 0;
-        display: inline-block;
-        position: relative;
-        padding: 0px 20px 4px 30px;
-        margin: 20;
-    }
-
-    .tagpagetitle::before {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
-        content: '';
-        height: 6px;
-        left: 10px;
-        position: absolute;
-        width: 6px;
-        top: 15px;
-    }
-
-    .tagpagetitle::after {
-        background: #fff;
-        border-bottom: 20px solid transparent;
-        border-left: 12px solid #eee;
-        border-top: 19px solid transparent;
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-</style>
-
 <div style="margin-bottom: 20px;">
-    <a href="#"><img src="/assets/images/bookmark.png"></a>
+    <a class="alltagslink" href="/tags.html" title="Всички тагове"><img src="/assets/images/bookmark-color.png"></a>
     <span class="tagpagetitle">
         Всички тагове</span>
 </div>
 
 {% assign tags = site.tags | sort %}
 {% for tag in tags %}
-<!--| where:"hidden","false" -->
+{% assign condition= "post.tags contains '" | append: tag[0] | append: "'" %}
+{% assign visibleposts = site.posts | where_exp: "post", condition | where:"hidden","false" | size %}
+{% assign hiddenposts = site.posts | where_exp: "post", condition | where:"hidden","true" | size %}
+{%if visibleposts > 0 %}
 <span class="site-tag">
-    <a href="/tag/{{ tag | first | slugify }}/" style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
-        {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+    <a href="/tag/{{ tag | first | slugify }}/" style="font-size: {{ visibleposts  |  times: 4 | plus: 80  }}%">
+        {{ tag[0] | replace:'-', ' ' }} ({{ visibleposts }})
     </a>
 </span>
+{% endif %}
+<script>console.log("ПОСТС {{tag[0]}} h:{{hiddenposts}}, v:{{visibleposts}}")</script>
 {% endfor %}

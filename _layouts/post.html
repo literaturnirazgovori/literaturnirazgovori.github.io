@@ -102,16 +102,20 @@ comments: true
             </script>
 
             {% if page.tags %}
-            <div class="tagcontainer">
-                <span class="tagheader">Тагове:</span>
-                <ul class="tags">
-                    {% assign sortedTags = page.tags | sort %}
-                    {% for tag in sortedTags %}
-                    <li>
-                        <a href="{{ site.baseurl }}/tag/{{ tag | slugify }}/">{{ tag }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
+            <div style="margin-bottom: 20px;">
+                <a class="alltagslink" href="/tags.html" title="Всички тагове" style="float:left; margin-right:10px;"><img
+                        src="/assets/images/bookmark-color.png"></a>
+                <div style="float:left;">
+                    <span class="tagheader">Тагове:</span>
+                    <ul class="tags">
+                        {% assign sortedTags = page.tags | sort %}
+                        {% for tag in sortedTags %}
+                        <li>
+                            <a href="{{ site.baseurl }}/tag/{{ tag | slugify }}/">{{ tag }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
             {% endif %}
 

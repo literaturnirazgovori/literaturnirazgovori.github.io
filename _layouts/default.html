@@ -26,50 +26,33 @@
   {% include analytics.html %}
   {% endif %}
 
+  <!-- social media SEO -->
   {% assign pagecategory="" %}
   {% if page.category and site.data.categoriestext[page.category] %}
   {% assign pagecategory=site.data.categoriestext[page.category].name%}
   {% assign pagecategorytext=site.data.categoriestext[page.category].text%}
   {% endif %}
 
-
   {% if jekyll.environment == "production" %}
-  <!-- LOG1: jekyll.environment == "production" -->
   {% assign siteurl="https://literaturnirazgovori.com" %}
   {%else%}
-  <!-- LOG2: jekyll.environment == "{{jekyll.environment}}" -->
   {% assign siteurl = site.url %}
   {% endif %}
 
   {% if page.url contains '://' %}
   {% assign currentUrl = page.url %}
-  <!-- LOG3: page.url = "{{page.url}}". currenturl = "{{currentUrl}}"-->
   {%else%}
   {% assign currentUrl = page.url | prepend: siteurl %}
-  <!-- LOG4: page.url = "{{page.url}}". currenturl = "{{currentUrl}}"-->
   {% endif %}
 
   {% if page.image %}
-  <!-- LOG5: page.image = "{{page.image}}"-->
   {% if page.image contains '://' %}
   {% assign featuredImage = page.image %}
-  <!-- LOG6: page.image = "{{page.image}}". featuredImage = "{{featuredImage}}"-->
   {%else%}
   {% assign featuredImage = page.image | prepend: siteurl %}
-  <!-- LOG7: page.image = "{{page.image}}". featuredImage = "{{featuredImage}}"-->
   {% endif %}
   {% endif %}
 
-  <!--
-INFO
-jekyll.environment = {{jekyll.environment}}
-siteurl = {{siteurl}}
-currenturl={{currentUrl}}
-featuredImage={{featuredImage}}
--->
-
-
-  <!-- social media SEO -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ currentUrl }}" />
   {% if featuredImage %}

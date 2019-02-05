@@ -182,6 +182,56 @@ ul.tags li {
      border-left-color: crimson; 
   }
 
+  .tagpagetitle {
+    background: #eee;
+    border-radius: 3px 0 0 3px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    padding-bottom: 4px;
+    margin-left: 10px;
+    border: 0;
+    display: inline-block;
+    position: relative;
+    padding: 0px 20px 4px 30px;
+    margin: 20;
+}
+
+.tagpagetitle::before {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+    content: '';
+    height: 6px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 15px;
+}
+
+.tagpagetitle::after {
+    background: #fff;
+    border-bottom: 20px solid transparent;
+    border-left: 12px solid #eee;
+    border-top: 19px solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.alltagslink img {
+    filter: grayscale();
+}
+
+.alltagslink img:hover {
+    filter: none;
+}
+
+span.site-tag {
+    font-family: "nicebgfontsemilight";
+}
+
 /*
 ul.tags li a {
     background:rgba(0,0,0,.05);
