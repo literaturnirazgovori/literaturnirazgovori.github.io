@@ -34,12 +34,12 @@
 
   <!-- social media SEO -->
   {% if page.image %}
-  <meta property="og:image" content="{{ site.baseurl }}{{ page.image }}" />
+  <meta property="og:image" content="{{ page.image | absolute_url }}" />
   {% endif %}
   {% if pagecategory %}
   <meta property="og:type" content="{{pagecategory}}" />
   {% endif %}
-  <meta property="og:url" content="{{ site.baseurl }}{{ page.url }}" />
+  <meta property="og:url" content="{{ page.url  | absolute_url }}" />
   {% if page.title %}
   <meta property="og:title" content="{{ page.title }}" />
   {% else %}
