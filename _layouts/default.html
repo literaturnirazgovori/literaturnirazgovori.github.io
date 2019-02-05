@@ -32,16 +32,18 @@
   {% assign pagecategorytext=site.data.categoriestext[page.category].text%}
   {% endif %}
 
+  {% if page.url contains '://' %}
   {% assign currentUrl = page.url %}
-  {% unless page.url contains '://' %}
+  {%else%}
   {% assign currentUrl = page.url | prepend: site.url %}
-  {% endunless %}
+  {% endif %}
 
   {% if page.image %}
+  {% if page.image contains '://' %}
+  {%else%}
   {% assign featuredImage = page.image %}
-  {% unless page.image contains '://' %}
   {% assign featuredImage = page.image | prepend: site.url %}
-  {% endunless %}
+  {% endif %}
   {% endif %}
 
   <!-- social media SEO -->
