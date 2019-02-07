@@ -13,6 +13,7 @@ comments: true
 
         <!-- Post Share -->
         <div class="col-md-2 pl-0">
+            <div id="postviewscontainer" class="postviews"><span id="postViews"></span></div>
             {% include share.html %}
         </div>
 
@@ -76,15 +77,11 @@ comments: true
                     }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="{{ page.title }}">
             </a>
 
-
-
-
             {% endif %}
             <!-- End Featured Image -->
 
             <!-- Post Content -->
             <div class="article-post" style="display:none;">
-                <div style="display:none;">Views: <span id="postViews"></span></div>
                 {{content}}
             </div>
 
@@ -109,6 +106,8 @@ comments: true
                 $(".article-post").show();
 
                 /* GET PAGE VIEWS */
+                //remove the category. In case the category was changed/moved, a regular expression is used.
+                var pageurl = "{{ page.url }}".replace(/^\/*/, "").replace(/[^\/]*/, "/.*");
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "{{site.analytics_proxy_url}}/api/ganalytics/pagevies");
                 xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -119,11 +118,13 @@ comments: true
                             console.log("Failed to request pageviews. Error: " + response.error);
                         }
                         else {
-                            /*
+
                             if (!(isNaN(parseInt(response.views)))) {
-                                document.getElementById("postViews").innerText = response.views;
+                                var postviewselement = document.getElementById("postViews");
+                                var postviewscontainer = document.getElementById("postviewscontainer");
+                                postviewselement.innerText = response.views;
+                                postviewscontainer.classList.add('postviews-visible');
                             }
-                            */
                             console.log("Post views, page " + response.page + ": " + response.views);
                         }
                     }
@@ -131,7 +132,9 @@ comments: true
                         console.log("Failed to request pageviews. Stat: " + xhr.status);
                     }
                 };
-                xhr.send(/*JSON.stringify({ "page": "{{ page.url }}" })*/);
+                //the JSON to send is optional. If not sent, the current page url will be used.
+                //It's sent here because the category is trimmed and replaced with a regex
+                xhr.send(JSON.stringify({ "page": pageurl }));
 
             </script>
 
