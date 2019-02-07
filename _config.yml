@@ -11,7 +11,7 @@ disqus: "literaturnirazgovori"
 mailchimp-list: "https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b"
 encoding: utf-8
 fb_app_id: "405644126912554"
-analytics_proxy_url: "https://warm-woodland-78106.herokuapp.com/"
+analytics_proxy_url: "https://warm-woodland-78106.herokuapp.com"
 
 # Authors
 authors:
