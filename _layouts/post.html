@@ -84,6 +84,7 @@ comments: true
 
             <!-- Post Content -->
             <div class="article-post" style="display:none;">
+                <div style="display:none;">Views: <span id="postViews"></span></div>
                 {{content}}
             </div>
 
@@ -94,12 +95,43 @@ comments: true
                 */
                 var original = $(".article-post").html();
                 //console.log(original);
-                var fixed = original.replace(/\\+\s*\\*\s*\=\=\s*\\+\s*\\*\s*/g, "NEWLINE").replace(/<p>.*\=\=.*<\/p>/g, "NEWLINE").replace(/<p>/g, "").replace(/<\/p>/g, "<br/>").replace(/NEWLINE/g, "</p><p>").replace(/\_(.+)\_/g, "<em>$1</em>").replace(/\*\*(.+)\*\*/g, "<strong>$1</strong>");
+                var fixed = original
+                    .replace(/\\+\s*\\*\s*\=\=\s*\\+\s*\\*\s*/g, "NEWLINE")
+                    .replace(/<p>.*\=\=.*<\/p>/g, "NEWLINE")
+                    .replace(/<p>/g, "")
+                    .replace(/<\/p>/g, "<br/>")
+                    .replace(/NEWLINE/g, "</p><p>")
+                    .replace(/\_(.+)\_/g, "<em>$1</em>")
+                    .replace(/\*\*(.+)\*\*/g, "<strong>$1</strong>");
                 fixed = "<p>" + fixed + "</p>";
                 //console.log(fixed);
                 $(".article-post").html(fixed);
                 $(".article-post").show();
 
+                /* GET PAGE VIEWS */
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "{{site.analytics_proxy_url}}/api/ganalytics/pagevies");
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.error) {
+                            console.log("Failed to request pageviews. Error: " + response.error);
+                        }
+                        else {
+                            /*
+                            if (!(isNaN(parseInt(response.views)))) {
+                                document.getElementById("postViews").innerText = response.views;
+                            }
+                            */
+                            console.log("Post views, page " + response.page + ": " + response.views);
+                        }
+                    }
+                    else {
+                        console.log("Failed to request pageviews. Stat: " + xhr.status);
+                    }
+                };
+                xhr.send(/*JSON.stringify({ "page": "{{ page.url }}" })*/);
 
             </script>
 
