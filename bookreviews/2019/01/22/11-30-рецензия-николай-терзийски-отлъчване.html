@@ -308,6 +308,7 @@
 
             <!-- Post Content -->
             <div class="article-post" style="display:none;">
+                <div style="display:none;">Views: <span id="postViews"></span></div>
                 <p>Едно нещо трябва да бъде признато на този впечатляващ дебют преди всичко останало - за него е бил положен огромен изследователски и в последствие редакторски труд, който се е отплатил на автора си. “Отлъчване” на Николай Терзийски (изд. “Жанет 45”) е внушителен първи роман с близо 500-те си страници, които разказват родовата история на цели осем поколения българи и то от гледните точки и на мъжете, и на жените в тях. Това е заявка за мащабност, исторически размах и езиково разнообразие.</p>
 
 <p>==</p>
@@ -368,12 +369,43 @@
                 */
                 var original = $(".article-post").html();
                 //console.log(original);
-                var fixed = original.replace(/\\+\s*\\*\s*\=\=\s*\\+\s*\\*\s*/g, "NEWLINE").replace(/<p>.*\=\=.*<\/p>/g, "NEWLINE").replace(/<p>/g, "").replace(/<\/p>/g, "<br/>").replace(/NEWLINE/g, "</p><p>").replace(/\_(.+)\_/g, "<em>$1</em>").replace(/\*\*(.+)\*\*/g, "<strong>$1</strong>");
+                var fixed = original
+                    .replace(/\\+\s*\\*\s*\=\=\s*\\+\s*\\*\s*/g, "NEWLINE")
+                    .replace(/<p>.*\=\=.*<\/p>/g, "NEWLINE")
+                    .replace(/<p>/g, "")
+                    .replace(/<\/p>/g, "<br/>")
+                    .replace(/NEWLINE/g, "</p><p>")
+                    .replace(/\_(.+)\_/g, "<em>$1</em>")
+                    .replace(/\*\*(.+)\*\*/g, "<strong>$1</strong>");
                 fixed = "<p>" + fixed + "</p>";
                 //console.log(fixed);
                 $(".article-post").html(fixed);
                 $(".article-post").show();
 
+                /* GET PAGE VIEWS */
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://warm-woodland-78106.herokuapp.com//api/ganalytics/pagevies");
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.error) {
+                            console.log("Failed to request pageviews. Error: " + response.error);
+                        }
+                        else {
+                            /*
+                            if (!(isNaN(parseInt(response.views)))) {
+                                document.getElementById("postViews").innerText = response.views;
+                            }
+                            */
+                            console.log("Post views, page " + response.page + ": " + response.views);
+                        }
+                    }
+                    else {
+                        console.log("Failed to request pageviews. Stat: " + xhr.status);
+                    }
+                };
+                xhr.send(/*JSON.stringify({ "page": "/bookreviews/2019/01/22/11-30-%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-%D0%BD%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B9-%D1%82%D0%B5%D1%80%D0%B7%D0%B8%D0%B9%D1%81%D0%BA%D0%B8-%D0%BE%D1%82%D0%BB%D1%8A%D1%87%D0%B2%D0%B0%D0%BD%D0%B5.html" })*/);
 
             </script>
 

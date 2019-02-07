@@ -308,6 +308,7 @@
 
             <!-- Post Content -->
             <div class="article-post" style="display:none;">
+                <div style="display:none;">Views: <span id="postViews"></span></div>
                 <p><strong><em>Aнтония: Всеки ли днес може да пише? И свива ли се разликата спрямо между това да си просто увлекателен в социалните мрежи, да издадеш бестселър или качествена проза/поезия?</em></strong></p>
 
 <p>==</p>
@@ -463,12 +464,43 @@
                 */
                 var original = $(".article-post").html();
                 //console.log(original);
-                var fixed = original.replace(/\\+\s*\\*\s*\=\=\s*\\+\s*\\*\s*/g, "NEWLINE").replace(/<p>.*\=\=.*<\/p>/g, "NEWLINE").replace(/<p>/g, "").replace(/<\/p>/g, "<br/>").replace(/NEWLINE/g, "</p><p>").replace(/\_(.+)\_/g, "<em>$1</em>").replace(/\*\*(.+)\*\*/g, "<strong>$1</strong>");
+                var fixed = original
+                    .replace(/\\+\s*\\*\s*\=\=\s*\\+\s*\\*\s*/g, "NEWLINE")
+                    .replace(/<p>.*\=\=.*<\/p>/g, "NEWLINE")
+                    .replace(/<p>/g, "")
+                    .replace(/<\/p>/g, "<br/>")
+                    .replace(/NEWLINE/g, "</p><p>")
+                    .replace(/\_(.+)\_/g, "<em>$1</em>")
+                    .replace(/\*\*(.+)\*\*/g, "<strong>$1</strong>");
                 fixed = "<p>" + fixed + "</p>";
                 //console.log(fixed);
                 $(".article-post").html(fixed);
                 $(".article-post").show();
 
+                /* GET PAGE VIEWS */
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://warm-woodland-78106.herokuapp.com//api/ganalytics/pagevies");
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.error) {
+                            console.log("Failed to request pageviews. Error: " + response.error);
+                        }
+                        else {
+                            /*
+                            if (!(isNaN(parseInt(response.views)))) {
+                                document.getElementById("postViews").innerText = response.views;
+                            }
+                            */
+                            console.log("Post views, page " + response.page + ": " + response.views);
+                        }
+                    }
+                    else {
+                        console.log("Failed to request pageviews. Stat: " + xhr.status);
+                    }
+                };
+                xhr.send(/*JSON.stringify({ "page": "/talks/2019/01/20/16-05-%D0%BC%D0%B0%D0%BD%D0%BE%D0%BB-%D0%B3%D0%BB%D0%B8%D1%88%D0%B5%D0%B2-%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%D0%B0%D0%BD%D1%8A%D1%82-%D0%B5-%D0%BD%D0%B0%D1%85%D0%B0%D0%BB%D0%BD%D0%B8%D0%BA-%D0%BF%D0%B0%D1%80%D0%B0%D0%B4%D0%B8%D1%80%D0%B0%D1%89-%D1%81-%D0%B4%D1%83%D1%88%D0%B0%D1%82%D0%B0-%D1%81%D0%B8.html" })*/);
 
             </script>
 
