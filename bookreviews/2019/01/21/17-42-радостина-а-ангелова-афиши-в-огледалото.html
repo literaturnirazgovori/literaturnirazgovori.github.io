@@ -214,6 +214,7 @@
 
         <!-- Post Share -->
         <div class="col-md-2 pl-0">
+            <div id="postviewscontainer" class="postviews"><span id="postViews"></span></div>
             <div class="share">
     <p>
         Сподели в:
@@ -300,15 +301,11 @@
                 <img class="featured-image img-fluid post-image" src="/Uploads/afishivogledaloto.jpg" alt="Рецензия: Радостина А. Ангелова, "Афиши в огледалото"">
             </a>
 
-
-
-
             
             <!-- End Featured Image -->
 
             <!-- Post Content -->
             <div class="article-post" style="display:none;">
-                <div style="display:none;">Views: <span id="postViews"></span></div>
                 <p>Към първата си книга на Радостина А. Ангелова пристъпих внимателно като към хербарий - такава впрочем е и корицата на романа, за който става дума тук - “Афиши в огледалото” (изд. Софтпрес): хербаризирана роза, която загатва и за съхраняването на спомена от отминалото време, и за името на главната героиня, актрисата - и какво ли още не - Роза Попова (1879-1949 г.). След прочита и на новия роман на Ангелова - “Бал в Мулен Руж”, ще се върна към пропуснатия от мен “Виенски апартамент” - за собствена сверка, тъй като имам нужда от калибриране на мнението си. Има случаи, в които една книга просто не е достатъчна за категоричност.</p>
 
 <p>==</p>
@@ -378,6 +375,8 @@
                 $(".article-post").show();
 
                 /* GET PAGE VIEWS */
+                //remove the category. In case the category was changed/moved, a regular expression is used.
+                var pageurl = "/bookreviews/2019/01/21/17-42-%D1%80%D0%B0%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B0-%D0%B0-%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D0%BE%D0%B2%D0%B0-%D0%B0%D1%84%D0%B8%D1%88%D0%B8-%D0%B2-%D0%BE%D0%B3%D0%BB%D0%B5%D0%B4%D0%B0%D0%BB%D0%BE%D1%82%D0%BE.html".replace(/^\/*/, "").replace(/[^\/]*/, "/.*");
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "https://warm-woodland-78106.herokuapp.com/api/ganalytics/pagevies");
                 xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -388,11 +387,13 @@
                             console.log("Failed to request pageviews. Error: " + response.error);
                         }
                         else {
-                            /*
+
                             if (!(isNaN(parseInt(response.views)))) {
-                                document.getElementById("postViews").innerText = response.views;
+                                var postviewselement = document.getElementById("postViews");
+                                var postviewscontainer = document.getElementById("postviewscontainer");
+                                postviewselement.innerText = response.views;
+                                postviewscontainer.classList.add('postviews-visible');
                             }
-                            */
                             console.log("Post views, page " + response.page + ": " + response.views);
                         }
                     }
@@ -400,7 +401,9 @@
                         console.log("Failed to request pageviews. Stat: " + xhr.status);
                     }
                 };
-                xhr.send(/*JSON.stringify({ "page": "/bookreviews/2019/01/21/17-42-%D1%80%D0%B0%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B0-%D0%B0-%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB%D0%BE%D0%B2%D0%B0-%D0%B0%D1%84%D0%B8%D1%88%D0%B8-%D0%B2-%D0%BE%D0%B3%D0%BB%D0%B5%D0%B4%D0%B0%D0%BB%D0%BE%D1%82%D0%BE.html" })*/);
+                //the JSON to send is optional. If not sent, the current page url will be used.
+                //It's sent here because the category is trimmed and replaced with a regex
+                xhr.send(JSON.stringify({ "page": pageurl }));
 
             </script>
 

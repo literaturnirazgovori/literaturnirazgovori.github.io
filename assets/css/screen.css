@@ -353,6 +353,23 @@ ul.tags li a:hover {
 */
 /*-------------------*/
 
+.postviews{
+    background-image: url('/assets/images/eye.png');
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    font-size: 12pt;
+    color: #6b6b47;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    height: 25px;
+    opacity: 0;
+}
+.postviews-visible{
+    opacity: 1;
+}
+
 .postboxcategory a:hover {
     background-color: #E8E8E8;
     -webkit-transition: background-color 1s linear;

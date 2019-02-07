@@ -214,6 +214,7 @@
 
         <!-- Post Share -->
         <div class="col-md-2 pl-0">
+            <div id="postviewscontainer" class="postviews"><span id="postViews"></span></div>
             <div class="share">
     <p>
         Сподели в:
@@ -300,15 +301,11 @@
                 <img class="featured-image img-fluid post-image" src="/Uploads/krisenchevkniga.jpg" alt="Книжните препоръки на Scribens за панаира на книгата 2018">
             </a>
 
-
-
-
             
             <!-- End Featured Image -->
 
             <!-- Post Content -->
             <div class="article-post" style="display:none;">
-                <div style="display:none;">Views: <span id="postViews"></span></div>
                 <p>Това са препоръките на издателство Scribens за някои от новите им книги, които можете да си вземете на Софийския международен панаир на книгата 2018:</p>
 
 <p>==</p>
@@ -384,6 +381,8 @@
                 $(".article-post").show();
 
                 /* GET PAGE VIEWS */
+                //remove the category. In case the category was changed/moved, a regular expression is used.
+                var pageurl = "/newbooks/2019/01/21/12-58-%D0%BA%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D1%82%D0%B5-%D0%BF%D1%80%D0%B5%D0%BF%D0%BE%D1%80%D1%8A%D0%BA%D0%B8-%D0%BD%D0%B0-scribens-%D0%B7%D0%B0-%D0%BF%D0%B0%D0%BD%D0%B0%D0%B8%D1%80%D0%B0-%D0%BD%D0%B0-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0%D1%82%D0%B0-2018.html".replace(/^\/*/, "").replace(/[^\/]*/, "/.*");
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "https://warm-woodland-78106.herokuapp.com/api/ganalytics/pagevies");
                 xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -394,11 +393,13 @@
                             console.log("Failed to request pageviews. Error: " + response.error);
                         }
                         else {
-                            /*
+
                             if (!(isNaN(parseInt(response.views)))) {
-                                document.getElementById("postViews").innerText = response.views;
+                                var postviewselement = document.getElementById("postViews");
+                                var postviewscontainer = document.getElementById("postviewscontainer");
+                                postviewselement.innerText = response.views;
+                                postviewscontainer.classList.add('postviews-visible');
                             }
-                            */
                             console.log("Post views, page " + response.page + ": " + response.views);
                         }
                     }
@@ -406,7 +407,9 @@
                         console.log("Failed to request pageviews. Stat: " + xhr.status);
                     }
                 };
-                xhr.send(/*JSON.stringify({ "page": "/newbooks/2019/01/21/12-58-%D0%BA%D0%BD%D0%B8%D0%B6%D0%BD%D0%B8%D1%82%D0%B5-%D0%BF%D1%80%D0%B5%D0%BF%D0%BE%D1%80%D1%8A%D0%BA%D0%B8-%D0%BD%D0%B0-scribens-%D0%B7%D0%B0-%D0%BF%D0%B0%D0%BD%D0%B0%D0%B8%D1%80%D0%B0-%D0%BD%D0%B0-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0%D1%82%D0%B0-2018.html" })*/);
+                //the JSON to send is optional. If not sent, the current page url will be used.
+                //It's sent here because the category is trimmed and replaced with a regex
+                xhr.send(JSON.stringify({ "page": pageurl }));
 
             </script>
 
