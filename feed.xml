@@ -5,8 +5,8 @@
     <description>с Антония Апостолова</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Feb 2019 15:57:15 +0000</pubDate>
-    <lastBuildDate>Tue, 12 Feb 2019 15:57:15 +0000</lastBuildDate>
+    <pubDate>Tue, 12 Feb 2019 15:59:02 +0000</pubDate>
+    <lastBuildDate>Tue, 12 Feb 2019 15:59:02 +0000</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -82,6 +82,8 @@
         <category>повест</category>
         
         <category>Лев Толстой</category>
+        
+        <category>Апостроф</category>
         
         
         <category>newbooks</category>
@@ -195,6 +197,8 @@
         <category>тихото слънце</category>
         
         <category>рецензии</category>
+        
+        <category>Жанет 45</category>
         
         
         <category>bookreviews</category>
