@@ -5,8 +5,8 @@
     <description>с Антония Апостолова</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 12 Feb 2019 15:59:58 +0000</pubDate>
-    <lastBuildDate>Tue, 12 Feb 2019 15:59:58 +0000</lastBuildDate>
+    <pubDate>Tue, 12 Feb 2019 16:01:06 +0000</pubDate>
+    <lastBuildDate>Tue, 12 Feb 2019 16:01:06 +0000</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -198,6 +198,8 @@
         
         <category>рецензии</category>
         
+        <category>Жанет 45</category>
+        
         
         <category>bookreviews</category>
         
@@ -357,6 +359,8 @@
         <category>роман</category>
         
         <category>книга</category>
+        
+        <category>Колибри</category>
         
         
         <category>newbooks</category>
@@ -545,6 +549,8 @@
         <category>роман</category>
         
         <category>рецензии</category>
+        
+        <category>Лист</category>
         
         
         <category>bookreviews</category>
