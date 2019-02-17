@@ -107,7 +107,8 @@ comments: true
 
                 /* GET PAGE VIEWS */
                 //remove the category. In case the category was changed/moved, a regular expression is used.
-                var pageurl = "{{ page.url }}".replace(/^\/*/, "").replace(/[^\/]*/, "/.*");
+                var pageurl = "{{ page.url }}".replace(/^\/+/, "").substr("{{ page.url }}".lastIndexOf("/" + 1)).replace(/\d{1,2}\-\d{1,2}(\-.*)/, ".*$1");
+                console.log("requesting views for: " + pageurl);
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "{{site.analytics_proxy_url}}/api/ganalytics/pagevies");
                 xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -140,8 +141,8 @@ comments: true
 
             {% if page.tags %}
             <div style="margin-bottom: 20px;">
-                <a class="alltagslink" href="/tags.html" title="Всички тагове" style="float:left; margin-right:10px;"><img
-                        src="/assets/images/bookmark-color.png"></a>
+                <a class="alltagslink" href="/tags.html" title="Всички тагове"
+                    style="float:left; margin-right:10px;"><img src="/assets/images/bookmark-color.png"></a>
                 <div style="float:left;">
                     <span class="tagheader">Тагове:</span>
                     <ul class="tags">
