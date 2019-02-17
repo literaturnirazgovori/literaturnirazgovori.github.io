@@ -1,3 +1,9 @@
+{% if jekyll.environment == "production" %}
+{% assign siteurl="https://literaturnirazgovori.com" %}
+{%else%}
+{% assign siteurl = site.url %}
+{% endif %}
+
 {% if page.url contains '://' %}
 {% assign currentUrl = page.url %}
 {%else%}
