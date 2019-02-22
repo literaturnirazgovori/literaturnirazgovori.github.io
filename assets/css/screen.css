@@ -353,6 +353,26 @@ ul.tags li a:hover {
 */
 /*-------------------*/
 
+#postviewscontainer-mobile {
+    display: none;
+    font-family: "nicebgfontsemilight";
+    font-size: 12pt;
+}
+#postviewscontainer { 
+    display: block; 
+    font-family: "nicebgfontsemilight";
+    font-size: 12pt;
+}
+
+@media (max-width:768px) {
+    #postviewscontainer-mobile {
+        display: block;
+    }
+    #postviewscontainer { 
+        display: none; 
+    }
+}
+
 .postviews{
     background-image: url('/assets/images/eye.png');
     background-repeat: no-repeat;
