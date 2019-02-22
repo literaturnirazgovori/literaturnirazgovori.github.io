@@ -275,6 +275,7 @@
                 <!-- Post Title -->
                 <h1 class="posttitle">test post</h1>
                 <h2 class="postsubtitle">this is a test</h2>
+                <div id="postviewscontainer-mobile" class="postviews"><span id="postViews-mobile"></span></div>
             </div>
             <div class="postinfo">
                 
@@ -337,7 +338,12 @@
 
                 /* GET PAGE VIEWS */
                 //remove the category. In case the category was changed/moved, a regular expression is used.
-                var pageurl = "/bookreviews/2019/02/17/17-18-test-post.html".replace(/^\/+/, "").substr("/bookreviews/2019/02/17/17-18-test-post.html".lastIndexOf("/" + 1)).replace(/\d{1,2}\-\d{1,2}(\-.*)/, ".*$1");
+                //var pageurl = "/bookreviews/2019/02/17/17-18-test-post.html".replace(/^\/+/, "").substr("/bookreviews/2019/02/17/17-18-test-post.html".lastIndexOf("/" + 1)).replace(/\d{1,2}\-\d{1,2}(\-.*)/, ".*$1");
+                var pageurl = "/bookreviews/2019/02/17/17-18-test-post.html";
+                pageurl = pageurl.replace(/^\/+/, "");
+                pageurl = pageurl.substr(pageurl.lastIndexOf("/") + 1);
+                pageurl = pageurl.replace(/\d{1,2}\-\d{1,2}(\-.*)/, ".*$1");
+
                 console.log("requesting views for: " + pageurl);
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "https://warm-woodland-78106.herokuapp.com/api/ganalytics/pagevies");
@@ -355,6 +361,11 @@
                                 var postviewscontainer = document.getElementById("postviewscontainer");
                                 postviewselement.innerText = response.views;
                                 postviewscontainer.classList.add('postviews-visible');
+
+                                var postviewselementmobile = document.getElementById("postViews-mobile");
+                                var postviewscontainermobile = document.getElementById("postviewscontainer-mobile");
+                                postviewselementmobile.innerText = response.views;
+                                postviewscontainermobile.classList.add('postviews-visible');
                             }
                             console.log("Post views, page " + response.page + ": " + response.views);
                         }

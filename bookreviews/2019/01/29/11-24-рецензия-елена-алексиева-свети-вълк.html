@@ -275,6 +275,7 @@
                 <!-- Post Title -->
                 <h1 class="posttitle">Рецензия: Елена Алексиева, "Свети вълк"</h1>
                 <h2 class="postsubtitle">Елена Алексиева пише на умен и красив език, с изящно внимание към детайла, метафизична дълбочина и прецизна ирония, което спасява романа от това да е поредния балкански роман за маргиналното и низвергнатото, за пароксизмите на низшите и нищите, за изваденото от калта и подземията на живота</h2>
+                <div id="postviewscontainer-mobile" class="postviews"><span id="postViews-mobile"></span></div>
             </div>
             <div class="postinfo">
                 
@@ -425,7 +426,12 @@
 
                 /* GET PAGE VIEWS */
                 //remove the category. In case the category was changed/moved, a regular expression is used.
-                var pageurl = "/bookreviews/2019/01/29/11-24-%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D0%B5%D0%B2%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B8-%D0%B2%D1%8A%D0%BB%D0%BA.html".replace(/^\/+/, "").substr("/bookreviews/2019/01/29/11-24-%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D0%B5%D0%B2%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B8-%D0%B2%D1%8A%D0%BB%D0%BA.html".lastIndexOf("/" + 1)).replace(/\d{1,2}\-\d{1,2}(\-.*)/, ".*$1");
+                //var pageurl = "/bookreviews/2019/01/29/11-24-%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D0%B5%D0%B2%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B8-%D0%B2%D1%8A%D0%BB%D0%BA.html".replace(/^\/+/, "").substr("/bookreviews/2019/01/29/11-24-%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D0%B5%D0%B2%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B8-%D0%B2%D1%8A%D0%BB%D0%BA.html".lastIndexOf("/" + 1)).replace(/\d{1,2}\-\d{1,2}(\-.*)/, ".*$1");
+                var pageurl = "/bookreviews/2019/01/29/11-24-%D1%80%D0%B5%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F-%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D0%B5%D0%B2%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%B8-%D0%B2%D1%8A%D0%BB%D0%BA.html";
+                pageurl = pageurl.replace(/^\/+/, "");
+                pageurl = pageurl.substr(pageurl.lastIndexOf("/") + 1);
+                pageurl = pageurl.replace(/\d{1,2}\-\d{1,2}(\-.*)/, ".*$1");
+
                 console.log("requesting views for: " + pageurl);
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "https://warm-woodland-78106.herokuapp.com/api/ganalytics/pagevies");
@@ -443,6 +449,11 @@
                                 var postviewscontainer = document.getElementById("postviewscontainer");
                                 postviewselement.innerText = response.views;
                                 postviewscontainer.classList.add('postviews-visible');
+
+                                var postviewselementmobile = document.getElementById("postViews-mobile");
+                                var postviewscontainermobile = document.getElementById("postviewscontainer-mobile");
+                                postviewselementmobile.innerText = response.views;
+                                postviewscontainermobile.classList.add('postviews-visible');
                             }
                             console.log("Post views, page " + response.page + ": " + response.views);
                         }
