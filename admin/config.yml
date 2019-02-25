@@ -54,3 +54,4 @@ collections:
         format: "YYYY-MM-DD HH:mm"
         dateFormat: "YYYY-MM-DD"
         timeFormat: "HH:mm"
+        required: true
