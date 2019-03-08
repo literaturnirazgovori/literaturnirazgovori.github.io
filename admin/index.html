@@ -7,11 +7,24 @@
   <title>Content Manager</title>
 </head>
 
-<body>
+<body onload="loaded()">
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@2.3.3/dist/netlify-cms.js"></script>
   <script>
     CMS.registerPreviewStyle("/admin/example.css");
+    function loaded() {
+      /*
+      alert("l");
+      var nav = document.getElementsByTagName("nav");
+      var ul = nav[0].getElementsByTagName("ul");
+      var li = document.createElement("li");
+      var img = document.createElement("img");
+      img.setAttribute("src", "https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io.svg?branch=work");
+      img.setAttribute("style", "margin:auto");
+      li.appendChild(img);
+      ul.appendChild(li);
+      */
+    }
   </script>
 </body>
 
