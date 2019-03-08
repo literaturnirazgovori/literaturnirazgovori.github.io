@@ -451,6 +451,17 @@ a {
      text-decoration:none;
 }
 
+.article-post a {
+    color:#007bff;
+    transition:all 0.2s;
+    text-decoration:none;
+}
+
+.article-post a:hover {
+    color: #3C5A99;
+    text-decoration:none;
+}
+
  pre {
      -moz-box-sizing: border-box;
      box-sizing: border-box;
