@@ -1,6 +1,7 @@
 var travisBuildStatusImageId = "travisBuildStatus";
 var buildStatusNotificationElementId = "buildStatusNotificationElement";
 var travisCheckIntervalMSec = 7000;
+var travisRepoId = "7843148";
 
 (async function () {
     //Wait for the nav bar to appear
@@ -35,7 +36,7 @@ var travisCheckIntervalMSec = 7000;
 function getTravisStatus() {
     var travisBuildStatusImg = document.getElementById(travisBuildStatusImageId);
     var notificationHeader = document.getElementById(buildStatusNotificationElementId);
-    var url = "https://api.travis-ci.com/builds?limit=1&sort_by=started_atdesc";
+    var url = "https://api.travis-ci.com/repo/" + travisRepoId + "/builds?limit=1&sort_by=finished_at:desc";
     var travisApiRequest = new XMLHttpRequest();
     travisApiRequest.ontimeout = function () {
         console.error("The request for " + url + " timed out.");
@@ -60,7 +61,7 @@ function getTravisStatus() {
                     var finished = (finishedAt) ? ("<b>[Finished at:</b> " + finishedAt + ", ") : "<b>[</b>";
                     var notificationHeaderClassName = "build-" + state;
                     var notificationHeaderContent =
-                        "<span class=\"infoleft\"><b>" + whichBuild + " publishing:</b> \"<em>" + commitMessage + "</em>\"</span><span class=\"inforight\">" + finished + "<b>Run by</b> " + createdBy + "<b>]</b></span>";
+                        "<div class=\"infoleft\"><b>" + whichBuild + " publishing:</b> \"<em>" + commitMessage + "</em>\"</div><div class=\"inforight\">" + finished + "<b>Run by</b> " + createdBy + "<b>]</b></div>";
                     if (notificationHeader.className != notificationHeaderClassName) {
                         notificationHeader.className = notificationHeaderClassName;
                     }

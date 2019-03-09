@@ -4,17 +4,19 @@
     padding: 3px 18px;
     font-size: 10pt;
     transition: all 0.4s;
-    height: 24px;
+    display: flex;
 }
 .infoleft
 {
     float:left;
-    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;    
 }
 .inforight
 {
     float: right;
-    display: inline-block;
 }
 .build-created
 {
