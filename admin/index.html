@@ -4,28 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="styles/customizations.css" rel="stylesheet" type="text/css">
   <title>Content Manager</title>
 </head>
 
-<body onload="loaded()">
+<body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@2.3.3/dist/netlify-cms.js"></script>
   <script>
-    CMS.registerPreviewStyle("/admin/example.css");
-    function loaded() {
-      /*
-      alert("l");
-      var nav = document.getElementsByTagName("nav");
-      var ul = nav[0].getElementsByTagName("ul");
-      var li = document.createElement("li");
-      var img = document.createElement("img");
-      img.setAttribute("src", "https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io.svg?branch=work");
-      img.setAttribute("style", "margin:auto");
-      li.appendChild(img);
-      ul.appendChild(li);
-      */
-    }
+    CMS.registerPreviewStyle("styles/custom-preview.css");
   </script>
+  <script src="scripts/customizations.js"></script>
 </body>
 
 </html>
