@@ -78,6 +78,6 @@ function getTravisStatus() {
     travisApiRequest.open("GET", url, true);
     travisApiRequest.setRequestHeader("Travis-API-Version", "3");
     travisApiRequest.setRequestHeader("Authorization", "token y1piqC-JCM4woaM1h5imyQ");
-    travisApiRequest.timeout = 5000;
+    travisApiRequest.timeout = travisCheckIntervalMSec;
     travisApiRequest.send(null);
 }
