@@ -57,7 +57,7 @@ function getTravisStatus() {
                         travisBuildStatusImg.setAttribute("src", statusImage);
                     }
                     var whichBuild = ((state == "created") || (state == "started")) ? "Running" : "Last";
-                    var finished = (finishedAt) ? ("<b>[Finished at:</b> " + finishedAt + ", ") : "[";
+                    var finished = (finishedAt) ? ("<b>[Finished at:</b> " + finishedAt + ", ") : "<b>[</b>";
                     var notificationHeaderClassName = "build-" + state;
                     var notificationHeaderContent =
                         "<span class=\"infoleft\"><b>" + whichBuild + " publishing:</b> \"<em>" + commitMessage + "</em>\"</span><span class=\"inforight\">" + finished + "<b>Run by</b> " + createdBy + "<b>]</b></span>";
