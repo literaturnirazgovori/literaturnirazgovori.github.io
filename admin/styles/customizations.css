@@ -1,0 +1,35 @@
+#buildStatusNotificationElement
+{
+    color: white;
+    padding: 3px 18px;
+    font-size: 10pt;
+    transition: all 0.4s;
+    height: 24px;
+}
+.infoleft
+{
+    float:left;
+    display: inline-block;
+}
+.inforight
+{
+    float: right;
+    display: inline-block;
+}
+.build-created
+{
+    background-color: #FF6A00;
+}
+.build-started
+{
+    background-color: #B200FF;
+}
+.build-errored
+{
+    background-color: #FF0000;
+}
+
+.build-passed
+{
+    background-color: #4EC820;
+}
