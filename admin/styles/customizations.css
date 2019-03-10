@@ -35,3 +35,8 @@
 {
     background-color: #4EC820;
 }
+
+.build-unknown
+{
+    background-color: red;
+}

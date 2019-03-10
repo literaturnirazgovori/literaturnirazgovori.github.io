@@ -11,35 +11,41 @@ var travisRepoId = "7843148";
         await new Promise(r => { attempt++; setTimeout(r, 500); });
     }
     var nav = document.getElementsByTagName("nav");
+    var header = document.getElementsByTagName("header");
     if (nav.length > 0) {
         var ul = nav[0].getElementsByTagName("ul");
         if (ul.length > 0) {
             var li = document.createElement("li");
             li.setAttribute("style", "margin:auto");
+            var a = document.createElement("a");
+            a.setAttribute("href", "https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io");
+            a.setAttribute("target", "_blank");
             var img = document.createElement("img");
             img.setAttribute("src", "https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io.svg?branch=work");
             img.setAttribute("id", travisBuildStatusImageId);
-            li.appendChild(img);
+            li.appendChild(a);
+            a.appendChild(img);
             ul[0].appendChild(li);
         }
     }
-    var header = document.getElementsByTagName("header");
     if (header.length > 0) {
         header[0].style.marginBottom = "40px";
         var notificationHeader = document.createElement("div");
         notificationHeader.setAttribute("id", buildStatusNotificationElementId);
         header[0].appendChild(notificationHeader);
     }
-    getTravisStatus();
+    if ((nav.length > 0) && (header.length > 0)) { getTravisStatus(); }
 })();
 
 function getTravisStatus() {
     var travisBuildStatusImg = document.getElementById(travisBuildStatusImageId);
     var notificationHeader = document.getElementById(buildStatusNotificationElementId);
+    var imageSrc = travisBuildStatusImg.getAttribute("src");
     var url = "https://api.travis-ci.com/repo/" + travisRepoId + "/builds?limit=1&sort_by=finished_at:desc";
+
     var travisApiRequest = new XMLHttpRequest();
     travisApiRequest.ontimeout = function () {
-        console.error("The request for " + url + " timed out.");
+        showError("The request for " + url + " timed out.");
     };
     travisApiRequest.onload = function () {
         if (travisApiRequest.readyState === 4) {
@@ -52,32 +58,43 @@ function getTravisStatus() {
                     var state = buildInfo.state;
                     var createdBy = buildInfo.created_by.login;
                     console.log("Build \"" + commitMessage + "\", State: " + state + ". Finished: " + finishedAt);
-                    var imageSrc = travisBuildStatusImg.getAttribute("src");
                     var statusImage = "images/build-" + state + ".png";
-                    if (imageSrc != statusImage) {
-                        travisBuildStatusImg.setAttribute("src", statusImage);
-                    }
+
                     var whichBuild = ((state == "created") || (state == "started")) ? "Running" : "Last";
                     var finished = (finishedAt) ? ("<b>[Finished at:</b> " + finishedAt + ", ") : "<b>[</b>";
                     var notificationHeaderClassName = "build-" + state;
                     var notificationHeaderContent =
                         "<div class=\"infoleft\"><b>" + whichBuild + " publishing:</b> \"<em>" + commitMessage + "</em>\"</div><div class=\"inforight\">" + finished + "<b>Run by</b> " + createdBy + "<b>]</b></div>";
-                    if (notificationHeader.className != notificationHeaderClassName) {
-                        notificationHeader.className = notificationHeaderClassName;
-                    }
-                    if (notificationHeader.innerHTML != notificationHeaderContent) {
-                        notificationHeader.innerHTML = notificationHeaderContent;
-                    }
+                    updateUI(statusImage, notificationHeaderClassName, notificationHeaderContent);
                 }
             } else {
-                console.error(travisApiRequest.statusText);
+                showError(travisApiRequest.statusText);
             }
-            setTimeout(function () { getTravisStatus() }, travisCheckIntervalMSec);
         }
     };
     travisApiRequest.open("GET", url, true);
     travisApiRequest.setRequestHeader("Travis-API-Version", "3");
     travisApiRequest.setRequestHeader("Authorization", "token y1piqC-JCM4woaM1h5imyQ");
     travisApiRequest.timeout = 5000;
+    travisApiRequest.onerror = function () {
+        showError();
+    };
+    function showError(err) {
+        var notificationContent = "<div class=\"infoleft\">Failed to get data. You may be offline.</div>";
+        updateUI("images/build-unknown.png", "build-unknown", notificationContent, err);
+    }
+    function updateUI(statusImage, notificationHeaderClassName, notificationHeaderContent, err) {
+        if (err) { console.error(err); }
+        if (imageSrc != statusImage) {
+            travisBuildStatusImg.setAttribute("src", statusImage);
+        }
+        if (notificationHeader.className != notificationHeaderClassName) {
+            notificationHeader.className = notificationHeaderClassName;
+        }
+        if (notificationHeader.innerHTML != notificationHeaderContent) {
+            notificationHeader.innerHTML = notificationHeaderContent;
+        }
+        setTimeout(function () { getTravisStatus() }, travisCheckIntervalMSec);
+    }
     travisApiRequest.send(null);
 }
