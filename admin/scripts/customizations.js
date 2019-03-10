@@ -2,6 +2,7 @@ var travisBuildStatusImageId = "travisBuildStatus";
 var buildStatusNotificationElementId = "buildStatusNotificationElement";
 var travisCheckIntervalMSec = 7000;
 var travisRepoId = "7843148";
+var offlineImg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAUCAYAAAAN+ioeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjEuNWRHWFIAAAQxSURBVFhH3Zi5ThxBEIYHeAAgIYCIgASBTMqRIAQCxH3fJOQ8AeISMTeBJTIEC2gjLgkh4xfgjrE5BAGIY80RcJXnL22PemdrJGZHmMUt/arurt7q6m+KnrGNpqam5M7OTl9HR8eFacm0BKv0GWMyjP9K9d9zsgzzYH4cLpokJetWb6YuUlJoenqaTk9P6ezsjGZmZug8NZVeY2LYr1v7nBTTi4z29vaAKYomSYm6FSAfHh7SysoKvb6+0tvbG62trdHx8TGdpqXRS2ysBVhJn5NiepHR1tZG0SYpUbdCJS8vLzM81QBwdnaW/H6/BVRJQT7IzaXVri4xphcZra2tpIRDRsNYStStcF2gkhVgCO3p6Ynu7u6sOSikks12fX0txvQio6WlhZyEZA8ODkSfk6ampujq6oqt3rev29zcZN/Q0FCYT0rUrXAn47pA0yEC/v39vTUHyIHERLqLj7fW3NzciDG9yGhububDSRb32e7urqNfso2NjVRaWsp2cnKSLi8v2drXbWxssG9wcDAsjpSoW+HFhztZwUNDf25ujq8UBdnuR/sQ0ObnHTlJgZZ879HExATDhLX7FOiBgYEwn5SoW+HrAvnjTsZ1gUr2+Xx0cnJCvzIywq4LNMyhfQhoVB4OJ1kkGggEeHM0/KkDDCoUfVisw8sF6zAGVPhgddBq3fPzczAahYDW95USdSsAxNcF9sSdjOsClawgA/rP+nqxorkJMb3IaGhoIAgHVH01BuijoyPKy8uj7u5uBrO/v09jY2Pch8XahYUFur295bHyjY+Ph6wD7MfHR/7cQrylpSX29ff3h+0vJepW+BbWq1bJ6bpA0/tSTC8y6s2nisNJFqB3dnZ4XFdXR9vb2zynA8Q6CbS9v7i4SOfn59TT08Px1tfX2dfX1xe2r5SoWymwSgD8w7z//yQkhABV1wWaPi/F9CIGDYiSRTXjjlZjQAfo0dFRhgSL+fn5eQaNsQ5XX4eHAdAAi3g6aPu+UqJupf+LD/qdnh4k6FzFel+K6UVGbW0tH1CyAA24GAPcw8MDv8kBDmABD+v29vbYh/mRkREGCKuDHh4etn6DeHiA8PX29obtKyUaiRTkl7g4OszMDBJ0hqtXtxTPixh0TU0NH1BJjQFab1tbW1ReXk5VVVXcVw2VCoiAq4PW+9XV1bS6uhr8BfHLU4G27y8lGokURBSBDtrputD7UjwvMgAAB5VsUVERZWdnU05ODtuSkhLLX1xcbM0XFhZSfn4+P4DKykoqKChgizH6sPhdWVmZFQ/rlc++r5RoJOL/HAq291T0h4NWUkA+eywlGol0cE6gper+kO9oVXnRZKVEI5Fe0ddJScFeKGh9jd6X4nkRQAcqKir4gE76134p0a8uwzykHwfFSy5arJToVxdAJ5uH85m6wCGjQVKiX1mlw9+y/gK7pr3LgKUYRAAAAABJRU5ErkJggg==";
 
 (async function () {
     //Wait for the nav bar to appear
@@ -81,7 +82,7 @@ function getTravisStatus() {
     };
     function showError(err) {
         var notificationContent = "<div class=\"infoleft\">Failed to get data. You may be offline.</div>";
-        updateUI("images/build-unknown.png", "build-unknown", notificationContent, err);
+        updateUI(offlineImg, "build-unknown", notificationContent, err);
     }
     function updateUI(statusImage, notificationHeaderClassName, notificationHeaderContent, err) {
         if (err) { console.error(err); }
