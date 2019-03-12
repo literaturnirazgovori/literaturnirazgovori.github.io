@@ -58,7 +58,6 @@ function triggerRepublish() {
             publishingInProgress(true);
             var travisApiRequest = new XMLHttpRequest();
             var url = "https://api.travis-ci.com/repo/" + travisRepoId + "/requests";
-            /*
             travisApiRequest.open("POST", url);
             travisApiRequest.setRequestHeader("Travis-API-Version", "3");
             travisApiRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -68,7 +67,7 @@ function triggerRepublish() {
                     "message": travisTriggerPublishingMessage,
                     "branch": travisTriggerPublishingBranch
                 }
-            }));*/
+            }));
         }
     }
 }
