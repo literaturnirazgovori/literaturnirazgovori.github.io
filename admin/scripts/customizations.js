@@ -35,7 +35,7 @@ var travisTriggerPublishingMessage = "Manual build triggered by admin panel";
 
             var triggerBuildLi = document.createElement("li");
             triggerBuildLi.setAttribute("id", triggerBuildLiID);
-            triggerBuildLi.innerHTML = "<a href=\"#\" id=\"" + triggerBuildButtonID + "\"><img src='images/republish.png'/><span id=\"republishMsg\">Republish!</span></a>";
+            triggerBuildLi.innerHTML = "<a href=\"#\" id=\"" + triggerBuildButtonID + "\" title=\"Click to manually trigger a re-publishing/deployment of the site\"><img src='images/republish.png'/><span id=\"republishMsg\">Republish!</span></a>";
             navUL[0].appendChild(triggerBuildLi);
 
             var triggerBuildButton = document.getElementById(triggerBuildButtonID);
@@ -58,6 +58,7 @@ function triggerRepublish() {
             publishingInProgress(true);
             var travisApiRequest = new XMLHttpRequest();
             var url = "https://api.travis-ci.com/repo/" + travisRepoId + "/requests";
+            /*
             travisApiRequest.open("POST", url);
             travisApiRequest.setRequestHeader("Travis-API-Version", "3");
             travisApiRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
@@ -67,22 +68,26 @@ function triggerRepublish() {
                     "message": travisTriggerPublishingMessage,
                     "branch": travisTriggerPublishingBranch
                 }
-            }));
+            }));*/
         }
     }
 }
 
 function publishingInProgress(isInProgress) {
-    isPublishingInProgress = isInProgress;
-    var triggerBuildButton = document.getElementById(triggerBuildButtonID);
-    var republishMsg = document.getElementById("republishMsg");
-    if (isInProgress) {
-        triggerBuildButton.className = "publishingInProgress";
-        republishMsg.innerText = "Publishing in progress..."
-    }
-    else {
-        triggerBuildButton.className = "";
-        republishMsg.innerText = "Re-publish!"
+    if (isPublishingInProgress != isInProgress) {
+        isPublishingInProgress = isInProgress;
+        var triggerBuildButton = document.getElementById(triggerBuildButtonID);
+        var republishMsg = document.getElementById("republishMsg");
+        if (isInProgress) {
+            triggerBuildButton.className = "publishingInProgress";
+            republishMsg.innerText = "Publishing in progress..."
+            triggerBuildButton.title = "Site re-publishing/deployment is in progress. Please wait.";
+        }
+        else {
+            triggerBuildButton.className = "";
+            republishMsg.innerText = "Re-publish!"
+            triggerBuildButton.title = "Click to manually trigger a re-publishing/deployment of the site.";
+        }
     }
 }
 
