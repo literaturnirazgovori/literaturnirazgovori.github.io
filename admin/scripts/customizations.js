@@ -1,8 +1,13 @@
 var travisBuildStatusImageId = "travisBuildStatus";
+var triggerBuildLiID = "triggerBuildLi";
+var triggerBuildButtonID = "triggerBuildButton";
 var buildStatusNotificationElementId = "buildStatusNotificationElement";
 var travisCheckIntervalMSec = 7000;
 var travisRepoId = "7843148";
 var offlineImg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAUCAYAAAAN+ioeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjEuNWRHWFIAAAQxSURBVFhH3Zi5ThxBEIYHeAAgIYCIgASBTMqRIAQCxH3fJOQ8AeISMTeBJTIEC2gjLgkh4xfgjrE5BAGIY80RcJXnL22PemdrJGZHmMUt/arurt7q6m+KnrGNpqam5M7OTl9HR8eFacm0BKv0GWMyjP9K9d9zsgzzYH4cLpokJetWb6YuUlJoenqaTk9P6ezsjGZmZug8NZVeY2LYr1v7nBTTi4z29vaAKYomSYm6FSAfHh7SysoKvb6+0tvbG62trdHx8TGdpqXRS2ysBVhJn5NiepHR1tZG0SYpUbdCJS8vLzM81QBwdnaW/H6/BVRJQT7IzaXVri4xphcZra2tpIRDRsNYStStcF2gkhVgCO3p6Ynu7u6sOSikks12fX0txvQio6WlhZyEZA8ODkSfk6ampujq6oqt3rev29zcZN/Q0FCYT0rUrXAn47pA0yEC/v39vTUHyIHERLqLj7fW3NzciDG9yGhububDSRb32e7urqNfso2NjVRaWsp2cnKSLi8v2drXbWxssG9wcDAsjpSoW+HFhztZwUNDf25ujq8UBdnuR/sQ0ObnHTlJgZZ879HExATDhLX7FOiBgYEwn5SoW+HrAvnjTsZ1gUr2+Xx0cnJCvzIywq4LNMyhfQhoVB4OJ1kkGggEeHM0/KkDDCoUfVisw8sF6zAGVPhgddBq3fPzczAahYDW95USdSsAxNcF9sSdjOsClawgA/rP+nqxorkJMb3IaGhoIAgHVH01BuijoyPKy8uj7u5uBrO/v09jY2Pch8XahYUFur295bHyjY+Ph6wD7MfHR/7cQrylpSX29ff3h+0vJepW+BbWq1bJ6bpA0/tSTC8y6s2nisNJFqB3dnZ4XFdXR9vb2zynA8Q6CbS9v7i4SOfn59TT08Px1tfX2dfX1xe2r5SoWymwSgD8w7z//yQkhABV1wWaPi/F9CIGDYiSRTXjjlZjQAfo0dFRhgSL+fn5eQaNsQ5XX4eHAdAAi3g6aPu+UqJupf+LD/qdnh4k6FzFel+K6UVGbW0tH1CyAA24GAPcw8MDv8kBDmABD+v29vbYh/mRkREGCKuDHh4etn6DeHiA8PX29obtKyUaiRTkl7g4OszMDBJ0hqtXtxTPixh0TU0NH1BJjQFab1tbW1ReXk5VVVXcVw2VCoiAq4PW+9XV1bS6uhr8BfHLU4G27y8lGokURBSBDtrputD7UjwvMgAAB5VsUVERZWdnU05ODtuSkhLLX1xcbM0XFhZSfn4+P4DKykoqKChgizH6sPhdWVmZFQ/rlc++r5RoJOL/HAq291T0h4NWUkA+eywlGol0cE6gper+kO9oVXnRZKVEI5Fe0ddJScFeKGh9jd6X4nkRQAcqKir4gE76134p0a8uwzykHwfFSy5arJToVxdAJ5uH85m6wCGjQVKiX1mlw9+y/gK7pr3LgKUYRAAAAABJRU5ErkJggg==";
+var isPublishingInProgress = false;
+var travisTriggerPublishingBranch = "work";
+var travisTriggerPublishingMessage = "Manual build triggered by admin panel";
 
 (async function () {
     //Wait for the nav bar to appear
@@ -14,19 +19,27 @@ var offlineImg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAUCAYAAAAN
     var nav = document.getElementsByTagName("nav");
     var header = document.getElementsByTagName("header");
     if (nav.length > 0) {
-        var ul = nav[0].getElementsByTagName("ul");
-        if (ul.length > 0) {
-            var li = document.createElement("li");
-            li.setAttribute("style", "margin:auto");
+        var navUL = nav[0].getElementsByTagName("ul");
+        if (navUL.length > 0) {
+            var travisStatusLi = document.createElement("li");
+            travisStatusLi.setAttribute("style", "margin:auto");
             var a = document.createElement("a");
             a.setAttribute("href", "https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io");
             a.setAttribute("target", "_blank");
             var img = document.createElement("img");
             img.setAttribute("src", "https://travis-ci.com/literaturnirazgovori/literaturnirazgovori.github.io.svg?branch=work");
             img.setAttribute("id", travisBuildStatusImageId);
-            li.appendChild(a);
+            travisStatusLi.appendChild(a);
             a.appendChild(img);
-            ul[0].appendChild(li);
+            navUL[0].appendChild(travisStatusLi);
+
+            var triggerBuildLi = document.createElement("li");
+            triggerBuildLi.setAttribute("id", triggerBuildLiID);
+            triggerBuildLi.innerHTML = "<a href=\"#\" id=\"" + triggerBuildButtonID + "\"><img src='images/republish.png'/><span id=\"republishMsg\">Republish!</span></a>";
+            navUL[0].appendChild(triggerBuildLi);
+
+            var triggerBuildButton = document.getElementById(triggerBuildButtonID);
+            triggerBuildButton.addEventListener("click", triggerRepublish);
         }
     }
     if (header.length > 0) {
@@ -37,6 +50,41 @@ var offlineImg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAUCAYAAAAN
     }
     if ((nav.length > 0) && (header.length > 0)) { getTravisStatus(); }
 })();
+
+function triggerRepublish() {
+    if (!isPublishingInProgress) {
+        var doTrigger = confirm("This will trigger a re-publishing.\nContinue?");
+        if (doTrigger) {
+            publishingInProgress(true);
+            var travisApiRequest = new XMLHttpRequest();
+            var url = "https://api.travis-ci.com/repo/" + travisRepoId + "/requests";
+            travisApiRequest.open("POST", url);
+            travisApiRequest.setRequestHeader("Travis-API-Version", "3");
+            travisApiRequest.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            travisApiRequest.setRequestHeader("Authorization", "token y1piqC-JCM4woaM1h5imyQ");
+            travisApiRequest.send(JSON.stringify({
+                "request": {
+                    "message": travisTriggerPublishingMessage,
+                    "branch": travisTriggerPublishingBranch
+                }
+            }));
+        }
+    }
+}
+
+function publishingInProgress(isInProgress) {
+    isPublishingInProgress = isInProgress;
+    var triggerBuildButton = document.getElementById(triggerBuildButtonID);
+    var republishMsg = document.getElementById("republishMsg");
+    if (isInProgress) {
+        triggerBuildButton.className = "publishingInProgress";
+        republishMsg.innerText = "Publishing in progress..."
+    }
+    else {
+        triggerBuildButton.className = "";
+        republishMsg.innerText = "Re-publish!"
+    }
+}
 
 function getTravisStatus() {
     var travisBuildStatusImg = document.getElementById(travisBuildStatusImageId);
@@ -57,6 +105,7 @@ function getTravisStatus() {
                     var commitMessage = buildInfo.commit.message;
                     var finishedAt = buildInfo.finished_at;
                     var state = buildInfo.state;
+                    publishingInProgress((state == "created") || (state == "started"));
                     var createdBy = buildInfo.created_by.login;
                     console.log("Build \"" + commitMessage + "\", State: " + state + ". Finished: " + finishedAt);
                     var statusImage = "images/build-" + state + ".png";
