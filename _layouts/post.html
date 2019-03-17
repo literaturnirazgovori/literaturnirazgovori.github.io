@@ -20,6 +20,14 @@ comments: true
 
         <!-- Post -->
         {% assign author = site.authors[page.author] %}
+        {% assign authorDisplayName = author.display_name %}
+        {% if page.author %}
+            {% assign pageauthorlowercase = page.author|downcase %}
+            {% if pageauthorlowercase == "guest" and page.guestauthorname %}
+                {% assign authorDisplayName = page.guestauthorname %}
+            {% endif %}
+        {% endif %}
+
 
         <div class="col-md-9 flex-first flex-md-unordered">
             <div class="mainheading">
@@ -40,15 +48,31 @@ comments: true
                 -->
                 <!-- Post Title -->
                 <h1 class="posttitle">{{ page.title }}</h1>
-                <h2 class="postsubtitle">{{ page.subtitle }}</h2>
+
+
+                <!--================================-->
+                {% assign guestimgdisplay="style='display:none;'" %}
+                {% if page.guestauthorimage %}
+                    {% assign guestimgdisplay="" %}
+                {% endif %}
+                <div id="subtitlecontainer">
+                    <div id="subtitleimagecontainer" {{guestimgdisplay}}>
+                        <a href="{{page.guestauthorimage}}" title="{{ authorDisplayName }}" data-lightbox="image-1">
+                        <img src="{{page.guestauthorimage}}" alt="{{ authorDisplayName }}">
+                    </a>
+                    </div>
+                    <div id="subtitletextcontainer">
+                        <h2 class="postsubtitle">{{ page.subtitle }}</h2>
+                    </div>
+                </div>            
+                <!--================================-->
+                
+                
+                
                 <div id="postviewscontainer-mobile" class="postviews"><span id="postViews-mobile"></span></div>
             </div>
             <div class="postinfo">
-                {% if page.author %}
-                <!--<img class="author-thumb" src="{{ author.photo }}" alt="{{ author.display_name }}">-->
-                {{ author.display_name }},
-                {% endif %}
-
+                    {{ authorDisplayName }},
                 <small>
                     <span class="post-date"><time class="post-date">
                             {% assign m = page.date | date: "%-m" %}
