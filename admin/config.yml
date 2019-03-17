@@ -26,6 +26,14 @@ collections:
         options:
           - { label: "Антония", value: "Antonia" }
           - { label: "Гост-автор", value: "Guest" }
+      - { label: "Guest author name", name: "guestauthorname", widget: "string", required: false }
+      - label: "Guest author photo"
+        name: "guestauthorimage"
+        widget: "image"
+        required: false
+        media_library:
+          config:
+            multiple: false     
       - label: "Featured Image"
         name: "image"
         widget: "image"

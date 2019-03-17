@@ -268,7 +268,20 @@ ul.tags li a:hover {
     bottom: 0;
 }
 
+/*------- Post subtitle area -----------*/
+#subtitlecontainer {
+    display: flex;
+}
 
+#subtitleimagecontainer {
+    float: left;
+    padding-right: 15px;
+    flex: none;
+}
+#subtitleimagecontainer img
+{ 
+    width: 100px;
+}
 
 /*------- 404 not found -------*/
 
