@@ -1,4 +1,12 @@
 {% assign author = site.authors[post.author] %}
+{% assign authorDisplayName = author.display_name %}
+{% if post.author %}
+{% assign pageauthorlowercase = post.author|downcase %}
+{% if pageauthorlowercase == "guest" and post.guestauthorname %}
+{% assign authorDisplayName = post.guestauthorname %}
+{% endif %}
+{% endif %}
+
 {% if post.image %}
 {% assign image = post.image %}
 {% if image contains "://" %}
@@ -29,9 +37,7 @@
                     </span></div>
             </div>
             <div class="postlistitem-bottominfo">
-                {% if post.author %}
-                {% endif %}
-                {{ author.display_name }}
+                {{ authorDisplayName }}
 
                 <span class="post-date">
                     {% assign m = post.date | date: "%-m" %}
