@@ -1,7 +1,9 @@
 backend:
   name: github
   repo: literaturnirazgovori/literaturnirazgovori.github.io # Path to your Github repository
+  # repo: literaturnirazgovori/jekyllscriptstest
   branch: work # Branch to update
+  # branch: master
   base_url: https://warm-woodland-78106.herokuapp.com
 
 # publish_mode: editorial_workflow
@@ -63,3 +65,4 @@ collections:
         dateFormat: "YYYY-MM-DD"
         timeFormat: "HH:mm"
         required: false
+      - { label: "Redirect from", name: "redirect_from", widget: "list" }
