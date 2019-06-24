@@ -65,4 +65,4 @@ collections:
         dateFormat: "YYYY-MM-DD"
         timeFormat: "HH:mm"
         required: false
-      - { label: "Redirect from", name: "redirect_from", widget: "list" }
+      - { label: "Redirect from", name: "redirect_from", widget: "list", required: false }
