@@ -1,0 +1,34 @@
+---
+label: Post
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: boolean
+  name: hidden
+  label: hidden
+- type: text
+  name: title
+  label: title
+- type: textarea
+  name: subtitle
+  label: subtitle
+- type: text
+  name: author
+  label: author
+- type: file
+  name: image
+  label: image
+- type: text
+  name: category
+  label: category
+- type: list
+  name: tags
+  label: tags
+- type: text
+  name: schedule
+  label: schedule
+- type: textarea
+  name: redirect_from
+  label: redirect_from
