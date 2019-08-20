@@ -51,16 +51,16 @@ comments: true
 
 
                 <!--================================-->
-                {% assign guestimgdisplay="style='display:none;'" %}
-                {% if page.guestauthorimage %}
-                    {% assign guestimgdisplay="" %}
-                {% endif %}
                 <div id="subtitlecontainer">
+                    
+                    {% if page.guestauthorimage %}
                     <div id="subtitleimagecontainer" {{guestimgdisplay}}>
                         <a href="{{page.guestauthorimage}}" title="{{ authorDisplayName }}" data-lightbox="image-1">
                         <img src="{{page.guestauthorimage}}" alt="{{ authorDisplayName }}">
                     </a>
                     </div>
+                    {% endif %}
+
                     <div id="subtitletextcontainer">
                         <h2 class="postsubtitle">{{ page.subtitle }}</h2>
                     </div>
@@ -96,10 +96,8 @@ comments: true
             <!-- Post Featured Image -->
             {% if page.image %}
 
-            <a href="{% if page.image contains " ://" %}{{page.image }}{% else %}{{ page.image | absolute_url }}{%
-                endif %}" data-lightbox="image-1">
-                <img class="featured-image img-fluid post-image" src="{% if page.image contains " ://" %}{{page.image
-                    }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt="{{ page.title }}">
+            <a href="{% if page.image contains " ://" %}{{page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" data-lightbox="image-1" title='{{ page.title }}'>
+                <img class="featured-image img-fluid post-image" src="{% if page.image contains " ://" %}{{page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt='{{ page.title }}'>
             </a>
 
             {% endif %}
