@@ -59,8 +59,13 @@
   <link href="/assets/css/main.css" rel="stylesheet" />
   <link href="/assets/css/lightbox.min.css" rel="stylesheet" />
   <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+  <!--<script src="/assets/js/lightbox-plus-jquery.min.js"></script>-->
 
+  <script>
+    $(function() {
+      $('.article-post img').wrap(function(index) { return '<a href="'+$(this).attr('src')+'" data-lightbox="image-1"></a>'; });
+    });
+  </script>
 </head>
 
 
@@ -280,14 +285,10 @@
 
 
                 <!--================================-->
-                
-                
                 <div id="subtitlecontainer">
-                    <div id="subtitleimagecontainer" style='display:none;'>
-                        <a href="" title="Антония Апостолова" data-lightbox="image-1">
-                        <img src="" alt="Антония Апостолова">
-                    </a>
-                    </div>
+                    
+                    
+
                     <div id="subtitletextcontainer">
                         <h2 class="postsubtitle">Ракът е една от реалностите на XXI век, но въпреки това "има толкова възможности за оцеляване", обнадеждава всички тях тази книга. Силно, силно я препоръчвам, защото освен тежка, тя е и безкрайно жизнеутвърждаваща</h2>
                     </div>
@@ -320,8 +321,8 @@
             <!-- Post Featured Image -->
             
 
-            <a href="/Uploads/godinatanaosemtehimii.jpg" data-lightbox="image-1">
-                <img class="featured-image img-fluid post-image" src="/Uploads/godinatanaosemtehimii.jpg" alt="Рецензия: Петя Накова, "Годината на осемте химии"">
+            <a href="/Uploads/godinatanaosemtehimii.jpg" data-lightbox="image-1" title='Рецензия: Петя Накова, "Годината на осемте химии"'>
+                <img class="featured-image img-fluid post-image" src="/Uploads/godinatanaosemtehimii.jpg" alt='Рецензия: Петя Накова, "Годината на осемте химии"'>
             </a>
 
             

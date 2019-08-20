@@ -59,8 +59,13 @@
   <link href="/assets/css/main.css" rel="stylesheet" />
   <link href="/assets/css/lightbox.min.css" rel="stylesheet" />
   <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+  <!--<script src="/assets/js/lightbox-plus-jquery.min.js"></script>-->
 
+  <script>
+    $(function() {
+      $('.article-post img').wrap(function(index) { return '<a href="'+$(this).attr('src')+'" data-lightbox="image-1"></a>'; });
+    });
+  </script>
 </head>
 
 
@@ -280,14 +285,16 @@
 
 
                 <!--================================-->
-                
-                
                 <div id="subtitlecontainer">
+                    
+                    
                     <div id="subtitleimagecontainer" >
                         <a href="/Uploads/silvianedkova.jpg" title="Силвия Недкова" data-lightbox="image-1">
                         <img src="/Uploads/silvianedkova.jpg" alt="Силвия Недкова">
                     </a>
                     </div>
+                    
+
                     <div id="subtitletextcontainer">
                         <h2 class="postsubtitle">Романът на Добри Божилов би трябвало да се приема така, както приемаме „Айвънхоу“ и Робин Худ – като художествена измислица, която има за цел да ни забавлява (на места до спонтанен смях), а не да ни образова</h2>
                     </div>
@@ -320,8 +327,8 @@
             <!-- Post Featured Image -->
             
 
-            <a href="/Uploads/zadrugata.jpg" data-lightbox="image-1">
-                <img class="featured-image img-fluid post-image" src="/Uploads/zadrugata.jpg" alt="Силвия Недкова за "Задругата": Българският приключенски роман се завръща">
+            <a href="/Uploads/zadrugata.jpg" data-lightbox="image-1" title='Силвия Недкова за "Задругата": Българският приключенски роман се завръща'>
+                <img class="featured-image img-fluid post-image" src="/Uploads/zadrugata.jpg" alt='Силвия Недкова за "Задругата": Българският приключенски роман се завръща'>
             </a>
 
             

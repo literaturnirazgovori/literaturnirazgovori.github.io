@@ -59,8 +59,13 @@
   <link href="/assets/css/main.css" rel="stylesheet" />
   <link href="/assets/css/lightbox.min.css" rel="stylesheet" />
   <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+  <!--<script src="/assets/js/lightbox-plus-jquery.min.js"></script>-->
 
+  <script>
+    $(function() {
+      $('.article-post img').wrap(function(index) { return '<a href="'+$(this).attr('src')+'" data-lightbox="image-1"></a>'; });
+    });
+  </script>
 </head>
 
 
@@ -280,14 +285,10 @@
 
 
                 <!--================================-->
-                
-                
                 <div id="subtitlecontainer">
-                    <div id="subtitleimagecontainer" style='display:none;'>
-                        <a href="" title="Антония Апостолова" data-lightbox="image-1">
-                        <img src="" alt="Антония Апостолова">
-                    </a>
-                    </div>
+                    
+                    
+
                     <div id="subtitletextcontainer">
                         <h2 class="postsubtitle">Романът изцяло излиза от жанровите стандарти, за да се превърне сам в едно пътуване, което разказва за пътуването. В една инвентаризация на пътешествието, от една страна, и от друга - на човешкото тяло - този съвършено опакован багаж, с който сме снабдени за пътуването си през живота</h2>
                     </div>
@@ -320,8 +321,8 @@
             <!-- Post Featured Image -->
             
 
-            <a href="/Uploads/beguni.jpg" data-lightbox="image-1">
-                <img class="featured-image img-fluid post-image" src="/Uploads/beguni.jpg" alt="Рецензия: "Бегуни" на Олга Токарчук и всепроникващата метафора на пътуването">
+            <a href="/Uploads/beguni.jpg" data-lightbox="image-1" title='Рецензия: "Бегуни" на Олга Токарчук и всепроникващата метафора на пътуването'>
+                <img class="featured-image img-fluid post-image" src="/Uploads/beguni.jpg" alt='Рецензия: "Бегуни" на Олга Токарчук и всепроникващата метафора на пътуването'>
             </a>
 
             

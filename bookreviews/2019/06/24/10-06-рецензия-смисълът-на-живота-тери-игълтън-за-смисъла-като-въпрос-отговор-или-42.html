@@ -59,8 +59,13 @@
   <link href="/assets/css/main.css" rel="stylesheet" />
   <link href="/assets/css/lightbox.min.css" rel="stylesheet" />
   <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+  <!--<script src="/assets/js/lightbox-plus-jquery.min.js"></script>-->
 
+  <script>
+    $(function() {
+      $('.article-post img').wrap(function(index) { return '<a href="'+$(this).attr('src')+'" data-lightbox="image-1"></a>'; });
+    });
+  </script>
 </head>
 
 
@@ -280,14 +285,16 @@
 
 
                 <!--================================-->
-                
-                
                 <div id="subtitlecontainer">
+                    
+                    
                     <div id="subtitleimagecontainer" >
                         <a href="/Uploads/cvetelinamareva.jpg" title="Цветелина Марева" data-lightbox="image-1">
                         <img src="/Uploads/cvetelinamareva.jpg" alt="Цветелина Марева">
                     </a>
                     </div>
+                    
+
                     <div id="subtitletextcontainer">
                         <h2 class="postsubtitle">Игълтън проследява как "големият въпрос" е тревожел умовете ни в исторически план, като разглежда края на викторианската епоха, противопоставена на модернизма и постмодернизма. За целта разсъждава как трите основни стожера на смисъла - религия, култура и сексуалност - постепенно са променяли ролята и значението си, отваряйки място за ерзац и фалшиви ценности</h2>
                     </div>
@@ -320,8 +327,8 @@
             <!-- Post Featured Image -->
             
 
-            <a href="/Uploads/smisylytnajivota.jpg" data-lightbox="image-1">
-                <img class="featured-image img-fluid post-image" src="/Uploads/smisylytnajivota.jpg" alt="Рецензия: "Смисълът на живота", Тери Игълтън - за смисъла като въпрос, отговор или 42">
+            <a href="/Uploads/smisylytnajivota.jpg" data-lightbox="image-1" title='Рецензия: "Смисълът на живота", Тери Игълтън - за смисъла като въпрос, отговор или 42'>
+                <img class="featured-image img-fluid post-image" src="/Uploads/smisylytnajivota.jpg" alt='Рецензия: "Смисълът на живота", Тери Игълтън - за смисъла като въпрос, отговор или 42'>
             </a>
 
             

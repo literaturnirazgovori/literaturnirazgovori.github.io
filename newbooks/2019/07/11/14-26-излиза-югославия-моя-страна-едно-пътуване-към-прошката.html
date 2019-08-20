@@ -59,8 +59,13 @@
   <link href="/assets/css/main.css" rel="stylesheet" />
   <link href="/assets/css/lightbox.min.css" rel="stylesheet" />
   <script src="/assets/js/lightbox.min.js"></script>
-  <script src="/assets/js/lightbox-plus-jquery.min.js"></script>
+  <!--<script src="/assets/js/lightbox-plus-jquery.min.js"></script>-->
 
+  <script>
+    $(function() {
+      $('.article-post img').wrap(function(index) { return '<a href="'+$(this).attr('src')+'" data-lightbox="image-1"></a>'; });
+    });
+  </script>
 </head>
 
 
@@ -280,14 +285,10 @@
 
 
                 <!--================================-->
-                
-                
                 <div id="subtitlecontainer">
-                    <div id="subtitleimagecontainer" style='display:none;'>
-                        <a href="" title="Антония Апостолова" data-lightbox="image-1">
-                        <img src="" alt="Антония Апостолова">
-                    </a>
-                    </div>
+                    
+                    
+
                     <div id="subtitletextcontainer">
                         <h2 class="postsubtitle">Авторът Горан Войнович е словенски режисьор, сценарист, колумнист, поет и писател. С романа си надминава всички очаквания на читатели и критици, и си спечелва място сред най-интересните млади словенски писатели</h2>
                     </div>
@@ -320,8 +321,8 @@
             <!-- Post Featured Image -->
             
 
-            <a href="/Uploads/yugoslavia-cover.jpg" data-lightbox="image-1">
-                <img class="featured-image img-fluid post-image" src="/Uploads/yugoslavia-cover.jpg" alt="Излиза "Югославия, моя страна" - едно пътуване към прошката">
+            <a href="/Uploads/yugoslavia-cover.jpg" data-lightbox="image-1" title='Излиза "Югославия, моя страна" - едно пътуване към прошката'>
+                <img class="featured-image img-fluid post-image" src="/Uploads/yugoslavia-cover.jpg" alt='Излиза "Югославия, моя страна" - едно пътуване към прошката'>
             </a>
 
             
