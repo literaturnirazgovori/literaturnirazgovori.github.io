@@ -114,7 +114,7 @@
     }
 }
 
-.postlistitemimage.bookreviews, .postlistitemimage.newbooks{
+.postlistitemimage.bookreviews, .postlistitemimage.newbooks, .postlistitemimage.mybooks{
     filter: none;
 }
 
