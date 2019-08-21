@@ -78,10 +78,11 @@
       <img src="/assets/images/logo-book.png" alt="Литературни разговори" />
     </a>
 
+    
     <form id="mobilesearchbar" action="/search">
-      <input type="text" class="searchinput" name="search"></input>
+      <input type="text" class="searchinput" name="search" />
     </form>
-
+    
     <!-- End Logo -->
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
@@ -100,6 +101,15 @@
           <!-- UNHIDE THE CMS -->
           <a class="nav-link" href="/"><strong>Н</strong>ачало</a>
         </li>
+
+        <!--==================================-->
+        </li>
+
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/category/mybooks"><strong>М</strong>оите книги</a>
+        </li>
+        <!--==================================-->
 
         <!--==================================-->
         </li>
@@ -150,17 +160,17 @@
         </li>
         ==================================-->
 
+        <!--
         </li>
 
         <li class="nav-item">
           
           <a class="nav-link" href="/about"><strong>З</strong>а мен</a>
         </li>
+        -->
 
         <li id="menubarsearch">
-          <form action="/search">
-            <input type="text" class="searchinput" name="search"></input>
-          </form>
+            <img src="/assets/images/search-glass.png" alt="Търсене">
         </li>
 
         <li class="nav-item">
@@ -190,6 +200,21 @@
             </a></div>
         </span></span>
     </div>
+
+<!--=========== Search ===========-->
+
+
+<form action="/search">
+  <div id="search-wrapper" class="">
+  <div id="searchbox-container" class="container">
+    <span id="search-label">Търсене:</span>
+      <input id="search-text" type="text" name="search" placeholder="Търси...">
+      <span id="search-close">X</span>
+  </div>
+</div>
+</form>
+<!--=========== Search ===========-->
+
     <!--
     <div class="mainheading">
       <h1 class="sitetitle"><a class="nav-link" href="">Литературни разговори</a></h1>
@@ -210,8 +235,18 @@
     <div class="main-content">
       
 
-<!-- Featured
-================================================== -->
+<!-- Featured ================================================== -->
+
+<!--=========== Banner ===========-->
+<a href="/category/mybooks">
+<div class="homepage-banner" style="background-image: url('/assets/images/dead-sea-book-banner.png');">
+    <div>
+        Новата ми книга
+    </div>
+</div>
+</a>
+<!--=========== Banner ===========-->
+
 <section class="featured-posts">
   <!--
     <div class="section-title">

@@ -49,6 +49,7 @@ collections:
         widget: "select"
         default: "interviews"
         options:
+          - { label: "Моите книги", value: "mybooks" }
           - { label: "Разговори", value: "talks" }
           # - { label: "Разговори", value: "interviews" }
           - { label: "Рецензии", value: "bookreviews" }

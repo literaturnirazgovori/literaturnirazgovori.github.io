@@ -78,10 +78,7 @@
       <img src="/assets/images/logo-book.png" alt="Литературни разговори" />
     </a>
 
-    <form id="mobilesearchbar" action="/search">
-      <input type="text" class="searchinput" name="search"></input>
-    </form>
-
+    
     <!-- End Logo -->
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
@@ -102,6 +99,15 @@
           <!-- UNHIDE THE CMS -->
           <a class="nav-link" href="/"><strong>Н</strong>ачало</a>
         </li>
+
+        <!--==================================-->
+        </li>
+
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/category/mybooks"><strong>М</strong>оите книги</a>
+        </li>
+        <!--==================================-->
 
         <!--==================================-->
         </li>
@@ -152,17 +158,17 @@
         </li>
         ==================================-->
 
+        <!--
         </li>
 
         <li class="nav-item">
           
           <a class="nav-link" href="/about"><strong>З</strong>а мен</a>
         </li>
+        -->
 
         <li id="menubarsearch">
-          <form action="/search">
-            <input type="text" class="searchinput" name="search"></input>
-          </form>
+            <img src="/assets/images/search-glass.png" alt="Търсене">
         </li>
 
         <li class="nav-item">
@@ -192,6 +198,21 @@
             </a></div>
         </span></span>
     </div>
+
+<!--=========== Search ===========-->
+
+
+<form action="/search">
+  <div id="search-wrapper" class="search-visible">
+  <div id="searchbox-container" class="container">
+    <span id="search-label">Търсене:</span>
+      <input id="search-text" type="text" name="search" placeholder="Търси...">
+      <span id="search-close">X</span>
+  </div>
+</div>
+</form>
+<!--=========== Search ===========-->
+
     <!--
     <div class="mainheading">
       <h1 class="sitetitle"><a class="nav-link" href="">Литературни разговори</a></h1>
@@ -271,17 +292,17 @@
         }
 
         function bodyloaded() {
-            var searchbox = document.getElementById("search-input");
+            var searchbox = document.getElementById("search-text");
             searchbox.value = getUrlParameter("search");
 
             var sjs = new SimpleJekyllSearch({
-                searchInput: document.getElementById('search-input'),
+                searchInput: document.getElementById('search-text'),
                 resultsContainer: document.getElementById('results-container'),
                 json: '/search.json'
             });
 
             window.simpleJekyllSearch = new SimpleJekyllSearch({
-                searchInput: document.getElementById('search-input'),
+                searchInput: document.getElementById('search-text'),
                 resultsContainer: document.getElementById('results-container'),
                 json: '/search.json',
                 searchResultTemplate: itemTemplate,
@@ -290,27 +311,32 @@
                 fuzzy: false
             });
             setTimeout(() => {
-                window.simpleJekyllSearch.search(getUrlParameter("search"))
-            }, 1000);
-        }
-
-        //update the url query string, so that searches can be copied by addres.
-        function newsearch() {
-            window.history.replaceState({}, "ttt", window.location.pathname + "?search=" + $("#search-input").get(0).value);
+                window.simpleJekyllSearch.search(getUrlParameter("search"));
+                $("#search-text").focus();
+            }, 500);
         }
     </script>
 </head>
 
 <body onload="bodyloaded()">
-
+   <!--
+        <div id="search-wrapper" class="search-visible">
+                <div id="searchbox-container" class="container">
+                  <span id="search-label">Търсене:</span>
+                    <input id="search-text" type="text" name="search" onkeyup="newsearch()">
+                    <span id="search-close" style="visibility: hidden;">X</span>
+                </div>
+              </div>
+ 
     <div class="section-title">
         <label style="float: left; margin-right:15PX;">
             <h2 style="margin-bottom:0;">Търсене:</h2>
         </label>
         <span style="display: block; overflow: hidden; border: 0;">
-            <input type="text" id="search-input" placeholder="Търси..." style="width: 100%;font-family: B52;" onkeyup="newsearch()" />
+            <input type="text" id="search-text" placeholder="Търси..." style="width: 100%;font-family: B52;" onkeyup="newsearch()" />
         </span>
     </div>
+-->
 
     <div id="search-container">
         <div class="categorylist">
