@@ -1,5 +1,39 @@
 jQuery(document).ready(function($){
 
+  //---- search bar ---------
+  $("#menubarsearch").click(function (){
+    if(window.location.pathname.indexOf("/search") < 0)
+    {
+      if($("#search-wrapper").is(":visible"))
+      {
+        hideSearch();
+      }
+      else
+      {
+        showSearch();
+      }
+    }
+  });
+  $("#search-close").click(function (){
+    hideSearch();
+  });
+
+  $("#search-text").on('keydown', function(event) {
+    if (event.key == "Escape") {
+      hideSearch();
+    }
+  });
+
+  $("#search-text").on('keyup', function(event) {
+      if(window.location.pathname.indexOf("/search") >= 0)
+      {
+        window.history.replaceState({}, "ttt", window.location.pathname + "?search=" + $("#search-text").get(0).value);
+      }
+  });
+
+  
+  //---- search bar ---------
+
     var offset = 1250; 
     var duration = 800; 
     jQuery(window).scroll(function() { 
@@ -110,7 +144,19 @@ jQuery(document).ready(function($){
     
     
     $('.site-content').css('margin-top', $('header').outerHeight() + 'px');
-
-
-
 });
+
+function hideSearch()
+{
+  if(window.location.pathname.indexOf("/search") < 0)
+  {
+    $('#search-wrapper').animate({ height: 0}, 400, function() { $('#search-wrapper').css("display", "none" ); });
+    $("#search-text").val("");
+  }
+}
+
+function showSearch()
+{
+  $("#search-wrapper").css('display', 'flex');
+  $('#search-wrapper').animate({ height: 60}, 400, function() { $("#search-text").focus(); });
+}

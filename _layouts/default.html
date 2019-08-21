@@ -100,10 +100,11 @@ page.layout
       <img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" />
     </a>
 
+    {% unless page.url contains "/search" %}
     <form id="mobilesearchbar" action="/search">
-      <input type="text" class="searchinput" name="search"></input>
+      <input type="text" class="searchinput" name="search" />
     </form>
-
+    {% endunless %}
     <!-- End Logo -->
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
@@ -125,6 +126,16 @@ page.layout
           <!-- UNHIDE THE CMS -->
           <a class="nav-link" href="{{ site.baseurl }}/"><strong>Н</strong>ачало</a>
         </li>
+
+        <!--==================================-->
+        {% if page.url contains "/category/mybooks" or pagecategory=="mybooks" %}
+        <li class="nav-item active">{% else %}</li>
+
+        <li class="nav-item">
+          {% endif %}
+          <a class="nav-link" href="{{ site.baseurl }}/category/mybooks"><strong>М</strong>оите книги</a>
+        </li>
+        <!--==================================-->
 
         <!--==================================-->
         {% if page.url contains "/category/talks" or pagecategory=="talks" %}
@@ -181,6 +192,7 @@ page.layout
         </li>
         ==================================-->
 
+        <!--
         {% if page.url == "/about.html" %}
         <li class="nav-item active">{% else %}</li>
 
@@ -188,11 +200,10 @@ page.layout
           {% endif %}
           <a class="nav-link" href="{{ site.baseurl }}/about"><strong>З</strong>а мен</a>
         </li>
+        -->
 
         <li id="menubarsearch">
-          <form action="/search">
-            <input type="text" class="searchinput" name="search"></input>
-          </form>
+            <img src="/assets/images/search-glass.png" alt="Търсене">
         </li>
 
         <li class="nav-item">
@@ -222,6 +233,23 @@ page.layout
             </a>{% endif %}</div>
         </span></span>
     </div>
+
+<!--=========== Search ===========-->
+{% assign searchVisibleClass="" %}
+{% if page.url contains "/search" %}
+  {% assign searchVisibleClass="search-visible" %}
+{% endif %}
+<form action="/search">
+  <div id="search-wrapper" class="{{searchVisibleClass}}">
+  <div id="searchbox-container" class="container">
+    <span id="search-label">Търсене:</span>
+      <input id="search-text" type="text" name="search" placeholder="Търси...">
+      <span id="search-close">X</span>
+  </div>
+</div>
+</form>
+<!--=========== Search ===========-->
+
     <!--
     <div class="mainheading">
       <h1 class="sitetitle"><a class="nav-link" href="{{ site.baseurl }}">{{ site.name }}</a></h1>

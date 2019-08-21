@@ -23,6 +23,31 @@
     font-style: normal;
 }
 
+/*------- Homepage banner ----- */
+.homepage-banner
+{
+    height: 100px; 
+    font-family: B52; 
+    font-weight: bold; 
+    font-size: 45pt;
+    border: 1px solid lightgray; 
+    display: flex; 
+    justify-content: center;
+    text-align: center;
+}
+@media (max-width:768px) {
+    .homepage-banner
+    {
+        font-size: 30pt;
+    }
+}
+
+.homepage-banner div
+{
+    width:100%; 
+    margin: auto;
+}
+
 /*------- Category pages -------*/
 
 .postlistitem{
@@ -301,6 +326,61 @@ ul.tags li a:hover {
 .navbar-container{
     position:relative;
 }
+
+#menubarsearch
+{
+  cursor:pointer;
+}
+#search-wrapper
+{
+  background-color: lightgray;
+  height: 0px;
+  /*transition: all 0.4s;*/
+  display: none;
+  margin-bottom: 20px;
+}
+#search-wrapper.search-visible
+{
+    height: 60px;
+    display: flex;
+}
+#search-wrapper.search-visible * #search-close
+{
+    visibility: hidden;
+}
+
+#searchbox-container
+{
+  justify-content: center;
+  margin: auto;
+  display:flex;
+  justify-content: center;
+}
+#search-label
+{
+  margin:auto;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+#searchbox-container input
+{
+    flex-grow: 100;
+    height: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(0,0,0,0.2);
+    font-family: B52;
+    margin: auto 10px;
+    outline: none;
+}
+#search-close
+{
+  display: inline-block;
+  margin: auto;
+  cursor: pointer;
+}
+
 
 .searchinput {
     background-size: 15px;
