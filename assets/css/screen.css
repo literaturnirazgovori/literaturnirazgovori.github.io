@@ -257,20 +257,6 @@ span.site-tag {
     font-family: "nicebgfontsemilight";
 }
 
-/*
-ul.tags li a {
-    background:rgba(0,0,0,.05);
-    color:rgba(0,0,0,.6);
-    border-radius:3px;
-    padding:5px 10px;
-}
-ul.tags li a:hover {
-    background:rgba(0,0,0,.07);
-    text-decoration:none;
-}
-*/
-
-
 .postlistitem-infocontainer
 {
     position:relative;
@@ -280,8 +266,6 @@ ul.tags li a:hover {
 {
     width:20px;
     height:20px;
-    /*float:left;
-    margin-right:13px;*/
     border-radius:100%;
 }
 
@@ -335,7 +319,6 @@ ul.tags li a:hover {
 {
   background-color: lightgray;
   height: 0px;
-  /*transition: all 0.4s;*/
   display: none;
   margin-bottom: 20px;
 }
@@ -386,9 +369,7 @@ ul.tags li a:hover {
     background-size: 15px;
     background-color: rgba(0,0,0,0.05);
     border-radius: 20px;
-    /* position: absolute; */
     height: 30px;
-    /* left: 70px; */
     background-image: url(/assets/images/search-glass.png);
     background-repeat: no-repeat;
     background-position-y: 6px;
@@ -433,17 +414,6 @@ ul.tags li a:hover {
     }
 }
 
-/*
-#searchinput:focus{
-    width:90%;
-    background-image: url("/assets/images/search-glass-inverted.png");
-    background-color: black;
-}
-
-.navbarlist{
-    padding-left: 30px;
-}
-*/
 /*-------------------*/
 
 #postviewscontainer-mobile {
@@ -650,18 +620,12 @@ a {
     max-width: 250px;
     float: right;
     margin: 0px 0px 20px 40px !important;
-    /*
-    -webkit-filter: grayscale(100%); 
-    filter: grayscale(100%);    
-    */
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-    /**/
     color: rgba(0,0,0,.5);
 }
 .navbar-light .navbar-nav .nav-link {
-    /**/
     color: rgba(0,0,0,.9);
 }
 
@@ -720,8 +684,6 @@ a {
  .author-thumb {
      width:30px;
      height:30px;
-     /*float:left;
-     margin-right:13px;*/
      border-radius:100%;
 }
  .post-top-meta {
@@ -832,7 +794,6 @@ a {
     color: #6b6b47;
     font-family: "nicebgfontsemilight";
     font-style: italic;
-    /* font-style: italic; */
 }
 .postinfo {
     border-top: 1px solid #D3D3D3;
@@ -869,10 +830,6 @@ a {
      color:rgba(0,0,0,.8);
 }
  .article-post {
-    /* 
-    font-family: "nicebgfontsemilight";
-     font-size:1.1rem;
-     */
      font: 17px/1.42 nicebgfontsemilight,Arial,sans-serif;
      line-height:1.84;
      color:rgba(0,0,0,.8);
@@ -1105,8 +1062,6 @@ a {
  .post-top-meta.authorpage .author-thumb {
     width: 30px;
     height: 30px;
-    /* float: left; */
-    /* margin-right: 13px; */
     border-radius: 100%;
 }
  .authorpage .author-description {

@@ -43,20 +43,33 @@ collections:
           config:
             multiple: true
       - { label: "Body", name: "body", widget: "markdown" }
-      # - { label: "Body", name: "body", widget: "string" }
       - label: "Category"
         name: "category"
         widget: "select"
         default: "interviews"
+        required: true
         options:
           - { label: "Моите книги", value: "mybooks" }
           - { label: "Разговори", value: "talks" }
-          # - { label: "Разговори", value: "interviews" }
           - { label: "Рецензии", value: "bookreviews" }
           - { label: "Интервюта", value: "interviews" }
           - { label: "Преводна поезия", value: "translations" }
           - { label: "Нови книги", value: "newbooks" }
           - { label: "Новини и събития", value: "newsevents" }
+      - label: "Secondary category"
+        name: "category2"
+        widget: "select"
+        default: ""
+        required: false
+        options:
+          - { label: "<none>", value: "" }
+          - { label: "Моите книги", value: "mybooks" }
+          - { label: "Разговори", value: "talks" }
+          - { label: "Рецензии", value: "bookreviews" }
+          - { label: "Интервюта", value: "interviews" }
+          - { label: "Преводна поезия", value: "translations" }
+          - { label: "Нови книги", value: "newbooks" }
+          - { label: "Новини и събития", value: "newsevents" }          
       - {label: "Tags", name: "tags", widget: "list"}   
       - label: "Schedule publish at"
         name: "schedule"
