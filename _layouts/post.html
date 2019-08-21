@@ -31,24 +31,8 @@ comments: true
 
         <div class="col-md-9 flex-first flex-md-unordered">
             <div class="mainheading">
-
-                <!-- Author Box 
-                {% if page.author %}
-                <div class="row post-top-meta">
-                    <div class="col-md-2">
-                        <img class="author-thumb" src="{{ author.photo }}" alt="{{ author.display_name }}">
-                    </div>
-                    <div class="col-md-10">
-                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a
-                            target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
-                        <span class="author-description">{{ author.description }}</span>
-                    </div>
-                </div>
-                {% endif %}
-                -->
                 <!-- Post Title -->
                 <h1 class="posttitle">{{ page.title }}</h1>
-
 
                 <!--================================-->
                 <div id="subtitlecontainer">
@@ -67,8 +51,6 @@ comments: true
                 </div>            
                 <!--================================-->
                 
-                
-                
                 <div id="postviewscontainer-mobile" class="postviews"><span id="postViews-mobile"></span></div>
             </div>
             <div class="postinfo">
@@ -86,10 +68,7 @@ comments: true
                     {% endif %}
                 </small>
                 <span class="postcategory">
-                    {% if page.category %}
-                    {% assign cat = site.data.categoriestext[page.category] %}
-                    <a href="/category/{{ cat.name }}">{{ cat.text }}</a>
-                    {% endif %}
+                    {% if page.category %}<a href="/category/{{ site.data.categoriestext[page.category].name }}">{{ site.data.categoriestext[page.category].text }}</a>{% endif %}{% if page.category2 %}{% if page.category %}, {% endif %}<a href="/category/{{ site.data.categoriestext[page.category2].name }}">{{ site.data.categoriestext[page.category2].text }}</a>{% endif %}
                 </span>
             </div>
 
@@ -189,47 +168,6 @@ comments: true
                 </div>
             </div>
             {% endif %}
-
-            <!-- Post Date 
-            <p>
-                <small>
-                    <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{
-                            page.date | date_to_string }}</time></span>
-                    {% if page.last_modified_at %}
-                    (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{
-                        page.last_modified_at | date: "%b %-d, %Y" }}</time>)
-                    {% endif %}
-                </small>
-            </p>
-            -->
-            <!-- Post Categories 
-            <div class="after-post-tags">
-                <ul class="tags">
-                    {% assign sortedCategories = page.categories | sort %}
-                    {% for category in sortedCategories %}
-                    <li>
-                        <a href="{{ site.baseurl }}/category/{{ category | slugify }}/">{{ category }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            -->
-            <!-- End Categories -->
-
-            <!-- Prev/Next 
-            <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
-                {% if page.previous.url %}
-                <a class="prev d-block col-md-6" href="{{page.previous.url | absolute_url}}"> &laquo;
-                    {{page.previous.title}}</a>
-                {% endif %}
-                {% if page.next.url %}
-                <a class="next d-block col-md-6 text-lg-right" href="{{page.next.url | absolute_url}}">{{page.next.title}}
-                    &raquo; </a>
-                {% endif %}
-                <div class="clearfix"></div>
-            </div>
-            -->
-            <!-- End Categories -->
 
         </div>
         <!-- End Post -->

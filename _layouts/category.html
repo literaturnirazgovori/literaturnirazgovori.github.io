@@ -3,19 +3,19 @@ layout: page
 ---
 <div class="categorylist">
     <div class="container">
-        <!--<h1>Filed Under <small>#{{ page.tag }}</small></h1>-->
-        <!--{{site.data.categoriestext[page.tag].name}} : {{site.data.categoriestext[page.tag].text}}-->
 
-        {% assign posts = site.categories[page.category] | where:"hidden","false" %}
-        <!--{% assign counter = 0 %}-->
-        {% if posts %}
-        {% for post in posts %}
-        {% assign counter = forloop.length %}
-        {% include postlistitem.html %}
-        {% endfor %}
+        {% assign counter = 0 %}
+        {% for post in site.posts %}
+        {% if post.category == page.category or post.category2 == page.category %}
+            {% unless post.hidden %}
+            {% assign counter = counter | plus:1 %}
+                {% include postlistitem.html %}
+            {% endunless %}
         {% endif %}
+        {% endfor %}
+
         {% if counter == 0 %}
-        Няма публикувани статии под {{ page.type }}
+            Няма публикувани статии под {{ page.type }}
         {% endif %}
     </div>
 </div>

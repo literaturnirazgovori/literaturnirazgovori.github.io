@@ -75,7 +75,6 @@
   <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" />
   <link href="{{ site.baseurl }}/assets/css/lightbox.min.css" rel="stylesheet" />
   <script src="{{ site.baseurl }}/assets/js/lightbox.min.js"></script>
-  <!--<script src="{{ site.baseurl }}/assets/js/lightbox-plus-jquery.min.js"></script>-->
 
   <script>
     $(function() {
@@ -182,25 +181,6 @@ page.layout
           <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
         </li>
         <!--==================================-->
-        <!--==================================
-        {% if page.url contains "/category/newsevents" or pagecategory=="newsevents" %}
-        <li class="nav-item active">{% else %}</li>
-
-        <li class="nav-item">
-          {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/newsevents">Новини и събития</a>
-        </li>
-        ==================================-->
-
-        <!--
-        {% if page.url == "/about.html" %}
-        <li class="nav-item active">{% else %}</li>
-
-        <li class="nav-item">
-          {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/about"><strong>З</strong>а мен</a>
-        </li>
-        -->
 
         <li id="menubarsearch">
             <img src="/assets/images/search-glass.png" alt="Търсене">
@@ -248,47 +228,11 @@ page.layout
   </div>
 </div>
 </form>
-<!--=========== Search ===========-->
 
-    <!--
-    <div class="mainheading">
-      <h1 class="sitetitle"><a class="nav-link" href="{{ site.baseurl }}">{{ site.name }}</a></h1>
-      <p class="lead">
-        {% if site.mainlink %}
-        <a href="{{ site.mainlink }}" target="_blank">
-          {% endif %}
-          {{ site.description }}
-          {% if site.mainlink %}
-          <img src="{{ site.baseurl }}/assets/images/facebook.png" />
-        </a>
-        {% endif %}
-      </p>
-    </div>
-  -->
-    <!-- Content
+<!-- Content
 ================================================== -->
     <div class="main-content">
       {{ content }}</div>
-
-    <!-- Bottom Alert Bar
-================================================== 
-    <div class="alertbar">
-      <div class="container text-center">
-        <span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.title }}" />
-          &nbsp; Never miss a <b>story</b> from us, subscribe to our
-          newsletter</span>
-        <form action="{{ site.mailchimp-list }}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate"
-          target="_blank" novalidate>
-          <div class="mc-field-group">
-            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on"
-              required />
-            <input type="submit" value="Subscribe" name="subscribe" class="heart" />
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  -->
 
 
     <!-- /.container>
@@ -302,12 +246,6 @@ page.layout
             Copyright © {{ site.time | date: "%Y" }} {{ site.name }} &amp; <a href="http://www.alonintheworld.com"
               target="_blank">alonintheworld</a>
           </div>
-          <!--
-            <div class="col-md-6 col-sm-6 text-center text-lg-right">
-            <a target="_blank" href="https://www.wowthemes.net">Mediumish Theme</a>
-            by WowThemes.net
-          </div>
-          -->
         </div>
       </div>
     </footer>
@@ -319,7 +257,6 @@ page.layout
 <!-- Bootstrap core JavaScript
 ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
-
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>

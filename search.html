@@ -59,7 +59,7 @@ title: Търсене
                     var year = date.getFullYear();
                     return day + ' ' + months[monthIndex + 1] + ' ' + year;
                 case 'category':
-                    return "<a href='/category/" + value + "'>" + categoriestext[value].text + "</a>";//"<a href=\"/category/" + categoriestext[value].name + "\">" + categoriestext[value].text + "</a>";
+                    return "<a href='/category/" + value + "'>" + categoriestext[value].text + "</a>";
             }
         }
 
@@ -91,25 +91,6 @@ title: Търсене
 </head>
 
 <body onload="bodyloaded()">
-   <!--
-        <div id="search-wrapper" class="search-visible">
-                <div id="searchbox-container" class="container">
-                  <span id="search-label">Търсене:</span>
-                    <input id="search-text" type="text" name="search" onkeyup="newsearch()">
-                    <span id="search-close" style="visibility: hidden;">X</span>
-                </div>
-              </div>
- 
-    <div class="section-title">
-        <label style="float: left; margin-right:15PX;">
-            <h2 style="margin-bottom:0;">Търсене:</h2>
-        </label>
-        <span style="display: block; overflow: hidden; border: 0;">
-            <input type="text" id="search-text" placeholder="Търси..." style="width: 100%;font-family: B52;" onkeyup="newsearch()" />
-        </span>
-    </div>
--->
-
     <div id="search-container">
         <div class="categorylist">
             <div class="container" id="results-container">
