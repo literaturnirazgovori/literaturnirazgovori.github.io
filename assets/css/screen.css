@@ -422,6 +422,13 @@ span.site-tag {
     }
 }
 
+@media (max-width: 414px){
+    .sitetitle {
+        font-size: 2.0em !important;
+    }
+}
+
+
 /*-------------------*/
 
 #postviewscontainer-mobile {
@@ -435,12 +442,21 @@ span.site-tag {
     font-size: 12pt;
 }
 
-@media (max-width:768px) {
+@media (max-width:768px) and (min-width:414px) {
     #postviewscontainer-mobile {
         display: block;
     }
     #postviewscontainer { 
         display: none; 
+    }
+    .sitetitle {
+        font-size: 2.0em !important;
+    }
+}
+
+@media (max-width:414px) and (min-width:320px) {
+    .sitetitle {
+        font-size: 1.5em !important;
     }
 }
 
@@ -517,7 +533,6 @@ span.site-tag {
 @media (min-width:992px) and (max-width:1200px) {
     .sitetitle {
         font-size: 3.0em !important;
-        color: green;
     }
 }
 
