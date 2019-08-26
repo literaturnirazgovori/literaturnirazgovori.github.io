@@ -40,6 +40,10 @@
     {
         font-size: 30pt;
     }
+
+    .topsidebanner {
+        display: none !important;
+    }
 }
 
 .homepage-banner div
@@ -412,6 +416,10 @@ span.site-tag {
     {
         align-items: flex-start !important;
     }
+
+    .sitetitle {
+        font-size: 2.5em !important;
+    }
 }
 
 /*-------------------*/
@@ -488,10 +496,34 @@ span.site-tag {
 .mainheading{
     font-family: B52; 
     margin-bottom:20px;
+    display: flex;
   }
 
+  .widget-facebook {
+    display: flex;
+  }
+  
+  .widget-facebook .facebook_iframe {
+    border: none;
+  }
+
+.topsidebanner {
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,.125);
+    width: 100%;
+    margin-top:10px;
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    .sitetitle {
+        font-size: 3.0em !important;
+        color: green;
+    }
+}
+
+
+
   .sitetitlecontainer{
-    font-size: 3.5em; 
     padding-right:55px;
     background-image: url('/assets/images/typebar-upright.png');
     background-repeat: no-repeat;
@@ -499,6 +531,7 @@ span.site-tag {
     display:inline-block;
     height:100%;
   }
+
   @media (max-width:1080px) and (orientation: portrait) {
     .sitetitlecontainer{
         padding-right:0px;
@@ -779,6 +812,8 @@ a {
     margin-top:10px;
     display:inline-block;
     padding-bottom:20px;
+    white-space: nowrap;
+    font-size: 3.5em; 
   }
 
 

@@ -83,6 +83,10 @@
   </script>
 </head>
 
+<!-- ======== Facebook banner ========-->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=383087475054247&autoLogAppEvents=1"></script>
+<!-- ========/Facebook banner ========-->
 
 {% capture layout %}{% if page.layout %}layout-{{
 page.layout
@@ -212,6 +216,12 @@ page.layout
               <img src="{{ site.baseurl }}/assets/images/facebook.png" />
             </a>{% endif %}</div>
         </span></span>
+
+        <div class="topsidebanner">
+            <div class="widget-facebook">
+              <iframe id="facebook_iframe" class="facebook_iframe"></iframe>
+            </div>
+          </div>
     </div>
 
 <!--=========== Search ===========-->
