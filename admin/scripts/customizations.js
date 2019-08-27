@@ -21,6 +21,12 @@ var travisTriggerPublishingMessage = "Manual build triggered by admin panel";
     if (nav.length > 0) {
         var navUL = nav[0].getElementsByTagName("ul");
         if (navUL.length > 0) {
+
+            var gotoSiteLi = document.createElement("li");
+            gotoSiteLi.setAttribute("style", "margin:auto");
+            gotoSiteLi.innerHTML = "<a href=\"/\" target=\"_blank\" id=\"lnkGotoSite\" title=\"Open site\" style=\"padding: 16px 0px;color: blue;\"><span style=\"display: inline-block;line-height: 0;width: 24px;height: 24px; margin: 0px 10px;\"><img src=\"/assets/images/logo-book.png\"></span>Go to site &#8640;</a>";
+            navUL[0].prepend(gotoSiteLi);
+
             var travisStatusLi = document.createElement("li");
             travisStatusLi.setAttribute("style", "margin:auto");
             var a = document.createElement("a");
@@ -35,7 +41,7 @@ var travisTriggerPublishingMessage = "Manual build triggered by admin panel";
 
             var triggerBuildLi = document.createElement("li");
             triggerBuildLi.setAttribute("id", triggerBuildLiID);
-            triggerBuildLi.innerHTML = "<a href=\"#\" id=\"" + triggerBuildButtonID + "\" title=\"Click to manually trigger a re-publishing/deployment of the site\"><img src='images/republish.png'/><span id=\"republishMsg\">Republish!</span></a>";
+            triggerBuildLi.innerHTML = "<a href=\"#\" id=\"" + triggerBuildButtonID + "\" title=\"Click to manually trigger a re-publishing/deployment of the site\"><img src='images/republish.png'/><span class=\"customActionText\" id=\"republishMsg\">Republish!</span></a>";
             navUL[0].appendChild(triggerBuildLi);
 
             var triggerBuildButton = document.getElementById(triggerBuildButtonID);
