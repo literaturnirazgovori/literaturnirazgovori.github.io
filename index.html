@@ -5,6 +5,10 @@ title: Начало
 
 {% if page.url == "/" %}
 
+<!-- Just count...-->
+{% assign visibleposts = site.posts  | where:"hidden","false" | size %}
+<!-- Total num of visible posts: {{visibleposts}} -->
+
 <!-- Featured ================================================== -->
 
 <!--=========== Banner ===========-->

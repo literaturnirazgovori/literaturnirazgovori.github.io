@@ -66,9 +66,10 @@ comments: true
                     (Updated: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}" itemprop="dateModified">{{
                         page.last_modified_at | date: "%b %-d, %Y" }}</time>)
                     {% endif %}
-                </small>
+                </small> 
                 <span class="postcategory">
-                    {% if page.category %}<a href="/category/{{ site.data.categoriestext[page.category].name }}">{{ site.data.categoriestext[page.category].text }}</a>{% endif %}{% if page.category2 %}{% if page.category %}, {% endif %}<a href="/category/{{ site.data.categoriestext[page.category2].name }}">{{ site.data.categoriestext[page.category2].text }}</a>{% endif %}
+                    {% assign trimmedCat2 = page.category2 | strip %}
+                    {% if page.category %}<a href="/category/{{ site.data.categoriestext[page.category].name }}">{{ site.data.categoriestext[page.category].text }}</a>{% endif %}{% if page.category2 and trimmedCat2 != '' and trimmedCat2 != page.category  %}, <a href="/category/{{ site.data.categoriestext[page.category2].name }}">{{ site.data.categoriestext[page.category2].text }}</a>{% endif %}
                 </span>
             </div>
 
