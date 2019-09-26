@@ -39,14 +39,7 @@ title: Търсене
     </div>`;
         var authors = {{ site.authors | jsonify }};
         var months = {{ site.data.months  | jsonify }};
-        var categoriestext = {{ site.data.categoriestext | jsonify }}
-
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
+        var categoriestext = {{ site.data.categoriestext | jsonify }};
 
         function searchresultMiddleware(prop, value, template) {
             switch (prop) {
@@ -84,6 +77,8 @@ title: Търсене
             });
             setTimeout(() => {
                 window.simpleJekyllSearch.search(getUrlParameter("search"));
+                $("#loading").hide();
+                $("#search-container").show();
                 $("#search-text").focus();
             }, 500);
         }
@@ -91,7 +86,10 @@ title: Търсене
 </head>
 
 <body onload="bodyloaded()">
-    <div id="search-container">
+    <div id="loading" style="display:block;">
+        <img src="/assets/images/pleaseWaitBookBW.gif" style="width:128px; height:128px;display:block; margin:auto;">
+    </div>
+    <div id="search-container" style="display:none;">
         <div class="categorylist">
             <div class="container" id="results-container">
             </div>

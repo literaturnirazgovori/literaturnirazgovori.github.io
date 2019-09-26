@@ -81,6 +81,7 @@
       $('.article-post img').wrap(function(index) { return '<a href="'+$(this).attr('src')+'" data-lightbox="image-1"></a>'; });
     });
   </script>
+  <script src="{{ site.baseurl }}/assets/js/utils.js"></script>
 </head>
 
 <!-- ======== Facebook banner ========-->
@@ -238,6 +239,14 @@ page.layout
   </div>
 </div>
 </form>
+<script>
+    //alert(getUrlParameter("search"));
+    var searchTerm = getUrlParameter("search");
+    if((location.pathname=="/search") && (searchTerm))
+    {
+      document.getElementById("search-text").value = searchTerm;
+    }
+</script>
 
 <!-- Content
 ================================================== -->
