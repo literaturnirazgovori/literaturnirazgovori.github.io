@@ -61,6 +61,7 @@
       $('.article-post img').wrap(function(index) { return '<a href="'+$(this).attr('src')+'" data-lightbox="image-1"></a>'; });
     });
   </script>
+  <script src="/assets/js/utils.js"></script>
 </head>
 
 <!-- ======== Facebook banner ========-->
@@ -203,6 +204,14 @@
   </div>
 </div>
 </form>
+<script>
+    //alert(getUrlParameter("search"));
+    var searchTerm = getUrlParameter("search");
+    if((location.pathname=="/search") && (searchTerm))
+    {
+      document.getElementById("search-text").value = searchTerm;
+    }
+</script>
 
 <!-- Content
 ================================================== -->
@@ -243,14 +252,7 @@
     </div>`;
         var authors = {"Antonia":{"name":"Antonia","display_name":"Антония Апостолова","photo":"/assets/images/author-antonia.png","email":"antonia@literaturnirazgovori.com","web":"https://www.facebook.com/literaturnirazgovori/"},"Guest":{"name":"Guest","display_name":"Гост-автор","photo":"/assets/images/author-guest.png"}};
         var months = {"1":"Януари","2":"Февруари","3":"Март","4":"Април","5":"Май","6":"Юни","7":"Юли","8":"Август","9":"Септември","10":"Октомври","11":"Ноември","12":"Декември"};
-        var categoriestext = {"mybooks":{"name":"mybooks","text":"Моите книги"},"talks":{"name":"talks","text":"Разговори за писането"},"interviews":{"name":"interviews","text":"Интервюта"},"bookreviews":{"name":"bookreviews","text":"Рецензии"},"translations":{"name":"translations","text":"Поезия"},"newbooks":{"name":"newbooks","text":"Нови книги"},"newsevents":{"name":"newsevents","text":"Новини и събития"}}
-
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
+        var categoriestext = {"mybooks":{"name":"mybooks","text":"Моите книги"},"talks":{"name":"talks","text":"Разговори за писането"},"interviews":{"name":"interviews","text":"Интервюта"},"bookreviews":{"name":"bookreviews","text":"Рецензии"},"translations":{"name":"translations","text":"Поезия"},"newbooks":{"name":"newbooks","text":"Нови книги"},"newsevents":{"name":"newsevents","text":"Новини и събития"}};
 
         function searchresultMiddleware(prop, value, template) {
             switch (prop) {
@@ -288,6 +290,8 @@
             });
             setTimeout(() => {
                 window.simpleJekyllSearch.search(getUrlParameter("search"));
+                $("#loading").hide();
+                $("#search-container").show();
                 $("#search-text").focus();
             }, 500);
         }
@@ -295,7 +299,10 @@
 </head>
 
 <body onload="bodyloaded()">
-    <div id="search-container">
+    <div id="loading" style="display:block;">
+        <img src="/assets/images/pleaseWaitBookBW.gif" style="width:128px; height:128px;display:block; margin:auto;">
+    </div>
+    <div id="search-container" style="display:none;">
         <div class="categorylist">
             <div class="container" id="results-container">
             </div>
