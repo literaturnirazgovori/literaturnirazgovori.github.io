@@ -5,8 +5,8 @@
     <description>с Антония Апостолова</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 Dec 2019 20:31:30 +0000</pubDate>
-    <lastBuildDate>Tue, 03 Dec 2019 20:31:30 +0000</lastBuildDate>
+    <pubDate>Tue, 03 Dec 2019 20:32:20 +0000</pubDate>
+    <lastBuildDate>Tue, 03 Dec 2019 20:32:20 +0000</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -323,6 +323,8 @@
         <category>панаир на книгата</category>
         
         <category>2019</category>
+        
+        <category>Лабиринт</category>
         
         
         <category>newbooks</category>
