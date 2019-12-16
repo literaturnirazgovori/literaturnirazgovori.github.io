@@ -17,8 +17,8 @@ deploy:
   on:
     branch: work
 before_install:
-  - gem install bundler
   - gem update --system
+  - gem install bundler
 notifications:
   email:
     recipients:
