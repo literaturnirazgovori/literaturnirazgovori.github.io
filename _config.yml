@@ -28,7 +28,7 @@ authors:
 
 # Plugins
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-archives
 
 
@@ -41,8 +41,13 @@ jekyll-archives:
     category: "/tag/:name/"
 
 # Pagination
-paginate: 12
-paginate_path: /page:num/
+pagination:
+  enabled: true
+  per_page: 12
+  sort_reverse: true
+  indexpage: page-1
+  permalink: page-:num
+  extension: json
 
 # Other
 markdown: kramdown

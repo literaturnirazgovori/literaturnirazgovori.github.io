@@ -42,23 +42,79 @@ title: Начало
 <!-- Posts Index
 ================================================== -->
 <section class="recent-posts">
-    <div class="row listrecent">
-
-        {% for post in paginator.posts %}
-
-        {% include postbox.html %}
-
-        {% endfor %}
-
+    <div id="postscontainer" class="row listrecent">
     </div>
-
+    <div id="loading">
+        <img id="loading-img" src="{{ site.baseurl }}/assets/images/loading.svg" alt="Please wait">
+        Зареждане... Моля Изчакайте!
+    </div>
+    <div id="paginationerror">
+        <a id="loadNext" href="javascript:;">Още...</a>
+    </div>
 </section>
 
 <!-- Pagination
-================================================== -->
+================================================== 
 <div class="bottompagination">
     <div class="pointerup"><i class="fa fa-caret-up"></i></div>
     <span class="navigation" role="navigation">
         {% include pagination.html %}
     </span>
 </div>
+-->
+<!-- infinite scroll -->
+<script src="{{ site.baseurl }}/assets/js/infinite-scroll.js"></script>
+<script>
+    var nextpage = "/api/articles.json";
+    var paginationError = false;
+
+    function getTheNextPage(pageUrl)
+    {
+        if(!pageUrl)
+            return;
+        
+        paginationError = false;
+        $("#loading").show();
+        getpage(pageUrl, function(page){
+            if(page)
+            {
+                for(var i=0; i < page.pages.length; i++)
+                {
+                    $(htmlDecode(page.pages[i]))
+                        .hide()
+                        .appendTo("#postscontainer")
+                        .fadeIn(800);
+                }
+                nextpage = page.next;
+            }
+            $("#loading").hide();
+        },
+        function(err){
+            $("#loading").hide();
+            paginationError = true;
+            $("#paginationerror").show();
+        });
+    }
+
+    $(function() {
+        getTheNextPage(nextpage);
+
+        var win = $(window);
+        // Each time the user scrolls
+        win.scroll(function() {
+            // End of the document reached?
+            if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+            //if ($(document).height() - win.height() == win.scrollTop()) {
+                if(!paginationError){
+                    getTheNextPage(nextpage);
+                }
+            }
+        });
+
+        $("#loadNext").click(function(){
+            paginationError=false;
+            $("#paginationerror").hide();
+            getTheNextPage(nextpage);
+        });
+    });
+</script>

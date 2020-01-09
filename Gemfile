@@ -15,6 +15,7 @@ group :jekyll_plugins do
     gem 'jekyll-feed'
     gem 'jekyll-sitemap'
     gem 'jekyll-archives'
-    gem 'jekyll-paginate'
+    # gem 'jekyll-paginate'
+    gem "jekyll-paginate-v2"
     gem 'jekyll-redirect-from', '~> 0.14.0'
 end

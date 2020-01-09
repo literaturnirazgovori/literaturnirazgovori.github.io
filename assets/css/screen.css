@@ -23,6 +23,37 @@
     font-style: normal;
 }
 
+/*--------Loading panel--------*/
+#loading {
+    display:none;
+    font-family: B52;
+    font-size: 14pt;
+}
+
+#loading-img {
+    height:17px;
+    width: 17px;
+}
+
+#paginationerror
+{
+    display:none;
+}
+
+#paginationerror a
+{
+    font-family: B52;
+    font-size: 14pt;
+    border-color: transparent;
+    transition: 700ms;
+}
+
+#paginationerror a:hover
+{
+    border-bottom: 1px solid rgba(0,0,0,.44);;
+    transition: 700ms;
+}
+
 /*------ Youtube videos --------*/
 .video-container {
     position: relative;
