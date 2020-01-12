@@ -1,40 +1,62 @@
 ---
 layout: default
 title: Начало
+redirect_from:
+  - /cancel-payment.html
 ---
 
 {% if page.url == "/" %}
 
 <!-- Just count...-->
-{% assign visibleposts = site.posts  | where:"hidden","false" | size %}
+{% assign visibleposts = site.posts | where:"hidden","false" | size %}
 <!-- Total num of visible posts: {{visibleposts}} -->
 
 <!-- Featured ================================================== -->
 
 <!--=========== Banner ===========-->
-<a href="/category/mybooks">
-<div class="homepage-banner" style="background-image: url('/assets/images/dead-sea-book-banner.png');">
-    <div>
+<style>
+</style>
+<div id="banner-container">
+  <div
+    class="homepage-banner"
+    style="background-image: url('/assets/images/dead-sea-book-banner-color.png');">
+    <a href="/category/mybooks">
+      <div>
         Новата ми книга
+      </div>
+    </a>
+  </div>
+  <div id="donatebox" onclick="$('#myModal').modal('show');">
+    <div>
+      <div class="donatebox-title"><b>Подкрепете ме!</b></div>
+      <div>За да продължите да ме четете.</div>
     </div>
+  </div>
 </div>
-</a>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        {% include support.html %}
+        <div style="border:0;" class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            Затвори
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--=========== Banner ===========-->
 
 <section class="featured-posts">
-    <div class="row">
-        {% assign allposts = site.posts %}
-        {% for post in allposts reversed %}
-
-        {% if post.featured == true %}
-
-        {% include featuredbox.html %}
-
-        {% endif %}
-
-        {% endfor %}
-
-    </div>
+  <div class="row">
+    {% assign allposts = site.posts %} {% for post in allposts reversed %} {% if post.featured == true %} {% include
+    featuredbox.html %} {% endif %} {% endfor %}
+  </div>
 </section>
 
 {% endif %}
@@ -42,15 +64,14 @@ title: Начало
 <!-- Posts Index
 ================================================== -->
 <section class="recent-posts">
-    <div id="postscontainer" class="row listrecent">
-    </div>
-    <div id="loading">
-        <img id="loading-img" src="{{ site.baseurl }}/assets/images/loading.svg" alt="Please wait">
-        Зареждане... Моля Изчакайте!
-    </div>
-    <div id="paginationerror">
-        <a id="loadNext" href="javascript:;">Още...</a>
-    </div>
+  <div id="postscontainer" class="row listrecent"></div>
+  <div id="loading">
+    <img id="loading-img" src="{{ site.baseurl }}/assets/images/loading.svg" alt="Please wait" />
+    Зареждане... Моля Изчакайте!
+  </div>
+  <div id="paginationerror">
+    <a id="loadNext" href="javascript:;">Още...</a>
+  </div>
 </section>
 
 <!-- Pagination
@@ -65,56 +86,55 @@ title: Начало
 <!-- infinite scroll -->
 <script src="{{ site.baseurl }}/assets/js/infinite-scroll.js"></script>
 <script>
-    var nextpage = "/api/articles.json";
-    var paginationError = false;
+  var nextpage = "/api/articles.json";
+  var paginationError = false;
 
-    function getTheNextPage(pageUrl)
-    {
-        if(!pageUrl)
-            return;
-        
-        paginationError = false;
-        $("#loading").show();
-        getpage(pageUrl, function(page){
-            if(page)
-            {
-                for(var i=0; i < page.pages.length; i++)
-                {
-                    $(htmlDecode(page.pages[i]))
-                        .hide()
-                        .appendTo("#postscontainer")
-                        .fadeIn(800);
-                }
-                nextpage = page.next;
-            }
-            $("#loading").hide();
-        },
-        function(err){
-            $("#loading").hide();
-            paginationError = true;
-            $("#paginationerror").show();
-        });
-    }
+  function getTheNextPage(pageUrl) {
+    if (!pageUrl) return;
 
-    $(function() {
-        getTheNextPage(nextpage);
+    paginationError = false;
+    $("#loading").show();
+    getpage(
+      pageUrl,
+      function(page) {
+        if (page) {
+          for (var i = 0; i < page.pages.length; i++) {
+            $(htmlDecode(page.pages[i]))
+              .hide()
+              .appendTo("#postscontainer")
+              .fadeIn(800);
+          }
+          nextpage = page.next;
+        }
+        $("#loading").hide();
+      },
+      function(err) {
+        $("#loading").hide();
+        paginationError = true;
+        $("#paginationerror").show();
+      }
+    );
+  }
 
-        var win = $(window);
-        // Each time the user scrolls
-        win.scroll(function() {
-            // End of the document reached?
-            if($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
-            //if ($(document).height() - win.height() == win.scrollTop()) {
-                if(!paginationError){
-                    getTheNextPage(nextpage);
-                }
-            }
-        });
+  $(function() {
+    getTheNextPage(nextpage);
 
-        $("#loadNext").click(function(){
-            paginationError=false;
-            $("#paginationerror").hide();
-            getTheNextPage(nextpage);
-        });
+    var win = $(window);
+    // Each time the user scrolls
+    win.scroll(function() {
+      // End of the document reached?
+      if ($(window).scrollTop() + $(window).height() > $(document).height() - 200) {
+        //if ($(document).height() - win.height() == win.scrollTop()) {
+        if (!paginationError) {
+          getTheNextPage(nextpage);
+        }
+      }
     });
+
+    $("#loadNext").click(function() {
+      paginationError = false;
+      $("#paginationerror").hide();
+      getTheNextPage(nextpage);
+    });
+  });
 </script>
