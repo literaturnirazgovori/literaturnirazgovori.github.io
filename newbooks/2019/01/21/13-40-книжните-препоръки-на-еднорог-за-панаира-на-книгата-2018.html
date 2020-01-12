@@ -67,7 +67,9 @@
   </script>
   <script src="/assets/js/utils.js"></script>
 </head>
+<body>
 
+<div class="whole-body-wrapper">
 <!-- ======== Facebook banner ========-->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=383087475054247&autoLogAppEvents=1"></script>
@@ -167,10 +169,10 @@
         <li class="nav-item">
           <a target="_blank" class="nav-link" href="https://www.facebook.com/literaturnirazgovori/"><i class="fab fa-facebook-f" style="color:#3C5A99;"></i></a>
         </li>
-
+      </ul>
         <!-- End Menu -->
-    </div>
-  </div>
+    </div><!--#navbarMediumish-->
+  </div><!--navbar-container-->
 </nav>
 <!-- End Navigation
 ================================================== -->
@@ -181,22 +183,25 @@
 ================================================== -->
     <div class="mainheading mainheadingflex">
       <span class="sitetitlecontainer">
-        <span class="sitetitle"><a href="">Литературни разговори</a>
+        <span class="sitetitle">
+          <a href="">Литературни разговори</a>
           <div class="lead">
             
             <a href="https://www.facebook.com/literaturnirazgovori/" target="_blank">
               
               с Антония Апостолова 
               <img src="/assets/images/facebook.png" />
-            </a></div>
-        </span></span>
+            </a>
+          </div><!--.lead-->
+        </span>
+      </span>
 
         <div class="topsidebanner">
             <div class="widget-facebook">
               <iframe id="facebook_iframe" class="facebook_iframe"></iframe>
-            </div>
-          </div>
-    </div>
+            </div><!--.idget-facebook-->
+          </div><!--.topsidebanner-->
+    </div><!--.mainheading-->
 
 <!--=========== Search ===========-->
 
@@ -205,10 +210,10 @@
   <div id="search-wrapper" class="">
   <div id="searchbox-container" class="container">
     <span id="search-label">Търсене:</span>
-      <input id="search-text" type="text" name="search" placeholder="Търси...">
+      <input id="search-text" type="text" name="search" placeholder="Търси..." />
       <span id="search-close">X</span>
-  </div>
-</div>
+  </div><!--#searchbox-dontainer-->
+</div><!--#search-wrapper-->
 </form>
 <script>
     //alert(getUrlParameter("search"));
@@ -218,7 +223,6 @@
       document.getElementById("search-text").value = searchTerm;
     }
 </script>
-
 <!-- Content
 ================================================== -->
     <div class="main-content">
@@ -507,11 +511,12 @@
 </div>
 
 <!--End Comments
-================================================== --></div>
+================================================== -->
+    </div><!--.main-content-->
+  </div><!--.container-->
 
-
-    <!-- /.container>
-    
+    </div><!--.site-content-->
+</div><!--.whole-body-wrapper-->
     <!-- Begin Footer
 ================================================== -->
     <footer class="footer">
@@ -520,15 +525,13 @@
           <div class="col-md-6 col-sm-6 text-center text-lg-left">
             Copyright © 2020 Литературни разговори &amp; <a href="http://www.alonintheworld.com"
               target="_blank">alonintheworld</a>
-          </div>
-        </div>
-      </div>
+          </div><!--inner footer div-->
+        </div><!--.row-->
+      </div><!--.container-->
     </footer>
     <!-- End Footer
 ================================================== -->
-  </div>
-  <!-- /.site-content>
-
+  
 <!-- Bootstrap core JavaScript
 ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
