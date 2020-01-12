@@ -83,7 +83,9 @@
   </script>
   <script src="{{ site.baseurl }}/assets/js/utils.js"></script>
 </head>
+<body>
 
+<div class="whole-body-wrapper">
 <!-- ======== Facebook banner ========-->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v4.0&appId=383087475054247&autoLogAppEvents=1"></script>
@@ -194,10 +196,10 @@ page.layout
         <li class="nav-item">
           <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f" style="color:#3C5A99;"></i></a>
         </li>
-
+      </ul>
         <!-- End Menu -->
-    </div>
-  </div>
+    </div><!--#navbarMediumish-->
+  </div><!--navbar-container-->
 </nav>
 <!-- End Navigation
 ================================================== -->
@@ -208,22 +210,25 @@ page.layout
 ================================================== -->
     <div class="mainheading mainheadingflex">
       <span class="sitetitlecontainer">
-        <span class="sitetitle"><a href="{{ site.baseurl }}">{{ site.name }}</a>
+        <span class="sitetitle">
+          <a href="{{ site.baseurl }}">{{ site.name }}</a>
           <div class="lead">
             {% if site.mainlink %}
             <a href="{{ site.mainlink }}" target="_blank">
               {% endif %}
               {{ site.description }} {% if site.mainlink %}
               <img src="{{ site.baseurl }}/assets/images/facebook.png" />
-            </a>{% endif %}</div>
-        </span></span>
+            </a>{% endif %}
+          </div><!--.lead-->
+        </span>
+      </span>
 
         <div class="topsidebanner">
             <div class="widget-facebook">
               <iframe id="facebook_iframe" class="facebook_iframe"></iframe>
-            </div>
-          </div>
-    </div>
+            </div><!--.idget-facebook-->
+          </div><!--.topsidebanner-->
+    </div><!--.mainheading-->
 
 <!--=========== Search ===========-->
 {% assign searchVisibleClass="" %}
@@ -234,10 +239,10 @@ page.layout
   <div id="search-wrapper" class="{{searchVisibleClass}}">
   <div id="searchbox-container" class="container">
     <span id="search-label">Търсене:</span>
-      <input id="search-text" type="text" name="search" placeholder="Търси...">
+      <input id="search-text" type="text" name="search" placeholder="Търси..." />
       <span id="search-close">X</span>
-  </div>
-</div>
+  </div><!--#searchbox-dontainer-->
+</div><!--#search-wrapper-->
 </form>
 <script>
     //alert(getUrlParameter("search"));
@@ -247,15 +252,15 @@ page.layout
       document.getElementById("search-text").value = searchTerm;
     }
 </script>
-
 <!-- Content
 ================================================== -->
     <div class="main-content">
-      {{ content }}</div>
+      {{ content }}
+    </div><!--.main-content-->
+  </div><!--.container-->
 
-
-    <!-- /.container>
-    
+    </div><!--.site-content-->
+</div><!--.whole-body-wrapper-->
     <!-- Begin Footer
 ================================================== -->
     <footer class="footer">
@@ -264,15 +269,13 @@ page.layout
           <div class="col-md-6 col-sm-6 text-center text-lg-left">
             Copyright © {{ site.time | date: "%Y" }} {{ site.name }} &amp; <a href="http://www.alonintheworld.com"
               target="_blank">alonintheworld</a>
-          </div>
-        </div>
-      </div>
+          </div><!--inner footer div-->
+        </div><!--.row-->
+      </div><!--.container-->
     </footer>
     <!-- End Footer
 ================================================== -->
-  </div>
-  <!-- /.site-content>
-
+  
 <!-- Bootstrap core JavaScript
 ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
