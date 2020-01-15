@@ -58,7 +58,9 @@
   {% if featuredImage %}
   <meta property="og:image" content="{{ featuredImage }}" />
   {% endif %}
-  {% if page.title %}
+  {% if page.seo_title %}
+  <meta property="og:title" content="{{ page.seo_title | escape }}" />
+  {% else if page.title %}
   <meta property="og:title" content="{{ page.title | escape }}" />
   {% else %}
   <meta property="og:title" content="{{ site.name | escape }}" />
