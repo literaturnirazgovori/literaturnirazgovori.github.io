@@ -21,10 +21,14 @@ var travisTriggerPublishingMessage = "Manual build triggered by admin panel";
     if (nav.length > 0) {
         var navUL = nav[0].getElementsByTagName("ul");
         if (navUL.length > 0) {
+            var gotoGithubLi = document.createElement("li");
+            gotoGithubLi.setAttribute("style", "margin:auto");
+            gotoGithubLi.innerHTML = "<a href=\"https://github.com/literaturnirazgovori/literaturnirazgovori.github.io\" target=\"_blank\" id=\"lnkGotoSite\" title=\"Go to Github\" style=\"padding: 16px 0px;color: blue;\"><span style=\"display: inline-block;line-height: 0;width: 24px;height: 24px; margin: 0px 10px;\"><img src=\"images/github.png\"></span></a>";
+            navUL[0].prepend(gotoGithubLi);
 
             var gotoSiteLi = document.createElement("li");
             gotoSiteLi.setAttribute("style", "margin:auto");
-            gotoSiteLi.innerHTML = "<a href=\"/\" target=\"_blank\" id=\"lnkGotoSite\" title=\"Open site\" style=\"padding: 16px 0px;color: blue;\"><span style=\"display: inline-block;line-height: 0;width: 24px;height: 24px; margin: 0px 10px;\"><img src=\"/assets/images/logo-book.png\"></span>Go to site &#8640;</a>";
+            gotoSiteLi.innerHTML = "<a href=\"/\" target=\"_blank\" id=\"lnkGotoSite\" title=\"Open site\" style=\"padding: 16px 0px;color: blue;\"><span style=\"display: inline-block;line-height: 0;width: 24px;height: 24px; margin: 0px 10px;\"><img src=\"/assets/images/logo-book.png\"></span><!--Go to site &#8640;--></a>";
             navUL[0].prepend(gotoSiteLi);
 
             var travisStatusLi = document.createElement("li");
