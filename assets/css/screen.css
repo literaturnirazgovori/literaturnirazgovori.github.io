@@ -816,6 +816,12 @@ a {
     transition: background-color 1s linear;
 }
 
+.nav-item-corona.active .nav-link
+{
+    color: #0B7DC3 !important;
+    background-color: white;
+}
+
 .post-image{
     max-width: 250px;
     float: right;
