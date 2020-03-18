@@ -799,6 +799,23 @@ a {
     transition: background-color 1s linear;
 }
 
+.nav-item-corona {
+    background-color: #0B7DC3;
+ }
+
+.nav-item-corona .nav-link
+{
+    color: white !important;
+}
+
+.nav-item-corona :hover {
+    background-color: rgb(161, 10, 10);
+    -webkit-transition: background-color 1s linear;
+    -moz-transition: background-color 1s linear;
+    -o-transition: background-color 1s linear;
+    transition: background-color 1s linear;
+}
+
 .post-image{
     max-width: 250px;
     float: right;
