@@ -5,14 +5,385 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="styles/customizations.css" rel="stylesheet" type="text/css">
+  <link href="styles/custom-preview.css" rel="stylesheet" type="text/css">
   <title>Content Manager</title>
 </head>
 
 <body>
   <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@2.3.3/dist/netlify-cms.js"></script>
+  <script src="/admin/scripts/config.js"></script>
+  <script src="https://unpkg.com/netlify-cms/dist/netlify-cms.js"></script>
   <script>
+    window.CMS_MANUAL_INIT = true
+
+    var env = "production";
+    if(!configurations[env])
+    {
+      env = "production";
+    }
+    initCMS(configurations[env]);
+
     CMS.registerPreviewStyle("styles/custom-preview.css");
+    CMS.registerPreviewStyle("/assets/css/bootstrap.min.css");
+    CMS.registerPreviewStyle("/assets/css/font-awesome.css");
+    CMS.registerPreviewStyle("/assets/css/google-font-faces.css");
+    CMS.registerPreviewStyle("/assets/css/screen.css");
+
+    /*
+      <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="/assets/css/font-awesome.css" />
+
+  <link href="/assets/css/google-font-faces.css" rel="stylesheet" />
+    */
+
+    var customPostPreview = createClass({
+        render: function() {
+          var entry = this.props.entry;
+
+          var isHiddenText = 'This post is ' + ((entry.getIn(['data', 'hidden']))? 'hidden':'visible!');
+          var messageClass = ((entry.getIn(['data', 'hidden']))? 'hiddenPost':'visiblePost');
+
+          var title = entry.getIn(['data', 'title']);
+          title = (typeof(title) == typeof(undefined))? '' : title;
+
+          var subtitle = entry.getIn(['data', 'subtitle']);
+          subtitle = (typeof(subtitle) == typeof(undefined))? '' : subtitle;
+
+          
+          var postAuthor = entry.getIn(['data', 'author']);
+          var guestauthorname = entry.getIn(['data', 'guestauthorname']);
+          var author = postAuthor;
+         
+          if(postAuthor.toLowerCase() == "guest" && guestauthorname)
+          {
+            author = guestauthorname;
+          }
+          else if(site_authors[postAuthor] && site_authors[postAuthor].display_name)
+          {
+            author = site_authors[postAuthor].display_name;
+          }
+          if(author)
+          {
+            author += ', ';
+          }
+          var guestAuthorPhotoDisplay = "none";
+          var guestAuthorPhoto = entry.getIn(['data', 'guestauthorimage']);
+          var guestAuthorPhotosrc = (guestAuthorPhoto)? (this.props.getAsset(guestAuthorPhoto).toString()) : "";
+          if(guestAuthorPhoto)
+          {
+            guestAuthorPhotoDisplay = "block";
+          }
+
+          var postDate = "";
+          var postDay ="", postMonth = "", postYear = "";
+          var entryPath = entry.get('path');
+          if(entryPath)
+          {
+            var dateMatch = entryPath.match(/([\d]{4})\-([\d]{2})-([\d]{2})/);
+            if(dateMatch && dateMatch.length > 3)
+            {
+              var monthNum = parseInt(dateMatch[2]);
+              var dayNum = parseInt(dateMatch[3]);
+              postYear = " " + dateMatch[1];
+              postMonth = " " + ((isNaN(monthNum))? site_months[0] : site_months[monthNum]);
+              postDay = (isNaN(dayNum))? 1 : dayNum;
+              postDate = postDay + postMonth + postYear;
+            }
+          }
+          if(!postDate)
+          {
+            var now = new Date();
+            postYear = now.getFullYear();
+            postMonth = " " + site_months[now.getMonth()+1];
+            postDay = " " + now.getDate();
+            postDate = postDay + postMonth + postYear;
+          }
+
+          var cat1 = entry.getIn(['data', 'category']);
+          var cat2 = entry.getIn(['data', 'category2']);
+          var categoriesText = "";
+          if(cat1 && site_categories[cat1] && site_categories[cat1].text)
+          {
+            categoriesText = site_categories[cat1].text;
+          }
+          if(cat2 && site_categories[cat2] && site_categories[cat2].text && cat2 != cat1)
+          {
+            categoriesText += ", " + site_categories[cat2].text;
+          }
+          
+          var postPhotoDisplay = "none";
+          var postPhoto = entry.getIn(['data', 'image']);
+          var postPhotosrc = (postPhoto) ? (this.props.getAsset(postPhoto).toString()) : "";
+          if(postPhoto)
+          {
+            postPhotoDisplay = "block";
+          }          
+          var content = this.props.widgetFor('body');
+          if(content)
+          {
+            content.props.value = "<p>" + content.props.value.replace(/[\\]+\s*\=[\=]+\s*\s*/g, "NEWLINE")
+              .replace(/<p>.*\=\=.*<\/p>/g, "NEWLINE")
+              .replace(/<p>/g, "")
+              .replace(/<\/p>/g, "<br/>")
+              .replace(/NEWLINE/g, "</p><p>")
+              .replace(/\_(.+)\_/g, "<em>$1</em>")
+              .replace(/\*\*(.+)\*\*/g, "<strong>$1</strong>")
+              + "</p>";
+          }          
+
+          var postTags = entry.getIn(['data', 'tags']);
+          var tagsList = [];
+          if(postTags)
+          {
+            postTags.forEach(function(tag){
+              tagsList.push(h('li', { }, 
+                h('a', {}, tag))
+              );
+            });
+          }
+
+          var ozoneLink = entry.getIn(['data', 'ozone-link']);
+          var ozoneBanner = h('a', { 'href': ozoneLink, 'target': '_blank', 'style': { 'display': (ozoneLink)?'block': 'none' } }, 
+            h('div', { 'className': 'buyozonebanner'},
+              h('span', { 'className': 'buyText' }, 'Купи книгата от'),
+              h('span', { }, 
+                h('img', { 'className': 'buyimage', 'src': '/assets/images/ozone.png' })
+              ),
+            )
+          );
+          var preview = 
+            h('div', {},
+              h('div', {'className': 'mt-3 mb-3 ' + messageClass }, isHiddenText),
+              h('div', { 'className': 'mainheading' }, 
+                h('h1', { 'className': 'posttitle'}, title),
+                h('div', { 'id': 'subtitlecontainer'},
+                  h('div', { 'id': 'subtitleimagecontainer', 'style': { 'display': guestAuthorPhotoDisplay } },
+                    h('img', { 'src':  guestAuthorPhotosrc })
+                  ),
+                  h('div', { 'id': 'subtitletextcontainer' },
+                    h('h2', { 'className': 'postsubtitle'}, subtitle) 
+                  )
+                )
+              ),
+              h('div', {'className': 'postinfo' }, author,
+                h('small', {},
+                  h('span', { 'className': 'post-date'},
+                    h('time', { 'className' : 'post-date'}, postDate )
+                  )
+                ),
+                h('span', { 'className': 'postcategory' }, categoriesText)
+              ),
+              ozoneBanner,
+              h('img', { 'className': 'featured-image img-fluid post-image', 'src': postPhoto, 'style': { 'display': postPhotoDisplay } }),
+              h('div' , { 'className': 'article-post' }, content ),
+              h('div', {}, 
+                h('span', { },
+                  h('a', { 'className': 'alltagslink', 'style': { 'float': 'left', 'margin-right': '10px' } }, 
+                    h('img', { 'src': '/assets/images/bookmark-color.png' } )
+                  )
+                ),
+                h('div', {'style': { 'float': 'left' } },
+                  h('span', { 'className': 'tagheader' }, 'Тагове:',
+                    h('ul', { 'className': 'tags' }, tagsList )
+                  )
+                )
+              )             
+          );
+          return preview;
+        }
+      });
+      CMS.registerPreviewTemplate("post", customPostPreview);
+
+      //---------------------------------------------------------------------
+      var tagsControl = createClass({
+        handleChange: function(e) {
+          this.props.onChange(e.target.value);
+        },
+        //currentTags: [],
+        inputchanged: function(e){
+         
+          var inp = e.target;
+          var value = inp.value.trim();
+          var tagsContainer = inp.parentElement.parentElement.querySelector("#tags-wrapper");
+          var sel = inp.parentElement.querySelector("#tagsAutoCompleteSelect");
+
+          var optionSelected = false;
+          Array.from(sel.options).forEach(function(opt){
+            var visible = (opt.text.toLowerCase().indexOf(value) >= 0);
+            opt.style.display = (visible)? "block": "none";
+            if(visible)
+            {
+              if(!optionSelected)
+              {
+                optionSelected = true;
+                //opt.setAttribute("selected", "selected");
+                opt.setAttribute("data-first", true);
+              }
+              else
+              {
+                opt.setAttribute("data-first", false);
+              }
+            }
+          });
+          sel.style.display = (value && optionSelected)? "block": "none";
+
+          if(value.indexOf(",") >= 0)
+          {
+            var caughtTags = value.substring(0, value.lastIndexOf(",")).split(",");
+            var remainingText = value.substr(value.lastIndexOf(",")+1);
+            var that = this;
+            var curValue = this.props.value;
+            caughtTags.forEach(function(t){
+              if (curValue.indexOf(t.trim()) < 0)
+              {
+                curValue = curValue.push(t.trim());
+                //console.log(that.currentTags);
+                //that.addTag(tagsContainer, t.trim());
+              }
+            });
+            this.props.onChange(curValue);
+            e.target.value = remainingText;
+          }
+        },
+
+        inputKeyDown: function(e)
+        {
+          var inp = e.target;
+          var sel = inp.parentElement.querySelector("#tagsAutoCompleteSelect");
+          var tagsContainer = sel.parentElement.parentElement.querySelector("#tags-wrapper");
+          
+          e = e || window.event;
+          var keyCode = e.keyCode || e.which;
+
+          if(keyCode=='40'){ //Arrow down
+              sel.options[0].setAttribute('selected', 'selected');
+              sel.focus();
+              e.preventDefault();
+              return false;
+          }
+          else if (keyCode == '8' && inp.selectionStart == 0 && tagsContainer.children.length > 0){ //backspace on the first position
+            var lastTag = tagsContainer.lastElementChild;
+            var lastTagText = lastTag.querySelector(".tagText").innerText;
+            var indexOfLastDisplayedTag = this.props.value.indexOf(lastTagText);
+            //ar.splice(ar.indexOf("c"), 1)
+            if (indexOfLastDisplayedTag >= 0)
+            {
+              this.props.onChange(this.props.value.splice(indexOfLastDisplayedTag, 1));
+            }            
+          }
+        },
+
+        closeTag: function(e)
+        {
+          var tag = e.target.parentElement;
+          var tagText = tag.querySelector(".tagText").innerText;
+          var indexOfLastDisplayedTag = this.props.value.indexOf(tagText);
+          if (indexOfLastDisplayedTag >= 0)
+          {
+            this.props.onChange(this.props.value.splice(indexOfLastDisplayedTag, 1));
+          }           
+        },
+
+        selectKeyDown: function(e)
+        {
+          var sel = e.target;
+          var inp = sel.parentElement.querySelector("#tagsinputunpug");
+          e = e || window.event;
+          var keyCode = e.keyCode || e.which;
+          if(keyCode == 13 && sel.selectedIndex >= 0) //Enter
+          {
+            var value = sel.options[sel.selectedIndex].text;
+            inp.value = "";
+            sel.style.display = "none";
+            inp.focus();
+
+            if (this.props.value.indexOf(value) < 0)
+            {
+              //this.currentTags.push(value);
+              //console.log(this.currentTags);
+              this.props.onChange(this.props.value.push(value));
+            }
+          }
+          else if (keyCode == 38) //key up
+          {
+            if(sel[sel.selectedIndex].getAttribute("data-first") == "true")
+            {
+              inp.focus();
+            }
+          }
+        },
+
+        selectClick: function(e)
+        {
+          var sel = e.target;
+          var inp = sel.parentElement.querySelector("#tagsinputunpug");          
+          if(sel.selectedIndex >= 0) //Enter
+          {
+            var value = sel.options[sel.selectedIndex].text;
+            inp.value = "";
+            sel.style.display = "none";
+            inp.focus();
+
+            if (this.props.value.indexOf(value) < 0)
+            {
+              this.props.onChange(this.props.value.push(value));
+            }            
+          }
+        },
+
+        focusOnInput: function(e)
+        {
+          var wrapper = e.target;
+          var input = wrapper.querySelector("#tagsinputunpug");
+          if(input)
+          {
+            input.focus();
+          }
+        },
+
+        render: function() {
+          var value = this.props.value;
+          if(value)
+          {
+            var tags = value;
+            var tagsarr = [];
+            var that = this;
+            tags.forEach(function(tag)
+            {
+              tagsarr.push(
+                h('tag', {},
+                  h('span', { 'className': 'close', 'onClick': that.closeTag }, 'x'),
+                  h('span', { 'className': 'tagText' }, tag.trim())
+                )
+              );
+            });
+          }
+          var siteTagsList = [];
+          site_tags.forEach(function(t){
+            if(t[0])
+            {
+              siteTagsList.push(h('option', { 'value': t[0] }, t[0]));
+            }
+          });
+
+          var ctl = h('div', { 'className': 'tagwrapper', 'onClick': this.focusOnInput }, 
+            h('span', { 'id': 'tags-wrapper' }, tagsarr),
+            h('span', { 'className': 'tagsInputWrapper' },
+              h('input', { 'type': 'text', 'onInput': this.inputchanged, 'onKeyDown': this.inputKeyDown, 'id': 'tagsinputunpug', 'autocomplete':'off' }),
+              h('select', { 'id': 'tagsAutoCompleteSelect', 'size': 6, 'className': 'tagsAutoCompleteSelect', 'onKeyDown': this.selectKeyDown, 'onClick': this.selectClick }, siteTagsList)
+            )
+          );
+          return ctl;
+        }
+      });
+      var tagsrPreview = createClass({
+        render: function() {
+          return h('div', { "style" : { "backgroundColor" : this.props.value } } );
+        }
+      });
+      CMS.registerWidget('tag-picker', tagsControl, tagsrPreview);
+
   </script>
   <script src="scripts/customizations.js"></script>
 </body>
