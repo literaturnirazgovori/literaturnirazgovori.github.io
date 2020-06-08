@@ -13,6 +13,10 @@ encoding: utf-8
 fb_app_id: "405644126912554"
 analytics_proxy_url: "https://warm-woodland-78106.herokuapp.com"
 
+ozone_banner_enabled: true
+ozone_banner_text: "Купи книгата от"
+ozone_banner_link_suffix: "?utm_campaign=book-link&utm_medium=affiliate&utm_source=lrazgovori"
+
 
 # Authors
 authors:

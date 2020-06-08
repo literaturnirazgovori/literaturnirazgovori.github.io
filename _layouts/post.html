@@ -73,6 +73,24 @@ comments: true
                 </span>
             </div>
 
+            <!-- optional buy banner -->
+            {% if page.ozone-link  and site.ozone_banner_enabled %}
+            {% assign ozonelink = page.ozone-link %}
+            {% if ozonelink contains "?"   %}
+                <!-- get rid of optional querystring, to add the predefined one. before: {{ ozonelink }} -->
+                {% assign ozonelink = ozonelink  | split:'?' | first %}
+            {% endif %}
+            {% assign ozonelink = ozonelink | append: site.ozone_banner_link_suffix %}
+            <a href="{{ ozonelink }}" target="_blank">
+                <div class="buyozonebanner">
+                    <span class="buyText">{{ site.ozone_banner_text }}</span>
+                    <span>
+                        <img class="buyimage" src="/assets/images/ozone.png"></span>
+                </div>
+            </a>
+            {% endif %}  
+            <!-- optional buy banner -->
+
             <!-- Post Featured Image -->
             {% if page.image %}
 

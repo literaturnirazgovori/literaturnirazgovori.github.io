@@ -26,6 +26,18 @@ html, body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'RobotoCondensed';
+    src: url('../fonts/robotocondensed-regular.eot');
+    src: url('../fonts/robotocondensed-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/robotocondensed-regular.woff2') format('woff2'),
+         url('../fonts/robotocondensed-regular.woff') format('woff'),
+         url('../fonts/robotocondensed-regular.ttf') format('truetype'),
+         url('../fonts/robotocondensed-regular.svg#roboto_condensedregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /*--------Loading panel--------*/
 #loading {
     display:none;
@@ -55,6 +67,32 @@ html, body {
 {
     border-bottom: 1px solid rgba(0,0,0,.44);;
     transition: 700ms;
+}
+
+/* Ozone.bg banner */
+.buyozonebanner
+{
+    background-color: #222;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    color: white;
+    font-family: 'RobotoCondensed';
+    padding: 20px 20px 9px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.buyozonebanner .buyText
+{
+    font-size: 19pt;
+    font-weight: bold;
+    margin-right: 19px;
+    margin-top: -4px;
+}
+
+.buyozonebanner .buyimage
+{
+    width: 167px;
 }
 
   /*------- Homepage banner ----- */
