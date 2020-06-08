@@ -5,7 +5,7 @@ window.CMS_MANUAL_INIT = true;
 var site_authors = {{ site.authors | jsonify }};
 var site_months = {{ site.data.months | jsonify }};
 var site_categories = {{ site.data.categoriestext | jsonify}};
-var site_tags = {{ site.tags | sort | jsonify }};
+var site_tags = [{% assign tags = site.tags | sort %}{% for tag in tags %}{% if forloop.first != true %},{% endif %}"{{ tag[0] }}"{% endfor %}];
 
 var pagelayouts = ["default", "blank"];
 
