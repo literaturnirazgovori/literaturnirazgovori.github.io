@@ -64,7 +64,7 @@ var configurations =
         "config": {
         "backend": {
             "name": "github",
-            "repo": "mastilnicata/mastilnicata.github.io",
+            "repo": "literaturnirazgovori/literaturnirazgovori.github.io",
             "branch": "work",
             "base_url": "https://warm-woodland-78106.herokuapp.com"
         },
