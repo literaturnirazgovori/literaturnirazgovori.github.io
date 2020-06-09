@@ -237,14 +237,22 @@
             var that = this;
             var curValue = this.props.value;
             caughtTags.forEach(function(t){
-              if (curValue.indexOf(t.trim()) < 0)
+              if(that.props.value)
               {
-                curValue = curValue.push(t.trim());
-                //console.log(that.currentTags);
-                //that.addTag(tagsContainer, t.trim());
+                if(that.props.value.indexOf(t.trim()) < 0)
+                {
+                  that.props.value.push(t.trim());
+                  //console.log(that.currentTags);
+                  //that.addTag(tagsContainer, t.trim());
+                  that.props.onChange(that.props.value);
+                }
+              }
+              else
+              {
+                that.props.onChange([t.trim()]);
               }
             });
-            this.props.onChange(curValue);
+            
             e.target.value = remainingText;
           }
         },
@@ -300,11 +308,18 @@
             sel.style.display = "none";
             inp.focus();
 
-            if (this.props.value.indexOf(value) < 0)
+            if (this.props.value)
             {
-              //this.currentTags.push(value);
-              //console.log(this.currentTags);
-              this.props.onChange(this.props.value.push(value));
+              if (this.props.value.indexOf(value) < 0)
+              {
+                //this.currentTags.push(value);
+                this.props.value.push(value);
+                this.props.onChange(this.props.value);
+              }
+            }
+            else
+            {
+              this.props.onChange([value]);
             }
           }
           else if (keyCode == 38) //key up
