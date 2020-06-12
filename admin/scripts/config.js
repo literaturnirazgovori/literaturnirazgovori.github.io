@@ -22,7 +22,7 @@ var collections =
         "label_singular": "Post",
         "folder": "_posts",
         "create": true,
-        "slug": "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{slug}}",
+        "slug": "{% raw %}{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{slug}}{% endraw %}",
         "fields": [
             { "label": "Layout", "name": "layout", "widget": "hidden", "default": "post" },
             { "label": "Hidden", "name": "hidden", "widget": "boolean", "default": true },
@@ -57,8 +57,13 @@ var configurations =
         },
         "local_backend": true,
         "load_config_file": false,
-        "media_folder": "Uploads",
-        "public_folder": "Uploads",
+        "media_folder": "/Uploads",
+        "public_folder": "/Uploads",
+        "slug": {
+            "encoding" : "unicode",
+            "clean_accents": false,
+            "sanitize_replacement": "-"
+        },
         "collections": collections
         }
     },
@@ -72,8 +77,13 @@ var configurations =
         },
         "local_backend": false,
         "load_config_file": false,
-        "media_folder": "Uploads",
-        "public_folder": "Uploads",
+        "media_folder": "/Uploads",
+        "public_folder": "/Uploads",
+        "slug": {
+            "encoding" : "unicode",
+            "clean_accents": false,
+            "sanitize_replacement": "-"
+        },        
         "collections": collections
         }
     }
