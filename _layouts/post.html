@@ -93,11 +93,16 @@ comments: true
 
             <!-- Post Featured Image -->
             {% if page.image %}
+                {% assign featuredImage = page.image %}
+                {% unless featuredImage contains '://' %}
+                {% assign firstchar = featuredImage | slice: 0 %}
+                {% if firstchar != "/" %}{% assign featuredImage = featuredImage | prepend: "/" %}{% endif %}
+                {% assign featuredImage = featuredImage | prepend: siteurl %}
+                {% endunless %}
 
-            <a href="{% if page.image contains " ://" %}{{page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" data-lightbox="image-1" title='{{ page.title }}'>
-                <img class="featured-image img-fluid post-image" src="{% if page.image contains " ://" %}{{page.image }}{% else %}{{ page.image | absolute_url }}{% endif %}" alt='{{ page.title }}'>
+                <a href="{{ featuredImage }}" data-lightbox="image-1" title='{{ page.title }}'>
+                <img class="featured-image img-fluid post-image" src="{{ featuredImage }}" alt='{{ page.title }}'>
             </a>
-
             {% endif %}
             <!-- End Featured Image -->
 

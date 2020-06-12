@@ -44,11 +44,12 @@
   {% endif %}
 
   {% if page.image %}
-  {% if page.image contains '://' %}
-  {% assign featuredImage = page.image %}
-  {%else%}
-  {% assign featuredImage = page.image | prepend: siteurl %}
-  {% endif %}
+    {% assign featuredImage = page.image %}
+    {% unless featuredImage contains '://' %}
+      {% assign firstchar = featuredImage | slice: 0 %}
+      {% if firstchar != "/" %}{% assign featuredImage = featuredImage | prepend: "/" %}{% endif %}
+      {% assign featuredImage = featuredImage | prepend: siteurl %}
+    {% endunless %}
   {% endif %}
 
   <meta property="og:type" content="article" />
