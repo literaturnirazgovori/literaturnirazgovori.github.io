@@ -95,39 +95,20 @@
 
       <!-- UNHIDE THE CMS -->
       <ul class="navbar-nav navbarlist" style="align-items: center;">
-        <!--removed calss: ml-auto-->
+        <!--
         </li>
 
         <li class="nav-item">
           
-          <!-- UNHIDE THE CMS -->
           <a class="nav-link" href="/"><strong>Н</strong>ачало</a>
         </li>
-
+        -->
         <!--==================================-->
         </li>
 
         <li class="nav-item">
           
           <a class="nav-link" href="/category/mybooks"><strong>М</strong>оите книги</a>
-        </li>
-        <!--==================================-->
-
-        <!--==================================-->
-        </li>
-
-        <li class="nav-item-corona">
-          
-          <a class="nav-link" href="/category/corona"><strong>К</strong>орона от книги</a>
-        </li>
-        <!--==================================-->
-
-        <!--==================================-->
-        </li>
-
-        <li class="nav-item">
-          
-          <a class="nav-link" href="/category/talks"><strong>Р</strong>азговори за писането</a>
         </li>
         <!--==================================-->
         <!--==================================-->
@@ -143,6 +124,14 @@
 
         <li class="nav-item">
           
+          <a class="nav-link" href="/category/newbooks"><strong>Н</strong>ови книги</a>
+        </li>
+        <!--==================================-->
+        <!--==================================-->
+        </li>
+
+        <li class="nav-item">
+          
           <a class="nav-link" href="/category/interviews"><strong>И</strong>нтервюта</a>
         </li>
         <!--==================================-->
@@ -151,7 +140,7 @@
 
         <li class="nav-item">
           
-          <a class="nav-link" href="/category/translations"><strong>П</strong>оезия</a>
+          <a class="nav-link" href="/category/talks"><strong>Р</strong>азговори за писането с български автори</a>
         </li>
         <!--==================================-->
         <!--==================================-->
@@ -159,9 +148,10 @@
 
         <li class="nav-item">
           
-          <a class="nav-link" href="/category/newbooks"><strong>Н</strong>ови книги</a>
+          <a class="nav-link" href="/category/translations"><strong>П</strong>реводи</a>
         </li>
         <!--==================================-->
+
 
         <li id="menubarsearch">
             <img src="/assets/images/search-glass.png" alt="Търсене">
@@ -263,7 +253,7 @@
     </div>`;
         var authors = {"Antonia":{"name":"Antonia","display_name":"Антония Апостолова","photo":"/assets/images/author-antonia.png","email":"antonia@literaturnirazgovori.com","web":"https://www.facebook.com/literaturnirazgovori/"},"Guest":{"name":"Guest","display_name":"Гост-автор","photo":"/assets/images/author-guest.png"}};
         var months = {"1":"Януари","2":"Февруари","3":"Март","4":"Април","5":"Май","6":"Юни","7":"Юли","8":"Август","9":"Септември","10":"Октомври","11":"Ноември","12":"Декември"};
-        var categoriestext = {"mybooks":{"name":"mybooks","text":"Моите книги"},"talks":{"name":"talks","text":"Разговори за писането"},"interviews":{"name":"interviews","text":"Интервюта"},"bookreviews":{"name":"bookreviews","text":"Рецензии"},"translations":{"name":"translations","text":"Поезия"},"newbooks":{"name":"newbooks","text":"Нови книги"},"newsevents":{"name":"newsevents","text":"Новини и събития"},"corona":{"name":"corona","text":"Корона от книги"}};
+        var categoriestext = {"mybooks":{"name":"mybooks","text":"Моите книги"},"talks":{"name":"talks","text":"Разговори за писането"},"interviews":{"name":"interviews","text":"Интервюта"},"bookreviews":{"name":"bookreviews","text":"Рецензии"},"translations":{"name":"translations","text":"Поезия"},"newbooks":{"name":"newbooks","text":"Нови книги"},"newsevents":{"name":"newsevents","text":"Новини и събития"}};
 
         function searchresultMiddleware(prop, value, template) {
             switch (prop) {
