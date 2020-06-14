@@ -25,7 +25,3 @@ newbooks:
 newsevents:
   name: newsevents
   text: Новини и събития
-
-corona:
-  name: corona
-  text: Корона от книги

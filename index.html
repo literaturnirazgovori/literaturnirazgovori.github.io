@@ -16,9 +16,31 @@ seo_title: Литературни разговори с Антония Апос�
 <!-- Featured ================================================== -->
 
 <!--=========== Banner ===========-->
-<style>
-</style>
-<div id="banner-container">
+<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+
+<script type="text/javascript">
+  var html5lightbox_options = {
+    bordersize: "0",
+    autoclose: true,
+    defaultwidth: 960,
+    defaultheight: 612
+  };
+  </script>
+<div id="banner-container" >
+    <div class="buyozonebanner">
+      <a class="buyozonebannerlink html5lightbox" href="/assets/videos/ozone-order.mp4">
+        <div>
+      <span class="buyText">Вече можете да поръчвате книги и тук с</span>
+      <span>
+          <img class="buyimage" src="/assets/images/ozone.png">
+      </span>
+  </div>
+  <div class="ozoneline2">
+      <span class="buyText">вижте как</span><span><img class="playbtn" src="/assets/images/ozone-play.png"></span>
+  </div>
+</a>
+</div>
+  <!--
   <div
     class="homepage-banner"
     style="background-image: url('/assets/images/dead-sea-book-banner-color.png');">
@@ -27,11 +49,27 @@ seo_title: Литературни разговори с Антония Апос�
         Новата ми книга
       </div>
     </a>
-  </div>
+  </div>-->
   <div id="donatebox" onclick="$('#myModal').modal('show');">
     <div>
       <div class="donatebox-title"><b>Подкрепете ме!</b></div>
       <div>Ако обичате да ме четете.</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ozoneModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+        <video controls id="video1" style="width: 100%; height: auto; margin:0 auto; frameborder:0;">
+          <source src="/assets/videos/ozone-order.mp4" type="video/mp4">
+          Your browser doesn't support HTML5 video tag.
+        </video>
+      </div>
     </div>
   </div>
 </div>
@@ -87,6 +125,7 @@ seo_title: Литературни разговори с Антония Апос�
 -->
 <!-- infinite scroll -->
 <script src="{{ site.baseurl }}/assets/js/infinite-scroll.js"></script>
+<script type="text/javascript" src="/assets/js/html5lightbox/html5lightbox.min.js"></script>
 <script>
   var nextpage = "/api/articles.json";
   var paginationError = false;

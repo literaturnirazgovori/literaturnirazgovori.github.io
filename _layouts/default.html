@@ -124,16 +124,15 @@ page.layout
 
       <!-- UNHIDE THE CMS -->
       <ul class="navbar-nav navbarlist" style="align-items: center;">
-        <!--removed calss: ml-auto-->
+        <!--
         {% if page.url == "/" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
           {% endif %}
-          <!-- UNHIDE THE CMS -->
           <a class="nav-link" href="{{ site.baseurl }}/"><strong>Н</strong>ачало</a>
         </li>
-
+        -->
         <!--==================================-->
         {% if page.url contains "/category/mybooks" or pagecategory=="mybooks" %}
         <li class="nav-item active">{% else %}</li>
@@ -141,26 +140,6 @@ page.layout
         <li class="nav-item">
           {% endif %}
           <a class="nav-link" href="{{ site.baseurl }}/category/mybooks"><strong>М</strong>оите книги</a>
-        </li>
-        <!--==================================-->
-
-        <!--==================================-->
-        {% if page.url contains "/category/corona" or pagecategory=="corona" %}
-        <li class="nav-item-corona active">{% else %}</li>
-
-        <li class="nav-item-corona">
-          {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/corona"><strong>К</strong>орона от книги</a>
-        </li>
-        <!--==================================-->
-
-        <!--==================================-->
-        {% if page.url contains "/category/talks" or pagecategory=="talks" %}
-        <li class="nav-item active">{% else %}</li>
-
-        <li class="nav-item">
-          {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането</a>
         </li>
         <!--==================================-->
         <!--==================================-->
@@ -173,6 +152,15 @@ page.layout
         </li>
         <!--==================================-->
         <!--==================================-->
+        {% if page.url contains "/category/newbooks" or pagecategory=="newbooks" %}
+        <li class="nav-item active">{% else %}</li>
+
+        <li class="nav-item">
+          {% endif %}
+          <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
+        </li>
+        <!--==================================-->
+        <!--==================================-->
         {% if page.url contains "/category/interviews" or pagecategory=="interviews" %}
         <li class="nav-item active">{% else %}</li>
 
@@ -182,23 +170,24 @@ page.layout
         </li>
         <!--==================================-->
         <!--==================================-->
+        {% if page.url contains "/category/talks" or pagecategory=="talks" %}
+        <li class="nav-item active">{% else %}</li>
+
+        <li class="nav-item">
+          {% endif %}
+          <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането с български автори</a>
+        </li>
+        <!--==================================-->
+        <!--==================================-->
         {% if page.url contains "/category/translations" or pagecategory=="translations" %}
         <li class="nav-item active">{% else %}</li>
 
         <li class="nav-item">
           {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/translations"><strong>П</strong>оезия</a>
+          <a class="nav-link" href="{{ site.baseurl }}/category/translations"><strong>П</strong>реводи</a>
         </li>
         <!--==================================-->
-        <!--==================================-->
-        {% if page.url contains "/category/newbooks" or pagecategory=="newbooks" %}
-        <li class="nav-item active">{% else %}</li>
 
-        <li class="nav-item">
-          {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
-        </li>
-        <!--==================================-->
 
         <li id="menubarsearch">
             <img src="/assets/images/search-glass.png" alt="Търсене">
