@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Ново издание на &quot;Музей на невинността&quot; - най-личния роман на Орхан Памук ",
+            "url": "/newbooks/2020/09/03/08-27-%D0%BD%D0%BE%D0%B2%D0%BE-%D0%B8%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%BC%D1%83%D0%B7%D0%B5%D0%B9-%D0%BD%D0%B0-%D0%BD%D0%B5%D0%B2%D0%B8%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%82%D0%B0-%D0%BD%D0%B0%D0%B9-%D0%BB%D0%B8%D1%87%D0%BD%D0%B8%D1%8F-%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BD%D0%B0-%D0%BE%D1%80%D1%85%D0%B0%D0%BD-%D0%BF%D0%B0%D0%BC%D1%83%D0%BA.html",
+            "category": "newbooks",
+            "category2": "",
+            "tags": "Еднорог, Музей на невинността, Орхан Памук, нова книга, роман",
+            "date": "2020-09-03 00:00:00 +0000",
+            "image": "/Uploads/muzeynevinnosta.jpg",
+            "author": "Antonia",
+            "subtitle": "„Музей на невинността“ отправя предизвикателство към читателя не само с размислите си за любовта, но и за брака, секса, страстта, семейството, приятелството и щастието"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "&quot;Срещу природата&quot; на Томас Еспедал - щастието е противоестествено, болката не",
             "url": "/bookreviews/2020/09/02/10-16-%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2-%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D1%82%D0%BE%D0%BC%D0%B0%D1%81-%D0%B5%D1%81%D0%BF%D0%B5%D0%B4%D0%B0%D0%BB-%D1%89%D0%B0%D1%81%D1%82%D0%B8%D0%B5%D1%82%D0%BE-%D0%B5-%D0%BF%D1%80%D0%BE%D1%82%D0%B8%D0%B2%D0%BE%D0%B5%D1%81%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BE-%D0%B1%D0%BE%D0%BB%D0%BA%D0%B0%D1%82%D0%B0-%D0%BD%D0%B5.html",
             "category": "bookreviews",
