@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Проф. Иван Станков с думи за &quot;Потъване в мъртво море&quot;",
+            "url": "/mybooks/2020/09/23/11-20-%D0%BF%D1%80%D0%BE%D1%84-%D0%B8%D0%B2%D0%B0%D0%BD-%D1%81%D1%82%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D1%81-%D0%B4%D1%83%D0%BC%D0%B8-%D0%B7%D0%B0-%D0%BF%D0%BE%D1%82%D1%8A%D0%B2%D0%B0%D0%BD%D0%B5-%D0%B2-%D0%BC%D1%8A%D1%80%D1%82%D0%B2%D0%BE-%D0%BC%D0%BE%D1%80%D0%B5.html",
+            "category": "mybooks",
+            "category2": "bookreviews",
+            "tags": "Потъване в мъртво море, Иван Станков, рецензия, Жанет 45",
+            "date": "2020-09-23 00:00:00 +0000",
+            "image": "/Uploads/potyvanevmyrtvomore.jpg",
+            "author": "Antonia",
+            "subtitle": "„Потъването“ беше книга, в която се огледах целият, беше написана специално за мен, както са написани специално за мен всички добри книги на тази земя. Не помня от кога не съм се приютявал безостатъчно в нечия книга"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "&quot;Червената нишка&quot; на Давид Гросман, или за самоизпълняващото се пророчество ",
             "url": "/bookreviews/2020/09/22/11-35-%D1%87%D0%B5%D1%80%D0%B2%D0%B5%D0%BD%D0%B0%D1%82%D0%B0-%D0%BD%D0%B8%D1%88%D0%BA%D0%B0-%D0%BD%D0%B0-%D0%B4%D0%B0%D0%B2%D0%B8%D0%B4-%D0%B3%D1%80%D0%BE%D1%81%D0%BC%D0%B0%D0%BD-%D0%B8%D0%BB%D0%B8-%D0%B7%D0%B0-%D1%81%D0%B0%D0%BC%D0%BE%D0%B8%D0%B7%D0%BF%D1%8A%D0%BB%D0%BD%D1%8F%D0%B2%D0%B0%D1%89%D0%BE%D1%82%D0%BE-%D1%81%D0%B5-%D0%BF%D1%80%D0%BE%D1%80%D0%BE%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE.html",
             "category": "bookreviews",
