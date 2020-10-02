@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Дебютът на Дино Будзати &quot;Барнабо от планината&quot; вече и на български",
+            "url": "/newbooks/2020/10/02/09-44-%D0%B4%D0%B5%D0%B1%D1%8E%D1%82%D1%8A%D1%82-%D0%BD%D0%B0-%D0%B4%D0%B8%D0%BD%D0%BE-%D0%B1%D1%83%D0%B4%D0%B7%D0%B0%D1%82%D0%B8-%D0%B1%D0%B0%D1%80%D0%BD%D0%B0%D0%B1%D0%BE-%D0%BE%D1%82-%D0%BF%D0%BB%D0%B0%D0%BD%D0%B8%D0%BD%D0%B0%D1%82%D0%B0-%D0%B2%D0%B5%D1%87%D0%B5-%D0%B8-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8.html",
+            "category": "newbooks",
+            "category2": "",
+            "tags": "Барнабо от планината, Дино Будзати, Лист, роман, нова книга",
+            "date": "2020-10-02 00:00:00 +0000",
+            "image": "/Uploads/budzzatibarnabao.jpg",
+            "author": "Antonia",
+            "subtitle": "Писан преди 87 години, когато бъдещият велик автор е само на 22, той отгръща страниците към голямата тема и любов на Будзати – планината"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "За &quot;Потъналите и спасените&quot; - или за оцеляването, от което не можеш да се завърнеш",
             "url": "/bookreviews/2020/09/30/11-16-%D0%B7%D0%B0-%D0%BF%D0%BE%D1%82%D1%8A%D0%BD%D0%B0%D0%BB%D0%B8%D1%82%D0%B5-%D0%B8-%D1%81%D0%BF%D0%B0%D1%81%D0%B5%D0%BD%D0%B8%D1%82%D0%B5-%D0%B8%D0%BB%D0%B8-%D0%B7%D0%B0-%D0%BE%D1%86%D0%B5%D0%BB%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5%D1%82%D0%BE-%D0%BE%D1%82-%D0%BA%D0%BE%D0%B5%D1%82%D0%BE-%D0%BD%D0%B5-%D0%BC%D0%BE%D0%B6%D0%B5%D1%88-%D0%B4%D0%B0-%D1%81%D0%B5-%D0%B7%D0%B0%D0%B2%D1%8A%D1%80%D0%BD%D0%B5%D1%88.html",
             "category": "bookreviews",
