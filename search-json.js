@@ -2,7 +2,7 @@ var search_json_index = [
     
           
         {
-            "title": "&quot;Добре дошъл, Натан&quot; - книга за любовта към мъртвородените ни деца",
+            "title": "&quot;Добре дошъл, Натан!&quot; - книга за любовта към мъртвородените ни деца",
             "url": "/bookreviews/2020/10/06/11-17-%D0%B4%D0%BE%D0%B1%D1%80%D0%B5-%D0%B4%D0%BE%D1%88%D1%8A%D0%BB-%D0%BD%D0%B0%D1%82%D0%B0%D0%BD-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0-%D0%B7%D0%B0-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2%D1%82%D0%B0-%D0%BA%D1%8A%D0%BC-%D0%BC%D1%8A%D1%80%D1%82%D0%B2%D0%BE%D1%80%D0%BE%D0%B4%D0%B5%D0%BD%D0%B8%D1%82%D0%B5-%D0%BD%D0%B8-%D0%B4%D0%B5%D1%86%D0%B0.html",
             "category": "bookreviews",
             "category2": "",
