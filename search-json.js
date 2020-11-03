@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "&quot;Лято на езерата&quot; - една от най-значимите жени в историята за първи път на български",
+            "url": "/interviews/2020/11/03/09-28-%D0%BB%D1%8F%D1%82%D0%BE-%D0%BD%D0%B0-%D0%B5%D0%B7%D0%B5%D1%80%D0%B0%D1%82%D0%B0-%D0%B5%D0%B4%D0%BD%D0%B0-%D0%BE%D1%82-%D0%BD%D0%B0%D0%B9-%D0%B7%D0%BD%D0%B0%D1%87%D0%B8%D0%BC%D0%B8%D1%82%D0%B5-%D0%B6%D0%B5%D0%BD%D0%B8-%D0%B2-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%D1%82%D0%B0-%D0%B7%D0%B0-%D0%BF%D1%8A%D1%80%D0%B2%D0%B8-%D0%BF%D1%8A%D1%82-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8.html",
+            "category": "interviews",
+            "category2": "",
+            "tags": "",
+            "date": "2020-11-03 00:00:00 +0000",
+            "image": "/Uploads/lyato_na_ezerata_korica.jpg",
+            "author": "Antonia",
+            "subtitle": "Първият превод на Маргарет Фулър на български език излиза под знака на &quot;Кръг&quot;. Това е първата книга на писателката, философка и журналистка от XIX в., известна с впечатляващата си ерудиция и висок интелект"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Румен Павлов: Ако не внимавам достатъчно, всяко мое стихотворение ще е за дървета",
             "url": "/interviews/2020/11/02/10-23-%D1%80%D1%83%D0%BC%D0%B5%D0%BD-%D0%BF%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2-%D0%B0%D0%BA%D0%BE-%D0%BD%D0%B5-%D0%B2%D0%BD%D0%B8%D0%BC%D0%B0%D0%B2%D0%B0%D0%BC-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D1%82%D1%8A%D1%87%D0%BD%D0%BE-%D0%B2%D1%81%D1%8F%D0%BA%D0%BE-%D0%BC%D0%BE%D0%B5-%D1%81%D1%82%D0%B8%D1%85%D0%BE%D1%82%D0%B2%D0%BE%D1%80%D0%B5%D0%BD%D0%B8%D0%B5-%D1%89%D0%B5-%D0%B5-%D0%B7%D0%B0-%D0%B4%D1%8A%D1%80%D0%B2%D0%B5%D1%82%D0%B0.html",
             "category": "interviews",
