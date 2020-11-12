@@ -3,22 +3,6 @@ var search_json_index = [
           
         {
             "title": "Тялото ни, доведено ad absurdum - Ясен Григоров за своя &quot;Телогинариум&quot;",
-            "url": "/interviews/2020/11/12/13-00-%D1%82%D1%8F%D0%BB%D0%BE%D1%82%D0%BE-%D0%BD%D0%B8-ad-absurdum-%D1%8F%D1%81%D0%B5%D0%BD-%D0%B3%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%BE%D0%B2-%D0%B7%D0%B0-%D1%81%D0%B2%D0%BE%D1%8F-%D1%82%D0%B5%D0%BB%D0%BE%D0%B3%D0%B8%D0%BD%D0%B0%D1%80%D0%B8%D1%83%D0%BC.html",
-            "category": "interviews",
-            "category2": "",
-            "tags": "Телогинариум, Ясен Григоров, интервю, Точица, приказки",
-            "date": "2020-11-12 00:00:00 +0000",
-            "image": "/Uploads/yassengrigorov.jpg",
-            "author": "Antonia",
-            "subtitle": "Героят съм аз самия. Но в отношението ни към телата ни ние сме равни – мъжете и жените. Всички ги носим небрежно, като на игра, незабележимо дори като цяло, когато сме деца"
-        } 
-        ,
-        
-    
-  
-          
-        {
-            "title": "Тялото ни, доведено ad absurdum - Ясен Григоров за своя &quot;Телогинариум&quot;",
             "url": "/interviews/2020/11/11/11-29-%D1%82%D1%8F%D0%BB%D0%BE%D1%82%D0%BE-%D0%BD%D0%B8-ad-absurdum-%D1%8F%D1%81%D0%B5%D0%BD-%D0%B3%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%BE%D0%B2-%D0%B7%D0%B0-%D1%81%D0%B2%D0%BE%D1%8F-%D1%82%D0%B5%D0%BB%D0%BE%D0%B3%D0%B8%D0%BD%D0%B0%D1%80%D0%B8%D1%83%D0%BC.html",
             "category": "interviews",
             "category2": "",
