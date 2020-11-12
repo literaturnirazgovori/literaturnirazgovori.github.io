@@ -18,6 +18,22 @@ var search_json_index = [
   
           
         {
+            "title": "Тялото ни, доведено ad absurdum - Ясен Григоров за своя &quot;Телогинариум&quot;",
+            "url": "/interviews/2020/11/11/11-29-%D1%82%D1%8F%D0%BB%D0%BE%D1%82%D0%BE-%D0%BD%D0%B8-ad-absurdum-%D1%8F%D1%81%D0%B5%D0%BD-%D0%B3%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D0%BE%D0%B2-%D0%B7%D0%B0-%D1%81%D0%B2%D0%BE%D1%8F-%D1%82%D0%B5%D0%BB%D0%BE%D0%B3%D0%B8%D0%BD%D0%B0%D1%80%D0%B8%D1%83%D0%BC.html",
+            "category": "interviews",
+            "category2": "",
+            "tags": "Телогинариум, Ясен Григоров, интервю, Точица, приказки",
+            "date": "2020-11-11 00:00:00 +0000",
+            "image": "/Uploads/yassengrigorov.jpg",
+            "author": "Antonia",
+            "subtitle": "Героят съм аз самия. Но в отношението ни към телата ни ние сме равни – мъжете и жените. Всички ги носим небрежно, като на игра, незабележимо дори като цяло, когато сме деца"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Цветозар Цаков: Използвам фантастичното, за да изпъкнат още по-ярко дребните нормалности ",
             "url": "/interviews/2020/11/10/11-03-%D1%86%D0%B2%D0%B5%D1%82%D0%BE%D0%B7%D0%B0%D1%80-%D1%86%D0%B0%D0%BA%D0%BE%D0%B2-%D0%B8%D0%B7%D0%BF%D0%BE%D0%BB%D0%B7%D0%B2%D0%B0%D0%BC-%D1%84%D0%B0%D0%BD%D1%82%D0%B0%D1%81%D1%82%D0%B8%D1%87%D0%BD%D0%BE%D1%82%D0%BE-%D0%B7%D0%B0-%D0%B4%D0%B0-%D0%B8%D0%B7%D0%BF%D1%8A%D0%BA%D0%BD%D0%B0%D1%82-%D0%BE%D1%89%D0%B5-%D0%BF%D0%BE-%D1%8F%D1%80%D0%BA%D0%BE-%D0%B4%D1%80%D0%B5%D0%B1%D0%BD%D0%B8%D1%82%D0%B5-%D0%BD%D0%BE%D1%80%D0%BC%D0%B0%D0%BB%D0%BD%D0%BE%D1%81%D1%82%D0%B8.html",
             "category": "interviews",
