@@ -5,7 +5,7 @@ window.CMS_MANUAL_INIT = true;
 var site_authors = {{ site.authors | jsonify }};
 var site_months = {{ site.data.months | jsonify }};
 var site_categories = {{ site.data.categoriestext | jsonify}};
-var site_tags = [{% assign tags = site.tags | sort %}{% for tag in tags %}{% if forloop.first != true %},{% endif %}"{{ tag[0] }}"{% endfor %}];
+
 
 var pagelayouts = ["default", "blank"];
 
@@ -40,7 +40,7 @@ var collections =
             { "label": "Body", "name": "body", "widget": "markdown" },
             {"label": "Category", "name": "category", "widget": "select", "default": "interviews", "required": true, "options": collectionCategories },
             {"label": "Secondary category", "name": "category2", "widget": "select", "default": "", "required": false, "options": collectionCategories },            
-            { "label": "Tags", "name": "tags", "widget": "list"},
+            { "label": "Tags", "name": "tags", "widget": "tag-picker" },
             { "label": "Ozone.bg book link", "name": "ozone-link", "widget": "string", "required": false },
             { "label": "Schedule publish at",  "name": "schedule", "widget": "datetime", "default": "", "format": "YYYY-MM-DD HH:mm", "dateFormat": "YYYY-MM-DD", "timeFormat": "HH:mm",  "required": false },
             { "label": "Redirect from", "name": "redirect_from", "widget": "list", "required": false }
