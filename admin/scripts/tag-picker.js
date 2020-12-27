@@ -1,0 +1,368 @@
+/*
+A custom tag picker control, allowing selection of existing tags, adding new ones, in an intuitive UI
+*/
+var site_tags = ["","180 секунди","2019","ARS","Black Flamingo","FastPrintBooks-Пловдив","ICU","Mybook","Oз Books","SCRIBENS","Scalino","Scribens","А.Б. Йехошуа","Або","Августина Тодорова","Авиатор","Адам Джонсън","Ади Асис","Аз Клавдий","Аквариус","Аксиния Михайлова","Ал","Алберт Бенбасат","Алек Попов","Алеко Желязков","Александър Байтошев","Александър Бечанович","Александър Пен","Алексанър Вутимски","Алексей Салников","Али Смит","Алис Харт","Алкохолен делир","Алтера","Амелия Личева","Американа","Американският любовник","Амир Ор","Ан Бронте","Ана Бландиана","Анат Левин","Андрей Тарковски","Андрю Шон Гриър","Анемоя","Анна Политковска","Анна и планината","Антония Апостолова","Апостроф","Арнон Грюнберг","Асен Агов","Бабини ягини","Бабини-ягини","Барнабо от планината","Беким Сейранович","Белослава Димитрова","Бесове","Биман","Божана Апостолова","Божествени частици","Борхес","Боряна Дукова","Братовчедката на Зорбас","Бруклин","Булгаков","Бьорн Расмусен","В печалния хан нан дните","Валентин Дишев","Варужан Восганян","Васил Панайотов","Венцеслав Константинов","Вергилий","Веселина Седларска","Вечерна сватба","Вили Лилков","Винилови души","Виолета Кунева","Вирджиния Улф","Владимир Зарев","Владимир Набоков","Владимир Путин","Владимир Трендафилов","Владислав Христов","Владо Трифонов","Вова","Володя","Всичко е осветено","Възхвала на Аспергер","Габриела Манова","Гайто Газданов","Гаст Грьобер","Георги Господинов","Георги Марков","Георги Мишев","Георги Сотянов","Георги Стоянов","Георги Тенев","Георги Томов","Гилермо Мартинес","Гилером Мартинес","Глад","Годишнина от завършването","Гонкур в България","Гонсало М. Тавареш","Горан Атанасов","Горан Войнович","Градината с камъните","Давид Авидан","Давид Гросман","Дан Пагис","Даниел Келман","Дейвид Крисчън","Деметра Дулева","Дени Терио","Деница Дилова","Депеш Мод","Деян Тиаго-Станкович","Джакомо Казанова","Джамал Уариаши","Джанин Къминс","Джеймс Джойс","Джесика Парк","Джон Ъпдайк","Джонатан Сафран Фоер","Джордж Сиртевш","Джордж Сиртеш","Джоузеф Камбъл","Джумпа Лахири","Диана Петрова","Диана Юсколова","Димана Йорданов","Димитър Башевски","Димитър Динев","Димитър Шумналиев","Дино Будзати","Добре дошъл Натан","Добри Божилов","Добър вечер дами и господа","Достоевски","Другите светове на Алби Брайт","Дубравка Угрешич","Дулсе Мария Кардозо","Е. Т. А. Хофман","ЕРГО","Евгений Водолазкин","Европа и идеята за нация","Един кон влязъл в бар","Еднорог","Ейлиш ни Гуивна","Екрие","Елена Алексиева","Елена Феранте","Ели Визел","Ели Елиаху","Ели Цонова","Емануил А. Видински","Емануил Видински","Емил Андреев","Емилиос Солому","Ентусиаст","Ерго","Ерих Кестнер","Естер Херистсен","Естер Херитсен","Ето ме","Ешкол Нево","Жажда","Жан дьо Лабрюйер","Жанет 45","Жените от кино Роялъ","Живи","Загадките на безумието","Звуци и други истории","Здравка Евтимова","Зима","Златко Ангелов","Златко Енев","Златозар Петров","Знаци","Зорница Христова","Иван Бунин","Иван Вазов","Иван Димитров","Иван Костов","Иван Ланджев","Иван Станков","Иван Христов","Иванка Могилска","Иглика Дионисиева","Изгубени вещи","Изгубените цветя на Алис Харт","Издателство за поезия ДА","Изида","Изнасилени от чудеса","Изток Запад","Изхвърлени в Америка","Илия Троянов","Имена под снега","Имитация на кошмар","Ина Иванова","Инна Пелева","Ирена Иванова","Иржи Кратохвил","Ирина Одоевцева","Ирина Папанчева","Исабел Алиенде","Исмаил Кадаре","Историята на изгубеното дете","Иън Макюън","Йелена Бачич Алимпич","Йехуда Амихай","Йозеф Рот","Йона Волах","Йосип Млакич","К.Г. Балан","Казуо Ишигуро","Как станах монахиня","Калин Донков","Камелия Кучер","Карай плуга си през костите н амъртвите","Карен Алкалай-Гут","Карина Сайнс Борго","Картата на Анна","Катерина Хапсали","Кварталът","Кендзабуро Ое","Керна Ангелова","Кирилов","Клаус Ман","Книгата на Бек","Когато капят кестените","Кожата е еластичната обвивка","Колибри","Колм Тойбин","Колъм Тойбин","Комореби","Кони Палмен","Константин Петров","Коста","Крехко равновесие","Крис Клийв","Кристин Димитрова","Кристина Курчаб-Радлих","Кристина Морато","Кристофър Едж","Крум Филипов","Кръг","Кукувича прежда","Лабиринт","Лавър","Ламия Бегагич","Ларш Петер Свен","Леа Коен","Лев Толстой","Лексикон","Лизе Спит","Лин Улман","Лист","Литературни изкушения","Локус","Лора Динкова","Лорънс Ферлингети","Луан Старова","Лудвик Вацулик","Любов Кронева","Любов на Boogie Street","Любовниците на Юстиция","Людмила Улицка","Магда Сабо","Майстора и Маргарита","Макс Блехер","Максим Горки","Малък живот","Манол Глишев","Маргарет Мичъл","Марек Шинделка","Марин Бодаков","Мария Донева","Мария Закревска Бенкердорф","Мария Касимова Моасе","Мария Попова","Мартин К. Илиев","Мати Каспи","Махалата на совите","Машини","Мефистофел","Мир на кумирите ни","Митове","Момчил Николов","Мошенил ЕООД","Моят танк","Моята олимпиада","Музей на невинността","Мура","На смелите се прощава","Надежда Радулова","Найджъл Никълсън","Наталия Иванова","Невена Митрополитска","Неда Антонова","Недялко Славов","Неутешимите","Ники Павлов","Николай Терзийски","Николай Фенерски","Никос Казандзакис","Нина Берберова","Нинко Кирилов","Ноам Чомски","Нора Уебстър","Нормални хора","Нощ в Каракас","Нощта","Обсидиан","Огледало на въображението","Олга Токаручк","Оля Стоянова","Опитът","Ори Бернщайн","Орхан Памук","Отвор","Отнесени от вихъра","Отпътуване от Френа","ПЕН Набоков","Пааво Мацин","Павел Вежинов","Павел Шрут","Павла Хоракова","Палми Ранчев","Панорама","Парадокс","Пати Смит","Персей","Петко Симеонов","Петрови в грипа и около него","Петър Андоновски","Петър Денчев","Петър Чухов","Петя Кокудева","Петя Накова","Пиафе","Пилат","По бреговете на Нева","По-сурово","Погубената България","Поезията като бунтовно изкуство","Покривът","Получих живота си","Портрет на художника като млад","Потъване в мъртво море","Потъналите и спасените","Предел на забравата","Предсмъртните видения на Никола Петков","През това време","Прекрасният живот на Артър Лес","Приказка за вълшебната флейта","Примо Леви","Произход на всичко","Пролет","Пролетен базазр на книгата","Пролетен базар на книгата","Равелщайн","Радко Пенев","Радослав Парушев","Радослав Чичев","Радостина А. Ангелова","Рене Карабаш","Рива","Ривка Мириам","Ричард Фланаган","Роберт Зееталер","Роберт Леви","Робърт Грейвс","Роуз Тримейн","Рохинтън Мистри","Румен Павлов","Русана Бърдарска","С книга в полунощ","Сава Василев","Сали Руни","Сам Шепърд","Сандра Сиснерос","Светкавици","Светлозар Василев","Седемте смърти на Ивлин Хардкасъл","Сергей Лебедев","Сергий Жадан","Сесар Айра","Сиела","Силата на мита","Силвия Недкова","Силвия Плат","Силвия Томова","Симон дьо Бовоар","Синът на управителя на сиропиталището","Скалино","Слънчев удар","Сол Белоу","Софтпрес","Срещу природата","СтаниславаСтаноева","Стефан Иванов","Стефан Коспартов","Стефан Стамболов","Стефан Цвайг","Стивън Фрай","Стигмати","Сто и една годишният старец който твърде много размишляваше","Странните преживелици на един пощальон","Стругацки","Струни","Стюарт Търтън","Събуждане в Шибуя","Сън","Сянка","Тайе Селаси","Тал Ницан","Таха Мухамад Али","Твой син Хъкълбери Фин","Тежки елементи","Телогинариум","Теория на чудатостите","Тери Игълтън","Тери Пратчет","Този търпелив лабиринт от линии","Том Улф","Томас Еспедал","Томас Макгонигъл","Томас Мор","Топли животни","Тор Вилхялмсон","Точица","Три етажа","Три пиеси","Труман Капоти","Тук сме","Убийството на Командора","Уила Катър","Уилям Уортън","Украйна","Улици и кораби","Фабер","Факел експрес","Фама","Фигури","Франк О`Конър","Франк ОКонър","Франсоа-Анри Дезерабл","Фридерике Майрьокер","Хаим Гури","Хайри Хамдан","Халдоура Тородсен","Ханя Янагихара","Характери","Харуки Мураками","Хенри Бек","Хермес","Хосе Ортега-и-Гасет","Хотелът на спомените","Христо Карастоянов","Христо Христов","Цветелина Георгиева","Цветелина Марева","Цветозар Цаков","Цвят продълговат в морето","Чавдар Ценов","Чекмо","Червената нишка","Чехов","Чимаманда Нгози Адичи","Човек с бонокъл","Чудовището","Шандор Мараи","Ю Хуа","Югославия","Юдит Равиц","Юнас Юнасон","Юрий Андрухович","Ян Балабан","Яна Язова","Яник Енел","Янкеле Ротблит","Ясен Григоров","Яцек Хуго-Бадер","автобиография","аз съм българка","аз съм динамит","аквариус","амстердамски блус","ангелски езици","аркьой","атлантис","афиши в огледалото","баба яга снесла яйце","бал в мулен руж","балкански писатели","балкански ритуал","бегуни","белязани души","биография","блъф","българският лекар","в далечното пътуване","веселина седларска","вечер у клер","вирус","висока облачност","владислав христов","всеки ден крие в себе си друг","всичко това е любов","вторият пол","възпламеняване","вълча богородица","въртележката","геза чат","гениалната приятелка","глад","годината на осемта химии","годината на осемте химии","гробницата на капуцините","да се наричаш Сахара","дамите от ориента","даниел келман","дарът","двоен прозорец","двуезично издание","депеш мод","депресията ме обича","детска","детски","деца","децата на войната","дискотека гогол","дневник на една изневяра","дневникът на една писателка","дневници","дни на самота","документалистика","достатъчно дълго","еврейска поезия","еднорог","елена алексиева","енеида","ентусиаст","ера","ерго","есеистика","есен","есета","ещорил","жанет 45","жена без път","жената от йерусалим","животът на ницше","завръщането на визона","заглавия","задругата","зелените очи на вятъра","извън редовете","издателства","издателство","издателство за поезия ДА","издателство за поезия да","изповед","израелска музика","израелска поезия","изследване","импресии","интервю","ирзаелска поезия","истории","история","история на моя живот","йехуда амихай","кино","клавиатурна грешка","кладата на суетата","книга","книга.роман","книги","когато порасна искам да стана чужденец","кожата е еластичната обвивка обгърнала цялото тяло","колективният фалш","колибри","комореби","компарсита","конференцията на животните","кореспонденция","корона","корона от книги","кройцерова соната","кръг","кухнята на госпожа черешова","къщата на улица манго","лексикон","лисица","лист","литературен обяд","литературен фестивал","литературознание","ловци на пеперуди","лятно пътуване","малкият бог на земетръса","машини като мен","мемоар","мемоари","месо и птици","мечка страх","митове","мишел уелбек","може ли да ме полюлееш","моя страна","моят едипов комплекс","музика за хамелеони","музите се чуват","на пост","награда","накъде тече реката","наука","незпознатият","непрекъсната линия","низината","нов роман","нова земя","нова книга","новакнига","новели","нови заглавия","нови книги","ново заглавие","ново издание","ноктюрни","нонфикшън","нормални хора","нощ","някой си господил пекелни","някой си господин пекелни","обгърнала цялото тяло","огнената тайна","олга токарчук","олга шурбанова","онзи в мен","отблъскващо щастие","отивам си е възрватен глагол","отклонения наесен","отлъчване","относно родерер","отпечатък от никого","панаир на книгата","парадокс","песен","пет въпроса към","пиер дьо ронсар","пиеси","пиле змия звяр и дюля","пинбол","писането","писма","пламен антов","повест","поводи за връщане","подкаст","поезия","поет","поздрави от синята палатка","полето","политика","понеделник започва в събота","потъване в мъртво море","почти всичко е наред","превод","преводи","преводна поезия","предложения","препоръки","призракът на александър волф","приказки","приказки от високосната година","продавачът на вестници и списания","продавачът на вестници и цигари","проза","произшествие на тихата улица","пролетен базар на книгата","пролетен базр на книгата","пролетен панаир на книгата","психоанализа","пътеводител","пътища в ноща","разговор","разговори","разказвачът","разкази","рак на гърдата","рецензии","рецензия","роман","сборник","свети вълк","световен ли е нобел","свещите изгарят докрай","свидетелства за прехода","серотонин","сивият мъх сияе","сиела","синът на авиатора","следите остават","сливовиц","случки в близката нереалност","смисълът на живота","смърт във вода","смъртта на речния водач","списък","статии","стихосбирка","странстващият албатрос","струни","суета суета","събития","сю прюдо","тази вечер няма нищо случайно","тайнствената непозната","тери игълтън","тетралогия","ти го каза","ти непрестанна новина","тил","тихото слънце","топи се","трактат","труд","уловеното време","утопия","факел експрес","фантастика","философия","франсоа-анри дезерабл","хермес","хотел авион","хотелът на спомените","хроника на камък","хроники на неведомото","цитати","цял един живот","чешки съновник","чифтоядците","чудовището","чуй песента на вятъра","чучело"];
+
+/// tagsControl
+/// This is the main tag-picker control, with all its functionality
+var tagsControl = createClass({
+    
+    /// addtag
+    /// Adds a tag (by string) to the selected control's collection
+    addtag : function(newtag){
+      var current = this.props.value;
+      if(!newtag)
+      {
+        return;
+      }
+      if(!current || typeof currrent == 'number')
+      {
+        
+        current = [];
+        current.push(newtag);
+      }
+      else
+      {
+        if((Array.isArray(current)) && (current.indexOf(newtag) < 0))
+        {
+          var newarr = current.slice();
+          current = newarr;
+          current.push(newtag);
+        }
+        else if(typeof current == 'object' && current.toArray)
+        {
+          current = current.toArray();
+          current.push(newtag);
+        }
+        else 
+        {
+          if(typeof current == 'string')
+          {
+            var arr = [];
+            arr.push(current);
+            arr.push(newtag);
+            current = arr;
+          }
+        }
+      }
+      this.props.onChange(current);
+    },
+
+    /// gettags
+    /// Returns all the selected tags currently in the control's collection
+    gettags : function()
+    {
+      var current = this.props.value;
+      if(current)
+      {
+        if(typeof current == 'string')
+        {
+          return [current];
+        }
+        else if (Array.isArray(current))
+        {
+          return current;
+        }
+        else if (current.toArray)
+        {
+          return current.toArray();
+        }
+      }
+      return [];
+    },
+
+    /// removetag
+    /// Removes a tag (by string) from the selected control's collection
+    removetag : function(oldtag){
+      console.log("--=---=- removetag: " + oldtag);
+      var current = this.props.value;
+      if(!current || !oldtag)
+      {
+        return;
+      }
+      else
+      {
+        if(Array.isArray(current))
+        {
+          var newarr = current.slice();
+          current = newarr;
+          var indexOfLastDisplayedTag = current.indexOf(oldtag);
+          if (indexOfLastDisplayedTag >= 0)
+          {
+            current.splice(indexOfLastDisplayedTag, 1);
+          }
+        }
+        else if(typeof current == 'object' && current.toArray)
+        {
+          current = current.toArray();
+          var indexOfLastDisplayedTag = current.indexOf(oldtag);
+          if (indexOfLastDisplayedTag >= 0)
+          {
+            current.splice(indexOfLastDisplayedTag, 1);
+          }
+        }
+
+        else 
+        {
+          if(typeof current == 'string')
+          {
+            if(current != oldtag)
+            {
+              return;
+            }
+            else
+            {
+              current = [];
+            }
+          }
+        }
+      }
+      this.props.onChange(current);
+    },
+
+    /// inputchanged
+    /// Triggered when the user text is changed. Building the auto-select box
+    inputchanged: function(e) {
+     var inp = e.target;
+      var textInputValue = inp.value.trim();
+      var tagsContainer = inp.parentElement.parentElement.querySelector("#tags-wrapper");
+      var sel = inp.parentElement.querySelector("#tagsAutoCompleteSelect");
+
+      var optionsAreVisible = false;
+      var currentTags = this.gettags();
+      
+      var options = Array.from(sel.options);
+      for(var i=0; i < options.length; i++)
+      {
+        var opt = options[i];
+        var visible = ((opt.text.toLowerCase().indexOf(textInputValue) >= 0) && (currentTags.indexOf(opt.text) < 0));
+        if(visible)
+        {
+          opt.style.display = "block";
+          if(!optionsAreVisible)
+          {
+            optionsAreVisible = true;
+            opt.setAttribute("selected", "seleted");
+            sel.selectedIndex = i;
+          }
+          else
+            opt.removeAttribute("selected");
+        }
+        else
+        {
+          opt.style.display = "none";
+          opt.removeAttribute("selected");
+        }
+      }
+      sel.style.display = (textInputValue && optionsAreVisible)? "block": "none";
+
+      if(textInputValue.indexOf(",") >= 0)
+      {
+        var caughtTags = textInputValue.substring(0, textInputValue.lastIndexOf(",")).split(",");
+        var remainingText = textInputValue.substr(textInputValue.lastIndexOf(",")+1);
+        var that = this;
+        caughtTags.forEach(function(t){ that.addtag(t); });
+        e.target.value = remainingText;
+      }
+    },
+
+    /// inputKeyDown
+    /// Triggered when the user presses a key on the textbox
+    inputKeyDown: function(e)
+    {
+      var inp = e.target;
+      var sel = inp.parentElement.querySelector("#tagsAutoCompleteSelect");
+      var tagsContainer = sel.parentElement.parentElement.querySelector("#tags-wrapper");
+      
+      e = e || window.event;
+      var keyCode = e.keyCode || e.which;
+
+      //Arrow down: go into the select box, if visible
+      if(keyCode=='40'){
+          var visibleItems = sel.querySelectorAll('option[style*="display: block;"]');
+          if(visibleItems.length > 0)
+          {
+            sel.focus();
+            e.preventDefault();
+            return false;
+          }
+      }
+      //backspace on the first position of the textbox: remove the last tag from the collection
+      else if (keyCode == '8' && inp.selectionStart == 0 && tagsContainer.children.length > 0){ 
+
+        var lastTag = tagsContainer.lastElementChild;
+        var lastTagText = lastTag.querySelector(".tagText").innerText;
+        this.removetag(lastTagText);
+      }
+      //Escape: Hide the select box, if visible
+      else if(keyCode == '27')
+      {
+        if(sel.style.display == "block")
+        {
+          sel.style.display = "none";
+        }
+      }
+      //Enter: Add the currently typed tag, if any, and hide the select box, if visible
+      else if(keyCode == '13')
+      {
+        this.addtag(inp.value);
+        inp.value = "";
+        if(sel.style.display == "block")
+        {
+          sel.style.display = "none";
+        }            
+      }
+    },
+
+    /// closeTag
+    /// Triggered when the user clicks the [x] button on a tag
+    closeTag: function(e)
+    {
+      var tag = e.target.parentElement;
+      var tagText = tag.querySelector(".tagText").innerText;
+      this.removetag(tagText);
+    },
+
+    /// selectKeyDown
+    /// Triggered when the user hits a key on the select box
+    selectKeyDown: function(e)
+    {
+      var sel = e.target;
+      var inp = sel.parentElement.querySelector("#tagsinputunpug");
+      e = e || window.event;
+      var keyCode = e.keyCode || e.which;
+      
+      //Enter: Add the currently selected tag, if any, and hide the select box, if visible
+      if(keyCode == 13 && sel.selectedIndex >= 0)
+      {
+        var value = sel.options[sel.selectedIndex].text;
+        inp.value = "";
+        sel.style.display = "none";
+        inp.focus();
+        this.addtag(value);
+      }
+      //Arrow up: If the selected option is the topmost visible one, go to the textbox
+      else if (keyCode == 38)
+      {
+        if(sel.options[sel.selectedIndex].value == sel.querySelectorAll('option[style*="display: block;"]')[0].value)
+        {
+          inp.focus();
+          this.moveCursorToEnd(inp);
+          e.preventDefault();
+          return false;              
+        }
+      }
+      //Escape: Go to the textbox and hide the select box
+      else if (keyCode == 27)
+      {
+        console.log("...focusing (esc)");
+        inp.focus();
+        this.moveCursorToEnd(inp);
+        sel.style.display = "none";
+      }
+    },
+
+    /// selectDoubleClick
+    /// Triggered whenthe user double clicks the select box
+    selectDoubleClick: function(e)
+    {
+      var sel = e.target;
+      if(sel.nodeName == "OPTION")
+        sel = sel.parentElement;
+      var inp = sel.parentElement.querySelector("#tagsinputunpug");
+      e = e || window.event;
+
+      //Add the currently double-clicked tag, if any, and hide the select box, if visible
+      if(sel.selectedIndex >= 0)
+      {
+        var value = sel.options[sel.selectedIndex].text;
+        inp.value = "";
+        sel.style.display = "none";
+        inp.focus();
+        this.addtag(value);
+      }
+    },
+
+    /// moveCursorToEnd
+    /// Moves the text cursor to the end of the textbox's text
+    moveCursorToEnd: function(inp)
+    {
+      if (inp.createTextRange) {  
+        //IE  
+        var FieldRange = inp.createTextRange();  
+        FieldRange.moveStart('character', inp.value.length);  
+        FieldRange.collapse();  
+        FieldRange.select();  
+      }  
+      else {  
+        //Firefox and Opera  
+        inp.focus();  
+        var length = inp.value.length;  
+        inp.setSelectionRange(length, length);  
+      } 
+    },
+
+    /// focusOnInput
+    /// Triggered when the user focuses on the entire tags control. Directs the focus to the textbox.
+    focusOnInput: function(e)
+    {
+      var wrapper = e.target;
+      var input = wrapper.querySelector("#tagsinputunpug");
+      if(input)
+      {
+        input.focus();
+      }
+    },
+    
+    /// render
+    /// Renders the control with all the tags selected
+    render: function() {
+      var value = this.gettags();
+      
+      if(value)
+      {
+        var tags = value;
+        var tagsarr = [];
+        var that = this;
+        for(var i=0; i < tags.length; i++)
+        {
+          tag = tags[i];
+          tagsarr.push(
+            h('tag', {},
+              h('span', { 'className': 'close', 'onClick': this.closeTag }, 'x'),
+              h('span', { 'className': 'tagText' }, tag.trim())
+            )
+          );
+        }
+      }
+      var siteTagsList = [];
+      site_tags.forEach(function(t){
+        if(t)
+        {
+          siteTagsList.push(h('option', { 'value': t }, t));
+        }
+      });
+
+      var ctl = h('div', { 'className': 'tagwrapper', 'onClick': this.focusOnInput }, 
+        h('span', { 'id': 'tags-wrapper' }, tagsarr),
+        h('span', { 'className': 'tagsInputWrapper' },
+          h('input', { 'type': 'text', 'onInput': this.inputchanged, 'onKeyDown': this.inputKeyDown, 'id': 'tagsinputunpug', 'autocomplete':'off' }),
+          h('select', { 'id': 'tagsAutoCompleteSelect', 'size': 6, 'className': 'tagsAutoCompleteSelect', 'onKeyDown': this.selectKeyDown, 'autocomplete':'off', 'onDoubleClick': this.selectDoubleClick }, siteTagsList)
+        )
+      );
+      return ctl;
+    }
+  });
+
+
+  var tagsrPreview = createClass({
+    render: function() {
+      return h('div', { "style" : { "backgroundColor" : this.props.value } } );
+    }
+  });
+
+function RegisterTagPicker()
+{
+  if(CMS && CMS.registerWidget)
+    CMS.registerWidget('tag-picker', tagsControl, tagsrPreview);
+}

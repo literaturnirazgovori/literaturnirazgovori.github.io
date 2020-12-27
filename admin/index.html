@@ -13,7 +13,11 @@
   <!-- Include the script that builds the page and powers Netlify CMS -->
   <script src="/admin/scripts/config.js"></script>
   <script src="https://unpkg.com/netlify-cms/dist/netlify-cms.js"></script>
+  <script src="/admin/scripts/tag-picker.js"></script>
   <script>
+
+    //To run with local backend:
+    //npx netlify-cms-proxy-server & bundle exec jekyll serve --incremental
     window.CMS_MANUAL_INIT = true
 
     var env = "production";
@@ -29,13 +33,8 @@
     CMS.registerPreviewStyle("/assets/css/google-font-faces.css");
     CMS.registerPreviewStyle("/assets/css/screen.css");
 
-    /*
-      <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-
-  <link rel="stylesheet" href="/assets/css/font-awesome.css" />
-
-  <link href="/assets/css/google-font-faces.css" rel="stylesheet" />
-    */
+    // Custom controls
+    RegisterTagPicker();
 
     var customPostPreview = createClass({
         render: function() {
@@ -137,9 +136,12 @@
           if(postTags)
           {
             postTags.forEach(function(tag){
-              tagsList.push(h('li', { }, 
-                h('a', {}, tag))
-              );
+              if(tag)
+              {
+                tagsList.push(h('li', { }, 
+                  h('a', {}, tag))
+                );
+              }
             });
           }
 
@@ -195,209 +197,66 @@
       });
       CMS.registerPreviewTemplate("post", customPostPreview);
 
-      //---------------------------------------------------------------------
-      var tagsControl = createClass({
-        handleChange: function(e) {
-          this.props.onChange(e.target.value);
-        },
-        //currentTags: [],
-        inputchanged: function(e){
-         
-          var inp = e.target;
-          var value = inp.value.trim();
-          var tagsContainer = inp.parentElement.parentElement.querySelector("#tags-wrapper");
-          var sel = inp.parentElement.querySelector("#tagsAutoCompleteSelect");
 
-          var optionSelected = false;
-          Array.from(sel.options).forEach(function(opt){
-            var visible = (opt.text.toLowerCase().indexOf(value) >= 0);
-            opt.style.display = (visible)? "block": "none";
-            if(visible)
+
+      //--------- experimental 
+      var ratingControl = createClass({
+        changeRating : function(e){
+          if(e && e.target)
+          {
+            var id = e.target.getAttribute("id");
+            if(id && id.indexOf("star") >=0)
             {
-              if(!optionSelected)
-              {
-                optionSelected = true;
-                //opt.setAttribute("selected", "selected");
-                opt.setAttribute("data-first", true);
-              }
-              else
-              {
-                opt.setAttribute("data-first", false);
-              }
+              var rate = parseInt(id.replace("star", ""));
+              console.log("[ratingControl :: changeRating] -> " + rate);
+              this.props.onChange(rate);
             }
-          });
-          sel.style.display = (value && optionSelected)? "block": "none";
-
-          if(value.indexOf(",") >= 0)
-          {
-            var caughtTags = value.substring(0, value.lastIndexOf(",")).split(",");
-            var remainingText = value.substr(value.lastIndexOf(",")+1);
-            var that = this;
-            var curValue = this.props.value;
-            caughtTags.forEach(function(t){
-              if(that.props.value)
-              {
-                if(that.props.value.indexOf(t.trim()) < 0)
-                {
-                  that.props.value.push(t.trim());
-                  //console.log(that.currentTags);
-                  //that.addTag(tagsContainer, t.trim());
-                  that.props.onChange(that.props.value);
-                }
-              }
-              else
-              {
-                that.props.onChange([t.trim()]);
-              }
-            });
-            
-            e.target.value = remainingText;
           }
+
+          parseInt(e.target.getAttribute("id").replace("star", ""))
+          //
         },
 
-        inputKeyDown: function(e)
-        {
-          var inp = e.target;
-          var sel = inp.parentElement.querySelector("#tagsAutoCompleteSelect");
-          var tagsContainer = sel.parentElement.parentElement.querySelector("#tags-wrapper");
-          
-          e = e || window.event;
-          var keyCode = e.keyCode || e.which;
-
-          if(keyCode=='40'){ //Arrow down
-              sel.options[0].setAttribute('selected', 'selected');
-              sel.focus();
-              e.preventDefault();
-              return false;
+        render: function(){
+          console.log("[ratingControl :: render] -> " + this.props.value);
+          var stars = [];
+          var x = this.props.value;
+          if(!x)
+          {
+            x = 0;
           }
-          else if (keyCode == '8' && inp.selectionStart == 0 && tagsContainer.children.length > 0){ //backspace on the first position
-            var lastTag = tagsContainer.lastElementChild;
-            var lastTagText = lastTag.querySelector(".tagText").innerText;
-            var indexOfLastDisplayedTag = this.props.value.indexOf(lastTagText);
-            //ar.splice(ar.indexOf("c"), 1)
-            if (indexOfLastDisplayedTag >= 0)
+          for (i=1; i <= 5; i++)
+          {
+            if(i <= x)
             {
-              this.props.onChange(this.props.value.splice(indexOfLastDisplayedTag, 1));
-            }            
-          }
-        },
-
-        closeTag: function(e)
-        {
-          var tag = e.target.parentElement;
-          var tagText = tag.querySelector(".tagText").innerText;
-          var indexOfLastDisplayedTag = this.props.value.indexOf(tagText);
-          if (indexOfLastDisplayedTag >= 0)
-          {
-            this.props.onChange(this.props.value.splice(indexOfLastDisplayedTag, 1));
-          }           
-        },
-
-        selectKeyDown: function(e)
-        {
-          var sel = e.target;
-          var inp = sel.parentElement.querySelector("#tagsinputunpug");
-          e = e || window.event;
-          var keyCode = e.keyCode || e.which;
-          if(keyCode == 13 && sel.selectedIndex >= 0) //Enter
-          {
-            var value = sel.options[sel.selectedIndex].text;
-            inp.value = "";
-            sel.style.display = "none";
-            inp.focus();
-
-            if (this.props.value)
-            {
-              if (this.props.value.indexOf(value) < 0)
-              {
-                //this.currentTags.push(value);
-                this.props.value.push(value);
-                this.props.onChange(this.props.value);
-              }
+              stars.push(h('span', { 'id': 'star' + i, 'onClick': this.changeRating, 'style':{'color': 'red'} }, '*' ));
             }
             else
             {
-              this.props.onChange([value]);
+              stars.push(h('span', { 'id': 'star' + i, 'onClick': this.changeRating, 'style':{'color': 'black'} }, '*' ));
             }
           }
-          else if (keyCode == 38) //key up
-          {
-            if(sel[sel.selectedIndex].getAttribute("data-first") == "true")
-            {
-              inp.focus();
-            }
-          }
-        },
 
-        selectClick: function(e)
-        {
-          var sel = e.target;
-          var inp = sel.parentElement.querySelector("#tagsinputunpug");          
-          if(sel.selectedIndex >= 0) //Enter
-          {
-            var value = sel.options[sel.selectedIndex].text;
-            inp.value = "";
-            sel.style.display = "none";
-            inp.focus();
 
-            if (this.props.value.indexOf(value) < 0)
-            {
-              this.props.onChange(this.props.value.push(value));
-            }            
-          }
-        },
-
-        focusOnInput: function(e)
-        {
-          var wrapper = e.target;
-          var input = wrapper.querySelector("#tagsinputunpug");
-          if(input)
-          {
-            input.focus();
-          }
-        },
-
-        render: function() {
-          var value = this.props.value;
-          if(value)
-          {
-            var tags = value;
-            var tagsarr = [];
-            var that = this;
-            tags.forEach(function(tag)
-            {
-              tagsarr.push(
-                h('tag', {},
-                  h('span', { 'className': 'close', 'onClick': that.closeTag }, 'x'),
-                  h('span', { 'className': 'tagText' }, tag.trim())
-                )
-              );
-            });
-          }
-          var siteTagsList = [];
-          site_tags.forEach(function(t){
-            if(t)
-            {
-              siteTagsList.push(h('option', { 'value': t }, t));
-            }
-          });
-
-          var ctl = h('div', { 'className': 'tagwrapper', 'onClick': this.focusOnInput }, 
-            h('span', { 'id': 'tags-wrapper' }, tagsarr),
-            h('span', { 'className': 'tagsInputWrapper' },
-              h('input', { 'type': 'text', 'onInput': this.inputchanged, 'onKeyDown': this.inputKeyDown, 'id': 'tagsinputunpug', 'autocomplete':'off' }),
-              h('select', { 'id': 'tagsAutoCompleteSelect', 'size': 6, 'className': 'tagsAutoCompleteSelect', 'onKeyDown': this.selectKeyDown, 'onClick': this.selectClick }, siteTagsList)
-            )
+          return h('div', {}, 
+            stars
+            /*
+            h('span', { 'id': 'star1', 'onClick': this.changeRating }, '*' ),
+            h('span', { 'id': 'star2', 'onClick': this.changeRating }, '*' ),
+            h('span', { 'id': 'star3', 'onClick': this.changeRating }, '*' ),
+            h('span', { 'id': 'star4', 'onClick': this.changeRating }, '*' ),
+            h('span', { 'id': 'star5', 'onClick': this.changeRating }, '*' ),
+            */
           );
-          return ctl;
         }
       });
-      var tagsrPreview = createClass({
+      var ratingPreview = createClass({
         render: function() {
-          return h('div', { "style" : { "backgroundColor" : this.props.value } } );
+          return h('div', { }, this.props.value );
         }
       });
-      CMS.registerWidget('tag-picker', tagsControl, tagsrPreview);
+      CMS.registerWidget('rating-pick', ratingControl, ratingPreview);
+      //--------- experimental 
 
   </script>
   <script src="scripts/customizations.js"></script>
