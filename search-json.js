@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Излиза &quot;Опит за екстаз&quot; от Димитър Бочев –  роман равносметка на българския дисидент",
+            "url": "/newbooks/2021/01/26/09-21-%D0%B8%D0%B7%D0%BB%D0%B8%D0%B7%D0%B0-%D0%BE%D0%BF%D0%B8%D1%82-%D0%B7%D0%B0-%D0%B5%D0%BA%D1%81%D1%82%D0%B0%D0%B7-%D0%BE%D1%82-%D0%B4%D0%B8%D0%BC%D0%B8%D1%82%D1%8A%D1%80-%D0%B1%D0%BE%D1%87%D0%B5%D0%B2-%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D1%80%D0%B0%D0%B2%D0%BD%D0%BE%D1%81%D0%BC%D0%B5%D1%82%D0%BA%D0%B0-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D1%8F-%D0%B4%D0%B8%D1%81%D0%B8%D0%B4%D0%B5%D0%BD%D1%82.html",
+            "category": "newbooks",
+            "category2": "",
+            "tags": "Димитър Бочев, Сиела, Опит за екстаз, нова книга, роман",
+            "date": "2021-01-26 00:00:00 +0000",
+            "image": "/Uploads/opitzaekstaz.jpg",
+            "author": "Antonia",
+            "subtitle": "Писателят дисидент и журналист, един от най-непоколебимите и ярки гласове на Радио &quot;Свободна Европа&quot; и един от близките приятели и редактори на Георги Марков, обръща погледа си назад"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "&quot;Обвивки живот&quot; на Симона Попеску – за детството с любов и омерзение",
             "url": "/bookreviews/2021/01/22/09-25-%D0%BE%D0%B1%D0%B2%D0%B8%D0%B2%D0%BA%D0%B8-%D0%B6%D0%B8%D0%B2%D0%BE%D1%82-%D0%BD%D0%B0-%D1%81%D0%B8%D0%BC%D0%BE%D0%BD%D0%B0-%D0%BF%D0%BE%D0%BF%D0%B5%D1%81%D0%BA%D1%83-%D0%B7%D0%B0-%D0%B4%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%BE%D1%82%D0%BE-%D1%81-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2-%D0%B8-%D0%BE%D0%BC%D0%B5%D1%80%D0%B7%D0%B5%D0%BD%D0%B8%D0%B5.html",
             "category": "bookreviews",
