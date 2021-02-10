@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Неиздаваният роман на Уилям Фокнър &quot;Дивите палми&quot; за пръв път на български",
+            "url": "/newbooks/2021/02/10/09-35-%D0%BD%D0%B5%D0%B8%D0%B7%D0%B4%D0%B0%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%D1%82-%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BD%D0%B0-%D1%83%D0%B8%D0%BB%D1%8F%D0%BC-%D1%84%D0%BE%D0%BA%D0%BD%D1%8A%D1%80-%D0%B4%D0%B8%D0%B2%D0%B8%D1%82%D0%B5-%D0%BF%D0%B0%D0%BB%D0%BC%D0%B8-%D0%B7%D0%B0-%D0%BF%D1%80%D1%8A%D0%B2-%D0%BF%D1%8A%D1%82-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8.html",
+            "category": "newbooks",
+            "category2": "",
+            "tags": "Уилям Фокнър, Лист, роман, нова книга, Дивите палми",
+            "date": "2021-02-10 00:00:00 +0000",
+            "image": "/Uploads/divite_palmi.jpg",
+            "author": "Antonia",
+            "subtitle": "Първоначално Уилям Фокнър озаглавява романа си &quot;Ако те забравя, Йерусалиме&quot;, което е препратка към библейски псалм. В името на търговския успех обаче издателите му го променят на &quot;Дивите палми&quot;"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "&quot;Островът в небето&quot; - приключение в деконструкция на патриотарски митове",
             "url": "/bookreviews/2021/02/09/11-46-%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D1%8A%D1%82-%D0%B2-%D0%BD%D0%B5%D0%B1%D0%B5%D1%82%D0%BE-%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2-%D0%B4%D0%B5%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BA%D1%86%D0%B8%D1%8F-%D0%BD%D0%B0-%D0%BF%D0%B0%D1%82%D1%80%D0%B8%D0%BE%D1%82%D0%B0%D1%80%D1%81%D0%BA%D0%B8-%D0%BC%D0%B8%D1%82%D0%BE%D0%B2%D0%B5.html",
             "category": "bookreviews",
