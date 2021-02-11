@@ -19,7 +19,15 @@
                 <span class="meta-footer-thumb">
                     <span class="postboxcategory">
                         {% assign trimmedCat2 = post.category2 | strip %}
-                        <a href="/category/{{site.data.categoriestext[post.category].name}}">{{site.data.categoriestext[post.category].text}}</a>{% if post.category2 and trimmedCat2 != '' and trimmedCat2 != post.category  %}, <a href="/category/{{site.data.categoriestext[post.category2].name}}">{{site.data.categoriestext[post.category2].text}}</a>{% endif %}
+                        <a class="postboxcat-{{site.data.categoriestext[post.category1].name}}" href="/category/{{site.data.categoriestext[post.category].name}}">
+                            {{site.data.categoriestext[post.category].text}}
+                        </a>
+                        {% if post.category2 and trimmedCat2 != '' and trimmedCat2 != post.category  %}
+                        , 
+                        <a class="postboxcat-{{site.data.categoriestext[post.category2].name}}" href="/category/{{site.data.categoriestext[post.category2].name}}">
+                            {{site.data.categoriestext[post.category2].text}}
+                        </a>
+                        {% endif %}
                     </span>
                     <br />
 

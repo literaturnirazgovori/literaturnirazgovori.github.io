@@ -69,7 +69,16 @@ comments: true
                 </small> 
                 <span class="postcategory">
                     {% assign trimmedCat2 = page.category2 | strip %}
-                    {% if page.category %}<a href="/category/{{ site.data.categoriestext[page.category].name }}">{{ site.data.categoriestext[page.category].text }}</a>{% endif %}{% if page.category2 and trimmedCat2 != '' and trimmedCat2 != page.category  %}, <a href="/category/{{ site.data.categoriestext[page.category2].name }}">{{ site.data.categoriestext[page.category2].text }}</a>{% endif %}
+                    {% if page.category %}
+                        <a class="pagecat-{{ site.data.categoriestext[page.category].name }}" href="/category/{{ site.data.categoriestext[page.category].name }}">
+                            {{ site.data.categoriestext[page.category].text }}
+                        </a>
+                    {% endif %}
+                    {% if page.category2 and trimmedCat2 != '' and trimmedCat2 != page.category  %}
+                        , <a class="pagecat-{{ site.data.categoriestext[page.category2].name }}" href="/category/{{ site.data.categoriestext[page.category2].name }}">
+                            {{ site.data.categoriestext[page.category2].text }}
+                        </a>
+                    {% endif %}
                 </span>
             </div>
 
