@@ -119,75 +119,48 @@ page.layout
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarMediumish">
+    <div class="collapse navbar-collapse flex-column" id="navbarMediumish">
       <!-- Begin Menu -->
+
+    <!-- Page category, if applicable -->
+    {% assign pagecat = page.url | split: '/category/' %}
+    {% if pagecat.size == 2 %}
+      {% assign pagecat =  pagecat[1] %}
+      {% assign pagecatsplitslash = pagecat | split: '/' %}
+      {% if pagecat.size > 1 %}
+        {% assign pagecat =  pagecatsplitslash[0] %}
+      {% endif %}
+    {% else %}
+    {% assign pagecat =  "" %}
+    {% endif %}
 
       <!-- UNHIDE THE CMS -->
       <ul class="navbar-nav navbarlist" style="align-items: center;">
-        <!--
-        {% if page.url == "/" %}
-        <li class="nav-item active">{% else %}</li>
 
-        <li class="nav-item">
-          {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/"><strong>Н</strong>ачало</a>
-        </li>
-        -->
-        <!--==================================-->
-        {% if page.url contains "/category/mybooks" or pagecategory=="mybooks" %}
-        <li class="nav-item active">{% else %}</li>
-
-        <li class="nav-item">
-          {% endif %}
+        <li class="nav-item {% if pagecat=='mybooks' %}active{% endif %}">
           <a class="nav-link" href="{{ site.baseurl }}/category/mybooks"><strong>М</strong>оите книги</a>
         </li>
-        <!--==================================-->
-        <!--==================================-->
-        {% if page.url contains "/category/bookreviews" or pagecategory=="bookreviews" %}
-        <li class="nav-item active">{% else %}</li>
 
-        <li class="nav-item">
-          {% endif %}
+        
+        <li class="nav-item {% if pagecat=='bookreviews' %}active{% endif %}">
           <a class="nav-link" href="{{ site.baseurl }}/category/bookreviews"><strong>Р</strong>ецензии</a>
         </li>
-        <!--==================================-->
-        <!--==================================-->
-        {% if page.url contains "/category/newbooks" or pagecategory=="newbooks" %}
-        <li class="nav-item active">{% else %}</li>
 
-        <li class="nav-item">
-          {% endif %}
+        <li class="nav-item {% if pagecat=='newbooks' %}active{% endif %}">
           <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
         </li>
-        <!--==================================-->
-        <!--==================================-->
-        {% if page.url contains "/category/interviews" or pagecategory=="interviews" %}
-        <li class="nav-item active">{% else %}</li>
 
-        <li class="nav-item">
-          {% endif %}
+        <li class="nav-item {% if pagecat=='interviews' %}active{% endif %}">
           <a class="nav-link" href="{{ site.baseurl }}/category/interviews"><strong>И</strong>нтервюта</a>
         </li>
-        <!--==================================-->
-        <!--==================================-->
-        {% if page.url contains "/category/talks" or pagecategory=="talks" %}
-        <li class="nav-item active">{% else %}</li>
 
-        <li class="nav-item">
-          {% endif %}
-          <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането с български автори</a>
+        <li class="nav-item {% if pagecat=='kolonkata-na-georgi-cankov' %}active{% endif %} kolonkata-na-georgi-cankov">
+          <a class="nav-link" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
         </li>
-        <!--==================================-->
-        <!--==================================-->
-        {% if page.url contains "/category/translations" or pagecategory=="translations" %}
-        <li class="nav-item active">{% else %}</li>
 
-        <li class="nav-item">
-          {% endif %}
+        <li class="nav-item {% if pagecat=='translations' %}active{% endif %}">
           <a class="nav-link" href="{{ site.baseurl }}/category/translations"><strong>П</strong>реводи</a>
         </li>
-        <!--==================================-->
-
 
         <li id="menubarsearch">
             <img src="/assets/images/search-glass.png" alt="Търсене">
@@ -198,13 +171,23 @@ page.layout
         </li>
       </ul>
         <!-- End Menu -->
+
+        <!-- 2nd menu row-->
+        <ul class="navbar-nav flex-row mb-2 mr-auto">
+          <li class="nav-item {% if pagecat=='talks' %}active{% endif %}">
+            <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането с български автори</a>
+          </li>
+        </ul><!--/2nd menu row-->
+
     </div><!--#navbarMediumish-->
+
   </div><!--navbar-container-->
 </nav>
 <!-- End Navigation
 ================================================== -->
 
 <div class="site-content">
+
   <div class="container">
     <!-- Site Title
 ================================================== -->
