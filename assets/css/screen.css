@@ -997,6 +997,35 @@ a {
     color: rgba(0,0,0,.9);
 }
 
+.kolonkata-na-georgi-cankov
+{
+    background-color: rgba(0,0,0,.9);
+}
+
+
+.kolonkata-na-georgi-cankov .nav-link
+{
+    color: white !important;
+}
+
+.kolonkata-na-georgi-cankov:hover .nav-link  {
+    color:rgba(0,0,0,.9) !important;
+    -webkit-transition: color 1s linear;
+    -moz-transition: color 1s linear;
+    -o-transition: color 1s linear;
+    transition: color 1s linear;
+}
+
+.kolonkata-na-georgi-cankov.active
+{
+    background-color: #E8E8E8 !important;
+}
+
+.kolonkata-na-georgi-cankov.active .nav-link
+{
+    color: black !important;
+}
+
 
 .lead{
     font-size: 1.25rem;
@@ -1139,7 +1168,7 @@ a {
      cursor:pointer;
 }
  .mediumnavigation .navbar-brand img {
-     max-height:30px;
+     max-height:50px;
      margin-right:5px;
 }
 

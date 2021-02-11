@@ -17,9 +17,11 @@
   <script>
 
     //To run with local backend:
-    //npx netlify-cms-proxy-server & bundle exec jekyll serve --incremental
+    //npx netlify-cms-proxy-server & bundle exec jekyll serve --incremental --host=0.0.0.0
     window.CMS_MANUAL_INIT = true
 
+    //set dev on Windows: 
+    //set JEKYLL_ENV=development
     var env = "production";
     if(!configurations[env])
     {

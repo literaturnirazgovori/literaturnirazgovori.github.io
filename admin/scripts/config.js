@@ -2,7 +2,7 @@ window.CMS_MANUAL_INIT = true;
 
 var site_authors = {"Antonia":{"name":"Antonia","display_name":"Антония Апостолова","photo":"/assets/images/author-antonia.png","email":"antonia@literaturnirazgovori.com","web":"https://www.facebook.com/literaturnirazgovori/"},"Guest":{"name":"Guest","display_name":"Гост-автор","photo":"/assets/images/author-guest.png"}};
 var site_months = {"1":"Януари","2":"Февруари","3":"Март","4":"Април","5":"Май","6":"Юни","7":"Юли","8":"Август","9":"Септември","10":"Октомври","11":"Ноември","12":"Декември"};
-var site_categories = {"mybooks":{"name":"mybooks","text":"Моите книги"},"talks":{"name":"talks","text":"Разговори за писането"},"interviews":{"name":"interviews","text":"Интервюта"},"bookreviews":{"name":"bookreviews","text":"Рецензии"},"translations":{"name":"translations","text":"Поезия"},"newbooks":{"name":"newbooks","text":"Нови книги"},"newsevents":{"name":"newsevents","text":"Новини и събития"}};
+var site_categories = {"mybooks":{"name":"mybooks","text":"Моите книги"},"talks":{"name":"talks","text":"Разговори за писането"},"interviews":{"name":"interviews","text":"Интервюта"},"bookreviews":{"name":"bookreviews","text":"Рецензии"},"translations":{"name":"translations","text":"Поезия"},"newbooks":{"name":"newbooks","text":"Нови книги"},"newsevents":{"name":"newsevents","text":"Новини и събития"},"kolonkata-na-georgi-cankov":{"name":"kolonkata-na-georgi-cankov","text":"Колонката на Георги Цанков"}};
 
 
 var pagelayouts = ["default", "blank"];
