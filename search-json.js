@@ -1,5 +1,7 @@
 var search_json_index = [
     
+      
+  
           
         {
             "title": "&quot;Т. Сингер&quot;. Човекът като черна дупка  ",
