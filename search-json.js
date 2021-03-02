@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Излезе &quot;Моята година със Селинджър&quot; – поглед към личността на легендарния писател",
+            "url": "/newbooks/2021/03/02/10-04-%D0%B8%D0%B7%D0%BB%D0%B5%D0%B7%D0%B5-%D0%BC%D0%BE%D1%8F%D1%82%D0%B0-%D0%B3%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0-%D1%81%D1%8A%D1%81-%D1%81%D0%B5%D0%BB%D0%B8%D0%BD%D0%B4%D0%B6%D1%8A%D1%80-%D0%BF%D0%BE%D0%B3%D0%BB%D0%B5%D0%B4-%D0%BA%D1%8A%D0%BC-%D0%BB%D0%B8%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BB%D0%B5%D0%B3%D0%B5%D0%BD%D0%B4%D0%B0%D1%80%D0%BD%D0%B8%D1%8F-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D0%B5%D0%BB.html",
+            "category": "newbooks",
+            "category2": "",
+            "tags": "Джоана Рейкоф, Моята година със Селинджър, нова книга, мемоари",
+            "date": "2021-03-02 00:00:00 +0000",
+            "image": "/Uploads/moyata-godina-sas-selindjar-koritsa.jpg",
+            "author": "Antonia",
+            "subtitle": "В мемоарния си роман Джоана Рейкоф разказва какво е да работиш за Селинджър в периода, когато той вече е легенда"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Сборникът &quot;Модерна любов&quot; - истински истории за любов, загуба и изкупление",
             "url": "/bookreviews/2021/03/01/12-02-%D1%81%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA%D1%8A%D1%82-%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%BD%D0%B0-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2-%D0%B8%D1%81%D1%82%D0%B8%D0%BD%D1%81%D0%BA%D0%B8-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8-%D0%B7%D0%B0-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2-%D0%B7%D0%B0%D0%B3%D1%83%D0%B1%D0%B0-%D0%B8-%D0%B8%D0%B7%D0%BA%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5.html",
             "category": "bookreviews",
