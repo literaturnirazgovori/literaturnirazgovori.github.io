@@ -3,11 +3,11 @@ var search_json_index = [
           
         {
             "title": "Колонката на Георги Цанков: Исабел Алиенде, Силвия Томова, Катрин Панкол и още книги от жени",
-            "url": "/kolonkata-na-georgi-cankov/2021/03/04/18-34-%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%B8%D1%81%D0%B0%D0%B1%D0%B5%D0%BB-%D0%B0%D0%BB%D0%B8%D0%B5%D0%BD%D0%B4%D0%B5-%D1%81%D0%B8%D0%BB%D0%B2%D0%B8%D1%8F-%D1%82%D0%BE%D0%BC%D0%BE%D0%B2%D0%B0-%D0%BA%D0%B0%D1%82%D1%80%D0%B8%D0%BD-%D0%BF%D0%B0%D0%BD%D0%BA%D0%BE%D0%BB-%D0%B8-%D0%BE%D1%89%D0%B5-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8-%D0%BE%D1%82-%D0%B6%D0%B5%D0%BD%D0%B8.html",
+            "url": "/kolonkata-na-georgi-cankov/2021/03/05/11-12-%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%B8%D1%81%D0%B0%D0%B1%D0%B5%D0%BB-%D0%B0%D0%BB%D0%B8%D0%B5%D0%BD%D0%B4%D0%B5-%D1%81%D0%B8%D0%BB%D0%B2%D0%B8%D1%8F-%D1%82%D0%BE%D0%BC%D0%BE%D0%B2%D0%B0-%D0%BA%D0%B0%D1%82%D1%80%D0%B8%D0%BD-%D0%BF%D0%B0%D0%BD%D0%BA%D0%BE%D0%BB-%D0%B8-%D0%BE%D1%89%D0%B5-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8-%D0%BE%D1%82-%D0%B6%D0%B5%D0%BD%D0%B8.html",
             "category": "kolonkata-na-georgi-cankov",
             "category2": "",
             "tags": "Катрин Панкол, Исабел Алиенде, Силвия Томова, Любослов, Джейн Харпър, Гергана Панчева, Павлина Павлова, Ким Лигет, Емма Мериът, Мери л. Тръмп",
-            "date": "2021-03-04 00:00:00 +0000",
+            "date": "2021-03-05 00:00:00 +0000",
             "image": "/Uploads/kgt4march2021.jpg",
             "author": "Guest",
             "subtitle": "Страхотно събитие в културния ни живот е великолепно издадената антология на съвременната българска женска поезия &quot;Любослов&quot;, подготвена от Людмила Калоянова"
