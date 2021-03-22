@@ -52,22 +52,6 @@ var search_json_index = [
   
           
         {
-            "title": "Кольо Николов и всеопрощаващото чувство към живота в последната му книга",
-            "url": "/bookreviews/2021/03/16/10-52-%D0%BA%D0%BE%D0%BB%D1%8C%D0%BE-%D0%BD%D0%B8%D0%BA%D0%BE%D0%BB%D0%BE%D0%B2-%D0%B8-%D0%B2%D1%81%D0%B5%D0%BE%D0%BF%D1%80%D0%BE%D1%89%D0%B0%D0%B2%D0%B0%D1%89%D0%BE%D1%82%D0%BE-%D1%87%D1%83%D0%B2%D1%81%D1%82%D0%B2%D0%BE-%D0%BA%D1%8A%D0%BC-%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D0%B0-%D0%B2-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D0%B0%D1%82%D0%B0-%D0%BC%D1%83-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0.html",
-            "category": "bookreviews",
-            "category2": "",
-            "tags": "Кольо Николов, Котаракът на Рей Бредбъри, Лос Анджелис, Жанет 45",
-            "date": "2021-03-16 00:00:00 +0000",
-            "image": "/Uploads/kotarakytnaray.jpg",
-            "author": "Antonia",
-            "subtitle": "&quot;Котаракът на Рей Бредбъри&quot; идва късно, но Слава Богу навреме, и за онези по-млади читатели е чудесен начин да се докоснат до специфичния разказвачески глас на писателя, който написа тази книга от Америка, където и до днес живее"
-        } 
-        ,
-        
-    
-  
-          
-        {
             "title": "&quot;Моята година със Селинджър&quot; - портрет на един бранш, на едно поколение и на един писател",
             "url": "/bookreviews/2021/03/15/11-34-%D0%BC%D0%BE%D1%8F%D1%82%D0%B0-%D0%B3%D0%BE%D0%B4%D0%B8%D0%BD%D0%B0-%D1%81%D1%8A%D1%81-%D1%81%D0%B5%D0%BB%D0%B8%D0%BD%D0%B4%D0%B6%D1%8A%D1%80-%D0%BF%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82-%D0%BD%D0%B0-%D0%B5%D0%B4%D0%B8%D0%BD-%D0%B1%D1%80%D0%B0%D0%BD%D1%88-%D0%BD%D0%B0-%D0%B5%D0%B4%D0%BD%D0%BE-%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8-%D0%BD%D0%B0-%D0%B5%D0%B4%D0%B8%D0%BD-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D0%B5%D0%BB.html",
             "category": "bookreviews",
