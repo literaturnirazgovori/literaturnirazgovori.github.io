@@ -1,6 +1,20 @@
 var search_json_index = [
     
-      
+          
+        {
+            "title": "&quot;Животът като следобедна дрямка&quot; - разкази-притчи за съвременния човек",
+            "url": "/bookreviews/2021/05/21/14-36-%D0%B6%D0%B8%D0%B2%D0%BE%D1%82%D1%8A%D1%82-%D0%BA%D0%B0%D1%82%D0%BE-%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B1%D0%B5%D0%B4%D0%BD%D0%B0-%D0%B4%D1%80%D1%8F%D0%BC%D0%BA%D0%B0-%D1%80%D0%B0%D0%B7%D0%BA%D0%B0%D0%B7%D0%B8-%D0%BF%D1%80%D0%B8%D1%82%D1%87%D0%B8-%D0%B7%D0%B0-%D1%81%D1%8A%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D1%8F-%D1%87%D0%BE%D0%B2%D0%B5%D0%BA.html",
+            "category": "bookreviews",
+            "category2": "",
+            "tags": "Боян Тончев, Смъртта като следобедно чувство, Жанет 45, рецензия, разкази",
+            "date": "2021-05-21 00:00:00 +0000",
+            "image": "/Uploads/zhivotytkatosledobednadryamka.jpg",
+            "author": "Antonia",
+            "subtitle": "Обединява ги най-вече иронията в светогледа и в езика на автора, както и прекрачването на реалността в териториите на магическия реализъм"
+        } 
+        ,
+        
+    
   
           
         {
