@@ -8,7 +8,7 @@ var search_json_index = [
             "category2": "",
             "tags": "Година на Маймуната, Пати Смит, Лист, мемоар, рецензия",
             "date": "2021-06-08 00:00:00 +0000",
-            "image": "/Uploads/godinanamaymunata.jpg",
+            "image": "/Uploads/godinatanamaymunata.jpg",
             "author": "Antonia",
             "subtitle": "2016 е преломна не само за рок звездата, но и за Америка, която избира новия си президент Доналд Тръмп. Смит ни среща с нея в третия си мемоар"
         } 
