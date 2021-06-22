@@ -1,6 +1,20 @@
 var search_json_index = [
     
-      
+          
+        {
+            "title": "&quot;Олив Китридж&quot; - за глада, който всички изпитваме до самия край",
+            "url": "/bookreviews/2021/06/22/10-28-%D0%BE%D0%BB%D0%B8%D0%B2-%D0%BA%D0%B8%D1%82%D1%80%D0%B8%D0%B4%D0%B6.html",
+            "category": "bookreviews",
+            "category2": "",
+            "tags": "Олив Китридж, Елизабет Страут, Кръг, роман, рецензия, ревю",
+            "date": "2021-06-22 00:00:00 +0000",
+            "image": "/Uploads/olivkitridzh.jpg",
+            "author": "Antonia",
+            "subtitle": "&quot;Олив Китрдиж&quot; е най-хубавата книга, която прочетох най-малкото от началото на годината досега. Дано от &quot;Кръг&quot; скоро да издадат и нейното продължение Olive, Again"
+        } 
+        ,
+        
+    
   
       
   
