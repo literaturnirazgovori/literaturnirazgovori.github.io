@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "&quot;Керван за гарвани&quot; - за човеколюбивата ирония на Емине Садкъ",
+            "url": "/bookreviews/2021/06/30/10-07-%D0%B5%D0%BC%D0%B8%D0%BD%D0%B5-%D1%81%D0%B0%D0%B4%D0%BA%D1%8A-%D0%B8-%D0%BA%D0%B5%D1%80%D0%B2%D0%B0%D0%BD-%D0%B7%D0%B0-%D0%B3%D0%B0%D1%80%D0%B2%D0%B0%D0%BD%D0%B8-%D0%BE%D0%B1%D0%B5%D1%89%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0-%D1%81%D0%B2%D0%B5%D0%B6%D0%BE-%D0%B8-%D0%B8%D1%80%D0%BE%D0%BD%D0%B8%D1%87%D0%BD%D0%BE-%D0%BF%D0%B5%D1%80%D0%BE.html",
+            "category": "bookreviews",
+            "category2": "",
+            "tags": "Емине Садкъ, Керван за гарвани, Фабер, рецензия, роман",
+            "date": "2021-06-30 00:00:00 +0000",
+            "image": "/Uploads/kervanzagarvani.jpg",
+            "author": "Antonia",
+            "subtitle": "Младо перо, което в следващите книги - надявам се и вярвам - ще се развива и задълбочава в жанра на сатирата и ще е също толкова злободневно и забавно"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Колонката на Георги Цанков: Христо Карастоянов, Рада Александрова, Антония Апостолова и още",
             "url": "/kolonkata-na-georgi-cankov/2021/06/25/09-11-%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D1%85%D1%80%D0%B8%D1%81%D1%82%D0%BE-%D0%BA%D0%B0%D1%80%D0%B0%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%BE%D0%B2-%D1%80%D0%B0%D0%B4%D0%B0-%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D0%B0-%D0%B0%D0%BD%D1%82%D0%BE%D0%BD%D0%B8%D1%8F-%D0%B0%D0%BF%D0%BE%D1%81%D1%82%D0%BE%D0%BB%D0%BE%D0%B2%D0%B0-%D0%B8-%D0%BE%D1%89%D0%B5.html",
             "category": "kolonkata-na-georgi-cankov",
@@ -43,22 +59,6 @@ var search_json_index = [
             "image": "/Uploads/olivkitridzh.jpg",
             "author": "Antonia",
             "subtitle": "&quot;Олив Китрдиж&quot; е най-хубавата книга, която прочетох най-малкото от началото на годината досега. Дано от &quot;Кръг&quot; скоро да издадат и нейното продължение Olive, Again"
-        } 
-        ,
-        
-    
-  
-          
-        {
-            "title": "&quot;Керван за гарвани&quot; - за човеколюбивата ирония на Емине Садкъ",
-            "url": "/bookreviews/2021/06/22/09-44-%D0%B5%D0%BC%D0%B8%D0%BD%D0%B5-%D1%81%D0%B0%D0%B4%D0%BA%D1%8A-%D0%B8-%D0%BA%D0%B5%D1%80%D0%B2%D0%B0%D0%BD-%D0%B7%D0%B0-%D0%B3%D0%B0%D1%80%D0%B2%D0%B0%D0%BD%D0%B8-%D0%BE%D0%B1%D0%B5%D1%89%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0-%D1%81%D0%B2%D0%B5%D0%B6%D0%BE-%D0%B8-%D0%B8%D1%80%D0%BE%D0%BD%D0%B8%D1%87%D0%BD%D0%BE-%D0%BF%D0%B5%D1%80%D0%BE.html",
-            "category": "bookreviews",
-            "category2": "",
-            "tags": "Емине Садкъ, Керван за гарвани, Фабер, рецензия, роман",
-            "date": "2021-06-22 00:00:00 +0000",
-            "image": "/Uploads/kervanzagarvani.jpg",
-            "author": "Antonia",
-            "subtitle": "Младо перо, което в следващите книги - надявам се и вярвам - ще се развива и задълбочава в жанра на сатирата и ще е също толкова злободневно и забавно"
         } 
         ,
         
