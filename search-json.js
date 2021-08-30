@@ -8,7 +8,7 @@ var search_json_index = [
             "category2": "",
             "tags": "мястото Янтара, Керана Ангелова, Фабер, рецензия",
             "date": "2021-08-30 00:00:00 +0000",
-            "image": "/Uploads/myastotoyantara.jpeg",
+            "image": "/Uploads/myastotoyantara1.jpeg",
             "author": "Antonia",
             "subtitle": "Има истории, които може да разкаже само Керана Ангелова, и начин, по който може да го направи само тя - разпознаваеми, специфични, нейни"
         } 
