@@ -16,6 +16,8 @@ var search_json_index = [
         
     
   
+      
+  
           
         {
             "title": "&quot;Превъртане&quot; - нов роман от Петър Денчев",
