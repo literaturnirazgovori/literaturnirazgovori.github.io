@@ -2,8 +2,24 @@ var search_json_index = [
     
           
         {
+            "title": "Камелия Панайотова: Младото поколение злоупотребява с тъгата. Малко неща са смъртоносни",
+            "url": "/interviews/2021/10/08/06-19-%D0%BA%D0%B0%D0%BC%D0%B5%D0%BB%D0%B8%D1%8F-%D0%BF%D0%B0%D0%BD%D0%B0%D0%B9%D0%BE%D1%82%D0%BE%D0%B2%D0%B0-%D0%BC%D0%BB%D0%B0%D0%B4%D0%BE%D1%82%D0%BE-%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%BB%D0%BE%D1%83%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D1%8F%D0%B2%D0%B0-%D1%81-%D1%82%D1%8A%D0%B3%D0%B0%D1%82%D0%B0-%D0%BC%D0%B0%D0%BB%D0%BA%D0%BE-%D0%BD%D0%B5%D1%89%D0%B0-%D1%81%D0%B0-%D1%81%D0%BC%D1%8A%D1%80%D1%82%D0%BE%D0%BD%D0%BE%D1%81%D0%BD%D0%B8.html",
+            "category": "interviews",
+            "category2": "",
+            "tags": "Камелия Панайотова, Артс, интервю, поезия, Човекът който си тръгва",
+            "date": "2021-10-08 00:00:00 +0000",
+            "image": "/Uploads/kameliyapanayotova.jpg",
+            "author": "Antonia",
+            "subtitle": "Мисля, че днес имаме нужда да се спасим от страданието си, което често сами си причиняваме. Понякога се вглъбяваме в това да сме жертви, което е глупаво"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Колонката на Георги Цанков: Пейчо Кънев - един от най-значимите ни съвременни поети",
-            "url": "/kolonkata-na-georgi-cankov/2021/10/06/08-57-%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%BF%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B0%D1%87%D1%8A%D1%82-%D0%B8-%D0%BF%D0%BE%D0%B5%D1%82%D1%8A%D1%82-%D0%BF%D0%B5%D0%B9%D1%87%D0%BE-%D0%BA%D1%8A%D0%BD%D0%B5%D0%B2.html",
+            "url": "/kolonkata-na-georgi-cankov/2021/10/06/12-14-%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%BF%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%B0%D1%87%D1%8A%D1%82-%D0%B8-%D0%BF%D0%BE%D0%B5%D1%82%D1%8A%D1%82-%D0%BF%D0%B5%D0%B9%D1%87%D0%BE-%D0%BA%D1%8A%D0%BD%D0%B5%D0%B2.html",
             "category": "kolonkata-na-georgi-cankov",
             "category2": "kolonkata-na-georgi-cankov",
             "tags": "Пейчо Кънев, Колонката на Георги Цанков",
