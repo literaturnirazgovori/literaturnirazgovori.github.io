@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Петър Денчев в разговор за &quot;Превъртане&quot;: Ние сме удивително типизирано общество",
+            "url": "/interviews/2021/10/14/08-05-%D0%BF%D0%B5%D1%82%D1%8A%D1%80-%D0%B4%D0%B5%D0%BD%D1%87%D0%B5%D0%B2-%D0%B2-%D1%80%D0%B0%D0%B7%D0%B3%D0%BE%D0%B2%D0%BE%D1%80-%D0%B7%D0%B0-%D0%BF%D1%80%D0%B5%D0%B2%D1%8A%D1%80%D1%82%D0%B0%D0%BD%D0%B5-%D0%BD%D0%B8%D0%B5-%D1%81%D0%BC%D0%B5-%D1%83%D0%B4%D0%B8%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D0%BD%D0%BE-%D1%82%D0%B8%D0%BF%D0%B8%D0%B7%D0%B8%D1%80%D0%B0%D0%BD%D0%BE-%D0%BE%D0%B1%D1%89%D0%B5%D1%81%D1%82%D0%B2%D0%BE.html",
+            "category": "interviews",
+            "category2": "",
+            "tags": "Петър Денчев, Превъртане, Жанет 45, интервю, роман",
+            "date": "2021-10-14 00:00:00 +0000",
+            "image": "/Uploads/pdenchev.jpg",
+            "author": "Antonia",
+            "subtitle": "Ако валоризираш миналото с предимство пред настоящето, вероятността да катастрофираш е много голяма, предупреждава писателят"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Камелия Панайотова: Младото поколение злоупотребява с тъгата. Малко неща са смъртоносни",
             "url": "/interviews/2021/10/08/06-19-%D0%BA%D0%B0%D0%BC%D0%B5%D0%BB%D0%B8%D1%8F-%D0%BF%D0%B0%D0%BD%D0%B0%D0%B9%D0%BE%D1%82%D0%BE%D0%B2%D0%B0-%D0%BC%D0%BB%D0%B0%D0%B4%D0%BE%D1%82%D0%BE-%D0%BF%D0%BE%D0%BA%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B7%D0%BB%D0%BE%D1%83%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D1%8F%D0%B2%D0%B0-%D1%81-%D1%82%D1%8A%D0%B3%D0%B0%D1%82%D0%B0-%D0%BC%D0%B0%D0%BB%D0%BA%D0%BE-%D0%BD%D0%B5%D1%89%D0%B0-%D1%81%D0%B0-%D1%81%D0%BC%D1%8A%D1%80%D1%82%D0%BE%D0%BD%D0%BE%D1%81%D0%BD%D0%B8.html",
             "category": "interviews",
