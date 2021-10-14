@@ -985,9 +985,11 @@ a {
 
 
 .post-image{
-    max-width: 250px;
+    /*max-width: 250px;*/
+    max-width: 340px;
     float: right;
-    margin: 0px 0px 20px 40px !important;
+    /*margin: 0px 0px 20px 40px !important;*/
+    margin: 0px 0px 0px 40px !important;
 }
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
