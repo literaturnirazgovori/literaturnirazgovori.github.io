@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Автобиографията на легендата Рони Джеймс Дио излиза и на български",
+            "url": "/newbooks/2021/10/15/08-43-%D0%B0%D0%B2%D1%82%D0%BE%D0%B1%D0%B8%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%D1%82%D0%B0-%D0%BD%D0%B0-%D0%BB%D0%B5%D0%B3%D0%B5%D0%BD%D0%B4%D0%B0%D1%82%D0%B0-%D1%80%D0%BE%D0%BD%D0%B8-%D0%B4%D0%B6%D0%B5%D0%B9%D0%BC%D1%81-%D0%B4%D0%B8%D0%BE-%D0%B8%D0%B7%D0%BB%D0%B8%D0%B7%D0%B0-%D0%B8-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8.html",
+            "category": "newbooks",
+            "category2": "",
+            "tags": "Сиела,  Рони Джеймс Дио, автобиография, биография, нова книга",
+            "date": "2021-10-15 00:00:00 +0000",
+            "image": "/Uploads/rainbow-in-the-dark_корица.jpg",
+            "author": "Antonia",
+            "subtitle": "В своите мемоари Рони описва най-важните хора и събития, които са му помогнали да се изгради като музикант и като личност"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "&quot;Лято в Бурландия&quot; – за миналото и властта като в детска книжка",
             "url": "/bookreviews/2021/10/15/08-10-%D0%BB%D1%8F%D1%82%D0%BE-%D0%B2-%D0%B1%D1%83%D1%80%D0%BB%D0%B0%D0%BD%D0%B4%D0%B8%D1%8F-%D0%B7%D0%B0-%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%BE%D1%82%D0%BE-%D0%B8-%D0%B2%D0%BB%D0%B0%D1%81%D1%82%D1%82%D0%B0-%D0%BA%D0%B0%D1%82%D0%BE-%D0%B2-%D0%B4%D0%B5%D1%82%D1%81%D0%BA%D0%B0-%D0%BA%D0%BD%D0%B8%D0%B6%D0%BA%D0%B0.html",
             "category": "bookreviews",
