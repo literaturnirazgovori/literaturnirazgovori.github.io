@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Нов роман на Колсън Уайтхед ни връща в Ню Йорк от 60-те",
+            "url": "/newbooks/2021/12/08/09-31-%D0%BD%D0%BE%D0%B2-%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BD%D0%B0-%D0%BA%D0%BE%D0%BB%D1%81%D1%8A%D0%BD-%D1%83%D0%B0%D0%B9%D1%82%D1%85%D0%B5%D0%B4-%D0%BD%D0%B8-%D0%B2%D1%80%D1%8A%D1%89%D0%B0-%D0%B2-%D0%BD%D1%8E-%D0%B9%D0%BE%D1%80%D0%BA-%D0%BE%D1%82-60-%D1%82%D0%B5.html",
+            "category": "newbooks",
+            "category2": "",
+            "tags": "Колсън Уайтхед, Харлемски рокади, роман, Лист",
+            "date": "2021-12-08 00:00:00 +0000",
+            "image": "/Uploads/harlemski-rokadi-30.jpg",
+            "author": "Antonia",
+            "subtitle": "В &quot;Харлемски рокади&quot; главният герой Карни се опитва да пусне котва в обществото на почтените. Това обаче не е никак лесно, ако баща ти е бил гангстер"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "&quot;Война и мир&quot; в ново луксозно четиритомно издание с илюстрации на Теодор Ушев",
             "url": "/newbooks/2021/12/06/12-33-%D0%B2%D0%BE%D0%B9%D0%BD%D0%B0-%D0%B8-%D0%BC%D0%B8%D1%80-%D0%B2-%D0%BD%D0%BE%D0%B2%D0%BE-%D0%BB%D1%83%D0%BA%D1%81%D0%BE%D0%B7%D0%BD%D0%BE-%D1%87%D0%B5%D1%82%D0%B8%D1%80%D0%B8%D1%82%D0%BE%D0%BC%D0%BD%D0%BE-%D0%B8%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81-%D0%B8%D0%BB%D1%8E%D1%81%D1%82%D1%80%D0%B0%D1%86%D0%B8%D0%B8-%D0%BD%D0%B0-%D1%82%D0%B5%D0%BE%D0%B4%D0%BE%D1%80-%D1%83%D1%88%D0%B5%D0%B2.html",
             "category": "newbooks",
