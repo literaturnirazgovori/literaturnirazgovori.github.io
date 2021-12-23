@@ -164,6 +164,16 @@ jQuery(document).ready(function($){
     }
 
     $('.site-content').css('margin-top', $('header').outerHeight() + 'px');
+
+    //Christmas decorations 23/12 - 04/01
+    var currentYear = (new Date()).getFullYear();
+    var beforeChristmas = new Date(currentYear + "/12/23");
+    var afterNewYear = new Date(currentYear + "/01/05");
+    var now = new Date();
+    if((now > beforeChristmas) || (now < afterNewYear))
+    {
+      $(".christmas").show();
+    }
 });
 
 function hideSearch()
