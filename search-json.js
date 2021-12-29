@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "&quot;Кая&quot; и &quot;Има още време&quot; - разказите на Дияна Тончева за тленността и майчинството ",
+            "url": "/bookreviews/2021/12/29/14-10-%D0%BA%D0%B0%D1%8F-%D0%B8-%D0%B8%D0%BC%D0%B0-%D0%BE%D1%89%D0%B5-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5-%D1%80%D0%B0%D0%B7%D0%BA%D0%B0%D0%B7%D0%B8%D1%82%D0%B5-%D0%BD%D0%B0-%D0%B4%D0%B8%D1%8F%D0%BD%D0%B0-%D1%82%D0%BE%D0%BD%D1%87%D0%B5%D0%B2%D0%B0-%D0%B7%D0%B0-%D1%82%D0%BB%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D1%82%D0%B0-%D0%B8-%D0%BC%D0%B0%D0%B9%D1%87%D0%B8%D0%BD%D1%81%D1%82%D0%B2%D0%BE%D1%82%D0%BE.html",
+            "category": "bookreviews",
+            "category2": "",
+            "tags": "Кая, Има още време, Фама, разкази, рецензия",
+            "date": "2021-12-29 00:00:00 +0000",
+            "image": "/Uploads/imaoshtevreme.jpg",
+            "author": "Antonia",
+            "subtitle": "Отказът да заменим с друго онова, което си е отишло, понеже страхът е свързал неразривно любовта със страданието и не пуска ръцете ни, е равносилно на това да спрем да съществуваме"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Никола Петров: Грозно е онова, което все още не възприемаме за красиво",
             "url": "/interviews/2021/12/23/10-39-%D0%BD%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0-%D0%BF%D0%B5%D1%82%D1%80%D0%BE%D0%B2-%D0%B3%D1%80%D0%BE%D0%B7%D0%BD%D0%BE%D1%82%D0%BE-%D0%B5-%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0-%D0%BA%D0%BE%D0%B5%D1%82%D0%BE-%D0%B2%D1%81%D0%B5-%D0%BE%D1%89%D0%B5-%D0%BD%D0%B5-%D0%B2%D1%8A%D0%B7%D0%BF%D1%80%D0%B8%D0%B5%D0%BC%D0%B0%D0%BC%D0%B5-%D0%B7%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D0%BE.html",
             "category": "interviews",
