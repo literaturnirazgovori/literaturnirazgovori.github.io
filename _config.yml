@@ -33,7 +33,8 @@ authors:
 
 # Plugins
 plugins:
-  - jekyll-paginate-v2
+#  - jekyll-paginate-v2
+  - jekyll-paginate
   - jekyll-archives
 
 
@@ -46,13 +47,21 @@ jekyll-archives:
     category: "/tag/:name/"
 
 # Pagination
-pagination:
-  enabled: true
-  per_page: 12
-  sort_reverse: true
-  indexpage: page-1
-  permalink: page-:num
-  extension: json
+# Page by page (old plugin)
+# Using the old plugin (jekyll-paginate and not jekyll-paginate-v2), 
+# because the new one renders an index.html file per each page, including the main page, which is /index.html
+# hence, the main page gets overriden (e.g. on the homepage there is a donation banner, which does not appear on the other pages,
+# but the new plugin overrides this file, with a "regular" page file, hence the banner is not there).
+paginate: 18
+paginate_path: /page/:num/
+
+# Infinite scroll (new plugin)
+#pagination:
+#  enabled: true
+#  per_page: 18
+##  sort_reverse: true
+#  permalink: '/page/:num/'
+##  extension: json
 
 # Other
 markdown: kramdown

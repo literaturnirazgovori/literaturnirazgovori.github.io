@@ -1,0 +1,12 @@
+{% if include.pg <= include.totalpages %}
+
+    {%  assign pagepath = include.pg %}
+    {% if page == include.activePage %}
+        <span class="ml-1 mr-1">{{ include.pg }}</span>
+    {% elsif page == 1 %}
+        <a  class="ml-1 mr-1" href="{{ site.baseurl | absolute_url }}">{{ include.pg }}</a>
+    {% else %}
+        <a  class="ml-1 mr-1" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', pagepath }}">{{ include.pg }}</a>
+    {% endif %}
+
+{% endif %}
