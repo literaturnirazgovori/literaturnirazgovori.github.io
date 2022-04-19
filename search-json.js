@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Вангел Имреоров: Всяка нова книга, която пиша, е къща в миналото",
+            "url": "/interviews/2022/04/19/07-32-%D0%B2%D0%B0%D0%BD%D0%B3%D0%B5%D0%BB-%D0%B8%D0%BC%D1%80%D0%B5%D0%BE%D1%80%D0%BE%D0%B2-%D0%B2%D1%81%D1%8F%D0%BA%D0%B0-%D0%BD%D0%BE%D0%B2%D0%B0-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0-%D0%BA%D0%BE%D1%8F%D1%82%D0%BE-%D0%BF%D0%B8%D1%88%D0%B0-%D0%B5-%D0%BA%D1%8A%D1%89%D0%B0-%D0%B2-%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB%D0%BE%D1%82%D0%BE.html",
+            "category": "interviews",
+            "category2": "",
+            "tags": "Вангел Имреоров, интервщ, поезия, Издателство за поезия ДА, Жанет 45",
+            "date": "2022-04-19 00:00:00 +0000",
+            "image": "/Uploads/vangelimreorov.jpg",
+            "author": "Antonia",
+            "subtitle": "Ние сме едновременно всичко, което сме били и в което ще се превърнем. Ще ми се да вярвам, че не сме права линия, а нежно танцуваща спирала"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Нов роман на Джон Банвил, вдъхновен от Пикасо, излиза на български",
             "url": "/newbooks/2022/04/12/07-03-%D0%BD%D0%BE%D0%B2-%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BD%D0%B0-%D0%B4%D0%B6%D0%BE%D0%BD-%D0%B1%D0%B0%D0%BD%D0%B2%D0%B8%D0%BB-%D0%B2%D0%B4%D1%8A%D1%85%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD-%D0%BE%D1%82-%D0%BF%D0%B8%D0%BA%D0%B0%D1%81%D0%BE-%D0%B8%D0%B7%D0%BB%D0%B8%D0%B7%D0%B0-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8.html",
             "category": "newbooks",
