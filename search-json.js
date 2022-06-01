@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Колонката на Георги Цанков: Преводните съкровища на Пролетния панаир на книгата",
+            "url": "/kolonkata-na-georgi-cankov/2022/06/01/08-22-%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%BF%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D0%BD%D0%B8%D1%82%D0%B5-%D1%81%D1%8A%D0%BA%D1%80%D0%BE%D0%B2%D0%B8%D1%89%D0%B0-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D0%BB%D0%B5%D1%82%D0%BD%D0%B8%D1%8F-%D0%BF%D0%B0%D0%BD%D0%B0%D0%B8%D1%80-%D0%BD%D0%B0-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0%D1%82%D0%B0.html",
+            "category": "kolonkata-na-georgi-cankov",
+            "category2": "",
+            "tags": "Колонката на Георги Цанков",
+            "date": "2022-06-01 00:00:00 +0000",
+            "image": "/Uploads/kgt0106.jpg",
+            "author": "Guest",
+            "subtitle": "В следващите редове съм подготвил кратки анотации за моите фаворити сред документалните и художествените четива"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Иван Станков: Каквото и да пише, писателят ще го направи, за да спаси някого",
             "url": "/interviews/2022/05/17/08-12-%D0%B8%D0%B2%D0%B0%D0%BD-%D1%81%D1%82%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%BA%D0%B0%D0%BA%D0%B2%D0%BE%D1%82%D0%BE-%D0%B8-%D0%B4%D0%B0-%D0%BF%D0%B8%D1%88%D0%B5-%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%D1%82-%D1%89%D0%B5-%D0%B3%D0%BE-%D0%BD%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%B8-%D0%B7%D0%B0-%D0%B4%D0%B0-%D1%81%D0%BF%D0%B0%D1%81%D0%B8-%D0%BD%D1%8F%D0%BA%D0%BE%D0%B3%D0%BE.html",
             "category": "interviews",
