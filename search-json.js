@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Новата книга на Красимир Димовски събира три новели за любовта и яростта (ОТКЪС)",
+            "url": "/newbooks/2022/06/07/12-02-%D0%BD%D0%BE%D0%B2%D0%B0%D1%82%D0%B0-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0-%D0%BD%D0%B0-%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%BC%D0%B8%D1%80-%D0%B4%D0%B8%D0%BC%D0%BE%D0%B2%D1%81%D0%BA%D0%B8-%D1%81%D1%8A%D0%B1%D0%B8%D1%80%D0%B0-%D1%82%D1%80%D0%B8-%D0%BD%D0%BE%D0%B2%D0%B5%D0%BB%D0%B8-%D0%B7%D0%B0-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2%D1%82%D0%B0-%D0%B8-%D1%8F%D1%80%D0%BE%D1%81%D1%82%D1%82%D0%B0-%D0%BE%D1%82%D0%BA%D1%8A%D1%81.html",
+            "category": "newbooks",
+            "category2": "",
+            "tags": "Красимир Димовски, Хермес, новели, нова книга",
+            "date": "2022-06-07 00:00:00 +0000",
+            "image": "/Uploads/lovecat_na_rusalki.jpg",
+            "author": "Antonia",
+            "subtitle": "Очаквайте скоро рецензия на &quot;Литературни разговори&quot; за сборника &quot;Ловецът на русалки&quot;, който отново е с логото на издателство &quot;Хермес&quot;"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Колонката на Георги Цанков: Новите български предизвикателства на Панаира на книгата",
             "url": "/kolonkata-na-georgi-cankov/2022/06/02/11-04-%D0%BA%D0%BE%D0%BB%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B0-%D0%BD%D0%B0-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D0%B5-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8-%D0%BF%D1%80%D0%B5%D0%B4%D0%B8%D0%B7%D0%B2%D0%B8%D0%BA%D0%B0%D1%82%D0%B5%D0%BB%D1%81%D1%82%D0%B2%D0%B0-%D0%BD%D0%B0-%D0%BF%D0%B0%D0%BD%D0%B0%D0%B8%D1%80%D0%B0-%D0%BD%D0%B0-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B0%D1%82%D0%B0.html",
             "category": "kolonkata-na-georgi-cankov",
