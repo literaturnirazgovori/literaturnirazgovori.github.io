@@ -8,7 +8,7 @@ var search_json_index = [
             "category2": "",
             "tags": "Антина Златкова, Контражур, Жанет 45, интервю",
             "date": "2022-07-03 00:00:00 +0000",
-            "image": "/Uploads/antinazh.jpg",
+            "image": "/Uploads/antinazh1.jpg",
             "author": "Antonia",
             "subtitle": "Струва ми се, че дори в последните години да имаме поводи за все повече общи страхове, краят на света (все още) е субективен"
         } 
