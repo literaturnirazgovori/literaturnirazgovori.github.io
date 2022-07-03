@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Антина Златкова: Има значение откъде и накъде гледаш - и на каква светлина",
+            "url": "/interviews/2022/07/03/11-23-%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%B0-%D0%B7%D0%BB%D0%B0%D1%82%D0%BA%D0%BE%D0%B2%D0%B0-%D0%B8%D0%BC%D0%B0-%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%BA%D1%8A%D0%B4%D0%B5-%D0%B8-%D0%BD%D0%B0%D0%BA%D1%8A%D0%B4%D0%B5-%D0%B3%D0%BB%D0%B5%D0%B4%D0%B0%D1%88-%D0%B8-%D0%BD%D0%B0-%D0%BA%D0%B0%D0%BA%D0%B2%D0%B0-%D1%81%D0%B2%D0%B5%D1%82%D0%BB%D0%B8%D0%BD%D0%B0.html",
+            "category": "interviews",
+            "category2": "",
+            "tags": "Антина Златкова, Контражур, Жанет 45, интервю",
+            "date": "2022-07-03 00:00:00 +0000",
+            "image": "/Uploads/antinazh.jpg",
+            "author": "Antonia",
+            "subtitle": "Струва ми се, че дори в последните години да имаме поводи за все повече общи страхове, краят на света (все още) е субективен"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "&quot;Късна смърт&quot;, или Иван-Станковата любов по време на история",
             "url": "/bookreviews/2022/06/28/13-46-%D0%BA%D1%8A%D1%81%D0%BD%D0%B0-%D1%81%D0%BC%D1%8A%D1%80%D1%82-%D0%B8%D0%BB%D0%B8-%D0%B8%D0%B2%D0%B0%D0%BD-%D1%81%D1%82%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D0%B0%D1%82%D0%B0-%D0%BB%D1%8E%D0%B1%D0%BE%D0%B2-%D0%BF%D0%BE-%D0%B2%D1%80%D0%B5%D0%BC%D0%B5-%D0%BD%D0%B0-%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F.html",
             "category": "bookreviews",
