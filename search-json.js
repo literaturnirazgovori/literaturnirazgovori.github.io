@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "С поглед към идното лято: &quot;Голи и солени&quot;, или Спомен за морето без бетон",
+            "url": "/bookreviews/2022/10/17/08-53-%D1%81-%D0%BF%D0%BE%D0%B3%D0%BB%D0%B5%D0%B4-%D0%BA%D1%8A%D0%BC-%D0%B8%D0%B4%D0%BD%D0%BE%D1%82%D0%BE-%D0%BB%D1%8F%D1%82%D0%BE-%D0%B3%D0%BE%D0%BB%D0%B8-%D0%B8-%D1%81%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8-%D0%B8%D0%BB%D0%B8-%D1%81%D0%BF%D0%BE%D0%BC%D0%B5%D0%BD-%D0%B7%D0%B0-%D0%BC%D0%BE%D1%80%D0%B5%D1%82%D0%BE-%D0%B1%D0%B5%D0%B7-%D0%B1%D0%B5%D1%82%D0%BE%D0%BD.html",
+            "category": "bookreviews",
+            "category2": "",
+            "tags": "Голи и солени, Кръг, рецензия, мемоари, сборник",
+            "date": "2022-10-17 00:00:00 +0000",
+            "image": "/Uploads/goliisoleni.jpg",
+            "author": "Antonia",
+            "subtitle": "Разказите ни разхождат от Дуранкулак на север до Резово на юг, минавайки през всички превърнали се в култови за различните видове летовници места"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Бестселърът „Галаад” на Мерилин Робинсън най-после и на българския",
             "url": "/newbooks/2022/10/12/12-46-%D0%B1%D0%B5%D1%81%D1%82%D1%81%D0%B5%D0%BB%D1%8A%D1%80%D1%8A%D1%82-%D0%B3%D0%B0%D0%BB%D0%B0%D0%B0%D0%B4-%D0%BD%D0%B0-%D0%BC%D0%B5%D1%80%D0%B8%D0%BB%D0%B8%D0%BD-%D1%80%D0%BE%D0%B1%D0%B8%D0%BD%D1%81%D1%8A%D0%BD-%D0%BD%D0%B0%D0%B9-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-%D0%B8-%D0%BD%D0%B0-%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D1%8F.html",
             "category": "newbooks",
