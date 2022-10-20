@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Чавдар Ценов: Писането е игра като в &quot;Том и Джери&quot; и мигът невнимание е най-интересният",
+            "url": "/interviews/2022/10/20/11-44-%D1%87%D0%B0%D0%B2%D0%B4%D0%B0%D1%80-%D1%86%D0%B5%D0%BD%D0%BE%D0%B2-%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B5%D1%82%D0%BE-%D0%B5-%D0%B8%D0%B3%D1%80%D0%B0-%D0%BA%D0%B0%D1%82%D0%BE-%D0%B2-%D1%82%D0%BE%D0%BC-%D0%B8-%D0%B4%D0%B6%D0%B5%D1%80%D0%B8-%D0%B8-%D0%BC%D0%B8%D0%B3%D1%8A%D1%82-%D0%BD%D0%B5%D0%B2%D0%BD%D0%B8%D0%BC%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B5-%D0%BD%D0%B0%D0%B9-%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D0%B8%D1%8F%D1%82.html",
+            "category": "interviews",
+            "category2": "",
+            "tags": "Чавдар Ценов, Рива, интервю, Старецът трябва да умре",
+            "date": "2022-10-20 00:00:00 +0000",
+            "image": "/Uploads/chavdarcenov.jpg",
+            "author": "Antonia",
+            "subtitle": "Лично аз пиша за своето непосредствено време - вероятно от мързел и неорганизираност, казва авторът на &quot;Старецът трябва да умре&quot;"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "С поглед към идното лято: &quot;Голи и солени&quot;, или Спомен за морето без бетон",
             "url": "/bookreviews/2022/10/17/08-53-%D1%81-%D0%BF%D0%BE%D0%B3%D0%BB%D0%B5%D0%B4-%D0%BA%D1%8A%D0%BC-%D0%B8%D0%B4%D0%BD%D0%BE%D1%82%D0%BE-%D0%BB%D1%8F%D1%82%D0%BE-%D0%B3%D0%BE%D0%BB%D0%B8-%D0%B8-%D1%81%D0%BE%D0%BB%D0%B5%D0%BD%D0%B8-%D0%B8%D0%BB%D0%B8-%D1%81%D0%BF%D0%BE%D0%BC%D0%B5%D0%BD-%D0%B7%D0%B0-%D0%BC%D0%BE%D1%80%D0%B5%D1%82%D0%BE-%D0%B1%D0%B5%D0%B7-%D0%B1%D0%B5%D1%82%D0%BE%D0%BD.html",
             "category": "bookreviews",
