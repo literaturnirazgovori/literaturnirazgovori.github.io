@@ -2,6 +2,22 @@ var search_json_index = [
     
           
         {
+            "title": "Книжен кръгозор с Георги Цанков: Книгите на &quot;Колибри&quot; (част 2)",
+            "url": "/kolonkata-na-georgi-cankov/2022/11/25/10-11-%D0%BA%D0%BD%D0%B8%D0%B6%D0%B5%D0%BD-%D0%BA%D1%80%D1%8A%D0%B3%D0%BE%D0%B7%D0%BE%D1%80-%D1%81-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8%D1%82%D0%B5-%D0%BD%D0%B0-%D0%BA%D0%BE%D0%BB%D0%B8%D0%B1%D1%80%D0%B8-%D1%87%D0%B0%D1%81%D1%82-2.html",
+            "category": "kolonkata-na-georgi-cankov",
+            "category2": "kolonkata-na-georgi-cankov",
+            "tags": "Колонката на Георги Цанков, Колибри",
+            "date": "2022-11-25 00:00:00 +0000",
+            "image": "/Uploads/colibrilogo2.jpg",
+            "author": "Guest",
+            "subtitle": "На път към нас вече е една от най-великите книги от &quot;модерната класика&quot; – &quot;Кучешки години&quot; от Гюнтер Грас в съвършения превод на вълшебника на словото Любомир Илиев"
+        } 
+        ,
+        
+    
+  
+          
+        {
             "title": "Книжен кръгозор с Георги Цанков: Книгите на &quot;Колибри&quot; (част 1)",
             "url": "/kolonkata-na-georgi-cankov/2022/11/23/09-42-%D0%BA%D0%BD%D0%B8%D0%B6%D0%B5%D0%BD-%D0%BA%D1%80%D1%8A%D0%B3%D0%BE%D0%B7%D0%BE%D1%80-%D1%81-%D0%B3%D0%B5%D0%BE%D1%80%D0%B3%D0%B8-%D1%86%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2-%D0%BA%D0%BD%D0%B8%D0%B3%D0%B8%D1%82%D0%B5-%D0%BD%D0%B0-%D0%BA%D0%BE%D0%BB%D0%B8%D0%B1%D1%80%D0%B8-%D1%87%D0%B0%D1%81%D1%82-1.html",
             "category": "kolonkata-na-georgi-cankov",
