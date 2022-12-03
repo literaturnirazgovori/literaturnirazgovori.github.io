@@ -22,6 +22,6 @@ before_install:
 notifications:
   email:
     recipients:
-      - alrotem@gmail.com
+      - alrotem+travis@gmail.com
     on_success: always # default: change
     on_failure: always # default: always
