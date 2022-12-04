@@ -4,3 +4,6 @@ _site
 .sass-cache
 *.Identifier
 .jekyll-metadata
+node_modules/
+.ruby-version
+Gemfile.lock

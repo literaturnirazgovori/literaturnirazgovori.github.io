@@ -54,11 +54,11 @@
 {
     float: right;
 }
-.build-created
+.build-created, .build-queued
 {
     background-color: #FF6A00;
 }
-.build-started
+.build-started, .build-in_progress
 {
     background-color: #B200FF;
 }
@@ -67,7 +67,7 @@
     background-color: #FF0000;
 }
 
-.build-passed
+.build-passed, .build-completed
 {
     background-color: #4EC820;
 }
