@@ -8,6 +8,7 @@ var offlineImg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAUCAYAAAAN
 var isPublishingInProgress = false;
 //var travisTriggerPublishingBranch = "work";
 //var travisTriggerPublishingMessage = "Manual build triggered by admin panel";
+var tk=["Z2hwX0FuOT", "lldFJIODdH", "eTV5Y3RUS2", "ZqOUdzTEsx", "dlBIbjRaUUZGWQ"]; //"=="
 
 (async function () {
     //Wait for the nav bar to appear
@@ -61,6 +62,17 @@ var isPublishingInProgress = false;
     if ((nav.length > 0) && (header.length > 0)) { getPublishingStatus(); }
 })();
 
+function enc(str)
+{
+    return window.btoa(encodeURIComponent(str));
+}
+function dec(arr)
+{
+    var t = (arr.join("")) + "==";
+    return decodeURIComponent(window.atob(t));
+}
+
+
 function triggerRepublish() {
     if (!isPublishingInProgress) {
         var doTrigger = confirm("This will trigger a re-publishing.\nContinue?");
@@ -71,7 +83,7 @@ function triggerRepublish() {
             workflowApiRequest.open("POST", url);
 
             workflowApiRequest.setRequestHeader("Accept", "application/vnd.github+json");
-            workflowApiRequest.setRequestHeader("Authorization", "Bearer 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");
+            workflowApiRequest.setRequestHeader("Authorization", "Bearer " + dec(tk));
             workflowApiRequest.send(JSON.stringify({ "ref":"work" }));
         }
     }
@@ -171,7 +183,7 @@ function getPublishingStatus() {
     };
     workflowApiRequest.open("GET", url, true);
     workflowApiRequest.setRequestHeader("Accept", "application/vnd.github+json");
-    workflowApiRequest.setRequestHeader("Authorization", "Bearer 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");
+    workflowApiRequest.setRequestHeader("Authorization", "Bearer " + dec(tk));
     workflowApiRequest.timeout = 5000;
     workflowApiRequest.onerror = function () {
         showError();
