@@ -1,5 +1,7 @@
 var fs = require('fs');
 var path = require('path');
+const frontmatter = require("front-matter");
+const jsyaml = require("js-yaml");
 require("dotenv").config({ silent: true });
 
 const { google } = require("googleapis");
@@ -153,28 +155,45 @@ const analyticsreporting = google.analyticsreporting({
 
   //let nextPageToken = "";
   const pageViews = {};
-  getNextPage("32000").then(()=>{
+  getNextPage("0").then(()=>{
 
     console.log(pageViews);
     fs.writeFile(path.resolve(__dirname, 'pageviews.json'), JSON.stringify(pageViews, null, 4), 'utf8', ()=>{});    
 
     let postsPath = path.resolve(__dirname, "../_posts");
-    // Loop through all the files in the temp directory
-    fs.readdir(postsPath, function (err, files) 
+
+    fs.readdir(postsPath, function (err, posts) 
     {
       if (err) {
         console.error("Could not list the directory.", err);
       }
       else
       {
-        files.forEach(function (file, index) {
+        posts.forEach(function (post, index) {
           let view = 0;
-          if(pageViews[file])
+          if(pageViews[post])
           {
-            view = pageViews[file];
+            view = pageViews[post];
           }
-          if (view > 0)
-            console.log(index + " :: " + file + " -> " + view);
+          if (view > 0) {
+            console.log(index + " :: " + post + " -> " + view);
+            let postfilename = path.resolve(postsPath, post);
+            let oldfilecontent = fs.readFileSync(postfilename).toString();
+            let oldfileFrontmatter = frontmatter(oldfilecontent).attributes;
+            if(! oldfileFrontmatter["pageviews"] || oldfileFrontmatter["pageviews"] != view)
+            {
+                oldfileFrontmatter["pageviews"] = view;
+                let updatedFrontmatter = jsyaml.safeDump(
+                  oldfileFrontmatter
+                );
+                let updatedContent = oldfilecontent.replace(
+                  /(^\-{3,}[\r\n]*)[\S\s]*([\n\r]*\-{3,})/,
+                  "$1" + updatedFrontmatter + "$2"
+                );
+                //change the url to /yyyy/mm/dd/hh/mm....
+                fs.writeFileSync(postfilename, updatedContent);                            
+            }
+          }
         });
       }
     });

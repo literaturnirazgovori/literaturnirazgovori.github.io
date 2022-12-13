@@ -12,6 +12,7 @@ mailchimp-list: "https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a
 encoding: utf-8
 fb_app_id: "405644126912554"
 analytics_proxy_url: "https://warm-woodland-78106.herokuapp.com"
+exclude: ["/utils"]
 
 ozone_banner_enabled: true
 ozone_banner_text: "Купи книгата от"

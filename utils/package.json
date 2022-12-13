@@ -2,7 +2,7 @@
     "name": "whatever",
     "version": "1.0.0",
     "engines": {
-      "node": ">=7.x"
+        "node": ">=7.x"
     },
     "description": "Whateber",
     "author": "Alon Rotem <alrotem@gmail.com>",
@@ -13,15 +13,15 @@
         "dotenv": "^2.0.0",
         "express": "^4.15.2",
         "front-matter": "^3.0.1",
+        "frontmatter": "^0.0.3",
         "fs-extra": "^7.0.1",
         "googleapis": "^109.0.1",
-        "js-yaml": "^3.12.1",
+        "js-yaml": "^3.14.1",
         "moment-timezone": "^0.5.23",
         "parse-diff": "^0.5.1",
         "randomstring": "^1.1.5",
         "save": "^2.3.3",
         "simple-oauth2": "^1.2.0",
         "utf8": "^3.0.0"
-      }
-  }
-  
+    }
+}

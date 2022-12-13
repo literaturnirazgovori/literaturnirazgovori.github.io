@@ -13,7 +13,11 @@ comments: true
 
         <!-- Post Share -->
         <div class="col-md-2 pl-0">
-            <div id="postviewscontainer" class="postviews"><span id="postViews"></span></div>
+            <div id="postviewscontainer" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
+                {% if page.pageviews and page.pageviews > 0 %}
+                    {{ page.pageviews }}
+                {% endif %}
+            <span id="postViews"></span></div>
             {% include share.html %}
         </div>
 
@@ -51,7 +55,11 @@ comments: true
                 </div>            
                 <!--================================-->
                 
-                <div id="postviewscontainer-mobile" class="postviews"><span id="postViews-mobile"></span></div>
+                <div id="postviewscontainer-mobile" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
+                    {% if page.pageviews and page.pageviews > 0 %}
+                        {{ page.pageviews }}
+                    {% endif %}                    
+                    <span id="postViews-mobile"></span></div>
             </div>
             <div class="postinfo">
                     {{ authorDisplayName }},
@@ -141,6 +149,7 @@ comments: true
                 $(".article-post").show();
 
                 /* GET PAGE VIEWS */
+                /*
                 //remove the category. In case the category was changed/moved, a regular expression is used.
                 //var pageurl = "{{ page.url }}".replace(/^\/+/, "").substr("{{ page.url }}".lastIndexOf("/" + 1)).replace(/\d{1,2}\-\d{1,2}(\-.*)/, ".*$1");
                 var pageurl = "{{ page.url }}";
@@ -181,6 +190,7 @@ comments: true
                 //the JSON to send is optional. If not sent, the current page url will be used.
                 //It's sent here because the category is trimmed and replaced with a regex
                 xhr.send(JSON.stringify({ "page": pageurl }));
+                */
 
             </script>
 
