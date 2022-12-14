@@ -42,6 +42,9 @@ jobs:
 
           npm install ./utils/
           node ./utils/analytics-fetch.js
+
+          rm -rf ./node_modules
+          rm -rf ./utils/node_modules
           
           numChangedFiles=$(git status -s | wc -l)
           echo "$numChangedFiles files pending push!"
