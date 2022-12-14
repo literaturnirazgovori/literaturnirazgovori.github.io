@@ -9,6 +9,8 @@ const url = require("url");
 const { min } = require('moment-timezone');
 const scopes = "https://www.googleapis.com/auth/analytics.readonly";
 
+const postsPath = path.resolve(__dirname, "../_posts");
+
 let tomorrow = new Date();
 tomorrow.setDate(new Date().getDate() + 1);
 let tomorrowDateString =
@@ -85,7 +87,6 @@ const analyticsreporting = google.analyticsreporting({
                 {
                   dimensionName: "ga:pagePath",
                   operator: "REGEXP",
-                  //expressions: ["/kolonkata-na-georgi-cankov/2022/11/23/09-42-книжен-кръгозор-с-георги-цанков-книгите-на-колибри-част-1.html"]
                   expressions: ["/.*"]
                 }
               ]
@@ -128,18 +129,30 @@ const analyticsreporting = google.analyticsreporting({
               let hour = matched[4];
               let minutes = matched [5];
               let pagename = matched[6];
-              pagename = pagename.replace(".html", ".md");
               page = year + "-" + month + "-" + day + "-" + hour + "-" + minutes + pagename;
+              
+              let regGetExtension = /^([^\.]*)\.(.+)$/
+              let matchExtension = regGetExtension.exec(page);
+              if(matchExtension && matchExtension.length > 2)
+              {
+                let filenamewithoutextension = matchExtension[1];
+                let filenameextension = matchExtension[2];
+                page = filenamewithoutextension;
+              }
+              page += ".md"
 
-              if(pageViews[page])
-              {
-                pageViews[page] += views;
+              let postfilename = path.resolve(postsPath, page);
+              //check if a page exists
+              if (fs.existsSync(postfilename)) {
+                if(pageViews[page])
+                {
+                  pageViews[page] += views;
+                }
+                else
+                {
+                  pageViews[page] = views;
+                }
               }
-              else
-              {
-                pageViews[page] = views;
-              }
-  
             }
           }
           if(result.data.reports[0].nextPageToken){
@@ -154,13 +167,20 @@ const analyticsreporting = google.analyticsreporting({
   }
 
   //let nextPageToken = "";
-  const pageViews = {};
+  let pageViews = {};
   getNextPage("0").then(()=>{
+
+    //order the collected pageviews by names
+    pageViews = Object.keys(pageViews).sort().reduce(
+      (obj, key) => { 
+        obj[key] = pageViews[key]; 
+        return obj;
+      }, 
+      {}
+    );
 
     console.log(pageViews);
     fs.writeFile(path.resolve(__dirname, 'pageviews.json'), JSON.stringify(pageViews, null, 4), 'utf8', ()=>{});    
-
-    let postsPath = path.resolve(__dirname, "../_posts");
 
     fs.readdir(postsPath, function (err, posts) 
     {
