@@ -2,10 +2,10 @@
 name: Retrieve Google Analytics data
 
 on:
-  # Runs on pushes targeting the default branch
-#  push:
-#    branches: ["work"]
-
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/30 * * * *'
+    
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
