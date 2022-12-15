@@ -196,12 +196,12 @@ const analyticsreporting = google.analyticsreporting({
             view = pageViews[post];
           }
           if (view > 0) {
-            console.log(index + " :: " + post + " -> " + view);
             let postfilename = path.resolve(postsPath, post);
             let oldfilecontent = fs.readFileSync(postfilename).toString();
             let oldfileFrontmatter = frontmatter(oldfilecontent).attributes;
             if(! oldfileFrontmatter["pageviews"] || oldfileFrontmatter["pageviews"] != view)
             {
+                console.log(index + " :: " + post + " [Updating views: " + oldfileFrontmatter["pageviews"] + " -> " + view + "]");
                 oldfileFrontmatter["pageviews"] = view;
                 let updatedFrontmatter = jsyaml.safeDump(
                   oldfileFrontmatter
