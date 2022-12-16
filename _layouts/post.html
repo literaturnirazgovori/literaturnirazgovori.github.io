@@ -13,12 +13,14 @@ comments: true
 
         <!-- Post Share -->
         <div class="col-md-2 pl-0">
-            <div id="postviewscontainer" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
-                {% if page.pageviews and page.pageviews > 0 %}
-                    {{ page.pageviews }}
-                {% endif %}
-            <span id="postViews"></span></div>
-            {% include share.html %}
+            <div id="side_actions">
+                <div id="postviewscontainer" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
+                    {% if page.pageviews and page.pageviews > 0 %}
+                        {{ page.pageviews }}
+                    {% endif %}
+                <span id="postViews"></span></div>
+                {% include share.html %}
+            </div>
         </div>
 
 

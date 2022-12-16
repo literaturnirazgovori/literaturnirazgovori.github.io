@@ -14,7 +14,6 @@ Theme: [Mediumish](https://wowthemesnet.github.io/mediumish-theme-jekyll/)
 
 
 // TODO
- - Check if post from analytics really exists (e.g. partial name typed). Otherwise remove from pageviews file
  - Add manual analytics refresh button
  - Sync the build status also with the new pipeline, to show it's running
  - Add "queued" timeout when manual is pressed, to show a build is about to start, even though it hasn't started yet

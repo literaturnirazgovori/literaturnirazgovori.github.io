@@ -155,27 +155,6 @@ function getPublishingStatus() {
                         "<div class=\"infoleft\"><b>" + whichBuild + " publishing:</b> \"<em>" + displayTitle + "</em>\"</div><div class=\"inforight\">" + finished + "<b>Run by</b> " + createdBy + "<b>]</b></div>";
                     updateUI(statusImage, notificationHeaderClassName, notificationHeaderContent);
                 }
-
-                /*
-                //----travis
-                if (response.builds && response.builds.length > 0) {
-                    var buildInfo = response.builds[0];
-                    var commitMessage = buildInfo.commit.message;
-                    var finishedAt = buildInfo.finished_at;
-                    var state = buildInfo.state;
-                    publishingInProgress((state == "created") || (state == "started"));
-                    var createdBy = buildInfo.created_by.login;
-                    console.log("Build \"" + commitMessage + "\", State: " + state + ". Finished: " + finishedAt);
-                    var statusImage = "images/build-" + state + ".png";
-
-                    var whichBuild = ((state == "created") || (state == "started")) ? "Running" : "Last";
-                    var finished = (finishedAt) ? ("<b>[Finished at:</b> " + finishedAt + ", ") : "<b>[</b>";
-                    var notificationHeaderClassName = "build-" + state;
-                    var notificationHeaderContent =
-                        "<div class=\"infoleft\"><b>" + whichBuild + " publishing:</b> \"<em>" + commitMessage + "</em>\"</div><div class=\"inforight\">" + finished + "<b>Run by</b> " + createdBy + "<b>]</b></div>";
-                    updateUI(statusImage, notificationHeaderClassName, notificationHeaderContent);
-                }
-                */
             } else {
                 showError(workflowApiRequest.statusText);
             }

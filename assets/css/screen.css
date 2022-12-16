@@ -753,6 +753,10 @@ span.site-tag {
 
 /*-------------------*/
 
+#side_actions {
+    position: fixed;
+}
+
 #postviewscontainer-mobile {
     display: none;
     font-family: "nicebgfontsemilight";
