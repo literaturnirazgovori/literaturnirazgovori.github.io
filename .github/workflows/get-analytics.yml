@@ -41,6 +41,8 @@ jobs:
           git config --global user.email "alrotem@gmail.com"
           git config --global user.name "Alon Rotem"
 
+          export Analytics_PrivateKey="${{ secrets.GOOGLE_ANALYTICS_PRIVATEKEY }}""
+
           npm install ./utils/
           node ./utils/analytics-fetch.js
 

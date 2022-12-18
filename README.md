@@ -17,5 +17,4 @@ Theme: [Mediumish](https://wowthemesnet.github.io/mediumish-theme-jekyll/)
  - Add manual analytics refresh button
  - Sync the build status also with the new pipeline, to show it's running
  - Add "queued" timeout when manual is pressed, to show a build is about to start, even though it hasn't started yet
- - Move keys to env vars
  - Send notifications on build (only for jekyll pipeline, not for analytics)
