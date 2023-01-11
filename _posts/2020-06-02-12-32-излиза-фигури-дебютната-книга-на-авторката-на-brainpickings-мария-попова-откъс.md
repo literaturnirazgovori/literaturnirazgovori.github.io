@@ -21,7 +21,7 @@ tags:
   - есеистика
 ozone-link: 'https://www.ozone.bg/product/figuri/'
 schedule: ''
-pageviews: 137
+pageviews: 138
 ---
 На 5 юни излиза от печат  „Фигури“, дебютната книга на Мария Попова, създателката на енциклопедичен сайт Brain Pickings.
 
