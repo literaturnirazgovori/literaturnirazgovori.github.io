@@ -4,7 +4,7 @@ name: Retrieve Google Analytics data
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-  - cron: '0 */2 * * *'     # every 2 hours at xx:00
+  - cron: '0 */4 * * *'     # every 4 hours at xx:00
 #   - cron:  '0 * * * *'      # every 1 hour at xx:00
 #   - cron:  '*/30 * * * *'   # every 30 mins
     
