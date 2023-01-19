@@ -8,3 +8,4 @@ node_modules/
 .ruby-version
 Gemfile.lock
 yq
+analytics-privatekey.txt
