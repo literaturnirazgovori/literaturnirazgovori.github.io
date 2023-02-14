@@ -35,7 +35,9 @@ jobs:
 
       - name: Fetch all analytics data, and update relevant posts
         run: |
+          echo "******* Update and upgrade *******"
           sudo apt update && sudo apt upgrade
+          echo "******* Installing packs *******"
           sudo apt install -y git nano curl wget
 
           git config core.quotepath false
@@ -44,7 +46,9 @@ jobs:
 
           export Analytics_PrivateKey="${{ secrets.GOOGLE_ANALYTICS_PRIVATEKEY }}"
 
+          echo "******* npm install *******"
           npm install ./utils/
+          echo "******* Calling the fetch script js *******"
           node ./utils/analytics-fetch.js
 
           rm -rf ./node_modules
