@@ -208,7 +208,7 @@ function getLatestGithubActionState(){
             }
             else
             {
-                state.latest_build_state += " scheduled";
+                state.latest_build_state += " autmated";
             }
             state.createdBy = buildInfo.actor.login;
             state.finishedAt = (buildInfo.status == "completed")? buildInfo.updated_at : null;
