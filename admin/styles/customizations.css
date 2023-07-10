@@ -15,13 +15,30 @@
     flex: 1;    
 }
 
-#triggerBuildLi{
+.toolbar_li
+{
+    display: block;
+}
+#inProgressMessageLi
+{
+    display: none;
+}
+
+.inprog .toolbar_li{
+    display: none;
+}
+
+.inprog #inProgressMessageLi {
+    display: block;
+}
+
+.toolbar_li {
     margin: auto 0px auto 20px;
     font-weight: bold;
     font-size: 11pt;
 }
 
-#triggerBuildLi a{
+.toolbar_li a{
     color: #3A69C7;
 }
 
@@ -41,11 +58,11 @@
     filter: grayscale(100%);
     }
 
-#triggerBuildLi a:hover{
+.toolbar_li a:hover{
     color: #3A69C7;
 }
 
-#triggerBuildLi img{
+.toolbar_li img{
     width: 16px;
     height: 16px;
 }

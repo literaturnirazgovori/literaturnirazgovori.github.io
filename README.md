@@ -18,3 +18,5 @@ Theme: [Mediumish](https://wowthemesnet.github.io/mediumish-theme-jekyll/)
  - Sync the build status also with the new pipeline, to show it's running
  - Add "queued" timeout when manual is pressed, to show a build is about to start, even though it hasn't started yet
  - Send notifications on build (only for jekyll pipeline, not for analytics)
+
+echo "------ IP ADDRESS -----" && ip -4 -o addr show wlo1 | awk '{print $4}' && echo "------ IP ADDRESS -----" && echo && echo &&  npx netlify-cms-proxy-server &  export JEKYLL_ENV=development & bundle exec jekyll serve --host=0.0.0.0

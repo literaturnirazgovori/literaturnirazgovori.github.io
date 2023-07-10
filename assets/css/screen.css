@@ -768,7 +768,7 @@ span.site-tag {
     font-size: 12pt;
 }
 
-@media (max-width:768px) and (min-width:414px) {
+@media (max-width:768px) /*and (min-width:414px)*/ {
     #postviewscontainer-mobile {
         display: block;
     }
