@@ -50,7 +50,8 @@ jobs:
           pip install google-api-python-client oauth2client google-analytics-data python-frontmatter
 
 
-          /usr/local/bin/python --version
+          which pyrhon
+          python --version
           /usr/local/bin/python ./utils/analytics-fetch.py
 
           # export Analytics_PrivateKey="${{ secrets.GOOGLE_ANALYTICS_PRIVATEKEY }}"
