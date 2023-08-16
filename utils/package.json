@@ -8,6 +8,7 @@
     "author": "Alon Rotem <alrotem@gmail.com>",
     "license": "MIT",
     "dependencies": {
+        "@google-analytics/data": "^3.2.2",
         "cors": "^2.8.5",
         "crypto": "^1.0.1",
         "dotenv": "^2.0.0",
