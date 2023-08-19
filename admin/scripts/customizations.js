@@ -76,7 +76,7 @@ var queuing_status = {
             var triggerAnalyticsLi = document.createElement("li");
             triggerAnalyticsLi.setAttribute("id", triggerAnalyticsLiID);
             triggerAnalyticsLi.className = "toolbar_li";
-            triggerAnalyticsLi.innerHTML = "<a href=\"#\" id=\"" + triggerAnalyticsButtonID + "\" title=\"This will refresh all views of all posts\"><img src='images/analytics-2.png'/><span class=\"customActionText\" id=\"analyticshMsg\">Refresh views!</span></a>";
+            triggerAnalyticsLi.innerHTML = "<a href=\"#\" id=\"" + triggerAnalyticsButtonID + "\" title=\"This will refresh all views of all posts\"><img src='images/analytics-2.png'/><span class=\"customActionText\" id=\"analyticshMsg\">Refresh page views!</span></a>";
             navUL[0].appendChild(triggerAnalyticsLi);
 
             var inProgressMessageLi = document.createElement("li");
@@ -266,8 +266,8 @@ function updateUI(state)
     }
 
     var strip_content = 
-        "<div class=\"infoleft\"><span style='color:black; font-weight: bold;'>" + state.latest_build_state + " execution:</span> \"<em>" + state.title  + "</em>\"" +
-        "<span style='color: black'>" + time_desc + "</span>" +
+        "<div class=\"infoleft\"><span style='color:#3a69c7; font-weight: bold;'>" + state.latest_build_state + " execution:</span> \"<em>" + state.title  + "</em>\"" +
+        "<span style='color: #3a69c7'>" + time_desc + "</span>" +
         "</div><div class=\"inforight\"><b>[Run by</b> " + state.createdBy + "<b>]</b></div>";
     if (notificationHeader.innerHTML != strip_content)
     {
