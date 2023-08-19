@@ -2,9 +2,9 @@
 name: Retrieve Google Analytics GA4 data
 
 on:
-#  schedule:
+  schedule:
     # * is a special character in YAML so you have to quote this string
-#  - cron: '0 */4 * * *'     # every 4 hours at xx:00
+  - cron: '0 */4 * * *'     # every 4 hours at xx:00
 #   - cron:  '0 * * * *'      # every 1 hour at xx:00
 #   - cron:  '*/30 * * * *'   # every 30 mins
     
@@ -86,7 +86,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
-  Deployment job
   deploy:
     environment:
       name: github-pages
