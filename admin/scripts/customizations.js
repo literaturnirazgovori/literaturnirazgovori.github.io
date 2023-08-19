@@ -282,7 +282,7 @@ function updateUI(state)
     {
         if(state.inProgress)
         {
-            if(state.action.indexOf("get-analytics.yml") >= 0)
+            if(state.action.indexOf("get-analytics-ga4.yml") >= 0)
             {
                 inprogMessage.innerHTML = "Analytics collection in progress...";
             }
