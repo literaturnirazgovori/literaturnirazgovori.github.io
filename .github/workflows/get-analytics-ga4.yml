@@ -36,6 +36,9 @@ jobs:
 
       - name: Fetch all analytics data, and update relevant posts
         run: |
+          export Analytics_PrivateKey_JSON="${{ secrets.ANALYTICS_GA4_KEYFILE }}"
+          #echo analytics-ga4-keyfile.json
+
           echo "******* Update and upgrade *******"
           sudo apt update
           echo "******* Installing packs *******"
@@ -49,10 +52,21 @@ jobs:
           pip install --upgrade pip
           pip install google-api-python-client oauth2client google-analytics-data python-frontmatter
 
-
-          which python
-          python --version
+          # which python # /opt/hostedtoolcache/Python/3.9.17/x64/bin/python
           python ./utils/analytics-fetch.py
+
+          # --------------- OLD CODE TEMPORARY HERE -------------
+          numChangedFiles=$(git status -s | wc -l)
+          echo "$numChangedFiles files pending push!"
+
+          if [[ $numChangedFiles > 0 ]]
+          then
+            echo "Pushing $numChangedFiles changed files..."
+          else
+            echo "No files changed, no pending push."
+          fi
+          # ---------------/OLD CODE TEMPORARY HERE -------------
+
 
           # export Analytics_PrivateKey="${{ secrets.GOOGLE_ANALYTICS_PRIVATEKEY }}"
           # 
