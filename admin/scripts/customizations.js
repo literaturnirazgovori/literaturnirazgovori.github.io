@@ -76,7 +76,7 @@ var queuing_status = {
             var triggerAnalyticsLi = document.createElement("li");
             triggerAnalyticsLi.setAttribute("id", triggerAnalyticsLiID);
             triggerAnalyticsLi.className = "toolbar_li";
-            triggerAnalyticsLi.innerHTML = "<a href=\"#\" id=\"" + triggerAnalyticsButtonID + "\" title=\"This will refresh all views of all posts\"><img src='images/analytics.png'/><span class=\"customActionText\" id=\"analyticshMsg\">Refresh views!</span></a>";
+            triggerAnalyticsLi.innerHTML = "<a href=\"#\" id=\"" + triggerAnalyticsButtonID + "\" title=\"This will refresh all views of all posts\"><img src='images/analytics-2.png'/><span class=\"customActionText\" id=\"analyticshMsg\">Refresh views!</span></a>";
             navUL[0].appendChild(triggerAnalyticsLi);
 
             var inProgressMessageLi = document.createElement("li");
