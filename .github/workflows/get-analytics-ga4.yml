@@ -43,7 +43,7 @@ jobs:
           echo "******* Installing packs *******"
           sudo apt install -y git nano curl wget jq
 
-          export decoded=$(echo $Analytics_PrivateKey_BASE64 | base64 -d)
+          export decoded=$(echo "$Analytics_PrivateKey_BASE64" | base64 -d)
           export Analytics_PrivateKey_JSON=$(jq --compact-output --raw-output <<< $decoded)
           echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
           echo $Analytics_PrivateKey_BASE64
