@@ -36,7 +36,8 @@ jobs:
 
       - name: Fetch all analytics data, and update relevant posts
         run: |
-          export Analytics_PrivateKey_JSON="${{ secrets.ANALYTICS_GA4_KEYFILE }}"
+          export Analytics_PrivateKey_JSON=$("$secrets.ANALYTICS_GA4_KEYFILE" | base64 -d)
+          #export Analytics_PrivateKey_JSON="${{ secrets.ANALYTICS_GA4_KEYFILE }}"
           #echo analytics-ga4-keyfile.json
 
           echo "******* Update and upgrade *******"
