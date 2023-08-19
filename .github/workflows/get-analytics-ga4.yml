@@ -45,11 +45,11 @@ jobs:
 
           export decoded=$(echo "$Analytics_PrivateKey_BASE64" | base64 -d)
           export Analytics_PrivateKey_JSON=$(jq --compact-output --raw-output <<< $decoded)
-          echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-          echo $Analytics_PrivateKey_BASE64
-          echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
-          echo $Analytics_PrivateKey_JSON
-          echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+          # echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+          # echo $Analytics_PrivateKey_BASE64
+          # echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+          # echo $Analytics_PrivateKey_JSON
+          # echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
 
           git config core.quotepath false
           git config --global user.email "alrotem@gmail.com"
@@ -61,62 +61,39 @@ jobs:
           # which python # /opt/hostedtoolcache/Python/3.9.17/x64/bin/python
           python ./utils/analytics-fetch.py
 
-          # --------------- OLD CODE TEMPORARY HERE -------------
           numChangedFiles=$(git status -s | wc -l)
           echo "$numChangedFiles files pending push!"
-
+          
           if [[ $numChangedFiles > 0 ]]
           then
             echo "Pushing $numChangedFiles changed files..."
+            git remote set-url --push origin "https://alonrotem:${{ secrets.GITHUB_TOKEN }}@github.com/literaturnirazgovori/literaturnirazgovori.github.io"
+            git add .
+            git commit -m"Updating pageviews!"
+            git push
           else
             echo "No files changed, no pending push."
           fi
-          # ---------------/OLD CODE TEMPORARY HERE -------------
 
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+        
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
 
-          # export Analytics_PrivateKey="${{ secrets.GOOGLE_ANALYTICS_PRIVATEKEY }}"
-          # 
-          # echo "******* npm install *******"
-          # npm install ./utils/
-          # echo "******* Calling the fetch script js *******"
-          # node ./utils/analytics-fetch.js
-          # 
-          # rm -rf ./node_modules
-          # rm -rf ./utils/node_modules
-          # 
-          # numChangedFiles=$(git status -s | wc -l)
-          # echo "$numChangedFiles files pending push!"
-          # 
-          # if [[ $numChangedFiles > 0 ]]
-          # then
-          #   echo "Pushing $numChangedFiles changed files..."
-          #   git remote set-url --push origin "https://alonrotem:${{ secrets.GITHUB_TOKEN }}@github.com/literaturnirazgovori/literaturnirazgovori.github.io"
-          #   git add .
-          #   git commit -m"Updating pageviews!"
-          #   git push
-          # else
-          #   echo "No files changed, no pending push."
-          # fi
-
-      # - name: Setup Pages
-      #   uses: actions/configure-pages@v2
-      #   
-      # - name: Build with Jekyll
-      #   uses: actions/jekyll-build-pages@v1
-      #   with:
-      #     source: ./
-      #     destination: ./_site
-      # - name: Upload artifact
-      #   uses: actions/upload-pages-artifact@v1
-
-  # Deployment job
-  # deploy:
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-  #   runs-on: ubuntu-latest
-  #   needs: build
-  #   steps:
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v1
+  Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
