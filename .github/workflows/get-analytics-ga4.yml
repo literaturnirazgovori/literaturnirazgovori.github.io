@@ -38,7 +38,12 @@ jobs:
         env:
           Analytics_PrivateKey_BASE64: ${{ secrets.ANALYTICS_GA4_KEYFILE }}      
         run: |
-          export Analytics_PrivateKey_JSON=$(cat $Analytics_PrivateKey_BASE64 | base64 -d)
+          export Analytics_PrivateKey_JSON=$(echo $Analytics_PrivateKey_BASE64 | base64 -d)
+          echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+          echo $Analytics_PrivateKey_BASE64
+          echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
+          echo $Analytics_PrivateKey_JSON
+          echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-"
 
           echo "******* Update and upgrade *******"
           sudo apt update
