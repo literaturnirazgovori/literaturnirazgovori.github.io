@@ -35,10 +35,10 @@ jobs:
           python-version: 3.9
 
       - name: Fetch all analytics data, and update relevant posts
+        env:
+          Analytics_PrivateKey_BASE64: ${{ secrets.ANALYTICS_GA4_KEYFILE }}      
         run: |
-          export Analytics_PrivateKey_JSON=$("$secrets.ANALYTICS_GA4_KEYFILE" | base64 -d)
-          #export Analytics_PrivateKey_JSON="${{ secrets.ANALYTICS_GA4_KEYFILE }}"
-          #echo analytics-ga4-keyfile.json
+          export Analytics_PrivateKey_JSON=$(cat $Analytics_PrivateKey_BASE64 | base64 -d)
 
           echo "******* Update and upgrade *******"
           sudo apt update
