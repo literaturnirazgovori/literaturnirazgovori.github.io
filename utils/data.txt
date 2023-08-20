@@ -370,7 +370,7 @@ Page views: collected: 30, frontmatter: 30, update: False
 post_file_name: 2019-01-21-20-33-здравка-евтимова-зелените-очи-на-вятъра.md
 matched URL: /bookreviews/2019/01/21/20-33-здравка-евтимова-зелените-очи-на-вятъра.html ->  99 views
 matched URL: /bookreviews/2019/01/21/20-33-здравка-евтимова-зелените-очи-на-вятъра ->  879 views
-Page views: collected: 978, frontmatter: 977, update: True
+Page views: collected: 978, frontmatter: 978, update: False
 ==================================
 post_file_name: 2019-01-21-20-40-излиза-биографичният-роман-желязната-жена-на-нина-берберова.md
 matched URL: /newbooks/2019/01/21/20-40-излиза-биографичният-роман-желязната-жена-на-нина-берберова ->  24 views
@@ -1649,8 +1649,8 @@ Page views: collected: 1005, frontmatter: 1005, update: False
 ==================================
 post_file_name: 2020-01-09-10-20-глад-на-джамал-уариаши-роман-който-ще-изпита-самите-вас.md
 matched URL: /bookreviews/2020/01/09/10-20-глад-на-джамал-уариаши-роман-който-ще-изпита-самите-вас.html ->  15 views
-matched URL: /bookreviews/2020/01/09/10-20-глад-на-джамал-уариаши-роман-който-ще-изпита-самите-вас ->  470 views
 matched URL: /bookreviews/2020/01/09/10-20-глад-на-джамал-уариаши-роман-който-ще-изпита-самите-вас ->  1 views
+matched URL: /bookreviews/2020/01/09/10-20-глад-на-джамал-уариаши-роман-който-ще-изпита-самите-вас ->  470 views
 Page views: collected: 486, frontmatter: 486, update: False
 ==================================
 post_file_name: 2020-01-14-11-31-рецензия-хотелът-на-спомените-на-златко-ангелов-расов-роман-за-либидото-което-съзидава-и-руши.md
@@ -3315,7 +3315,7 @@ post_file_name: 2023-06-02-12-58-палми-ранчев-понякога-има
 matched URL: /interviews/2023/06/02/12-58-палми-ранчев-понякога-имам-чувство-че-стиховете-се-пишат-от-един-и-съ ->  133 views
 matched URL: /interviews/2023/06/02/12-58-палми-ранчев-понякога-имам-чувство-че-стиховете-се-пишат-от-един-и-същ-поет.html ->  2 views
 matched URL: /interviews/2023/06/02/12-58-палми-ранчев-понякога-имам-чувство-че-стиховете-се-пишат-от-един-и-същ-поет ->  130 views
-Page views: collected: 265, frontmatter: 263, update: True
+Page views: collected: 265, frontmatter: 265, update: False
 ==================================
 post_file_name: 2023-06-10-10-58-дом-за-начинаещи-или-да-израстнеш-през-90-те-отвъд-границите.md
 matched URL: /bookreviews/2023/06/10/10-58-дом-за-начинаещи-или-да-израстнеш-през-90-те-отвъд-границите.html ->  162 views
@@ -3349,4 +3349,4 @@ Page views: collected: 64, frontmatter: 64, update: False
 post_file_name: 2023-07-20-06-37-наказанието-да-помниш-и-знаеш-един-разговор-с-иван-брегов.md
 matched URL: /interviews/2023/07/20/06-37-наказанието-да-помниш-и-знаеш-един-разговор-с-иван-брегов.html ->  58 views
 matched URL: /interviews/2023/07/20/06-37-наказанието-да-помниш-и-знаеш-един-разговор-с-иван-брегов ->  1 views
-Page views: collected: 59, frontmatter: 55, update: True
+Page views: collected: 59, frontmatter: 59, update: False
