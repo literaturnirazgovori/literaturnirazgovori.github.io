@@ -1,6 +1,6 @@
 #buildStatusNotificationElement
 {
-    color: white;
+    /*color: white;*/
     padding: 3px 18px;
     font-size: 10pt;
     transition: all 0.4s;
@@ -74,22 +74,44 @@
 .build-created, .build-queued
 {
     background-color: #FF6A00;
+    color: yellow;
+}
+.build-created .status, .build-queued .status
+{
+    color: white;
 }
 .build-started, .build-in_progress
 {
     background-color: #B200FF;
+    color: yellow;
 }
+.build-started .status, .build-in_progress .status
+{
+    color: aqua;
+}
+
 .build-errored
 {
     background-color: #FF0000;
+    color: white;
 }
-
+.build-errored .status
+{
+    color: yellow;
+}
 .build-passed, .build-completed
 {
     background-color: #4EC820;
+    color: #3a69c7;
+}
+
+.build-passed .status, .build-completed .status
+{
+    color: black;
 }
 
 .build-unknown
 {
     background-color: red;
+    color: white;
 }

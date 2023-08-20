@@ -266,8 +266,8 @@ function updateUI(state)
     }
 
     var strip_content = 
-        "<div class=\"infoleft\"><span style='color:#3a69c7; font-weight: bold;'>" + state.latest_build_state + " execution:</span> \"<em>" + state.title  + "</em>\"" +
-        "<span style='color: #3a69c7'>" + time_desc + "</span>" +
+        "<div class=\"infoleft\"><span style='font-weight: bold;'>" + state.latest_build_state + " execution:</span> \"<em class='status'>" + state.title  + "</em>\"" +
+        "<span>" + time_desc + "</span>" +
         "</div><div class=\"inforight\"><b>[Run by</b> " + state.createdBy + "<b>]</b></div>";
     if (notificationHeader.innerHTML != strip_content)
     {
