@@ -189,7 +189,7 @@ ua_get_all_page_views()
 
 print(f"========== DONE. Collected total {len(all_analytics_data)} pageview items ==================")
 
-logfile_obj = open(LOGFILE, 'a')
+#logfile_obj = open(LOGFILE, 'a')
 
 post_file_names = os.listdir(POSTS_DIR)
 post_file_names.sort()
@@ -200,7 +200,8 @@ for post_file_name in post_file_names:
   file_views_front_matter = 0
   file_views_collected = 0
 
-  logfile_obj.write(f"==================================\n")
+  #logfile_obj.write(f"==================================\n")
+  print(f"==================================")
   post_full_file_name = os.path.join(POSTS_DIR, post_file_name)
   post_frontmatter = frontmatter.load(post_full_file_name)
 
@@ -219,9 +220,11 @@ for post_file_name in post_file_names:
     page_matching_url = f"/{yer}/{mon}/{day}/{hur}-{min}-{ttl[0:5]}"
     matchedURLs = [ url for url in all_analytics_data.keys() if page_matching_url in url ]
 
-    logfile_obj.write(f"post_file_name: {post_file_name}\n")
+    # logfile_obj.write(f"post_file_name: {post_file_name}\n")
+    print(f"post_file_name: {post_file_name}")
     for u in matchedURLs:
-      logfile_obj.write(f"matched URL: {u} ->  { all_analytics_data[u] } views\n")
+      # logfile_obj.write(f"matched URL: {u} ->  { all_analytics_data[u] } views\n")
+      print(f"matched URL: {u} ->  { all_analytics_data[u] } views")
       file_views_collected += int(all_analytics_data[u])
 
     if "redirect_from" in post_frontmatter.keys():
@@ -234,10 +237,12 @@ for post_file_name in post_file_names:
           for u in matchedURLs:
             # make sure the redirect url does not point to the current url
             if page_matching_url != main_redirect_url:
-              logfile_obj.write(f"redirect URL: {u} ->  { all_analytics_data[u] } views\n")
+              # logfile_obj.write(f"redirect URL: {u} ->  { all_analytics_data[u] } views\n")
+              print(f"redirect URL: {u} ->  { all_analytics_data[u] } views")
               file_views_collected += int(all_analytics_data[u])
     
-    logfile_obj.write(f"Page views: collected: {file_views_collected}, frontmatter: { file_views_front_matter }, update: { file_views_collected != file_views_front_matter }\n")
+    # logfile_obj.write(f"Page views: collected: {file_views_collected}, frontmatter: { file_views_front_matter }, update: { file_views_collected != file_views_front_matter }\n")
+    print(f"Page views: collected: {file_views_collected}, frontmatter: { file_views_front_matter }, update: { file_views_collected != file_views_front_matter }")
     views_per_page[post_file_name] = file_views_collected
     if file_views_collected != file_views_front_matter:
       print(f" { post_file_name } { file_views_front_matter } -> {file_views_collected} (+{ (file_views_collected - file_views_front_matter) })")
@@ -251,4 +256,4 @@ views_per_page_json = json.dumps(views_per_page, indent=4, ensure_ascii=False)
 with open(JSON_REPORT, "w", encoding='utf-8') as outfile:
     outfile.write(views_per_page_json)
 
-logfile_obj.close()
+# logfile_obj.close()
