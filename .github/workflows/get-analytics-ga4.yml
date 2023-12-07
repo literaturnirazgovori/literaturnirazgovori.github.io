@@ -75,16 +75,27 @@ jobs:
             echo "No files changed, no pending push."
           fi
 
+#      - name: Setup Pages
+#        uses: actions/configure-pages@v2
+#        
+#      - name: Build with Jekyll
+#        uses: actions/jekyll-build-pages@v1
+#        with:
+#          source: ./
+#          destination: ./_site
+#      - name: Upload artifact
+#        uses: actions/upload-pages-artifact@v1
       - name: Setup Pages
-        uses: actions/configure-pages@v2
-        
+        id: pages
+        uses: actions/configure-pages@v4
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        # Automatically uploads an artifact from the './_site' directory by default
+        uses: actions/upload-pages-artifact@v2
 
   deploy:
     environment:

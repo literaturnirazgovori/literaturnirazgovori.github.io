@@ -932,6 +932,8 @@ a {
     min-height: 100%;
     margin-bottom: -50px;
     padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
  .site-content {

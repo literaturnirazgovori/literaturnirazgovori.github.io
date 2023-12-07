@@ -1,25 +1,29 @@
 ---
 layout: default
 ---
-{% assign posts = page.posts | where:"hidden","false" %}
+{% assign current_tag = page.title | strip %}
+{% assign condition = "post.tags contains '" | append: current_tag | append: "'" %}
+{% assign visibleposts = site.posts | where_exp: "post", condition | where:"hidden","false" %}
+
 
 <div style="margin-bottom: 20px;">
     <a class="alltagslink" href="/tags.html" title="Всички тагове"><img src="/assets/images/bookmark-color.png"></a>
     <span class="tagpagetitle">
-        {{ page.title }} ({{ posts | size }})</span>
+        {{ current_tag }} ({{ visibleposts | size }})
+    </span>
 </div>
 
 <div class="article-post">
     <div class="categorylist">
         <div class="container">
-            {% if posts %}
-            {% for post in posts %}
-            {% assign counter = forloop.length %}
-            {% include postlistitem.html %}
-            {% endfor %}
+            {% if visibleposts %}
+                {% for post in visibleposts %}
+                    {% assign counter = forloop.length %}
+                    {% include postlistitem.html %}
+                {% endfor %}
             {% endif %}
             {% if counter == 0 %}
-            Няма публикувани статии под {{site.data.categoriestext[page.category].text}}
+                Няма публикувани статии под {{ current_tag }}
             {% endif %}
         </div>
     </div>

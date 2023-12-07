@@ -1,8 +1,47 @@
 ---
 layout: default
 title: Страницата не е намерена
+additional_body_class: occupy-full-page
 ---
-<div class="main-content pagenotfound">
+<style>
+    .occupy-full-page .site-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .occupy-full-page .site-content .container {
+        height: 100% !important;
+        min-height: 100% !important;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .occupy-full-page .main-content {
+        height: 100% !important;
+        min-height: 100% !important;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        margin: 0;
+        padding: 0;        
+    }
+
+    .occupy-full-page .pagenotfound {
+        font-size: 40px;
+        height: 100% !important;
+        min-height: 100% !important;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-content: center;
+        justify-content: center;
+        align-items: center;        
+    }
+
+</style>
+<div class="main-content pagenotfound" style="font-size: 40px;">
     <div class="pagenotfoundtitle">
         404 :(
     </div>
