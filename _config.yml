@@ -79,3 +79,13 @@ defaults:
       type: category
     values:
       layout: "category"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - utils/node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
