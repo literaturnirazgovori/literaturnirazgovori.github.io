@@ -1287,14 +1287,14 @@ a {
      margin-bottom:1.5rem;
 }
  .share {
-     text-align:center;
+     /*text-align:center;*/
 }
  .share p {
      margin-bottom:10px;
      font-size:0.95rem;
 }
  .share ul li {
-     display:inline-block;
+     display:inline;
      margin-bottom:9px;
 }
  .share ul {
@@ -1314,11 +1314,11 @@ a {
 }
  @media (min-width:1024px) {
      .share {
-         position:fixed;
+         /*position:fixed;*/
          display:block;
     }
      .share ul li {
-         display:block;
+         display:inline;
     }
 }
  @media (max-width:999px) {

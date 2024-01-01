@@ -1,0 +1,406 @@
+---
+layout: default
+title: Дарете
+---
+{% assign visibleposts = site.posts | where:"hidden","false" | size %}
+<style>
+    .donate-page, .donate-page h1, .donate-page h2 {
+        font-family: nicebgfontsemilight,Arial,sans-serif;
+    }
+
+    .donate-page {
+        font-size: 17px;
+        line-height: 31px;
+    }
+
+    .donate-page h1 {
+        font-family: "nicebgfontsemibold";
+        font-size: 2.0em;
+        margin-bottom: 35px;
+    }
+
+    .donate-page a {
+        color: #007bff;
+    }
+
+    .hover_zoom_btn {
+        transition: all 0.25s ease 0s;
+        transform: scale(1);
+    }
+
+    .hover_zoom_btn:hover {
+        transform: scale(1.1);
+    }
+
+    .brand_btn {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        border-radius: 12px;
+        width: 308px;
+        height: 60px;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .paypal {
+        background-color: #ffcc42;
+        padding: 15px 20px;
+    }
+
+    .buymeacoffee {
+        background: #edde2e;
+        height: 60px;
+    }
+
+    .revolut {
+        background: #0083e9;
+        padding: 10px;
+        border-radius: 12px;
+        width: 308px;
+        justify-content: center;
+        height: 60px;        
+    }
+
+    .patreon {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 308px;
+    }
+
+    .patreon .instructions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .patreon .instructions img {
+        height: auto; 
+        width: 65px; 
+        margin-left:7px;
+    }
+
+    .patreon .brand_btn
+    {
+        background-color: black;
+    }
+
+    .patreon .brand_btn img {
+        width: 40px;
+        margin-left: 10PX;
+    }
+
+    .patreon select {
+        height: 32px;
+    }
+
+    .epay {
+        background-color: #2872a0;
+        color: white;
+    }
+
+    .paypal .currency {
+        margin-right: 3px;
+        color: #311e81;
+    }
+
+    .buymeacoffee .donate_text
+    {    
+        margin-right: 10px;
+        font-weight: 600;
+        font-size: 19px;
+    }
+
+    .revolut .donate_text {
+        margin-right: 10px;
+        font-weight: 700;
+        color: white;
+        font-size: 19px;
+    }
+
+    .epay .donate_text {
+        font-weight: 700;
+        margin-left: 10px;
+    }
+
+    .paypal .donate_text {
+        margin-right: 7px;
+        font-weight: 600;
+        color: #311e81;
+    }
+    .paypal img {
+        width: 109px;
+    }
+
+    .buymeacoffee img {
+        width: 185px;
+        height: auto;        
+    }
+
+    .revolut img {
+        width: 110px;
+        height: auto;
+    }
+
+    .service-title-image
+    {
+        width: 240px; 
+        margin: 50px 0 30px 0;
+    }
+
+    #donate-button img
+    {
+        width: 170px;
+    }
+
+    .donation_amount {
+        text-align: end;
+        height: 34px;
+        border: 1px solid darkgray;
+        margin-right: 7px;
+        width: 50px; 
+        cursor:text;
+    }
+
+    .donation_title {
+        display: none;
+    }
+
+    .donate_section {
+        margin: 40px 0;
+    }    
+</style>
+<script>
+    function submitForm(formId)
+    {
+        var frm = document.getElementById(formId);
+        if(frm.reportValidity()) 
+        {
+            frm.submit();
+        }
+    }
+
+    function open_patreon()
+    {
+        var tiers_cents = {
+            3: 200,
+            6: 400,
+            9: 700,
+            12: 1000,
+            15: 1500,
+            20: 2000
+        };
+        var tiers_select = document.getElementById("patreon_tier"); 
+        var redirectUrl = encodeURIComponent("https://www.literaturnirazgovori.com/thankyou");
+        var url = "https://www.patreon.com/oauth2/become-patron?response_type=code&" + 
+            "min_cents=" + tiers_cents[tiers_select.value] + 
+            "&client_id={{ site.patreon_client_id }}" + 
+            "&redirect_uri=" + redirectUrl +
+            "&scope=identity%20identity[email]";
+
+        window.open(url, "patreon", "noopener=yes");
+    }
+</script>
+<div class="donate-page">
+    <h1>Станете дарител или осиновител</h1>
+    <div>
+        <p>
+            "Литературни разговори" се списва от един-единствен човек, доброволно и без никаква институционална помощ. Той е напълно независим - освен от естетическите изисквания на създателя си.
+        </p>
+        <p>
+            Ако сте сред последователите и редовните му читатели, от авторите, които се появяват на страниците му, или просто ценители на едно свободно 
+            литературно пространство за задълбочена критика и интервюта - можете да го подкрепите финансово по най-различни начини: чрез
+            <a href="#donate_revolut">Revolut</a>, <a href="#donate_paypal">PayPal</a>, <a href="#donate_epay">ePay</a>, <a href="#donate_buymeacoffee">Buy Me a Coffee</a>, <a href="#donate_patreon">Patreon</a> или <a href="#donate_bank">банков превод</a>.
+        </p>
+        <p>
+            "Литературни разговори" зависи и се издържа изцяло от помощта ви. Сърдечни благодарности!
+        </p>
+        
+
+
+
+    
+
+    <!------------------------------- Revolut ------------------------------>
+    <p class="donate_section" id="donate_revolut">
+        <div class="donation_title">
+            <a href="https://revolut.me/antonikxq9" target="_blank">
+                <img src="/assets/images/revolut-logo.png" class="service-title-image" style="width:170px"/>
+            </a>
+        </div>
+        <p  class="donation_title">To make a donation via Revolut click the button below, or <a href="https://revolut.me/antonikxq9" target="_blank"> click here</a>.</p>
+
+    <a href="https://revolut.me/antonikxq9" target="_blank">
+    <div class="brand_btn revolut hover_zoom_btn">
+               <span class="donate_text">Дарете с</span>
+               <img src="/assets/images/revolut-logo-w.png">
+            </div>
+        </a>
+    </p>
+    <!-------------------------------/Revolut ------------------------------>
+
+    
+
+    <!------------------------------- PayPal ------------------------------>
+
+    <p class="donate_section" id="donate_paypal">
+        <div class="donation_title">
+            <div><a href="https://www.paypal.com/donate?hosted_button_id=3CU7YLQGZ3BUS" target="_blank">
+                <img src="/assets/images/paypal-logo.png" class="service-title-image" style="width: 190px;"/>
+            </a>
+        </div>
+    </div>
+    <p  class="donation_title">Make a donation via PayPal</p>
+    <!-- Paypal code-->
+    <form action="https://www.paypal.com/donate" method="post" target="_blank" id="paypalform">
+        <input type="hidden" name="hosted_button_id" value="3CU7YLQGZ3BUS" />
+        <input type="hidden" name="cmd" value="_donations">
+        <input type="hidden" name="business" value="antoniarotem@gmail.com">
+        <input type="hidden" name="no_recurring" value="0" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <!-- button with all the shenanigans -->
+        <div class="brand_btn paypal hover_zoom_btn" onclick="javascript:submitForm('paypalform')">
+            <span class="currency">€</span>
+            <input class="donation_amount" type="number" name="amount" id="amount" value="" placeholder="0" onclick="event.stopPropagation();">
+            <span class="donate_text">Дарете с</span>
+            <img src="/assets/images/paypal-words-logo.png">
+        </div>
+        <!-- button with all the shenanigans -->
+        <img alt="" border="0" src="https://www.paypal.com/en_BG/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+    </p>
+    <!-------------------------------/PayPal ------------------------------>
+
+    
+
+    <!------------------------------- ePay.bg ------------------------------>
+    <p class="donate_section" id="donate_epay">
+        <div  class="donation_title">
+            <a href="https://revolut.me/antonikxq9" target="_blank">
+                <img src="/assets/images/epay-logo.png" class="service-title-image" style="width: 190px;"/>
+            </a>
+        </div>
+        <form method="POST" action="https://www.epay.bg/v3main/paylogin" id="epayform" target="_blank">
+            <input type="hidden" name="MIN" value="6469224723">
+            <input type="hidden" name="DESCR" value="Независимият литературен сайт">
+            <input type="hidden" name="URL_OK" value="https://www.literaturnirazgovori.com/thankyou">
+            <input type="hidden" name="URL_CANCEL" value="https://www.literaturnirazgovori.com/">
+            <input type="hidden" name="ENCODING" value="utf8"> <input type="hidden" name="CHECKSUM" value="348b7302719890491dcddf1bad4914ff989f950e"> 
+
+            <!-- button with all the shenanigans -->
+            <div class="brand_btn epay hover_zoom_btn" onclick="javascript:submitForm('epayform')">
+                <input oninvalid="setCustomValidity('Моля, въведете сума!')" class="donation_amount" type="number" name="amount" id="amount" value="" placeholder="0" required onclick="event.stopPropagation();">
+                <span class="currency">лв.</span>
+                <span class="donate_text">Дарете с</span>
+                <img style="width: 90px; margin-left: 7px;" src="/assets/images/epay-logo-w.png" />
+            </div>
+            <!-- button with all the shenanigans -->
+        </form>             
+    </p>
+    <!-------------------------------/ePay.bg ------------------------------>
+
+        <!------------------------------- Buy me a coffee ------------------------------>
+        <p class="donate_section" id="donate_buymeacoffee">
+            <div class="donation_title">
+                <a href="https://www.buymeacoffee.com/litrazgovori" target="_blank">
+                    <img src="/assets/images/buymeacoffee-logo.png" class="service-title-image"/>
+                </a>
+            </div>
+            <p  class="donation_title">
+                Buy me a coffee. Click the button below or <a href="https://www.buymeacoffee.com/litrazgovori" target="_blank"> click here</a>.
+            </p>
+            <div class="brand_btn hover_zoom_btn buymeacoffee" data-toggle="modal" data-target="#buyMeACoffeeModal">
+                <span class="donate_text">Дарете с</span>
+                <img src="/assets/images/buymeacoffee-logo-words.png">
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="buyMeACoffeeModal" tabindex="-1" aria-labelledby="buyMeACoffeeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog modal-md modal-dialog-centered" style="height: 95vh;">
+                <div class="modal-content" style="height: 95vh;">
+                    
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.buymeacoffee.com/widget/page/litrazgovori?description=Support%20me%20on%20Buy%20me%20a%20coffee!&color=%23BD5FFF"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button 
+                            type="button" 
+                            class="btn btn-secondary" 
+                            data-dismiss="modal" 
+                            style="background: rgb(189, 95, 255);">Затвори
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MODAL-->           
+    </p>
+    <!-------------------------------/Buy me a coffee ------------------------------>
+
+    <!------------------------------- patreon ------------------------------>
+    <div id="donate_patreon" class="patreon donate_section">
+        <div class="brand_btn hover_zoom_btn" onclick="open_patreon()">
+            <select id="patreon_tier" onclick="event.stopPropagation();">
+                <option value="3">€3 Чест минувач</option>
+                <option value="6" selected="">€6 Добър познат</option>
+                <option value="9">€9 Скъп приятел</option>
+                <option value="12">€12 Верен почитател</option>
+                <option value="15">€15 Апостол и сподвижник</option>
+                <option value="20">€20 Уау!</option>
+            </select>
+            <span>
+                <img src="/assets/images/patreon-log-p-w.png">
+            </span>
+        </div>
+        <div>
+            <a href="https://www.patreon.com/literaturnirazgovori" target="_blank">
+                <div class="instructions">
+                    <span>Изберете абонамент с</span> 
+                    <img src="/assets/images/patreon-log-word.png"/>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-------------------------------/patreon ------------------------------>
+
+    <!------------------------------- Bank transfer ------------------------------>
+    <div class="donate_section hover_zoom_btn" id="donate_bank" style="background-color: #feba4f;
+    color: black;
+    width: 308px;
+    border-radius: 13px;
+    padding: 10px;
+    font-size: 15px;">
+        <div style="display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin-bottom: 12px;"><img src="/assets/images/piggy-bank.png" style="width: 45px; margin-right: 5px;"><h2 style="display: inline; margin: 0;     font-size: 20px;
+    font-weight: 700; color:white; text-shadow: 0px 0px 4px rgba(0,0,0,1);">Дарете с банков превод</h2></div>
+        <strong><span style="color: white; text-shadow: 0px 0px 4px rgba(0,0,0,1);">IBAN:</strong> BG74UNCR76301077264224<br/>
+        <strong><span style="color: white; text-shadow: 0px 0px 4px rgba(0,0,0,1);">Swift/BIC:</span></strong> UNCRBGSF<br/>
+        <strong><span style="color: white; text-shadow: 0px 0px 4px rgba(0,0,0,1);">Титуляр:</span></strong> Антония Кирилова Апостолова-Ротем<br/>
+        <strong><span style="color: white; text-shadow: 0px 0px 4px rgba(0,0,0,1);">Основание:</span></strong> Дарение за ЛР
+    </div>
+    <!-------------------------------/Bank transfer ------------------------------>
+    </div>
+</div>

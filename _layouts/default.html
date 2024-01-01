@@ -15,7 +15,7 @@
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/font-awesome.css" />
+  <link rel="stylesheet" href="/assets/css/font-awesome.css" />
 
   <link href="{{ site.baseurl }}/assets/css/google-font-faces.css" rel="stylesheet" />
 
@@ -136,30 +136,33 @@ page.layout
 
     <!-- UNHIDE THE CMS -->
     <ul class="navbar-nav navbarlist" style="align-items: center;">
-
-      <li class="nav-item {% if pagecat=='mybooks' %}active{% endif %}">
-        <a class="nav-link" href="{{ site.baseurl }}/category/mybooks"><strong>М</strong>оите книги</a>
-      </li>
-
       
       <li class="nav-item {% if pagecat=='bookreviews' %}active{% endif %}">
         <a class="nav-link" href="{{ site.baseurl }}/category/bookreviews"><strong>Р</strong>ецензии</a>
-      </li>
-
-      <li class="nav-item {% if pagecat=='newbooks' %}active{% endif %}">
-        <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
       </li>
 
       <li class="nav-item {% if pagecat=='interviews' %}active{% endif %}">
         <a class="nav-link" href="{{ site.baseurl }}/category/interviews"><strong>И</strong>нтервюта</a>
       </li>
 
-      <li class="nav-item {% if pagecat=='kolonkata-na-georgi-cankov' %}active{% endif %} kolonkata-na-georgi-cankov">
-        <a class="nav-link" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
+      <li class="nav-item {% if pagecat=='newbooks' %}active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
       </li>
 
       <li class="nav-item {% if pagecat=='translations' %}active{% endif %}">
         <a class="nav-link" href="{{ site.baseurl }}/category/translations"><strong>П</strong>реводи</a>
+      </li>
+
+      <li class="nav-item {% if pagecat=='mybooks' %}active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/category/mybooks"><strong>М</strong>оите книги</a>
+      </li>
+
+      <li class="nav-item {% if pagecat=='talks' %}active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането</a>
+      </li>
+      
+      <li style="display:none;" class="nav-item {% if pagecat=='kolonkata-na-georgi-cankov' %}active{% endif %} kolonkata-na-georgi-cankov">
+        <a class="nav-link" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
       </li>
     </ul>
     <!-- End Menu -->
@@ -167,10 +170,8 @@ page.layout
     <!-- Second row menu-->
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="secondrowmenu">
       <!-- 2nd menu row links -->
-      <ul class="navbar-nav flex-row mb-2 mr-auto">
-        <li class="nav-item {% if pagecat=='talks' %}active{% endif %}">
-          <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането с български автори</a>
-        </li>
+      <ul style="display:none;" class="navbar-nav flex-row mb-2 mr-auto">
+
       </ul>
       <!-- 2nd menu row icons -->
 
@@ -290,6 +291,7 @@ page.layout
 
     </div><!--.site-content-->
 </div><!--.whole-body-wrapper-->
+
     <!-- Begin Footer
 ================================================== -->
     <footer class="footer">
@@ -323,7 +325,7 @@ page.layout
 
   <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js"></script>
 
-  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="litrazgovori" data-description="Support me on Buy me a coffee!" data-message="" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+  <!--<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="litrazgovori" data-description="Support me on Buy me a coffee!" data-message="" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>-->
 
   </body>
 

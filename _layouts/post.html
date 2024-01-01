@@ -8,6 +8,13 @@ comments: true
 
 <!-- Begin Article
 ================================================== -->
+
+<!-- donate button: visible on the post bottom right, on mobile -->
+{% include 
+    donate_button.html 
+    classes="btn_donate_red fixed_top_mobile_bottom_right d-lg-none d-block"
+%}
+
 <div class="container">
     <div class="row">
 
@@ -18,8 +25,16 @@ comments: true
                     {% if page.pageviews and page.pageviews > 0 %}
                         {{ page.pageviews }}
                     {% endif %}
-                <span id="postViews"></span></div>
-                {% include share.html %}
+                    <span id="postViews"></span>
+                </div>
+                <div>
+                    <!-- donate button: visible on the post sidebar, on large screens-->
+                    {% include 
+                        donate_button.html 
+                        classes="btn_donate_red d-lg-block d-none"
+                    %}
+                </div>
+                <div>{% include share.html %}</div>
             </div>
         </div>
 
