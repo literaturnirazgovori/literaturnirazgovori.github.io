@@ -1,0 +1,19 @@
+{% if page.url contains '://' %}
+{% assign currentUrl = page.url %}
+{%else%}
+{% assign currentUrl = page.url | prepend: siteurl %}
+{% endif %}
+<html>
+    <head>
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ currentUrl }}" />
+        <meta property="og:image" content="{{ page.image }}" />
+        <meta property="og:title" content="{{ page.seo_title | escape }}" />
+        {% if site.fb_app_id %}
+        <meta property="fb:app_id" content="{{site.fb_app_id}}" />
+        {% endif %}
+    </head>
+    <body>
+        <img src="{{ page.image }}" />
+    </body>
+</html>
