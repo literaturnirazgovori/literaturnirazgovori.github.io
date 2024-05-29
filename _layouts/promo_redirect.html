@@ -11,6 +11,8 @@
 {% endif %}
 
 {% assign promo_image = page.image | prepend: siteurl %}
+{% assign intermediate_image = page.intermediate_image | prepend: siteurl %}
+
 <html>
     <head>
         <meta property="og:type" content="article" />
@@ -18,12 +20,29 @@
         <meta property="og:image" content="{{ promo_image }}" />
         <meta property="og:title" content="{{ page.seo_title | escape }}" />
         {% if site.fb_app_id %}
-        <meta property="fb:app_id" content="{{site.fb_app_id}}" />
+        <meta property="fb:app_id" content="{{ site.fb_app_id }}" />
         {% endif %}
+
+        <style>
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /*border: 1px solid;*/
+                width: 100vw;
+                height: 100vw;
+            }
+            .container img
+            {
+                max-width:100%;
+                max-height:100%;
+            }
+        </style>
     </head>
     <body>
-        <img src="{{ promo_image }}" />
-
+        <div class="container">
+            <img src="{{ intermediate_image }}"/>
+        </div>
         <script>
             window.onload = function() {
                 // similar behavior as an HTTP redirect
