@@ -15,5 +15,12 @@
     </head>
     <body>
         <img src="{{ page.image }}" />
+
+        <script>
+            window.onload = function() {
+                // similar behavior as an HTTP redirect
+                window.location.replace("{{ page.go_to }}");
+            }
+            </script>    
     </body>
 </html>
