@@ -10,3 +10,4 @@ Gemfile.lock
 yq
 analytics-privatekey.txt
 analytics-ga4-keyfile.json
+.gems/
