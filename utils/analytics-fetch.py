@@ -31,9 +31,11 @@ POSTS_FOLDER =  os.path.join(CURRENT_FOLDER, "../_posts")
 LOGFILE = os.path.join(CURRENT_FOLDER, "data.txt")
 POSTS_DIR = os.path.join(CURRENT_FOLDER, "../_posts")
 JSON_REPORT = os.path.join(CURRENT_FOLDER, "pageviews.json")
+JSON_REPORT_UA = os.path.join(CURRENT_FOLDER, "ua_historical.json")
 KEY_FILE_LOCATION = os.path.join(CURRENT_FOLDER, "analytics-ga4-keyfile.json")
 
 all_analytics_data = {}
+ua_analytics_legacy_cached = {}
 
 # ---- UA
 SCOPES = ['https://www.googleapis.com/auth/analytics.readonly']
@@ -79,7 +81,18 @@ def strip_query_extensions(url):
   return stripped
 
 # ---- UA
+# CACHED UA ANALYTICS
+def ua_get_all_cached_page_views():
+  global ua_analytics_legacy_cached
+  with open(JSON_REPORT_UA) as ua_data:
+     ua_analytics_legacy_cached = json.load(ua_data)
 
+# Restore after runtime
+# mkdir -p /tmp; cp -f /site/utils/analytics-fetch.py /tmp/; cp -f /site/Dockerfile /tmp/; git config --global --add safe.directory /site; git restore .; cp -f /tmp/analytics-fetch.py /site/utils/; cp -f /tmp/Dockerfile /site/;
+
+# ====== LEGACY CODE ===========
+# The code below uses the old Analytics API (UA), which does not retrieve data anymore.
+# Instead, the code above uses collected cached historical UA data, to be combined with the new GA4
 def ua_initialize_client():
   credentials = ServiceAccountCredentials.from_json_keyfile_name(KEY_FILE_LOCATION, SCOPES)
   analytics = build('analyticsreporting', 'v4', credentials=credentials)
@@ -96,7 +109,9 @@ def ua_get_all_page_views():
   while fetching:
     response = ua_page_views_batch(analytics_client, nextPageToken)
     nextPageToken = response.get('reports')[0].get('nextPageToken')
+    print(response)
     data = response.get('reports')[0].get('data').get('rows')
+    print("data: " + data)
     data_size = len(data)
     for item in data:
       #strip_query_extensions
@@ -144,7 +159,7 @@ def ua_page_views_batch(analytics, pageToken):
       }
   ).execute()
   return data
-
+# ====== LEGACY CODE ===========
 
 # --- GA4
 
@@ -185,7 +200,8 @@ if os.path.exists(LOGFILE):
   os.remove(LOGFILE)
 
 ga4_get_all_page_views()
-ua_get_all_page_views()
+#ua_get_all_page_views()
+ua_get_all_cached_page_views()
 
 print(f"========== DONE. Collected total {len(all_analytics_data)} pageview items ==================")
 
@@ -194,6 +210,7 @@ print(f"========== DONE. Collected total {len(all_analytics_data)} pageview item
 post_file_names = os.listdir(POSTS_DIR)
 post_file_names.sort()
 views_per_page = {}
+# ua_historical_analytics = { "#" : "This file contains analytics collcted from Google's old model (UA), which is not available anymore" }
 
 for post_file_name in post_file_names:
 
@@ -240,10 +257,11 @@ for post_file_name in post_file_names:
               # logfile_obj.write(f"redirect URL: {u} ->  { all_analytics_data[u] } views\n")
               print(f"redirect URL: {u} ->  { all_analytics_data[u] } views")
               file_views_collected += int(all_analytics_data[u])
-    
-    # logfile_obj.write(f"Page views: collected: {file_views_collected}, frontmatter: { file_views_front_matter }, update: { file_views_collected != file_views_front_matter }\n")
-    print(f"Page views: collected: {file_views_collected}, frontmatter: { file_views_front_matter }, update: { file_views_collected != file_views_front_matter }")
-    views_per_page[post_file_name] = file_views_collected
+
+    if post_file_name in ua_analytics_legacy_cached:
+      file_views_collected += int(ua_analytics_legacy_cached[post_file_name])
+      print(f"FOUND HISTORICAL ANALYTICS FOR {post_file_name}: {ua_analytics_legacy_cached[post_file_name]}")
+
     if file_views_collected != file_views_front_matter:
       print(f" { post_file_name } { file_views_front_matter } -> {file_views_collected} (+{ (file_views_collected - file_views_front_matter) })")
       post_frontmatter["pageviews"] = file_views_collected
@@ -251,9 +269,23 @@ for post_file_name in post_file_names:
       post_file_dump.write(frontmatter.dumps(post_frontmatter))
       post_file_dump.close()
 
+    # logfile_obj.write(f"Page views: collected: {file_views_collected}, frontmatter: { file_views_front_matter }, update: { file_views_collected != file_views_front_matter }\n")
+    print(f"Page views: collected: {file_views_collected}, frontmatter: { file_views_front_matter }, update: { file_views_collected != file_views_front_matter }")
+    views_per_page[post_file_name] = file_views_collected
+    #if file_views_front_matter - file_views_collected > 0:
+    #  ua_historical_analytics[post_file_name] = file_views_front_matter - file_views_collected
+
+
+
 # dump views to json report file
 views_per_page_json = json.dumps(views_per_page, indent=4, ensure_ascii=False)
 with open(JSON_REPORT, "w", encoding='utf-8') as outfile:
     outfile.write(views_per_page_json)
+
+# # dump views to json report file
+# ua_historical_analytics_json = json.dumps(ua_historical_analytics, indent=4, ensure_ascii=False)
+# with open(JSON_REPORT_UA, "w", encoding='utf-8') as outfile:
+#     outfile.write(ua_historical_analytics_json)
+
 
 # logfile_obj.close()

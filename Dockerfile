@@ -5,12 +5,17 @@
 # docker build -f ./Dockerfile -t jekyll_site .
 
 # Just run Jekyll automatically (+ npx backend)
-# docker run --name jek -v $PWD:/site -p 4000:4000 -it jekyll_site
+# docker rm -f jek; docker run --name jek -v $PWD:/site -p 4000:4000 -it jekyll_site
 
 # Interactive connect
-# docker run --name jek -v $PWD:/site -p 4000:4000 -it jekyll_site /bin/bash
+# docker rm -f jek; docker run --name jek -v $PWD:/site -p 4000:4000 -it jekyll_site /bin/bash
 # 
+# Run the site inside Docker:
 # $ bundle exec jekyll serve --host=0.0.0.0
+#
+# Run the analytics fetch inside Docker:
+# (first copy the analytics-ga4-keyfile.json into ./utils/ <- it's .gitignored!)
+# $ python /site/utils/analytics-fetch.py
 
 FROM ruby:2.7
 WORKDIR /site
@@ -25,7 +30,16 @@ RUN apt-get install -y \
         screenfetch \
         nano \
         iproute2 \
-        nodejs
+        nodejs \
+        git \
+        wget \
+        jq \
+        neofetch \
+        python3.9 \
+        python-is-python3 \
+        python3-pip
+
+RUN pip install google-api-python-client oauth2client google-analytics-data python-frontmatter
 
 RUN bundle install
 RUN npm install -g netlify-cms-proxy-server
