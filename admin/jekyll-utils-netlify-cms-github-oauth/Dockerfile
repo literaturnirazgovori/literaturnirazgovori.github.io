@@ -44,6 +44,9 @@ RUN apt-get install -y \
 # ENV PATH="${PATH}:${NODE_BIN}"
 #SHELL ["/bin/sh", "-c"]
 
+ENV OAUTH_CLIENT_ID=Ov23lihpGT8NasHg0DwN
+ENV OAUTH_CLIENT_SECRET=a0c5093b4007f81e20622b283debcf3e9e58c9a0
+
 ENV NODE_VERSION=20.17.0
 RUN apt install -y curl
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
