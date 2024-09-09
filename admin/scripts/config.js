@@ -73,7 +73,7 @@ var configurations =
             "name": "github",
             "repo": "literaturnirazgovori/literaturnirazgovori.github.io",
             "branch": "work",
-            "base_url": "http://benjicloud.duckdns.org:5000/" //"https://salmon-xerus-tutu.cyclic.app/" //"https://warm-woodland-78106.herokuapp.com"
+            "base_url": "https://jekyll-auth-literaturni.duckdns.org/" //"https://salmon-xerus-tutu.cyclic.app/" //"https://warm-woodland-78106.herokuapp.com"
         },
         "local_backend": false,
         "load_config_file": false,
