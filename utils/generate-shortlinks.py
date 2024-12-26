@@ -16,6 +16,9 @@ print("=====generate-shortlinks.py================================")
 
 # All the changed files in this commit
 changed_files = os.environ["ALL_CHANGED_FILES"]
+print("changed_files:")
+print(changed_files)
+print("Loading json...")
 filenames = json.loads(changed_files)
 for f in filenames:
   print(f"Py script, changed file: {f}")
