@@ -24,6 +24,7 @@ for post_file_name in filenames:
   if post_file_name.startswith("_posts"):
     save_file = False
     post_full_file_name = os.path.join(POSTS_DIR, post_file_name)
+    print(f"LOADING FRONTMATTER FROM FILE: {post_full_file_name}")
     post_frontmatter = frontmatter.load(post_full_file_name)
     
     # is shortlink populated?
