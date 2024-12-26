@@ -43,7 +43,9 @@ for post_file_name in filenames:
                 min = filename_parts.groups()[4] # minutes
                 ttl = filename_parts.groups()[5] # title (truncated to 5 chars)
 
-                shortlink_url=f"https://literaturnirazgovori.com/{yer}{mon}{day}{hur}{min}"
+                shortlink_url=f"/{yer}{mon}{day}{hur}{min}"
+                post_frontmatter["shortlink"] = shortlink_url
+                save_file = True
 
         # make sure redirectfrom with the shortlink exists
         if shortlink_url != "":
