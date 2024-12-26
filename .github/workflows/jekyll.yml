@@ -51,11 +51,15 @@ jobs:
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}      
         run: |
-          for file in ${ALL_CHANGED_FILES}; do
-            echo "$file was changed"
-          done
+          # for file in ${ALL_CHANGED_FILES}; do
+          #   echo "$file was changed"
+          # done
+          # 
+          # echo "${ALL_CHANGED_FILES}"
 
-          echo "${ALL_CHANGED_FILES}"
+          git config core.quotepath false
+          git config --global user.email "alrotem@gmail.com"
+          git config --global user.name "Alon Rotem"
 
           pip install --upgrade pip
           pip install python-frontmatter
