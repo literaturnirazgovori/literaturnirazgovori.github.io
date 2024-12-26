@@ -20,8 +20,10 @@ files_changed_for_commit = 0
 for post_file_name in filenames:
   # was a post changed?
   print(f"Detected file changed: { post_file_name }")
-  print(f"starts with _posts { post_file_name.startswith("_posts") }")
-  print(f"starts with _posts/ { post_file_name.startswith("_posts/") }")
+  s1 = post_file_name.startswith("_posts")
+  s2 = post_file_name.startswith("_posts/")
+  print(f"starts with _posts { s1 }")
+  print(f"starts with _posts/ { s2 }")
   if post_file_name.startswith("_posts"):
     save_file = False
     post_full_file_name = os.path.join(ROOT_DIR, post_file_name)
