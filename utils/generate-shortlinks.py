@@ -8,9 +8,9 @@ import frontmatter
 import json
 
 CURRENT_FOLDER = pathlib.Path(__file__).parent.resolve()
-POSTS_FOLDER =  os.path.join(CURRENT_FOLDER, "../_posts")
+#POSTS_FOLDER =  os.path.join(CURRENT_FOLDER, "../_posts")
 
-POSTS_DIR = os.path.join(CURRENT_FOLDER, "../_posts")
+ROOT_DIR = os.path.join(CURRENT_FOLDER, "../")
 
 print("=====generate-shortlinks.py================================")
 
@@ -21,9 +21,9 @@ files_changed_for_commit = 0
 
 for post_file_name in filenames:
   # was a post changed?
-  if post_file_name.startswith("_posts"):
+  if post_file_name.startswith("_posts/"):
     save_file = False
-    post_full_file_name = os.path.join(POSTS_DIR, post_file_name)
+    post_full_file_name = os.path.join(ROOT_DIR, post_file_name)
     print(f"LOADING FRONTMATTER FROM FILE: {post_full_file_name}")
     post_frontmatter = frontmatter.load(post_full_file_name)
     
