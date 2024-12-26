@@ -48,14 +48,15 @@ jobs:
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}      
         run: |
-          for file in ${ ALL_CHANGED_FILES }; do
+          for file in ${ALL_CHANGED_FILES}; do
             echo "$file was changed"
           done
 
-          echo "${ ALL_CHANGED_FILES }"
+          echo "${ALL_CHANGED_FILES}"
 
           pip install --upgrade pip
-          pip install python-frontmatter          
+          pip install python-frontmatter
+          python ./utils/generate-shortlinks.py
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
