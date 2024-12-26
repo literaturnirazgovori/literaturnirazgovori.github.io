@@ -7,10 +7,8 @@ from urllib.parse import unquote
 import frontmatter
 import json
 
-CURRENT_FOLDER = pathlib.Path(__file__).parent.resolve()
-#POSTS_FOLDER =  os.path.join(CURRENT_FOLDER, "../_posts")
-
-ROOT_DIR = os.path.join(CURRENT_FOLDER, "../")
+CURRENT_FOLDER = pathlib.Path(__file__).parent.resolve() #./utils/...
+ROOT_DIR = os.path.join(CURRENT_FOLDER, "../")           #root of the project
 
 print("=====generate-shortlinks.py================================")
 
@@ -21,7 +19,10 @@ files_changed_for_commit = 0
 
 for post_file_name in filenames:
   # was a post changed?
-  if post_file_name.startswith("_posts/"):
+  print(f"Detected file changed: { post_file_name }")
+  print(f"starts with _posts { post_file_name.startswith("_posts") }")
+  print(f"starts with _posts/ { post_file_name.startswith("_posts/") }")
+  if post_file_name.startswith("_posts"):
     save_file = False
     post_full_file_name = os.path.join(ROOT_DIR, post_file_name)
     print(f"LOADING FRONTMATTER FROM FILE: {post_full_file_name}")
