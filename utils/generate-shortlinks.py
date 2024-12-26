@@ -12,3 +12,6 @@ POSTS_FOLDER =  os.path.join(CURRENT_FOLDER, "../_posts")
 
 POSTS_DIR = os.path.join(CURRENT_FOLDER, "../_posts")
 
+# All the changed files in this commit
+changed_files = os.environ["ALL_CHANGED_FILES"]
+print(changed_files)

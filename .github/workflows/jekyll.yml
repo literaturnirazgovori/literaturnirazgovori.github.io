@@ -45,12 +45,14 @@ jobs:
         uses: tj-actions/changed-files@v44
   
       - name: List all changed files
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}      
         run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+          for file in ${ ALL_CHANGED_FILES }; do
             echo "$file was changed"
           done
 
-          echo "${{ steps.changed-files.outputs.all_changed_files }}"
+          echo "${ ALL_CHANGED_FILES }"
 
           pip install --upgrade pip
           pip install python-frontmatter          
