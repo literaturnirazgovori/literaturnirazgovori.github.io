@@ -44,6 +44,7 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v44
         with:
+          json: true
           escape_json: true        
   
       - name: List all changed files
