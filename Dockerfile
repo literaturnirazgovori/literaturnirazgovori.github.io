@@ -5,10 +5,10 @@
 # docker build -f ./Dockerfile -t jekyll_site .
 
 # Just run Jekyll automatically (+ npx backend)
-# docker rm -f jek; docker run --name jek -v $PWD:/site -p 4000:4000 -it jekyll_site
+# docker rm -f jek; docker run --name jek -v $PWD:/site -p 4000:4000 -p 8081:8081 --net=host -it jekyll_site
 
 # Interactive connect
-# docker rm -f jek; docker run --name jek -v $PWD:/site -p 4000:4000 -it jekyll_site /bin/bash
+# docker rm -f jek; docker run --name jek -v $PWD:/site -p 4000:4000 -p 8081:8081 --net=host -it jekyll_site /bin/bash
 # 
 # Run the site inside Docker:
 # $ bundle exec jekyll serve --host=0.0.0.0

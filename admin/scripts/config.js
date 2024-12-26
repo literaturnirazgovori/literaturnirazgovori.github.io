@@ -38,11 +38,12 @@ var collections =
             { "label": "Guest author photo",  "name": "guestauthorimage", "widget": "image", "required": false, "media_library": { "config": {"multiple": false }}},
             { "label": "Featured Image", "name": "image","widget": "image", "media_library":{ "config": {"multiple": true }}},
             { "label": "Body", "name": "body", "widget": "markdown" },
-            {"label": "Category", "name": "category", "widget": "select", "default": "interviews", "required": true, "options": collectionCategories },
-            {"label": "Secondary category", "name": "category2", "widget": "select", "default": "", "required": false, "options": collectionCategories },            
+            { "label": "Category", "name": "category", "widget": "select", "default": "interviews", "required": true, "options": collectionCategories },
+            { "label": "Secondary category", "name": "category2", "widget": "select", "default": "", "required": false, "options": collectionCategories },            
             { "label": "Tags", "name": "tags", "widget": "tag-picker" },
             { "label": "Ozone.bg book link", "name": "ozone-link", "widget": "string", "required": false },
             { "label": "Schedule publish at",  "name": "schedule", "widget": "datetime", "default": "", "format": "YYYY-MM-DD HH:mm", "dateFormat": "YYYY-MM-DD", "timeFormat": "HH:mm",  "required": false },
+            { "label": "Shot link", "name": "shortlink", "widget": "string", "required": false },
             { "label": "Redirect from", "name": "redirect_from", "widget": "list", "required": false }
         ]
     }
