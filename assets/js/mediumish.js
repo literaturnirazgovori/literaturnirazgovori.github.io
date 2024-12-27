@@ -20,6 +20,41 @@ function getCookie(cname) {
   return "";
 }
 
+function shortLinkClickHandle() {
+  $(".shortlink").click(function (e){
+    var url_spans = e.currentTarget.getElementsByTagName("span");
+    var modal = $('#shortLinkModal');
+    if(modal.length > 0) {
+      var shortLink = "";
+      var regLink = "";
+      var linkToShare = "";
+      var modal_body = modal.get(0).getElementsByClassName("modal-body");
+      var modal_url = modal.get(0).getElementsByClassName("shortlinkModal_URL");
+      if(modal_url.length > 0 && url_spans.length > 0) {
+        shortLink = decodeURIComponent(url_spans[0].textContent);
+        regLink = decodeURIComponent(url_spans[1].textContent);
+        linkToShare = (shortLink)? shortLink : regLink;
+        modal_url[0].textContent = linkToShare;
+      }
+      if(modal_body.length > 0) {
+        $(modal_body[0]).popover();
+        $(modal_body[0]).click(function (){
+          modal.modal('hide');
+          navigator.clipboard.writeText(linkToShare);
+        });
+      }
+
+      for(var i=0; i < url_spans.length; i++) {
+        console.log(url_spans[i].textContent);
+      }
+      
+      if(shortLink != ""){
+        modal.modal({});
+      }
+    }
+  });  
+}
+
 jQuery(document).ready(function($){
 
   //---- search bar ---------
@@ -86,38 +121,7 @@ jQuery(document).ready(function($){
     }
     //------- check cookie for donation badge ----
 
-    $(".shortlink").click(function (e){
-      var url_spans = e.currentTarget.getElementsByTagName("span");
-      var modal = $('#shortLinkModal');
-      if(modal.length > 0) {
-        var shortLink = "";
-        var regLink = "";
-        var linkToShare = "";
-        var modal_body = modal.get(0).getElementsByClassName("modal-body");
-        var modal_url = modal.get(0).getElementsByClassName("shortlinkModal_URL");
-        if(modal_url.length > 0 && url_spans.length > 0) {
-          shortLink = decodeURIComponent(url_spans[0].textContent);
-          regLink = decodeURIComponent(url_spans[1].textContent);
-          linkToShare = (shortLink)? shortLink : regLink;
-          modal_url[0].textContent = linkToShare;
-        }
-        if(modal_body.length > 0) {
-          $(modal_body[0]).popover();
-          $(modal_body[0]).click(function (){
-            modal.modal('hide');
-            navigator.clipboard.writeText(linkToShare);
-          });
-        }
-
-        for(var i=0; i < url_spans.length; i++) {
-          console.log(url_spans[i].textContent);
-        }
-        
-        if(shortLink != ""){
-          modal.modal({});
-        }
-      }
-    });
+    shortLinkClickHandle();
 
   $("#search-close").click(function (){
     hideSearch();

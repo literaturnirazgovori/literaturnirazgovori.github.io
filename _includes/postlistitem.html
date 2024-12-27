@@ -21,32 +21,41 @@
 {% assign pagecategory=site.data.categoriestext[page.category].name%}
 {% endif %}
 
-<a href="{{ post.url | absolute_url }}">
-    <div class="postlistitem row">
-        <div class="col-6 col-lg-2 col-md-4 col-sm-6 col-xs-6 postlistitem-imagecontainer">
-            <div class="square postlistitemimage {{pagecategory}}" style="background-image: url('{{image}}');"></div>
+
+<div class="postlistitem row">
+    <div class="col-6 col-lg-2 col-md-4 col-sm-6 col-xs-6 postlistitem-imagecontainer">
+        <a href="{{ post.url | absolute_url }}">
+        <div class="square postlistitemimage {category}" style="background-image: url('{{image}}');"></div>
+        </a>
+    </div>
+
+    <div class="col-6 col-lg-10 col-md-8 col-sm-6 col-xs-6 postlistitem-infocontainer">
+        <div class="align-self-start">
+            <a href="{{ post.url | absolute_url }}">
+            <div class="postlistitem-title">{{ post.title }}</div>
+
+            <div class="postlistitem-subtitle">
+                <span class="postlistitem-subtitle-concat">
+                    {{ post.subtitle | strip_html}}
+                </span></div>
+            </a>
         </div>
+        <div class="postlistitem-bottominfo" style="width:100%; padding-right:25px;">
+            {{ authorDisplayName }}
+            <span class="post-date">
+                {% assign m = post.date | date: "%-m" %}
+                {{ post.date | date: "%-d" }}
+                {{site.data.months[m]}}
+                {{ post.date | date: "%Y" }}
+            </span>
 
-        <div class="col-6 col-lg-10 col-md-8 col-sm-6 col-xs-6 postlistitem-infocontainer">
-            <div class="align-self-start">
-                <div class="postlistitem-title">{{ post.title }}</div>
-
-                <div class="postlistitem-subtitle">
-                    <span class="postlistitem-subtitle-concat">
-                        {{ post.subtitle | strip_html}}
-                    </span></div>
-            </div>
-            <div class="postlistitem-bottominfo">
-                {{ authorDisplayName }}
-
-                <span class="post-date">
-                    {% assign m = post.date | date: "%-m" %}
-                    {{ post.date | date: "%-d" }}
-                    {{site.data.months[m]}}
-                    {{ post.date | date: "%Y" }}
-                </span>
-
+            <div style="display: inline-block; margin-left: 10px;">
+                {% 
+                    include shortlink.html 
+                        shortlink=post.shortlink 
+                        fulllink=currentUrl 
+                %}
             </div>
         </div>
     </div>
-</a>
+</div>

@@ -592,6 +592,12 @@ span.site-tag {
     bottom: 0;
 }
 
+.postlistitem-shortlink {
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+}
+
 /*------- Post subtitle area -----------*/
 #subtitlecontainer {
     display: flex;
