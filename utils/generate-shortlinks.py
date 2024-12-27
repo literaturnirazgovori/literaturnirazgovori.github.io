@@ -6,6 +6,7 @@ import pathlib
 from urllib.parse import unquote
 import frontmatter
 import json
+import sys
 
 CURRENT_FOLDER = pathlib.Path(__file__).parent.resolve() #./utils/...
 ROOT_DIR = os.path.join(CURRENT_FOLDER, "../")           #root of the project
@@ -13,9 +14,18 @@ ROOT_DIR = os.path.join(CURRENT_FOLDER, "../")           #root of the project
 print("=====generate-shortlinks.py================================")
 
 # All the changed files in this commit
-changed_files = os.environ["ALL_CHANGED_FILES"]
-filenames = json.loads(changed_files.encode('utf-8').decode('unicode_escape'))
+filenames=()
 files_changed_for_commit = 0
+
+if "ALL_CHANGED_FILES" in os.environ.keys():
+    changed_files = os.environ["ALL_CHANGED_FILES"]
+    filenames = json.loads(changed_files.encode('utf-8').decode('unicode_escape'))
+
+# run this script with --allfiles to scan all posts
+if "--allfiles" in sys.argv:
+    filenames = [f'_posts/{f}' for f in os.listdir(os.path.join(ROOT_DIR, "_posts"))] 
+    for file in filenames:
+        print(file)
 
 for post_file_name in filenames:
   # was a post changed?
@@ -55,6 +65,8 @@ for post_file_name in filenames:
                 relative_url = f"/{ shortlink_relative.groups()[0] }"
             if "redirect_from" in post_frontmatter.keys():
                 redirects_to_this_file = post_frontmatter["redirect_from"]
+                if isinstance(redirects_to_this_file, str):
+                    redirects_to_this_file=[redirects_to_this_file]
                 if relative_url not in redirects_to_this_file:
                     redirects_to_this_file.append(relative_url)
                     save_file = True

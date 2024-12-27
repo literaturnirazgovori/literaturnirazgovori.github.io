@@ -7,7 +7,10 @@ image: /Uploads/figuri.jpg
 layout: post
 ozone-link: https://www.ozone.bg/product/figuri/
 pageviews: 141
+redirect_from:
+- /202006021232
 schedule: ''
+shortlink: /202006021232
 subtitle: Книгата изследва комплексните аспекти на любовта и търсенето на смисъл,
   преплитайки житейските пътища на няколко исторически личности – голяма част от които
   жени, повечето от тях незаслужено потънали в периферията на историята
