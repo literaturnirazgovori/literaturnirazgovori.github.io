@@ -30,33 +30,36 @@ for post_file_name in filenames:
         # is shortlink populated?
         shortlink_url=""
         if "shortlink" in post_frontmatter.keys():
-            shortlink_url = int(post_frontmatter["shortlink"])
+            shortlink_url = post_frontmatter["shortlink"].strip()
         
         # if not populated, create a shortlink based on the filename
         if shortlink_url == "":
-            filename_parts = re.search(r"(\d{4})\-(\d{2})\-(\d{2})\-(\d{2})\-(\d{2})\-([^\.]*)", post_file_name.replace(".md", ""))
-            if filename_parts and filename_parts.groups() and len(filename_parts.groups()) >= 6:
+            filename_parts = re.search(r"(\d{4})\-(\d{2})\-(\d{2})\-(\d{2})\-(\d{2}).*", post_file_name)
+            if filename_parts and filename_parts.groups() and len(filename_parts.groups()) >= 5:
                 yer = filename_parts.groups()[0] # year
                 mon = filename_parts.groups()[1] # month
                 day = filename_parts.groups()[2] # day
                 hur = filename_parts.groups()[3] # hour
                 min = filename_parts.groups()[4] # minutes
-                ttl = filename_parts.groups()[5] # title (truncated to 5 chars)
 
                 shortlink_url=f"/{yer}{mon}{day}{hur}{min}"
                 post_frontmatter["shortlink"] = shortlink_url
                 save_file = True
 
         # make sure redirectfrom with the shortlink exists
+        # strip the domain if exists in the url
         if shortlink_url != "":
+            relative_url = shortlink_url
+            shortlink_relative = re.search(r"https{0,1}\:\/\/[^\/]+\/(.*)", shortlink_url)
+            if shortlink_relative and shortlink_relative.groups() and len(shortlink_relative.groups()) >= 1:
+                relative_url = f"/{ shortlink_relative.groups()[0] }"
             if "redirect_from" in post_frontmatter.keys():
                 redirects_to_this_file = post_frontmatter["redirect_from"]
-                if shortlink_url not in redirects_to_this_file:
-                    redirects_to_this_file.append(shortlink_url)
+                if relative_url not in redirects_to_this_file:
+                    redirects_to_this_file.append(relative_url)
                     save_file = True
-                
             else:
-                post_frontmatter["redirect_from"] = [ shortlink_url ]
+                post_frontmatter["redirect_from"] = [ relative_url ]
                 save_file = True
         
         if save_file:
@@ -67,4 +70,5 @@ for post_file_name in filenames:
     else:
         print(f"File not found (deleted?): {post_full_file_name}")
 
+print(f"{files_changed_for_commit} files changed to commit")
 print("====/generate-shortlinks.py================================")
