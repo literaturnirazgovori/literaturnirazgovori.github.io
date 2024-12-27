@@ -1,0 +1,11 @@
+{% if jekyll.environment == "production" %}
+    {% assign siteurl="https://literaturnirazgovori.com" %}
+{% else %}
+    {% assign siteurl = site.url %}
+{% endif %}
+
+<div class="shortlink">
+    <i class="fas fa-link"></i>
+    <span>{{ siteurl }}{{ include.shortlink }}</span>
+    <span>{{ include.fulllink }}</span>
+</div>

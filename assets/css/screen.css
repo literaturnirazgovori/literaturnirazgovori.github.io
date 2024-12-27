@@ -245,6 +245,7 @@ html, body {
       font-weight: 700;
   }
 
+
   @media (max-width: 768px) {
     .buyozonebanner
     {
@@ -1855,3 +1856,44 @@ a {
   }
 
   /*---/Christmas decorations ---*/
+
+  /* --- short links --- */
+  .shortlink {
+    color: rgba(0, 0, 0, 0.44);
+    cursor: pointer;
+    display: inline-block;
+  }
+  .shortlink:hover {
+    color: black;
+  }
+
+  .card-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .shortlink span {
+    display: none;
+  }
+
+  #shortLinkModal .modal-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: #6b6b47;
+    cursor: pointer;
+  }
+
+  #shortLinkModal .modal-body:hover {
+    color: black;
+  }
+
+  .shortlinkModal_URL {
+    margin-right: 10px;
+  }
+  /* ---/short links --- */

@@ -1,5 +1,14 @@
 <style>
     #btn_donate {
+        z-index: 1000000;
+    }
+
+    /* the default state */
+    #btn_donate.hidden_badge {
+        display: none !important;
+    }
+
+    .btn_donate_internal {
         background-color: #a2d5dd;
         color: white;
         cursor: pointer;
@@ -20,15 +29,17 @@
             transform .4s ease-in-out, 
             background 0.4s ease-in-out,
             box-shadow 0.4s ease-in-out;
-        margin: 20px 0;
-        z-index: 1000000;
+        margin-bottom: 20px;
         -webkit-box-shadow: 0px 0px 24px 5px rgba(6,101,117, 0.38);
         -moz-box-shadow: 0px 0px 24px 5px rgba(6,101,117, 0.38);
         box-shadow: 0px 0px 24px 5px rgba(6,101,117, 0.38);
         line-height: normal;
     }
+    .btn_donate_internal a, .btn_donate_internal a:hover {
+        color: white;
+    }
 
-    #btn_donate:hover {
+    .btn_donate_internal:hover {
         transform: rotate(-15deg);
         background-color: #4babb1;
         -webkit-box-shadow: 0px 0px 24px 16px rgba(6,101,117, 0.38);
@@ -37,7 +48,7 @@
     }
 
     @media (max-width:992px) {
-        #btn_donate.fixed_top_mobile_bottom_right {
+        .fixed_top_mobile_bottom_right {
             position: fixed !important;
             right: 18px !important;
             bottom: 18px !important;
@@ -45,62 +56,70 @@
         }
     }
 
-    #btn_donate.fixed_top_right {
+    .fixed_top_right {
         position: fixed;
         right: 18px;
         top: 180px;
     }
 
-    #btn_donate.btn_donate_red {
+    .btn_donate_red .btn_donate_internal {
         background-color: #fb4545;
         -webkit-box-shadow: 0px 0px 24px 5px rgba(102, 0, 0 ,0.38);
         -moz-box-shadow: 0px 0px 24px 5px rgba(102, 0, 0 ,0.38);
         box-shadow: 0px 0px 24px 5px rgba(102, 0, 0 ,0.38);
     }
-    #btn_donate.btn_donate_red:hover {
-        background-color: #cc0000;
+    .btn_donate_red .btn_donate_internal:hover {
+        background-: #cc0000;
         -webkit-box-shadow: 0px 0px 24px 16px rgba(102, 0, 0 ,0.38);
         -moz-box-shadow: 0px 0px 24px 16px rgba(102, 0, 0 ,0.38);
         box-shadow: 0px 0px 24px 16px rgba(102, 0, 0 ,0.38);
     }
-
-    #btn_donate.btn_donate_green {
-        background-color: #58c3b6;
-        -webkit-box-shadow: 0px 0px 24px 5px rgba(0, 88, 77,0.38);
-        -moz-box-shadow: 0px 0px 24px 5px rgba(0, 88, 77,0.38);
-        box-shadow: 0px 0px 24px 5px rgba(0, 88, 77,0.38);
-    }
-    #btn_donate.btn_donate_green:hover {
-        background-color: #008676;
-        -webkit-box-shadow: 0px 0px 24px 16px rgba(0, 88, 77,0.38);
-        -moz-box-shadow: 0px 0px 24px 16px rgba(0, 88, 77,0.38);
-        box-shadow: 0px 0px 24px 16px rgba(0, 88, 77,0.38);
+    
+    .btn-donate-content {
+        display:flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
     }
 
-    #btn_donate.btn_donate_pink {
-        background-color: #dc00fc;
-        -webkit-box-shadow: 0px 0px 24px 5px rgba(216,0,247,0.38);
-        -moz-box-shadow: 0px 0px 24px 5px rgba(216,0,247,0.38);
-        box-shadow: 0px 0px 24px 5px rgba(216,0,247,0.38);
+    .btn_donate_wrapper {
+        position:relative;
     }
-    #btn_donate.btn_donate_pink:hover {
-        background-color: #b100cb;
-        -webkit-box-shadow: 0px 0px 24px 16px rgba(216,0,247,0.38);
-        -moz-box-shadow: 0px 0px 24px 16px rgba(216,0,247,0.38);
-        box-shadow: 0px 0px 24px 16px rgba(216,0,247,0.38);
+
+    .btn_close_donation {
+        position:absolute; 
+        top: 0px; 
+        right: 0px;
+        display: none;
     }
+
+    .close_btn .btn_close_donation {
+        display: block !important;
+        cursor: pointer;
+        color: red;
+    }
+
 </style>
-<a href="/donate">
-<div id="btn_donate" class="{{ include.classes }}">
-    <div>
-    {% if include.text %}
-        {{ include.text }}
-    {% else %}
-        Ако харесате статията,
-        подкрепете сайта -
-        той зависи от вас.
-    {% endif %}
+<div id="btn_donate" class="hidden_badge {{ include.classes }}">
+    <div class="btn_donate_wrapper">
+        <span class="btn_close_donation">X</span>
+        <div class="btn_donate_internal">
+            <a href="/donate">
+                <div class="btn-donate-content">
+                    <div>
+                    {% if include.text %}
+                        {{ include.text }}
+                    {% else %}
+                        Ако харесате статията,
+                        подкрепете сайта -
+                        той зависи от вас.
+                    {% endif %}
+                    </div>
+                    <div style="position: relative; top: 10px;"><i class="fas fa-heart"></i></div>
+                </div>
+            </a>
+        </div>
     </div>
-    <div style="position: relative; top: 10px;"><i class="fas fa-heart"></i></div>
 </div>
-</a>
