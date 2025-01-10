@@ -19,6 +19,7 @@ files_changed_for_commit = 0
 
 if "ALL_CHANGED_FILES" in os.environ.keys():
     changed_files = os.environ["ALL_CHANGED_FILES"]
+    print(f"-=-=-\nChanged files:\n{changed_files}\n-=-=-")
     filenames = json.loads(changed_files.encode('utf-8').decode('unicode_escape'))
 
 # run this script with --allfiles to scan all posts
