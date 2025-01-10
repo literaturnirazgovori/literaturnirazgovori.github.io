@@ -39,7 +39,8 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     for file in raw_files:
         print(f"file 4\n{file}")
         print(f"repr(file) 4\n{repr(file)}")
-        print(f"decoded\n{file.strip().strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8')}")
+        dec = file.strip().strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8')
+        print(f"decoded\n{dec}")
 
 
     filenames = [file.strip().strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8') for file in raw_files]
