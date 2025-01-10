@@ -22,7 +22,10 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     print(f"changed_files 1\n{changed_files}")
     print(f"repr(changed_files) 1\n{repr(changed_files)}")
 
+    filenames = json.loads(changed_files.encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8').replace('""','"'))
+
     # -- chatgpt 
+    """
     cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
     print(f"cleaned_files 2\n{cleaned_files}")
     print(f"repr(cleaned_files) 2\n{repr(cleaned_files)}")
@@ -47,7 +50,7 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     print(filenames)
 
 
-    """
+    
     print(f"---\changed_files\n{changed_files}\n---")
     print(f"The type is {print(type(changed_files))}")
     # Clean up the escaping in the string
