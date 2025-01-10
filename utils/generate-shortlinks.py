@@ -19,11 +19,29 @@ files_changed_for_commit = 0
 
 if "ALL_CHANGED_FILES" in os.environ.keys():
     changed_files = os.environ["ALL_CHANGED_FILES"]
+    print(f"changed_files 1\n{changed_files}")
+    print(f"repr(changed_files) 1\n{repr(changed_files)}")
 
     # -- chatgpt 
     cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
+    print(f"cleaned_files 2\n{cleaned_files}")
+    print(f"repr(cleaned_files) 2\n{repr(cleaned_files)}")
+
     cleaned_files = cleaned_files.strip('[]')  # Remove square brackets
+    print(f"cleaned_files 3\n{cleaned_files}")
+    print(f"repr(cleaned_files) 3\n{repr(cleaned_files)}")
+
+
     raw_files = cleaned_files.split('","')   # Split on the separator
+    print(f"raw_files 4\n{raw_files}")
+    print(f"repr(raw_files) 4\n{repr(raw_files)}")
+
+    for file in raw_files:
+        print(f"file 4\n{file}")
+        print(f"repr(file) 4\n{repr(file)}")
+        print(f"decoded\n{file.strip().strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8')}")
+
+
     filenames = [file.strip().strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8') for file in raw_files]
     print(filenames)
 
