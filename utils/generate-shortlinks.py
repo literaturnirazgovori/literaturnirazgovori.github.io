@@ -21,6 +21,14 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     changed_files = os.environ["ALL_CHANGED_FILES"]
 
     # -- chatgpt 
+    cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
+    cleaned_files = cleaned_files.strip('[]')  # Remove square brackets
+    raw_files = cleaned_files.split('", "')   # Split on the separator
+    filenames = [file.strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8') for file in raw_files]
+    print(filenames)
+
+
+    """
     print(f"---\changed_files\n{changed_files}\n---")
     print(f"The type is {print(type(changed_files))}")
     # Clean up the escaping in the string
@@ -37,7 +45,7 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     #    print(f"Error processing files: {e}")
     
     # --- chatgpt
-
+    """
     """
     cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
 
