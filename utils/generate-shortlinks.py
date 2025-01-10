@@ -19,6 +19,23 @@ files_changed_for_commit = 0
 
 if "ALL_CHANGED_FILES" in os.environ.keys():
     changed_files = os.environ["ALL_CHANGED_FILES"]
+
+    # -- chatgpt 
+    # Clean up the escaping in the string
+    cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
+
+    # Manually split and decode
+    #try:
+    cleaned_files = cleaned_files.strip('[]')  # Remove square brackets
+    raw_files = cleaned_files.split('", "')   # Split on the separator
+    filenames = [file.strip('"').encode('utf-8').decode('unicode_escape') for file in raw_files]
+    print(filenames)
+    #except Exception as e:
+    #    print(f"Error processing files: {e}")
+    
+    # --- chatgpt
+
+    """
     cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
 
     # Fix the wrapping quotes around the list
@@ -29,6 +46,7 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     # filenames = json.loads(changed_files.encode('utf-8').decode('unicode_escape'))
     filenames = json.loads(cleaned_files.encode('utf-8').decode('unicode_escape'))
     print(filenames)
+    """
 
 # run this script with --allfiles to scan all posts
 if "--allfiles" in sys.argv:
