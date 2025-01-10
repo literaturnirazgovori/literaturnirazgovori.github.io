@@ -21,6 +21,7 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     changed_files = os.environ["ALL_CHANGED_FILES"]
 
     # -- chatgpt 
+    print(f"---\ncleaned_files\n{changed_files}\n---")
     # Clean up the escaping in the string
     cleaned_files = changed_files.encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8')
 
