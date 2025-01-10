@@ -22,7 +22,7 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     print(f"changed_files 1\n{changed_files}")
     print(f"repr(changed_files) 1\n{repr(changed_files)}")
 
-    decoded = changed_files.encode('utf-8').decode('unicode_escape').encode('latin1')
+    decoded = changed_files.replace('\\\\', '\\').encode('utf-8').decode('unicode_escape').encode('latin1')
     print(f"Decoded:\n{decoded}")
 
     filenames = json.loads(changed_files.encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8').replace('""','"'))
