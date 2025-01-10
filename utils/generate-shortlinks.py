@@ -24,11 +24,14 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     # Clean up the escaping in the string
     cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
 
-    # Manually split and decode
-    #try:
-    cleaned_files = cleaned_files.strip('[]')  # Remove square brackets
-    raw_files = cleaned_files.split('", "')   # Split on the separator
-    filenames = [file.strip('"').encode('utf-8').decode('unicode_escape') for file in raw_files]
+    # Parse the JSON string
+    raw_filenames = json.loads(cleaned_files)
+    
+    # Decode Unicode escape sequences properly
+    filenames = [
+        file.encode('latin1').decode('utf-8') for file in raw_filenames
+    ]
+    
     print(filenames)
     #except Exception as e:
     #    print(f"Error processing files: {e}")
