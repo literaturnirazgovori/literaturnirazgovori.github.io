@@ -21,7 +21,11 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     changed_files = os.environ["ALL_CHANGED_FILES"]
     cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
 
-    print(f"-=-=-\nChanged files:\n{changed_files}\nUtf-8 encode:\n{changed_files.encode('utf-8')}\n-=-=-")
+    # Fix the wrapping quotes around the list
+    if cleaned_files.startswith("[\\\"") and cleaned_files.endswith("\\\"]"):
+        cleaned_files = cleaned_files[3:-3]
+
+    # print(f"-=-=-\nChanged files:\n{changed_files}\nUtf-8 encode:\n{changed_files.encode('utf-8')}\n-=-=-")
     # filenames = json.loads(changed_files.encode('utf-8').decode('unicode_escape'))
     filenames = json.loads(cleaned_files.encode('utf-8').decode('unicode_escape'))
     print(filenames)
