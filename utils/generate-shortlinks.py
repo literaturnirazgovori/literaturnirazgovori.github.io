@@ -19,70 +19,35 @@ files_changed_for_commit = 0
 
 if "ALL_CHANGED_FILES" in os.environ.keys():
     changed_files = os.environ["ALL_CHANGED_FILES"]
-    print(f"changed_files 1\n{changed_files}")
-    print(f"repr(changed_files) 1\n{repr(changed_files)}")
 
-    decoded = changed_files.replace('\\\\', '\\').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8')
+    # changed files are retrieved as unicode escape sequences
+    # meaning they look like this: 
+    # [\"\\"_posts/2025-01-10-08-09-\\320\\274\\320\\260\\320\\273\\320\\272\\320\\270\\321\\202\\320\\265-\\320\\261\\321\\203\\320\\275\\321\\202\\320\\276\\320\\262\\320\\265-\\320\\275\\320\\260-\\321\\201\\320\\262\\320\\276\\320\\261\\320\\276\\320\\264\\320\\260\\321\\202\\320\\260-\\320\\262-\\320\\265\\320\\264\\320\\270\\320\\275-\\320\\274\\320\\275\\320\\276\\320\\263\\320\\276-\\320\\266\\320\\270\\320\\262-\\321\\200\\320\\276\\320\\274\\320\\260\\320\\275.md\\"\",\"utils/generate-shortlinks.py\"]
+    # And must be first decoded into this:
+    # ['_posts/2025-01-10-08-09-малките-бунтове-на-свободата-в-един-много-жив-роман.md', 'utils/generate-shortlinks.py']
+    # This is the purpose of the following block.
+
+    """
+    decoded = changed_files\
+        .replace('\\\\', '\\')\
+        .encode('utf-8')\
+        .decode('unicode_escape')\
+        .encode('latin1')\
+        .decode('utf-8')
     print(f"Decoded:\n{decoded}")
+    """
 
-    filenames = json.loads(changed_files.replace('\\\\', '\\').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8').replace('""','"'))
+    filenames = json.loads(
+        changed_files\
+        .replace('\\\\', '\\')\
+        .encode('utf-8')\
+        .decode('unicode_escape')\
+        .encode('latin1')\
+        .decode('utf-8')\
+        .replace('""','"')
+    )
     print(f"Filenames:\n{filenames}")
-    # -- chatgpt 
-    """
-    cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
-    print(f"cleaned_files 2\n{cleaned_files}")
-    print(f"repr(cleaned_files) 2\n{repr(cleaned_files)}")
 
-    cleaned_files = cleaned_files.strip('[]')  # Remove square brackets
-    print(f"cleaned_files 3\n{cleaned_files}")
-    print(f"repr(cleaned_files) 3\n{repr(cleaned_files)}")
-
-
-    raw_files = cleaned_files.split('","')   # Split on the separator
-    print(f"raw_files 4\n{raw_files}")
-    print(f"repr(raw_files) 4\n{repr(raw_files)}")
-
-    for file in raw_files:
-        print(f"file 4\n{file}")
-        print(f"repr(file) 4\n{repr(file)}")
-        dec = file.strip().strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8')
-        print(f"decoded\n{dec}")
-
-
-    filenames = [file.strip().strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8') for file in raw_files]
-    print(filenames)
-
-
-    
-    print(f"---\changed_files\n{changed_files}\n---")
-    print(f"The type is {print(type(changed_files))}")
-    # Clean up the escaping in the string
-    cleaned_files = changed_files.encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8')
-
-    print(f"---\ncleaned_files\n{cleaned_files}\n---")
-
-    # Parse the JSON string
-    filenames = json.loads(cleaned_files)
-    
-    
-    print(filenames)
-    #except Exception as e:
-    #    print(f"Error processing files: {e}")
-    
-    # --- chatgpt
-    """
-    """
-    cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
-
-    # Fix the wrapping quotes around the list
-    if cleaned_files.startswith("[\\\"") and cleaned_files.endswith("\\\"]"):
-        cleaned_files = cleaned_files[3:-3]
-
-    # print(f"-=-=-\nChanged files:\n{changed_files}\nUtf-8 encode:\n{changed_files.encode('utf-8')}\n-=-=-")
-    # filenames = json.loads(changed_files.encode('utf-8').decode('unicode_escape'))
-    filenames = json.loads(cleaned_files.encode('utf-8').decode('unicode_escape'))
-    print(filenames)
-    """
 
 # run this script with --allfiles to scan all posts
 if "--allfiles" in sys.argv:
