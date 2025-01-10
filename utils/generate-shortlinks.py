@@ -23,8 +23,8 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
     # -- chatgpt 
     cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
     cleaned_files = cleaned_files.strip('[]')  # Remove square brackets
-    raw_files = cleaned_files.split('", "')   # Split on the separator
-    filenames = [file.strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8') for file in raw_files]
+    raw_files = cleaned_files.split('","')   # Split on the separator
+    filenames = [file.strip().strip('"').encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8') for file in raw_files]
     print(filenames)
 
 
