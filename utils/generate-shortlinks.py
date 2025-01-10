@@ -22,15 +22,13 @@ if "ALL_CHANGED_FILES" in os.environ.keys():
 
     # -- chatgpt 
     # Clean up the escaping in the string
-    cleaned_files = changed_files.replace('\\"', '"').replace('\\\\', '\\')
+    cleaned_files = changed_files.encode('utf-8').decode('unicode_escape').encode('latin1').decode('utf-8')
+
+    print(f"---\ncleaned_files\n{cleaned_files}\n---")
 
     # Parse the JSON string
-    raw_filenames = json.loads(cleaned_files)
+    filenames = json.loads(cleaned_files)
     
-    # Decode Unicode escape sequences properly
-    filenames = [
-        file.encode('latin1').decode('utf-8') for file in raw_filenames
-    ]
     
     print(filenames)
     #except Exception as e:
