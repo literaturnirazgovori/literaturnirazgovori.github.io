@@ -1903,3 +1903,13 @@ a {
     margin-right: 10px;
   }
   /* ---/short links --- */
+
+  #scroll_indicator { 
+    height: 10px; 
+    width: 0%; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    background-color: #D95B64; 
+    z-index: 99999;
+  }

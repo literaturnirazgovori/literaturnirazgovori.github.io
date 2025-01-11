@@ -214,6 +214,8 @@ jQuery(document).ready(function($){
 
     $(window).scroll(function(event){
         didScroll = true;
+        var scroll_percents = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+        $("#scroll_indicator").width(scroll_percents + "%");
     });
 
     setInterval(function() {
