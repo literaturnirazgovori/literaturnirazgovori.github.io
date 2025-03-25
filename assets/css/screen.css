@@ -929,12 +929,73 @@ a {
 }
  .mediumnavigation {
      background:rgba(255,255,255,.97);
-     box-shadow:0 2px 2px -2px rgba(0,0,0,.15);
+     box-shadow:0 2px 2px -2px rgba(0,0,0,.44);
      transition: top 0.2s linear;
 }
+/*----------- Hamburger animated menu button -----------*/
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+    /* Optional: Uncomment to shrink further */
+    /* transform: scale(0.9); */
+  }
+  
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 2.5; /* Slightly thinner */
+    transition: stroke-dasharray 400ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 2.5;
+  }
+  
+  .line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 2.5;
+  }
+  
+  .line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 2.5;
+  }
+  
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 2.5;
+  }
+  
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 2.5;
+  }
+  
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 2.5;
+  }
+  
+  .menu:focus,
+  .menu:active,
+  .menu:focus {
+      outline: none;
+      box-shadow: none;
+  }
+  /*-----------/Hamburger animated menu button -----------*/
+
  .main-content {
     /*min-height:300px;*/
 }
+
 .whole-body-wrapper{
     min-height: 100%;
     margin-bottom: -50px;

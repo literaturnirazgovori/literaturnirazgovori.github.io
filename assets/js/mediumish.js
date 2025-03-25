@@ -262,6 +262,16 @@ jQuery(document).ready(function($){
     {
       $(".christmas").show();
     }
+
+    // Check if click is outside navbar content & toggler (and menu is open)
+    document.addEventListener('click', function(event) {
+      const navbar = document.querySelector('.navbar');
+      
+      if (!navbar.contains(event.target)) {
+        $(".menu").addClass("collapsed").removeClass("opened");
+        $(".navbar-collapse").removeClass("show");
+      }
+    });
 });
 
 function hideSearch()
