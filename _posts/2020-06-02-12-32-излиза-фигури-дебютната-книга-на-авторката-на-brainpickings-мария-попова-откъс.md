@@ -6,7 +6,7 @@ hidden: false
 image: /Uploads/figuri.jpg
 layout: post
 ozone-link: https://www.ozone.bg/product/figuri/
-pageviews: 141
+pageviews: 142
 redirect_from:
 - /202006021232
 schedule: ''
