@@ -391,7 +391,7 @@ html, body {
 }
 
 .postlistitemimage{
-    filter: grayscale(100%);
+    /*filter: grayscale(100%); */
 }
 
 .postlistitem-title {
@@ -561,7 +561,7 @@ ul.tags li {
 }
 
 .alltagslink img {
-    filter: grayscale();
+    /* filter: grayscale(); */
 }
 
 .alltagslink img:hover {
@@ -1733,8 +1733,10 @@ a {
 
  .card .img-fluid {
     width:100%;
+    /*
     -webkit-filter: grayscale(100%); 
-    filter: grayscale(100%);   
+    filter: grayscale(100%);
+    */
 }
 
 /*--- Christmas decorations ---*/
