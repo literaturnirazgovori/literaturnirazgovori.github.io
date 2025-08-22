@@ -5,7 +5,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <link rel="icon" href="{{ site.baseurl }}/assets/images/logo-book.png" />
+  <!--link rel="icon" href="{{ site.baseurl }}/assets/images/logo-book.png" /-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
 
   <title>{{ page.title }} | {{ site.name }}</title>
 
@@ -34,7 +38,7 @@
   {% if jekyll.environment == "production" %}
   {% assign siteurl="https://literaturnirazgovori.com" %}
   {%else%}
-  {% assign siteurl = site.url %}
+  {% assign siteurl = "" %}
   {% endif %}
 
   {% if page.url contains '://' %}
@@ -99,7 +103,7 @@ page.layout
 <!-- Begin Menu Navigation
 ================================================== -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+<nav class="navbar navbar-expand-lg navbar fixed-top mediumnavigation nav-down">
   <div class="container-fluid pr-0 navbar-container">
     <!-- Begin Logo -->
     <!-- UNHIDE THE CMS -->
@@ -157,17 +161,25 @@ page.layout
         <a class="nav-link" href="{{ site.baseurl }}/category/translations"><strong>П</strong>реводи</a>
       </li>
 
-      <li class="nav-item {% if pagecat=='mybooks' %}active{% endif %}">
+      <li class="nav-item">
         <a class="nav-link" href="https://stilnica.com/people/antonia" target="_blank"><strong>М</strong>оите книги</a>
       </li>
 
-      <li class="nav-item {% if pagecat=='talks' %}active{% endif %}">
-        <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането</a>
+      <li class="nav-item">
+        <a class="nav-link" href="https://stilnica.com/" target="_blank"><strong>Р</strong>едакторски услуги</a>
       </li>
       
       <li style="display:none;" class="nav-item {% if pagecat=='kolonkata-na-georgi-cankov' %}active{% endif %} kolonkata-na-georgi-cankov">
-        <a class="nav-link" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
+        <a class="nav-link" style="margin: 10px 0;" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
       </li>
+
+          <li id="menubarsearch">
+            <img src="/assets/images/search-glass-inverted.png" alt="Търсене">
+          </li>
+
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f"></i></a>
+          </li>      
     </ul>
     <!-- End Menu -->
 
@@ -181,13 +193,7 @@ page.layout
 
       <div class="navbar-collapse collapse order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
-          <li id="menubarsearch">
-            <img src="/assets/images/search-glass.png" alt="Търсене">
-          </li>
 
-          <li class="nav-item">
-            <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f" style="color:#3C5A99;"></i></a>
-          </li>
         </ul>
       </div>
     </div>
@@ -245,19 +251,21 @@ page.layout
 
           <img src="{{ site.baseurl }}/assets/images/santa-hat.png" class="christmas christmas-hat">
 
-          <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-          <div class="lead">
-            {% if site.mainlink %}
-            <a href="{{ site.mainlink }}" target="_blank">
-              {% endif %}
-              {{ site.description }} {% if site.mainlink %}
-              <img src="{{ site.baseurl }}/assets/images/facebook.png" />
-            </a>{% endif %}
-          </div><!--.lead-->
+          <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: baseline;">
+            <a href="{{ site.baseurl }}/" style="margin-right: 23px;">ЛИТЕРАТУРНИ РАЗГОВОРИ</a>
+            <div class="lead">
+              {% if site.mainlink %}
+              <a href="{{ site.mainlink }}" target="_blank">
+                {% endif %}
+                {{ site.description }} {% if site.mainlink %}
+                <img src="{{ site.baseurl }}/assets/images/facebook.png" />
+              </a>{% endif %}
+            </div><!--.lead-->
+          </div>
         </span>
       </span>
 
-        <div class="topsidebanner">
+        <div class="topsidebanner" style="display:none;">
             <div class="widget-facebook">
               <iframe id="facebook_iframe" class="facebook_iframe"></iframe>
             </div><!--.idget-facebook-->
