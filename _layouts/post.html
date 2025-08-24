@@ -17,10 +17,10 @@ comments: true
 {% include scroll_indicator.html %}
 
 <div class="container">
-    <div class="row">
+    <div class="row justify-content-center">
 
         <!-- Post Share -->
-        <div class="col-md-2 pl-0">
+        <div class="col-md-2 pl-0 d-none">
             <div id="side_actions">
                 <div id="postviewscontainer" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
                     {% if page.pageviews and page.pageviews > 0 %}
@@ -51,8 +51,8 @@ comments: true
         {% endif %}
 
 
-        <div class="col-md-9 flex-first flex-md-unordered">
-            <div class="mainheading">
+        <div class="col-md-10  bg-white flex-first flex-md-unordered post-sheet" style="border-radius: 7px;">
+            <div class="mainheading" style="letter-spacing: normal;">
                 <!-- Post Title -->
                 <h1 class="posttitle">{{ page.title }}</h1>
 
@@ -70,14 +70,31 @@ comments: true
                     <div id="subtitletextcontainer">
                         <h2 class="postsubtitle">{{ page.subtitle }}</h2>
                     </div>
+                    <div class="actions">
+                        {% 
+                            include shortlink.html 
+                                shortlink=page.shortlink 
+                                fulllink=currentUrl 
+                        %}                        
+                        <div id="postviewscontainer" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
+                            {% if page.pageviews and page.pageviews > 0 %}
+                            <div id="postViews">
+                                <img src="/assets/images/eye.png" />
+                                <div style="margin-left: 5px;">{{ page.pageviews }}</div>
+                            </div>
+                            {% endif %}
+                        </div>                    
+                    </div>
                 </div>            
                 <!--================================-->
-                
+                <!--
                 <div id="postviewscontainer-mobile" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
                     {% if page.pageviews and page.pageviews > 0 %}
                         {{ page.pageviews }}
                     {% endif %}                    
-                    <span id="postViews-mobile"></span></div>
+                    <span id="postViews-mobile"></span>
+                </div>
+                -->
             </div>
             <div class="postinfo">
                     {{ authorDisplayName }},
@@ -127,6 +144,23 @@ comments: true
             <!-- optional buy banner -->
 
             <!-- Post Featured Image -->
+
+            {% if jekyll.environment == "production" %}
+            {% assign siteurl="https://literaturnirazgovori.com" %}
+            {%else%}
+            {% assign siteurl = site.url %}
+            {% endif %}
+            {% if site.url == 'http://0.0.0.0:4000' %}
+                {% assign siteurl = "" %}
+            {% endif %}
+            
+            
+            {% if post.url contains '://' %}
+            {% assign currentUrl = post.url %}
+            {%else%}
+            {% assign currentUrl = post.url | prepend: siteurl %}
+            {% endif %}            
+            
             {% unless page.hide_image %}
             {% if page.image %}
                 {% assign featuredImage = page.image %}
