@@ -7,12 +7,24 @@
 {% endif %}
 {% endif %}
 
+{% if jekyll.environment == "production" %}
+{% assign siteurl="https://literaturnirazgovori.com" %}
+{%else%}
+{% assign siteurl = "" %}
+{% endif %}
+
+{% if page.url contains '://' %}
+{% assign currentUrl = page.url %}
+{%else%}
+{% assign currentUrl = page.url | prepend: siteurl %}
+{% endif %}
+
 {% if post.image %}
 {% assign image = post.image %}
 {% if image contains "://" %}
 {% assign image = post.image %}
 {% else %}
-{% assign image = post.image | absolute_url %}
+{% assign image = post.image | prepend: siteurl %}
 {% endif %}
 {% endif %}
 
@@ -21,6 +33,51 @@
 {% assign pagecategory=site.data.categoriestext[page.category].name%}
 {% endif %}
 
+<!--
+<div class="row postlistitem">
+    <a href="{{ post.url | prepend: siteurl }}">
+        <div class="postlist-image" style="background-image: url('{{image}}');">
+        </div>
+    </a>
+    <div class="post-details">
+        <a href="{{ post.url | prepend: siteurl }}">
+            <div class="post-title">
+                {{ post.title }}
+            </div>
+        </a>
+        <a href="{{ post.url | prepend: siteurl }}">
+            <div class="post-subtitle">
+                {{ post.subtitle | strip_html}}
+            </div>
+        </a>
+        <div class="post-meta">
+            <div class="post-author-date">
+                <a href="{{ post.url | prepend: siteurl }}">
+                {{ authorDisplayName }},
+                {% assign m = post.date | date: "%-m" %}
+                {{ post.date | date: "%-d" }}
+                {{site.data.months[m]}}
+                {{ post.date | date: "%Y" }}
+                </a>
+                <div class="post-shortlink">
+                {% 
+                    include shortlink.html 
+                        shortlink=post.shortlink 
+                        fulllink=currentUrl
+                        class="bright"
+                %}
+                </div>
+            </div>
+
+        </div>
+        <div class="post-category">
+            <a href="/category/{{ site.data.categoriestext[post.category].name }}">
+                {{ site.data.categoriestext[post.category].text }}
+            </a>
+        </div>        
+    </div>
+</div>
+-->
 
 <div class="postlistitem row">
     <div class="col-6 col-lg-2 col-md-4 col-sm-6 col-xs-6 postlistitem-imagecontainer">
@@ -54,6 +111,7 @@
                     include shortlink.html 
                         shortlink=post.shortlink 
                         fulllink=currentUrl 
+                        class="bright"
                 %}
             </div>
         </div>

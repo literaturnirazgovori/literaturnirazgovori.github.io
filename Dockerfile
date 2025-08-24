@@ -5,7 +5,10 @@
 # docker build -f ./Dockerfile -t literaturni_site .
 
 # Just run Jekyll automatically (+ npx backend)
-# docker rm -f literaturni; docker run --name literaturni -v $PWD:/site -p 4000:4000 -p 8081:8081 --net=host -it literaturni_site
+# docker rm -f literaturni; docker run --rm --name literaturni -v $PWD:/site -p 4000:4000 -p 8081:8081 --net=host -it literaturni_site
+
+# Windows
+# docker rm -f literaturni; docker run --rm --name literaturni -v .:/site -p 4000:4000 -p 8081:8081  -it literaturni_site
 
 # Interactive connect
 # docker rm -f literaturni; docker run --name literaturni -v $PWD:/site -p 4000:4000 -p 8081:8081 --net=host -it literaturni_site /bin/bash

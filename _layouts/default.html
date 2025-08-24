@@ -5,7 +5,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <link rel="icon" href="{{ site.baseurl }}/assets/images/logo-book.png" />
+  <!--link rel="icon" href="{{ site.baseurl }}/assets/images/logo-book.png" /-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
 
   <title>{{ page.title }} | {{ site.name }}</title>
 
@@ -34,7 +38,7 @@
   {% if jekyll.environment == "production" %}
   {% assign siteurl="https://literaturnirazgovori.com" %}
   {%else%}
-  {% assign siteurl = site.url %}
+  {% assign siteurl = "" %}
   {% endif %}
 
   {% if page.url contains '://' %}
@@ -98,8 +102,7 @@ page.layout
 
 <!-- Begin Menu Navigation
 ================================================== -->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+<nav class="navbar navbar-expand-lg navbar fixed-top mediumnavigation nav-down">
   <div class="container-fluid pr-0 navbar-container">
     <!-- Begin Logo -->
     <!-- UNHIDE THE CMS -->
@@ -138,7 +141,7 @@ page.layout
     {% endif %}
 
     <!-- UNHIDE THE CMS -->
-    <ul class="navbar-nav navbarlist" style="align-items: center;">
+    <ul class="navbar-nav mx-auto" style="align-items: center;">
       
       <li class="nav-item {% if pagecat=='bookreviews' %}active{% endif %}">
         <a class="nav-link" href="{{ site.baseurl }}/category/bookreviews"><strong>Р</strong>ецензии</a>
@@ -157,17 +160,31 @@ page.layout
         <a class="nav-link" href="{{ site.baseurl }}/category/translations"><strong>П</strong>реводи</a>
       </li>
 
-      <li class="nav-item {% if pagecat=='mybooks' %}active{% endif %}">
-        <a class="nav-link" href="https://stilnica.com/people/antonia" target="_blank"><strong>М</strong>оите книги</a>
+      <li class="nav-item">
+        <a class="nav-link stilnica-link" href="https://stilnica.com/people/antonia" target="_blank"><strong>М</strong>оите книги</a>
       </li>
 
-      <li class="nav-item {% if pagecat=='talks' %}active{% endif %}">
-        <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането</a>
+      <li class="nav-item">
+        <a class="nav-link stilnica-link" href="https://stilnica.com/" target="_blank"><strong>Р</strong>едакторски услуги</a>
       </li>
       
       <li style="display:none;" class="nav-item {% if pagecat=='kolonkata-na-georgi-cankov' %}active{% endif %} kolonkata-na-georgi-cankov">
-        <a class="nav-link" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
+        <a class="nav-link" style="margin: 10px 0;" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
       </li>
+
+      {% assign search_active = "" %}
+      {% if page.url contains "search.html" %}
+      {% assign search_active = "search_active" %}
+      {% endif %}
+
+          <li id="menubarsearch" class="{{ search_active }}">
+            <div id="glass"  alt="Търсене"></div>
+            <!--<img src="/assets/images/search-glass-inverted.png" alt="Търсене">-->
+          </li>
+
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f"></i></a>
+          </li>      
     </ul>
     <!-- End Menu -->
 
@@ -181,13 +198,7 @@ page.layout
 
       <div class="navbar-collapse collapse order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
-          <li id="menubarsearch">
-            <img src="/assets/images/search-glass.png" alt="Търсене">
-          </li>
 
-          <li class="nav-item">
-            <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f" style="color:#3C5A99;"></i></a>
-          </li>
         </ul>
       </div>
     </div>
@@ -199,7 +210,12 @@ page.layout
 
 <div class="site-content">
 
-  <div class="container">
+  {% assign container_class = "container" %}
+  {%if page.container_class %}
+    {% assign container_class = page.container_class %}
+  {% endif %}
+
+  <div class="{{ container_class }}">
 
     <!-- Christmas decorations -->
       <div class="christmas christmasLights">
@@ -239,25 +255,27 @@ page.layout
 
     <!-- Site Title
 ================================================== -->
-    <div class="mainheading mainheadingflex">
+    <div class="mainheading mainheadingflex" style="margin: 20px 0px;">
       <span class="sitetitlecontainer">
         <span class="sitetitle">
 
           <img src="{{ site.baseurl }}/assets/images/santa-hat.png" class="christmas christmas-hat">
 
-          <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-          <div class="lead">
-            {% if site.mainlink %}
-            <a href="{{ site.mainlink }}" target="_blank">
-              {% endif %}
-              {{ site.description }} {% if site.mainlink %}
-              <img src="{{ site.baseurl }}/assets/images/facebook.png" />
-            </a>{% endif %}
-          </div><!--.lead-->
+          <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: center;">
+            <a href="{{ site.baseurl }}/" style="margin-right: 23px;">ЛИТЕРАТУРНИ РАЗГОВОРИ</a>
+            <div class="lead">
+              {% if site.mainlink %}
+              <a href="{{ site.mainlink }}" target="_blank">
+                {% endif %}
+                {{ site.description }} {% if site.mainlink %}
+                <img src="{{ site.baseurl }}/assets/images/facebook.png" />
+              </a>{% endif %}
+            </div><!--.lead-->
+          </div>
         </span>
       </span>
 
-        <div class="topsidebanner">
+        <div class="topsidebanner" style="display:none;">
             <div class="widget-facebook">
               <iframe id="facebook_iframe" class="facebook_iframe"></iframe>
             </div><!--.idget-facebook-->
@@ -272,8 +290,7 @@ page.layout
 <form action="/search">
   <div id="search-wrapper" class="{{searchVisibleClass}}">
   <div id="searchbox-container" class="container">
-    <span id="search-label">Търсене:</span>
-      <input id="search-text" type="text" name="search" placeholder="Търси..." />
+      <input id="search-text" type="text" name="search" placeholder="ТЪРСИ..." />
       <span id="search-close">X</span>
   </div><!--#searchbox-dontainer-->
 </div><!--#search-wrapper-->
@@ -301,9 +318,10 @@ page.layout
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-12 text-center mt-2">
-            Copyright © {{ site.time | date: "%Y" }} {{ site.name }} &amp; <a href="http://www.alonintheworld.com"
-              target="_blank">alonintheworld</a>
+          <div class="col-12 text-center mt-2" style="display: flex; flex-wrap: nowrap; flex-direction: row; justify-content: center; align-items: center;">
+            <span style="position: relative; top: 2px;">Copyright © {{ site.time | date: "%Y" }} {{ site.name }} &amp;</span>
+            <a href="http://www.alonintheworld.com"
+              target="_blank"><img src="/assets/images/alon-in-the-world-animated-single-line.gif"/></a>
           </div><!--inner footer div-->
         </div><!--.row-->
       </div><!--.container-->
@@ -320,7 +338,7 @@ page.layout
         <i class="far fa-copy"></i>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">затвори</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="background-color: #5B5B5B;">затвори</button>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
     {% assign siteurl = site.url %}
 {% endif %}
 
-<div class="shortlink">
+<div class="shortlink {{ include.class }}">
     <i class="fas fa-link"></i>
     <span>{{ siteurl }}{{ include.shortlink }}</span>
     <span>{{ include.fulllink }}</span>
