@@ -40,7 +40,10 @@ function shortLinkClickHandle() {
         $(modal_body[0]).popover();
         $(modal_body[0]).click(function (){
           modal.modal('hide');
-          navigator.clipboard.writeText(linkToShare);
+          if(navigator.clipboard){
+            navigator.clipboard.writeText(linkToShare);
+          }
+          toast("Готово!", 3);        
         });
       }
 
@@ -287,6 +290,19 @@ function showSearch()
 {
   $("#search-wrapper").css('display', 'flex');
   $('#search-wrapper').animate({ height: 60}, 400, function() { $("#search-text").focus(); });
+}
+
+function toast(message, seconds){
+  var toast = document.querySelector('.toast');
+  if(toast) {
+    var toast_message = toast.querySelector('.toast-message');
+    if(toast_message) {
+      if(!seconds) { seconds = 3; }
+      toast_message.textContent=message;
+      toast.classList.add('active');
+      setTimeout(function() { toast.classList.remove('active'); }, seconds * 1000);  
+    }
+  }
 }
 
 //-------- Facebook banner -------
