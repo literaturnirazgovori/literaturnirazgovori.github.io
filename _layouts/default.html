@@ -11,7 +11,12 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">  
 
-  <title>{{ page.title }} | {{ site.name }}</title>
+  {%if page.title and page.title != "" %}
+    {% assign page_title = page.title | append: " | " | append: site.name %}
+  {% else %}
+    {% assign page_title = site.name %}
+  {% endif %}
+  <title>{{ page_title }}</title>
 
   {% if page.description %}
   <meta name="description" content="{{ page.description }}" />
