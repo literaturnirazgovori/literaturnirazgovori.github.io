@@ -6,10 +6,10 @@
 
 [https://literaturnirazgovori.com](https://literaturnirazgovori.com)
 
-[Литературни разговори с Антония Апостолова](https://www.facebook.com/literaturnirazgovori/)
+[![](https://literaturnirazgovori.com/assets/images/facebook.png) Литературни разговори с Антония Апостолова](https://www.facebook.com/literaturnirazgovori/)
 
 
-![](https://literaturnirazgovori.com/assets/images/Screenshot_28-10-2025_102716_literaturnirazgovori.com-cropped.jpeg)
+[![](https://literaturnirazgovori.com/assets/images/Screenshot_28-10-2025_102716_literaturnirazgovori.com-cropped.jpeg)](https://literaturnirazgovori.com)
 
 Adapted theme: [Mediumish](https://wowthemesnet.github.io/mediumish-theme-jekyll/)
 
