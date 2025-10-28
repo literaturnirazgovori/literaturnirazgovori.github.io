@@ -57,7 +57,7 @@ jobs:
           git config --global user.name "Alon Rotem"
 
           pip install --upgrade pip
-          pip install google-api-python-client oauth2client google-analytics-data python-frontmatter
+          pip install packaging google-api-python-client oauth2client google-analytics-data python-frontmatter
 
           # which python # /opt/hostedtoolcache/Python/3.9.17/x64/bin/python
           python ./utils/analytics-fetch.py
