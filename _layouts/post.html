@@ -22,7 +22,7 @@ comments: true
         <!-- Post Share -->
         <div class="col-md-2 pl-0 d-none">
             <div id="side_actions">
-                <div id="postviewscontainer" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
+                <div id="postviewscontainer" class="d-none postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
                     {% if page.pageviews and page.pageviews > 0 %}
                         {{ page.pageviews }}
                     {% endif %}
@@ -76,7 +76,7 @@ comments: true
                                 shortlink=page.shortlink 
                                 fulllink=currentUrl 
                         %}                        
-                        <div id="postviewscontainer" class="postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
+                        <div id="postviewscontainer" class="d-none postviews {% if page.pageviews and page.pageviews > 0 %}postviews-visible{% endif %}">
                             {% if page.pageviews and page.pageviews > 0 %}
                             <div id="postViews">
                                 <img src="/assets/images/eye.png" />
@@ -290,3 +290,20 @@ comments: true
 {% endif %}
 <!--End Comments
 ================================================== -->
+
+<script>
+    jQuery(document).ready(function($){
+        let post_sheet = document.getElementsByClassName("post-sheet");
+        if(post_sheet && post_sheet.length > 0){
+        post_sheet[0].addEventListener('click', function(event){
+            if (event.ctrlKey) {
+                {% if page.pageviews and page.pageviews > 0 %}
+                    alert("{{ page.pageviews }} article views.");
+                {% else %}
+                    alert("No article views recorded yet.");
+                {% endif %}
+            }
+        });
+        }
+    });
+</script>

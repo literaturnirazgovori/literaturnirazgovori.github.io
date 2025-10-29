@@ -18,7 +18,7 @@ Adapted theme: [Mediumish](https://wowthemesnet.github.io/mediumish-theme-jekyll
 * Integrated with
   - Github Actions
   - Bootstrap
-  - Google Analytics
+  - Google Analytics (ctrl + click an article)
   - Disqus
   - Netlify CMS
 
