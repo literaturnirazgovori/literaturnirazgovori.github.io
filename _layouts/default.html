@@ -213,6 +213,23 @@ page.layout
 <!-- End Navigation
 ================================================== -->
 
+<!-- Christmas decorations -->
+{% assign colors="red,yellow,blue,pink,green,blue light-540,yellow light-540,red light-540,pink light-540,yellow light-770,red light-770,green light-770,blue light-990,yellow light-990,red light-990,pink light-990,green light-990,blue light-1200" | split: "," %}
+{% assign selection_size = colors | size | plus: 1 %}
+  <div class="christmas christmasLights">
+    <div class="light">
+      <ul class="line" style="white-space: nowrap;">
+        {% for i in (1..60) %}
+          {% assign randomFactor = "now" | date: "%N" | modulo: 70 %}
+          {% assign randomNumber = "now" | date: "%N" | plus: randomFactor | modulo: selection_size %}
+          <li class="{{ colors[randomNumber] }}"></li>
+        {% endfor %}            
+          
+      </ul>
+  </div>
+  </div>
+<!-- Christmas decorations -->
+
 <div class="site-content">
 
   {% assign container_class = "container" %}
@@ -222,41 +239,6 @@ page.layout
 
   <div class="{{ container_class }}">
 
-    <!-- Christmas decorations -->
-      <div class="christmas christmasLights">
-        <div class="light">
-          <ul class="line">
-              <li class="red"></li>
-              <li class="yellow"></li>
-              <li class="blue"></li>
-              <li class="pink"></li>
-              <li class="red"></li>
-              <li class="green"></li>
-              <li class="blue light-540"></li>
-              <li class="yellow light-540"></li>
-              <li class="red light-540"></li>
-              <li class="pink light-540"></li>
-              <li class="blue light-540"></li>
-              <li class="yellow light-770"></li>
-              <li class="red light-770"></li>
-              <li class="green light-770"></li>
-              <li class="blue light-990"></li>
-              <li class="yellow light-990"></li>
-              <li class="red light-990"></li>
-              <li class="pink light-990"></li>
-              <li class="green light-990"></li>
-              <li class="blue light-1200"></li>
-              <!--
-              <li class="pink"></li>
-              <li class="red"></li>
-              <li class="green"></li>
-              <li class="blue"></li>
-              -->
-          </ul>
-      </div>
-      </div>
-    <!-- Christmas decorations -->
-
 
     <!-- Site Title
 ================================================== -->
@@ -264,10 +246,13 @@ page.layout
       <span class="sitetitlecontainer">
         <span class="sitetitle">
 
-          <img src="{{ site.baseurl }}/assets/images/santa-hat.png" class="christmas christmas-hat">
+          
 
-          <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: center;">
-            <a href="{{ site.baseurl }}/" style="margin-right: 23px;">ЛИТЕРАТУРНИ РАЗГОВОРИ</a>
+          <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: center; position:relative;">
+            <div style="display: flex; flex-wrap: nowrap;">
+              <img src="{{ site.baseurl }}/assets/images/santa-hat.png" class="christmas christmas-hat" style="">
+              <a href="{{ site.baseurl }}/" style="margin-right: 23px;">ЛИТЕРАТУРНИ РАЗГОВОРИ</a>
+            </div>
             <div class="lead">
               {% if site.mainlink %}
               <a href="{{ site.mainlink }}" target="_blank">
