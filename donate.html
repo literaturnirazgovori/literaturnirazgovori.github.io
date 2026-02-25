@@ -107,16 +107,20 @@ title: Дарете
         color: white;
     }
 
+    .epay .currency {
+        margin-right: 3px;
+    }
+
     .paypal .currency {
         margin-right: 3px;
         color: #311e81;
     }
 
-    .buymeacoffee .donate_text
-    {    
+    .buymeacoffee .donate_text {    
         margin-right: 10px;
         font-weight: 600;
         font-size: 19px;
+        color: black;
     }
 
     .revolut .donate_text {
@@ -305,8 +309,8 @@ title: Дарете
 
             <!-- button with all the shenanigans -->
             <div class="brand_btn epay hover_zoom_btn" onclick="javascript:submitForm('epayform')">
+                <span class="currency">€</span>
                 <input oninvalid="setCustomValidity('Моля, въведете сума!')" oninput="setCustomValidity('')" class="donation_amount" type="number" name="amount" id="epay_amount" value="" placeholder="0"  onclick="event.stopPropagation();" required>
-                <span class="currency">лв.</span>
                 <span class="donate_text">Дарете с</span>
                 <img style="width: 90px; margin-left: 7px;" src="/assets/images/epay-logo-w.png" />
             </div>
