@@ -1,3 +1,63 @@
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function shortLinkClickHandle() {
+  $(".shortlink").click(function (e){
+    var url_spans = e.currentTarget.getElementsByTagName("span");
+    var modal = $('#shortLinkModal');
+    if(modal.length > 0) {
+      var shortLink = "";
+      var regLink = "";
+      var linkToShare = "";
+      var modal_body = modal.get(0).getElementsByClassName("modal-body");
+      var modal_url = modal.get(0).getElementsByClassName("shortlinkModal_URL");
+      if(modal_url.length > 0 && url_spans.length > 0) {
+        shortLink = decodeURIComponent(url_spans[0].textContent);
+        regLink = decodeURIComponent(url_spans[1].textContent);
+        linkToShare = (shortLink)? shortLink : regLink;
+        modal_url[0].textContent = linkToShare;
+      }
+      if(modal_body.length > 0) {
+        $(modal_body[0]).popover();
+        $(modal_body[0]).click(function (){
+          modal.modal('hide');
+          if(navigator.clipboard){
+            navigator.clipboard.writeText(linkToShare);
+          }
+          toast("Готово!", 3);        
+        });
+      }
+
+      for(var i=0; i < url_spans.length; i++) {
+        console.log(url_spans[i].textContent);
+      }
+      
+      if(shortLink != ""){
+        modal.modal({});
+      }
+    }
+  });  
+}
+
 jQuery(document).ready(function($){
 
   //---- search bar ---------
@@ -36,6 +96,35 @@ jQuery(document).ready(function($){
     }
     //--------/Facebook banner -------
 
+    //------- check cookie for donation badge ----
+    // if donation doesn't have a close class, or not closed (cookie), show it
+    var donate_badges = $("#btn_donate");
+    var cookie_close_donation_badge = "cookie_close_donation_badge";
+    var badgeClosed = false;
+    if(donate_badges.length > 0){
+      var badge = donate_badges.get(0);
+      var close_btn = $(badge.getElementsByClassName("btn_close_donation"));
+      var classes = badge.className.split(/\s+/);
+      //donate badge is closable
+      if(classes.indexOf("close_btn") >= 0){
+        var donation_closed = getCookie(cookie_close_donation_badge);
+        if(donation_closed == "1"){
+          badgeClosed = true;
+        }
+      }
+      if(!badgeClosed){
+        badge.classList.remove("hidden_badge");
+      }
+      // close button click sets the cookie
+      close_btn.click(function (){ 
+        setCookie(cookie_close_donation_badge, "1", 365);
+        badge.classList.add("hidden_badge");
+       });
+      
+    }
+    //------- check cookie for donation badge ----
+
+    shortLinkClickHandle();
 
   $("#search-close").click(function (){
     hideSearch();
@@ -128,6 +217,8 @@ jQuery(document).ready(function($){
 
     $(window).scroll(function(event){
         didScroll = true;
+        var scroll_percents = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+        $("#scroll_indicator").width(scroll_percents + "%");
     });
 
     setInterval(function() {
@@ -174,6 +265,16 @@ jQuery(document).ready(function($){
     {
       $(".christmas").show();
     }
+
+    // Check if click is outside navbar content & toggler (and menu is open)
+    document.addEventListener('click', function(event) {
+      const navbar = document.querySelector('.navbar');
+      
+      if (!navbar.contains(event.target)) {
+        $(".menu").addClass("collapsed").removeClass("opened");
+        $(".navbar-collapse").removeClass("show");
+      }
+    });
 });
 
 function hideSearch()
@@ -189,6 +290,19 @@ function showSearch()
 {
   $("#search-wrapper").css('display', 'flex');
   $('#search-wrapper').animate({ height: 60}, 400, function() { $("#search-text").focus(); });
+}
+
+function toast(message, seconds){
+  var toast = document.querySelector('.toast');
+  if(toast) {
+    var toast_message = toast.querySelector('.toast-message');
+    if(toast_message) {
+      if(!seconds) { seconds = 3; }
+      toast_message.textContent=message;
+      toast.classList.add('active');
+      setTimeout(function() { toast.classList.remove('active'); }, seconds * 1000);  
+    }
+  }
 }
 
 //-------- Facebook banner -------

@@ -12,7 +12,8 @@ var search_json_index = [
             "date": "{{ post.date }}",
             "image": "{{ post.image }}",
             "author": "{{ post.author }}",
-            "subtitle": "{{ post.subtitle | escape }}"
+            "subtitle": "{{ post.subtitle | escape }}",
+            "shortlink": "{{ post.shortlink }}"
         } 
         {% unless forloop.last %},
         {% endunless %}

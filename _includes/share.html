@@ -29,7 +29,15 @@
             </a>
         </li>
 
+        <li class="ml-1 mr-1">
+            {% 
+                include shortlink.html 
+                    shortlink=page.shortlink 
+                    fulllink=currentUrl 
+            %}
+        </li>
     </ul>
+    <!--
     {% if page.comments != false %}
     <div class="sep">
     </div>
@@ -39,4 +47,5 @@
         </li>
     </ul>
     {% endif %}
+    -->
 </div>

@@ -5,9 +5,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-  <link rel="icon" href="{{ site.baseurl }}/assets/images/logo-book.png" />
+  <!--link rel="icon" href="{{ site.baseurl }}/assets/images/logo-book.png" /-->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">  
 
-  <title>{{ page.title }} | {{ site.name }}</title>
+  {%if page.title and page.title != "" %}
+    {% assign page_title = page.title | append: " | " | append: site.name %}
+  {% else %}
+    {% assign page_title = site.name %}
+  {% endif %}
+  <title>{{ page_title }}</title>
 
   {% if page.description %}
   <meta name="description" content="{{ page.description }}" />
@@ -15,7 +24,7 @@
 
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/bootstrap.min.css" />
 
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/font-awesome.css" />
+  <link rel="stylesheet" href="/assets/css/font-awesome.css" />
 
   <link href="{{ site.baseurl }}/assets/css/google-font-faces.css" rel="stylesheet" />
 
@@ -34,7 +43,7 @@
   {% if jekyll.environment == "production" %}
   {% assign siteurl="https://literaturnirazgovori.com" %}
   {%else%}
-  {% assign siteurl = site.url %}
+  {% assign siteurl = "" %}
   {% endif %}
 
   {% if page.url contains '://' %}
@@ -84,7 +93,7 @@
   </script>
   <script src="{{ site.baseurl }}/assets/js/utils.js"></script>
 </head>
-<body>
+<body class="{{ page.additional_body_class }}">
 
 <div class="whole-body-wrapper">
 <!-- ======== Facebook banner ========-->
@@ -98,8 +107,7 @@ page.layout
 
 <!-- Begin Menu Navigation
 ================================================== -->
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+<nav class="navbar navbar-expand-lg navbar fixed-top mediumnavigation nav-down">
   <div class="container-fluid pr-0 navbar-container">
     <!-- Begin Logo -->
     <!-- UNHIDE THE CMS -->
@@ -114,10 +122,13 @@ page.layout
     {% endunless %}
     <!-- End Logo -->
 
+    {% include hamburger.html %}
+    <!--
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish, #secondrowmenu" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    -->
 
     <div class="collapse navbar-collapse flex-column" id="navbarMediumish">
       <!-- Begin Menu -->
@@ -135,54 +146,64 @@ page.layout
     {% endif %}
 
     <!-- UNHIDE THE CMS -->
-    <ul class="navbar-nav navbarlist" style="align-items: center;">
-
-      <li class="nav-item {% if pagecat=='mybooks' %}active{% endif %}">
-        <a class="nav-link" href="{{ site.baseurl }}/category/mybooks"><strong>М</strong>оите книги</a>
-      </li>
-
+    <ul class="navbar-nav mx-auto" style="align-items: center;">
       
       <li class="nav-item {% if pagecat=='bookreviews' %}active{% endif %}">
         <a class="nav-link" href="{{ site.baseurl }}/category/bookreviews"><strong>Р</strong>ецензии</a>
-      </li>
-
-      <li class="nav-item {% if pagecat=='newbooks' %}active{% endif %}">
-        <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
       </li>
 
       <li class="nav-item {% if pagecat=='interviews' %}active{% endif %}">
         <a class="nav-link" href="{{ site.baseurl }}/category/interviews"><strong>И</strong>нтервюта</a>
       </li>
 
-      <li class="nav-item {% if pagecat=='kolonkata-na-georgi-cankov' %}active{% endif %} kolonkata-na-georgi-cankov">
-        <a class="nav-link" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
+      <!--
+      <li class="nav-item {% if pagecat=='newbooks' %}active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/category/newbooks"><strong>Н</strong>ови книги</a>
       </li>
-
+      -->
       <li class="nav-item {% if pagecat=='translations' %}active{% endif %}">
         <a class="nav-link" href="{{ site.baseurl }}/category/translations"><strong>П</strong>реводи</a>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link stilnica-link" href="https://stilnica.com/people/antonia" target="_blank"><strong>М</strong>оите книги</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link stilnica-link" href="https://stilnica.com/" target="_blank"><strong>Р</strong>едакторски услуги</a>
+      </li>
+      
+      <li style="display:none;" class="nav-item {% if pagecat=='kolonkata-na-georgi-cankov' %}active{% endif %} kolonkata-na-georgi-cankov">
+        <a class="nav-link" style="margin: 10px 0;" href="{{ site.baseurl }}/category/kolonkata-na-georgi-cankov"><strong>К</strong>олонката на Георги Цанков</a>
+      </li>
+
+      {% assign search_active = "" %}
+      {% if page.url contains "search.html" %}
+      {% assign search_active = "search_active" %}
+      {% endif %}
+
+          <li id="menubarsearch" class="{{ search_active }}">
+            <div id="glass"  alt="Търсене"></div>
+            <!--<img src="/assets/images/search-glass-inverted.png" alt="Търсене">-->
+          </li>
+
+          <li class="nav-item">
+            <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f"></i></a>
+          </li>      
     </ul>
     <!-- End Menu -->
 
     <!-- Second row menu-->
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="secondrowmenu">
       <!-- 2nd menu row links -->
-      <ul class="navbar-nav flex-row mb-2 mr-auto">
-        <li class="nav-item {% if pagecat=='talks' %}active{% endif %}">
-          <a class="nav-link" href="{{ site.baseurl }}/category/talks"><strong>Р</strong>азговори за писането с български автори</a>
-        </li>
+      <ul style="display:none;" class="navbar-nav flex-row mb-2 mr-auto">
+
       </ul>
       <!-- 2nd menu row icons -->
 
       <div class="navbar-collapse collapse order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
-          <li id="menubarsearch">
-            <img src="/assets/images/search-glass.png" alt="Търсене">
-          </li>
 
-          <li class="nav-item">
-            <a target="_blank" class="nav-link" href="{{ site.mainlink }}"><i class="fab fa-facebook-f" style="color:#3C5A99;"></i></a>
-          </li>
         </ul>
       </div>
     </div>
@@ -192,67 +213,59 @@ page.layout
 <!-- End Navigation
 ================================================== -->
 
+<!-- Christmas decorations -->
+{% assign colors="red,yellow,blue,pink,green,blue light-540,yellow light-540,red light-540,pink light-540,yellow light-770,red light-770,green light-770,blue light-990,yellow light-990,red light-990,pink light-990,green light-990,blue light-1200" | split: "," %}
+{% assign selection_size = colors | size | plus: 1 %}
+  <div class="christmas christmasLights">
+    <div class="light">
+      <ul class="line" style="white-space: nowrap;">
+        {% for i in (1..60) %}
+          {% assign randomFactor = "now" | date: "%N" | modulo: 70 %}
+          {% assign randomNumber = "now" | date: "%N" | plus: randomFactor | modulo: selection_size %}
+          <li class="{{ colors[randomNumber] }}"></li>
+        {% endfor %}            
+          
+      </ul>
+  </div>
+  </div>
+<!-- Christmas decorations -->
+
 <div class="site-content">
 
-  <div class="container">
+  {% assign container_class = "container" %}
+  {%if page.container_class %}
+    {% assign container_class = page.container_class %}
+  {% endif %}
 
-    <!-- Christmas decorations -->
-      <div class="christmas christmasLights">
-        <div class="light">
-          <ul class="line">
-              <li class="red"></li>
-              <li class="yellow"></li>
-              <li class="blue"></li>
-              <li class="pink"></li>
-              <li class="red"></li>
-              <li class="green"></li>
-              <li class="blue light-540"></li>
-              <li class="yellow light-540"></li>
-              <li class="red light-540"></li>
-              <li class="pink light-540"></li>
-              <li class="blue light-540"></li>
-              <li class="yellow light-770"></li>
-              <li class="red light-770"></li>
-              <li class="green light-770"></li>
-              <li class="blue light-990"></li>
-              <li class="yellow light-990"></li>
-              <li class="red light-990"></li>
-              <li class="pink light-990"></li>
-              <li class="green light-990"></li>
-              <li class="blue light-1200"></li>
-              <!--
-              <li class="pink"></li>
-              <li class="red"></li>
-              <li class="green"></li>
-              <li class="blue"></li>
-              -->
-          </ul>
-      </div>
-      </div>
-    <!-- Christmas decorations -->
+  <div class="{{ container_class }}">
 
 
     <!-- Site Title
 ================================================== -->
-    <div class="mainheading mainheadingflex">
+    <div class="mainheading mainheadingflex" style="margin: 20px 0px;">
       <span class="sitetitlecontainer">
         <span class="sitetitle">
 
-          <img src="{{ site.baseurl }}/assets/images/santa-hat.png" class="christmas christmas-hat">
+          
 
-          <a href="{{ site.baseurl }}/">{{ site.name }}</a>
-          <div class="lead">
-            {% if site.mainlink %}
-            <a href="{{ site.mainlink }}" target="_blank">
-              {% endif %}
-              {{ site.description }} {% if site.mainlink %}
-              <img src="{{ site.baseurl }}/assets/images/facebook.png" />
-            </a>{% endif %}
-          </div><!--.lead-->
+          <div style="display: flex; flex-direction: row; flex-wrap: wrap; align-items: baseline; justify-content: center; position:relative;">
+            <div style="display: flex; flex-wrap: nowrap;">
+              <img src="{{ site.baseurl }}/assets/images/santa-hat.png" class="christmas christmas-hat" style="">
+              <a href="{{ site.baseurl }}/" style="margin-right: 23px;">ЛИТЕРАТУРНИ РАЗГОВОРИ</a>
+            </div>
+            <div class="lead">
+              {% if site.mainlink %}
+              <a href="{{ site.mainlink }}" target="_blank">
+                {% endif %}
+                {{ site.description }} {% if site.mainlink %}
+                <img src="{{ site.baseurl }}/assets/images/facebook.png" />
+              </a>{% endif %}
+            </div><!--.lead-->
+          </div>
         </span>
       </span>
 
-        <div class="topsidebanner">
+        <div class="topsidebanner" style="display:none;">
             <div class="widget-facebook">
               <iframe id="facebook_iframe" class="facebook_iframe"></iframe>
             </div><!--.idget-facebook-->
@@ -267,8 +280,7 @@ page.layout
 <form action="/search">
   <div id="search-wrapper" class="{{searchVisibleClass}}">
   <div id="searchbox-container" class="container">
-    <span id="search-label">Търсене:</span>
-      <input id="search-text" type="text" name="search" placeholder="Търси..." />
+      <input id="search-text" type="text" name="search" placeholder="ТЪРСИ..." />
       <span id="search-close">X</span>
   </div><!--#searchbox-dontainer-->
 </div><!--#search-wrapper-->
@@ -290,14 +302,16 @@ page.layout
 
     </div><!--.site-content-->
 </div><!--.whole-body-wrapper-->
+
     <!-- Begin Footer
 ================================================== -->
     <footer class="footer">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mt-2">
-            Copyright © {{ site.time | date: "%Y" }} {{ site.name }} &amp; <a href="http://www.alonintheworld.com"
-              target="_blank">alonintheworld</a>
+            <span style="position: relative; top: 2px;">Copyright © {{ site.time | date: "%Y" }} {{ site.name }} &amp;</span>
+            <a href="http://www.alonintheworld.com"
+              target="_blank"><img src="/assets/images/alon-in-the-world-animated-single-line.gif"/></a>
           </div><!--inner footer div-->
         </div><!--.row-->
       </div><!--.container-->
@@ -305,6 +319,27 @@ page.layout
     <!-- End Footer
 ================================================== -->
   
+<!-- Short links modal dialog-->
+<div id="shortLinkModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body" style="padding: 30px;" data-content="Кликнете, за да копирате" rel="popover" data-placement="bottom" data-trigger="hover">
+        <div class="shortlinkModal_URL"></div>
+        <i class="far fa-copy"></i>
+      </div>
+      <div class="modal-footer" style="padding: 20px;">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" style="background-color: #5B5B5B;">затвори</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast toast-animated">
+    <div class="toast-body">
+        <div class="toast-message">Готово!</div>
+    </div>
+</div>
+<!--/Short links modal dialog -->
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
@@ -322,6 +357,9 @@ page.layout
   <script src="{{ site.baseurl }}/assets/js/mediumish.js"></script>
 
   <script id="dsq-count-scr" src="//{{ site.disqus }}.disqus.com/count.js"></script>
+
+  <!--<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="litrazgovori" data-description="Support me on Buy me a coffee!" data-message="" data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>-->
+
   </body>
 
 </html>

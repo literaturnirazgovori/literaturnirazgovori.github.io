@@ -1,16 +1,32 @@
 <!-- begin post -->
 {% assign author = site.authors[post.author] %}
 
+{% if jekyll.environment == "production" %}
+{% assign siteurl="https://literaturnirazgovori.com" %}
+{%else%}
+{% assign siteurl = site.url %}
+{% endif %}
+{% if site.url == 'http://0.0.0.0:4000' %}
+    {% assign siteurl = "" %}
+{% endif %}
+
+
+{% if post.url contains '://' %}
+{% assign currentUrl = post.url %}
+{%else%}
+{% assign currentUrl = post.url | prepend: siteurl %}
+{% endif %}
+
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
         <div class="maxthumb">
-            <a href="{{ post.url | absolute_url }}">
+            <a href="{{ post.url | prepend: siteurl }}">
                 {% if post.image %} <img class="img-fluid" src="{% if post.image contains " ://" %}{{ post.image }}{%
-                    else %}{{ post.image | absolute_url }}{% endif %}" alt="{{ post.title }}"> {% endif %}
+                    else %}{{ post.image | prepend: siteurl }}{% endif %}" alt="{{ post.title }}"> {% endif %}
             </a>
         </div>
         <div class="card-body">
-            <h2 class="card-title"><a class="text-dark" href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+            <h2 class="card-title"><a class="text-dark" href="{{ post.url | prepend: siteurl }}">{{ post.title }}</a></h2>
             <h4 class="card-text">{{ post.subtitle | strip_html | truncatewords:30 }}</h4>
         </div>
         <div class="card-footer bg-white">
@@ -32,7 +48,15 @@
                 </span>
                 <div class="clearfix"></div>
             </div>
+            <div>
+                {% 
+                    include shortlink.html 
+                        shortlink=post.shortlink 
+                        fulllink=currentUrl 
+                %}
+            </div>
         </div>
     </div>
 </div>
+
 <!-- end post -->

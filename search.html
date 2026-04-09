@@ -2,7 +2,11 @@
 layout: default
 title: Търсене
 ---
-
+{% if jekyll.environment == "production" %}
+    {% assign siteurl="https://literaturnirazgovori.com" %}
+{% else %}
+    {% assign siteurl = site.url %}
+{% endif %}
 <head>
     <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
     <script src="/search-json.js" type="text/javascript"></script>
@@ -35,6 +39,12 @@ title: Търсене
                     {date}
                 </span>
                 <span class="postcategory">{category}</span>
+
+                <div class="shortlink bright" style="margin-left: 10px;">
+                    <i class="fas fa-link"></i>
+                    <span>{shortlink}</span>
+                    <span>{url}</span>
+                </div>
             </div>
         </div>
     </div>`;
@@ -62,6 +72,9 @@ title: Търсене
                     }
                 case 'category':
                     return "<a href='/category/" + value + "'>" + categoriestext[value].text + "</a>";
+                
+                case 'shortlink':
+                    return "{{ siteurl }}" + value;
             }
         }
 
@@ -84,7 +97,7 @@ title: Търсене
                 json: search_json_index,
                 searchResultTemplate: itemTemplate,
                 templateMiddleware: searchresultMiddleware,
-                noResultsText: '<p style="font-family: B52; font-size: 17pt;">Няма резултати.</p>',
+                noResultsText: '<p style="font-family: \'Karano free\'; font-size: 19pt; color: #D3D3D3">Няма резултати.</p>',
                 fuzzy: false
             });
             setTimeout(() => {
@@ -92,6 +105,7 @@ title: Търсене
                 $("#loading").hide();
                 $("#search-container").show();
                 $("#search-text").focus();
+                shortLinkClickHandle();
             }, 500);
         }
     </script>
@@ -99,7 +113,7 @@ title: Търсене
 
 <body onload="bodyloaded()">
     <div id="loading" style="display:block;">
-        <img src="/assets/images/pleaseWaitBookBW.gif" style="width:128px; height:128px;display:block; margin:auto;">
+        <img src="/assets/images/book-49.gif" style="display:block; margin:auto;">
     </div>
     <div id="search-container" style="display:none;">
         <div class="categorylist">
@@ -107,4 +121,11 @@ title: Търсене
             </div>
         </div>
     </div>
+
+    <!-- Donate button -->
+    {% include donate_button.html 
+        classes="btn_donate_red fixed_top_right fixed_top_mobile_bottom_right"
+        text="Ако сте фен на сайта и го четете редовно - подкрепете го, той зависи от вас." 
+    %}
+  <!--/Donate button -->    
 </body>

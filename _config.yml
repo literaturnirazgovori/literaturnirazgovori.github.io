@@ -3,8 +3,8 @@ name: "Литературни разговори"
 description: "с Антония Апостолова"
 mainlink: "https://www.facebook.com/literaturnirazgovori/"
 meta_description: "Литературни разговори с Антония Апостолова"
-logo: "assets/images/logo-book.png"
-favicon: "assets/images/logo-book.png"
+logo: "assets/images/logo-new-bw.png"
+favicon: "assets/images/logo-new-bw.png"
 baseurl: ""
 google_analytics: UA-132938422-1
 disqus: "literaturnirazgovori"
@@ -14,10 +14,12 @@ fb_app_id: "405644126912554"
 analytics_proxy_url: "https://warm-woodland-78106.herokuapp.com"
 exclude: ["/utils", "/node_modules"]
 
-ozone_banner_enabled: true
+ozone_banner_enabled: false
 ozone_banner_text: "Купи книгата от"
 ozone_banner_link_suffix: "?utm_campaign=book-link&utm_medium=affiliate&utm_source=lrazgovori"
 
+
+patreon_client_id: "8YGuKOMgJqlRukg2zN4UqwD6Efu3qhZk-CXHFnSw3r35-vf9SkjzKrwEV_aOgybw"
 
 # Authors
 authors:
@@ -79,3 +81,13 @@ defaults:
       type: category
     values:
       layout: "category"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - utils/node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
