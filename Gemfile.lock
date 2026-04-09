@@ -51,7 +51,7 @@ GEM
     mercenary (0.3.6)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (7.0.5)
+    public_suffix (6.0.2)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -77,6 +77,7 @@ DEPENDENCIES
   jekyll-redirect-from (~> 0.14.0)
   jekyll-sitemap
   kramdown-parser-gfm
+  public_suffix (< 7)
   wdm
 
 RUBY VERSION
