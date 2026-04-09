@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+    rebase-strategy: disabled
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+    rebase-strategy: disabled
+
+  - package-ecosystem: "npm"
+    directories:
+      - "/utils"
+      - "/admin/jekyll-utils-netlify-cms-github-oauth"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 0
+    rebase-strategy: disabled
