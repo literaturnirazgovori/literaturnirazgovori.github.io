@@ -33,7 +33,7 @@
     "randomstring": "^1.1.5",
     "save": "^2.3.3",
     "simple-git": "^1.107.0",
-    "simple-oauth2": "^1.2.0",
+    "simple-oauth2": "^5.1.0",
     "utf8": "^3.0.0"
   }
 }
