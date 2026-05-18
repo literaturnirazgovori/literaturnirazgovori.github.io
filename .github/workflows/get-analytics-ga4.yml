@@ -33,10 +33,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python 3.9
+      - name: Set up Python 3.10
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9
+          python-version: '3.10'
 
       - name: Fetch all analytics data, and update relevant posts
         env:
@@ -60,7 +60,7 @@ jobs:
           git config --global user.name "Alon Rotem"
 
           pip install --upgrade pip
-          pip install packaging google-api-python-client oauth2client google-analytics-data python-frontmatter
+          pip install packaging google-api-python-client oauth2client google-analytics-data python-frontmatter typing-extensions
 
           # which python # /opt/hostedtoolcache/Python/3.9.17/x64/bin/python
           python ./utils/analytics-fetch.py
