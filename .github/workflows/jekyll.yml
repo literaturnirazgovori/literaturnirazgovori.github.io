@@ -66,7 +66,7 @@ jobs:
           git config --global user.name "Alon Rotem"
 
           pip install --upgrade pip
-          pip install python-frontmatter
+          pip install python-frontmatter typing-extensions
           python ./utils/generate-shortlinks.py
 
           numChangedFiles=$(git status -s | wc -l)
