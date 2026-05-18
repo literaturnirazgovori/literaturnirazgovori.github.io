@@ -28,7 +28,7 @@
     "fs-extra": "^7.0.1",
     "googleapis": "^171.4.0",
     "js-yaml": "^3.12.1",
-    "moment-timezone": "^0.5.23",
+    "moment-timezone": "^0.5.35",
     "parse-diff": "^0.5.1",
     "randomstring": "^1.1.5",
     "save": "^2.3.3",
